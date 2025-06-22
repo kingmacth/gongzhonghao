@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIY 迷你制冷系統</title>
+    <title>極致降溫 DIY：迷你制冷系統製作教程</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
@@ -16,19 +16,19 @@
             }
         }
         @layer components {
-            /* 適應微信公眾號的單列 Item 樣式 */
-            .wechat-item {
-                @apply bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-sm border border-gray-200;
+            /* 適應微信公眾號的單列 Item 樣式，帶有 Bento Grid 視覺感 */
+            .wechat-bento-item {
+                @apply bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-sm border border-gray-200 overflow-hidden; /* 避免內容溢出影響圓角 */
             }
-            /* 修改圖片樣式，設置默認最大寬度接近 900px */
-            .wechat-item img {
-                 @apply w-full max-w-4xl mx-auto mb-2 rounded-md shadow-sm block; /* 居中圖片，設置最大寬度 */
+            /* 修改圖片樣式，設置默認最大寬度 900px 且居中 */
+            .wechat-bento-item img {
+                 @apply w-full max-w-[900px] mx-auto mb-2 rounded-md shadow-sm block; /* 居中圖片，設置最大寬度 */
             }
              .wechat-heading-large {
-                 @apply text-3xl font-bold text-blue-800 leading-tight mb-1;
+                 @apply text-3xl md:text-4xl font-bold text-blue-800 leading-tight mb-1;
              }
              .wechat-text-small {
-                 @apply text-sm text-gray-600;
+                 @apply text-base text-gray-600; /* 略微調大英文點綴字體，適應閱讀 */
              }
 
             /* 高亮透明漸變示例 */
@@ -44,194 +44,225 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
      <!-- Framer Motion CDN -->
     <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.25/dist/framer-motion.min.js"></script>
-    <!-- Required for Framer Motion with CDN -->
+    <!-- Required for Framer Motion with CDN (if using React features like useScroll) -->
+    <!-- For simple whileInView, React/ReactDOM might not be strictly necessary depending on Framer Motion version -->
     <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
 <body class="bg-orange-50 text-gray-800">
 
     <div id="root" class="container mx-auto p-4 md:p-8">
         <!-- Hero Section / Summary -->
-        <motion.section class="wechat-item text-center highlight-gradient"
+        <motion.section class="wechat-bento-item text-center highlight-gradient"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}>
             <h1 class="text-5xl md:text-6xl font-bold mb-2 text-blue-900 drop-shadow-md">極致降溫 DIY</h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-4">Mini Refrigeration System Project</p>
-            <img src="placeholder_00_00.jpg" alt="Frosty Copper Coil" class="w-full max-w-4xl mx-auto mb-4 rounded-lg shadow-xl">
-            <p class="text-base text-gray-700 max-w-md mx-auto">這個項目展示了如何使用簡單的直流氣泵、銅管等材料，構建一個小型制冷系統，並實現銅管表面的迅速結霜現象。它基於基礎的蒸氣壓縮制冷循環原理，是一個有趣的物理和工程實驗。</p>
+            <p class="text-lg md:text-xl text-gray-700 mb-4">Mini Refrigeration System Project Tutorial</p>
+            <img src="placeholder_00_00.jpg" alt="完成的迷你制冷系統" class="w-full max-w-[900px] mx-auto mb-4 rounded-lg shadow-xl">
+            <p class="text-base text-gray-700 max-w-md mx-auto">这个教程将引导您使用常见的电子和五金材料，亲手打造一个简易的迷你蒸汽压缩制冷系统。通过这个项目，您不仅能看到铜管表面瞬间结霜的奇妙现象，更能深入理解制冷循环的基础原理。</p>
         </motion.section>
 
         <!-- Key Features Section -->
-         <motion.section class="wechat-item"
+         <motion.section class="wechat-bento-item"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, delay: 0.1 }}>
-            <h2 class="wechat-heading-large">核心亮點 <span class="wechat-text-small block md:inline">Key Features</span></h2>
+            <h2 class="wechat-heading-large">项目特点 <span class="wechat-text-small block md:inline">Project Highlights</span></h2>
             <ul class="list-none p-0 mt-4 space-y-3 text-gray-700">
-                <li class="flex items-center"><i class="fas fa-snowflake text-blue-600 mr-3"></i> <strong>快速結霜:</strong> 在盤管表面實現明顯的低溫效果。</li>
-                <li class="flex items-center"><i class="fas fa-puzzle-piece text-green-600 mr-3"></i> <strong>簡單材料:</strong> 利用易於獲取的組件。</li>
-                <li class="flex items-center"><i class="fas fa-wrench text-yellow-600 mr-3"></i> <strong>動手製作:</strong> 親身實踐制冷循環原理。</li>
-                <li class="flex items-center"><i class="fas fa-microchip text-purple-600 mr-3"></i> <strong>原理演示:</strong> 可視化展示製冷過程。</li>
+                <li class="flex items-center"><i class="fas fa-snowflake text-blue-600 w-6 text-center mr-3"></i> <strong>快速制冷效果:</strong> 在蒸发器盘管表面实现明显的低至冰点以下的温度。</li>
+                <li class="flex items-center"><i class="fas fa-toolbox text-green-600 w-6 text-center mr-3"></i> <strong>材料易获取:</strong> 项目所需的核心组件相对容易获得。</li>
+                <li class="flex items-center"><i class="fas fa-hand-sparkles text-yellow-600 w-6 text-center mr-3"></i> <strong>亲手实践:</strong> 适合电子或物理爱好者，通过动手加深理解。</li>
+                <li class="flex items-center"><i class="fas fa-vial text-purple-600 w-6 text-center mr-3"></i> <strong>原理可视化:</strong> 清晰展示了蒸汽压缩制冷循环的基本工作流程。</li>
             </ul>
         </motion.section>
 
 
         <!-- Components Section -->
-        <motion.section class="wechat-item"
+        <motion.section class="wechat-bento-item"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.7, delay: 0.2 }}>
-            <h2 class="wechat-heading-large">使用的組件 <span class="wechat-text-small block md:inline">Components Used</span></h2>
-            <div class="space-y-6 mt-4 text-center"> <!-- Added text-center for content within this section -->
+            <h2 class="wechat-heading-large">所需材料与组件 <span class="wechat-text-small block md:inline">Materials & Components</span></h2>
+            <div class="space-y-6 mt-4 text-gray-700">
                  <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_02_19.jpg" alt="DC Air Pump" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">直流氣泵</h3>
-                    <p class="text-gray-700">DC Air Pump (Compressor)</p>
-                    <p class="text-xs text-gray-600 mt-1">規格 (標籤所示): 12V, 壓力 20-23PSI / -50-60KPA</p>
+                    <img src="placeholder_02_19.jpg" alt="直流气泵" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">直流气泵 (Compressor)</h3>
+                    <p class="text-gray-700">用于循环制冷剂，提供系统所需的压力。</p>
+                    <p class="text-xs text-gray-600 mt-1">参考规格 (如图所示): 12V, 压力 20-23PSI (高压侧) / -50-60KPA (低压侧)</p>
                 </div>
                  <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_00_40.jpg" alt="Large Copper Coil" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">大型銅管盤管</h3>
-                    <p class="text-gray-700">Large Copper Coil (Evaporator)</p>
-                     <p class="text-xs text-gray-600 mt-1">規格 (外徑 OD): 6.2 mm</p>
+                    <img src="placeholder_00_40.jpg" alt="大型铜管盘管" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">大型铜管盘管 (Evaporator)</h3>
+                    <p class="text-gray-700">作为蒸发器，制冷剂在此吸收热量从液体变为气体，产生低温。</p>
+                     <p class="text-xs text-gray-600 mt-1">参考规格 (外径 OD): 6.2 mm (制作方法见步骤 1)</p>
                 </div>
                  <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_01_05.jpg" alt="Small Copper Coil" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">小型銅管盤管</h3>
-                    <p class="text-gray-700">Small Copper Coil (Condenser)</p>
-                     <p class="text-xs text-gray-600 mt-1">規格 (外徑 OD): 約 2.9 mm</p>
+                    <img src="placeholder_01_05.jpg" alt="小型铜管盘管" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">小型铜管盘管 (Condenser)</h3>
+                    <p class="text-gray-700">作为冷凝器，制冷剂在此释放热量从气体变为液体。</p>
+                     <p class="text-xs text-gray-600 mt-1">参考规格 (外径 OD): 约 2.9 mm (制作方法见步骤 1)</p>
                 </div>
                  <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_01_40.jpg" alt="Thin Copper Tube" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">細銅管 (毛細管)</h3>
-                    <p class="text-gray-700">Thin Copper Tube (Capillary Tube)</p>
+                    <img src="placeholder_01_40.jpg" alt="细铜管" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">细铜管 (Capillary Tube)</h3>
+                    <p class="text-gray-700">作为节流膨胀装置，通过阻力降低制冷剂的压力和温度。</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_05_04.jpg" alt="DC Fan" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">直流風扇</h3>
-                    <p class="text-gray-700">DC Fan</p>
+                    <img src="placeholder_05_04.jpg" alt="直流风扇" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">直流风扇</h3>
+                    <p class="text-gray-700">用于加速冷凝器或蒸发器的热交换效率。</p>
                 </div>
                  <div class="flex flex-col items-center text-center">
-                    <img src="placeholder_03_39.jpg" alt="Valve Assembly" class="w-full max-w-4xl mb-2">
-                    <h3 class="text-xl font-semibold">閥門組件</h3>
-                    <p class="text-gray-700">Valve Assembly</p>
+                    <img src="placeholder_03_39.jpg" alt="阀门组件" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">阀门组件</h3>
+                    <p class="text-gray-700">用于制冷剂的加注和系统控制。</p>
                 </div>
                  <div class="flex flex-col items-center text-center">
-                    <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-4xl mx-auto"> <!-- Adjusted width here too -->
-                        <img src="placeholder_02_37.jpg" alt="Tubing" class="w-1/2 mb-0"> <!-- Adjust individual image widths within flex if needed -->
-                         <img src="placeholder_05_30.jpg" alt="Syringe" class="w-1/2 mb-0">
+                    <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-[900px] mx-auto">
+                        <img src="placeholder_02_37.jpg" alt="软管" class="w-1/2 mb-0 object-contain">
+                         <img src="placeholder_05_30.jpg" alt="注射器" class="w-1/2 mb-0 object-contain">
                     </div>
-                    <h3 class="text-xl font-semibold">軟管與注射器</h3>
+                    <h3 class="text-xl font-semibold">软管与注射器</h3>
                     <p class="text-gray-700">Tubing & Syringe</p>
-                     <p class="text-xs text-gray-600 mt-1">軟管規格: 內徑 ID 約 3.7 mm / 外徑 OD 約 6.5 mm</p>
+                     <p class="text-xs text-gray-600 mt-1">软管参考规格: 内径 ID 约 3.7 mm / 外径 OD 约 6.5 mm。注射器用于制冷剂加注。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <img src="placeholder_01_48.jpg" alt="木板底座材料" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">木板</h3>
+                    <p class="text-gray-700">用于制作装置的底座。</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                     <img src="placeholder_04_10.jpg" alt="焊锡工具" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">焊锡工具和焊锡</h3>
+                    <p class="text-gray-700">用于连接铜管。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <img src="placeholder_02_28.jpg" alt="螺丝刀" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">螺丝及螺丝刀</h3>
+                    <p class="text-gray-700">用于固定组件。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <img src="placeholder_04_22.jpg" alt="钳子和扎带" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">钳子、扎带、金属丝</h3>
+                    <p class="text-gray-700">用于辅助固定和密封管路。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                     <img src="placeholder_07_12.jpg" alt="密封胶" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">密封胶</h3>
+                    <p class="text-gray-700">用于增强管路连接处的密封性。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <img src="placeholder_05_06.jpg" alt="电池组或电源" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">电源</h3>
+                    <p class="text-gray-700">直流电源适配器或电池组，为气泵和风扇供电。</p>
+                </div>
+                 <div class="flex flex-col items-center text-center">
+                    <img src="placeholder_05_34.jpg" alt="制冷剂" class="w-full max-w-[900px] mb-2">
+                    <h3 class="text-xl font-semibold">制冷剂</h3>
+                    <p class="text-gray-700">蓝色液体，用于在系统中循环实现制冷。</p>
                 </div>
             </div>
         </motion.section>
 
         <!-- Build Steps Section -->
-         <motion.section class="wechat-item"
+         <motion.section class="wechat-bento-item"
                          initial={{ opacity: 0, y: 50 }}
                          whileInView={{ opacity: 1, y: 0 }}
                          viewport={{ once: true, amount: 0.3 }}
                          transition={{ duration: 0.7, delay: 0.3 }}>
-            <h2 class="wechat-heading-large">製作步驟詳解 <span class="wechat-text-small block md:inline">Detailed Steps</span></h2>
-            <div class="space-y-6 mt-4 text-gray-700">
+            <h2 class="wechat-heading-large">制作步骤详解 <span class="wechat-text-small block md:inline">Detailed Build Steps</span></h2>
+            <div class="space-y-8 mt-4 text-gray-700"> <!-- Increased space-y -->
                  <div>
-                    <h3 class="text-lg font-semibold mb-2 text-blue-700">1. 準備銅管</h3>
-                    <img src="placeholder_00_16.jpg" alt="Copper Tube Measurement" class="w-full max-w-4xl mb-2">
-                    <p>使用卡尺測量銅管外徑 (OD 6.2 mm)。將較粗的銅管纏繞在圓柱體（如汽水罐）上，形成較大的盤管（蒸發器）。</p>
-                     <img src="placeholder_00_28.jpg" alt="Making Large Coil" class="w-full max-w-4xl mb-2">
-                     <p>將細銅管（OD 約 2.9 mm）也彎曲並截取一小段。</p>
-                     <img src="placeholder_01_05.jpg" alt="Making Small Coil" class="w-full max-w-4xl mb-2">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-cogs text-gray-500 mr-2"></i> 步骤 1：准备铜管</h3>
+                    <img src="placeholder_00_16.jpg" alt="测量铜管外径" class="w-full max-w-[900px] mb-2">
+                    <p>测量较粗铜管的外径，确保为 6.2 mm。将它缠绕在直径合适的圆柱体（如汽水罐）上，制作成蒸发器盘管。</p>
+                     <img src="placeholder_00_28.jpg" alt="制作大盘管" class="w-full max-w-[900px] mb-2">
+                     <p>取一段较细的铜管（外径约 2.9 mm），弯曲并截取所需长度，这将用作毛细管和冷凝器盘管。</p>
+                     <img src="placeholder_01_05.jpg" alt="制作小盘管" class="w-full max-w-[900px] mb-2">
                  </div>
                  <div>
-                     <h3 class="text-lg font-semibold mb-2 text-blue-700">2. 製作毛細管</h3>
-                     <p>將細銅管的一端使用小刀或銼刀打磨尖銳。</p>
-                      <img src="placeholder_01_34.jpg" alt="Sharpening Capillary Tube" class="w-full max-w-4xl mb-2">
-                     <p>清理乾淨。</p>
-                      <img src="placeholder_01_40.jpg" alt="Cleaning Capillary Tube" class="w-full max-w-4xl mb-2">
+                     <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-tools text-gray-500 mr-2"></i> 步骤 2：处理毛细管与接头</h3>
+                     <p>将细铜管的一端使用小刀或锉刀细心打磨至尖锐，以便后续插入。</p>
+                      <img src="placeholder_01_34.jpg" alt="打磨毛细管" class="w-full max-w-[900px] mb-2">
+                     <p>清理毛细管内部和外部的雜質。</p>
+                      <img src="placeholder_01_40.jpg" alt="清理毛细管" class="w-full max-w-[900px] mb-2">
+                     <p>准备阀门组件和一个黄铜软管接头。如果接头过长，可能需要锯掉一端并打磨。</p>
+                       <img src="placeholder_03_30.jpg" alt="打磨接头" class="w-full max-w-[900px] mb-2">
                  </div>
                  <div>
-                     <h3 class="text-lg font-semibold mb-2 text-blue-700">3. 準備閥門與接頭</h3>
-                     <p>準備一個帶有閥門的接頭。視頻中還使用了一個鋸掉一端的黃銅接頭 (03:29 處鋸掉)。</p>
-                      <img src="placeholder_03_39.jpg" alt="Valve and Connector" class="w-full max-w-4xl mb-2">
-                      <p>將鋸掉的黃銅接頭打磨光滑。</p>
-                       <img src="placeholder_03_30.jpg" alt="Grinding Connector" class="w-full max-w-4xl mb-2">
+                     <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-fire text-gray-500 mr-2"></i> 步骤 3：焊接铜管连接</h3>
+                     <p>将打磨尖锐的细铜管插入大型盘管（蒸发器）的出气口，使用焊锡牢固焊接连接。</p>
+                      <img src="placeholder_03_55.jpg" alt="焊接毛细管到蒸发器" class="w-full max-w-[900px] mb-2">
+                     <p>将小型盘管（冷凝器）的一端焊接到阀门组件的输入端。</p>
+                      <img src="placeholder_04_16.jpg" alt="焊接冷凝器到阀门" class="w-full max-w-[900px] mb-2">
+                     <p>将黄铜软管接头焊接到阀门的另一个接口上。</p>
                  </div>
                  <div>
-                     <h3 class="text-lg font-semibold mb-2 text-blue-700">4. 焊接銅管連接</h3>
-                     <p>將打磨好的細銅管尖端插入大型盤管（蒸發器）的出氣口，使用焊錫進行焊接連接。</p>
-                      <img src="placeholder_03_55.jpg" alt="Soldering Capillary to Evaporator" class="w-full max-w-4xl mb-2">
-                     <p>將小型盤管（冷凝器）的一端焊接到閥門組件上。</p>
-                      <img src="placeholder_04_16.jpg" alt="Soldering Condenser to Valve" class="w-full max-w-4xl mb-2">
-                      <p>將黃銅接頭焊接到閥門的另一端。</p>
-                 </div>
-                 <div>
-                    <h3 class="text-lg font-semibold mb-2 text-blue-700">5. 製作底座並固定氣泵</h3>
-                    <img src="placeholder_01_58.jpg" alt="Cutting Base" class="w-full max-w-4xl mb-2">
-                    <p>切割木板並粘合或固定作為整個裝置的底座。</p>
-                     <img src="placeholder_02_17.jpg" alt="Base Ready" class="w-full max-w-4xl mb-2">
-                    <p>將直流氣泵使用金屬支架和螺絲固定在木板底座上。</p>
-                     <img src="placeholder_02_31.jpg" alt="Mounting Pump" class="w-full max-w-4xl mb-2">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-cube text-gray-500 mr-2"></i> 步骤 4：制作底座并固定气泵</h3>
+                    <img src="placeholder_01_58.jpg" alt="切割木板" class="w-full max-w-[900px] mb-2">
+                    <p>切割木板并粘合或固定，形成一个稳定的底座。</p>
+                     <img src="placeholder_02_17.jpg" alt="底座准备就绪" class="w-full max-w-[900px] mb-2">
+                    <p>使用提供的金属支架和螺丝，将直流气泵牢固地固定在木板底座上。</p>
+                     <img src="placeholder_02_31.jpg" alt="安装气泵" class="w-full max-w-[900px] mb-2">
                 </div>
                  <div>
-                     <h3 class="text-lg font-semibold mb-2 text-blue-700">6. 連接管路</h3>
-                     <p>使用軟管連接氣泵的排氣口 (通常標示 OUT 或 +) 到大型盤管（蒸發器）的入口。</p>
-                      <img src="placeholder_02_59.jpg" alt="Connect Pump to Evaporator" class="w-full max-w-4xl mb-2">
-                     <p>將連接了細管的大型盤管（蒸發器）出口，通過細管連接到小型盤管（冷凝器）的入口（已焊接在閥門上）。</p>
-                      <img src="placeholder_04_18.jpg" alt="Connect Evaporator to Condenser via Valve" class="w-full max-w-4xl mb-2">
-                     <p>將小型盤管（冷凝器）的出氣端通過軟管連接到閥門。</p>
-                     <p>將閥門的另一個接口（通常是直通的）通過軟管連接回氣泵的進氣口 (通常標示 IN 或 -)。</p>
-                      <img src="placeholder_5_35.jpg" alt="Complete Tubing" class="w-full max-w-4xl mb-2">
-                     <p>使用紮帶或金屬絲加固軟管與接頭之間的連接，確保氣密性。</p>
-                      <img src="placeholder_04_26.jpg" alt="Secure Connection" class="w-full max-w-4xl mb-2">
+                     <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-ホース text-gray-500 mr-2"></i> 步骤 5：连接管路形成循环</h3>
+                     <p>使用软管连接气泵的排气口 (OUT/+ ) 到大型盘管（蒸发器）的铜管入口。</p>
+                      <img src="placeholder_02_59.jpg" alt="连接气泵到蒸发器" class="w-full max-w-[900px] mb-2">
+                     <p>将连接了细铜管的大型盘管（蒸发器）出口，通过细铜管连接到小型盘管（冷凝器）的入口（已焊接在阀门上）。</p>
+                      <img src="placeholder_04_18.jpg" alt="连接蒸发器到冷凝器（含阀门）" class="w-full max-w-[900px] mb-2">
+                     <p>将小型盘管（冷凝器）的出气端通过软管连接到阀门。</p>
+                     <p>将阀门上连接了黄铜接头的端口，通过软管连接回气泵的进气口 (IN/-)，形成一个完整的密闭循环管路。</p>
+                      <img src="placeholder_05_35.jpg" alt="完成管路连接" class="w-full max-w-[900px] mb-2">
+                     <p>使用扎带或细金属丝加固所有软管与接头之间的连接，确保管路系统的气密性，避免制冷剂泄漏。</p>
+                      <img src="placeholder_04_26.jpg" alt="加固连接处" class="w-full max-w-[900px] mb-2">
                  </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2 text-blue-700">7. 安裝風扇</h3>
-                    <p>將直流風扇固定在底座上，使其空氣流動方向對準大型盤管（蒸發器）。</p>
-                     <img src="placeholder_05_16.jpg" alt="Mounting Fan" class="w-full max-w-4xl mb-2">
-                    <p>連接風扇電源線到氣泵電源線的相同接頭，使其與氣泵同時啟動。</p>
-                     <img src="placeholder_05_19.jpg" alt="Connecting Fan Power" class="w-full max-w-4xl mb-2">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-fan text-gray-500 mr-2"></i> 步骤 6：安装风扇</h3>
+                    <p>将直流风扇固定在底座上，调整方向使其空气流向大型盘管（蒸发器）。</p>
+                     <img src="placeholder_05_16.jpg" alt="安装风扇" class="w-full max-w-[900px] mb-2">
+                    <p>将风扇的电源线与气泵的电源线并联连接到同一个电源接口，以便它们同时工作。</p>
+                     <img src="placeholder_05_19.jpg" alt="连接风扇电源" class="w-full max-w-[900px] mb-2">
                 </div>
                  <div>
-                    <h3 class="text-lg font-semibold mb-2 text-blue-700">8. 加註製冷劑與測試</h3>
-                    <p>通過閥門組件的加註口，使用注射器將藍色製冷劑液體加註到系統中。注意加註量可能需要根據實際效果調整。</p>
-                     <img src="placeholder_05_35.jpg" alt="Charging Refrigerant" class="w-full max-w-4xl mb-2">
-                    <p>連接電池或電源（如視頻中的電池組）到氣泵和風扇的電源接口。</p>
-                    <p>啟動系統。觀察大型盤管的表面，應會開始出現凝結和結霜現象。</p>
+                    <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-syringe text-gray-500 mr-2"></i> 步骤 7：加注制冷剂与测试</h3>
+                    <p>通过阀门组件上的加注口，使用注射器将少量蓝色制冷剂液体缓慢注入到系统中。注意不要过量。</p>
+                     <img src="placeholder_05_35.jpg" alt="加注制冷剂" class="w-full max-w-[900px] mb-2">
+                    <p>连接直流电源适配器或电池组到气泵和风扇的电源接口，启动整个系统。</p>
+                    <p>观察大型盘管（蒸发器）的表面。如果一切连接正確且制冷劑適量，盤管應開始迅速降溫，並在表面形成霜層。</p>
                  </div>
                 <div>
-                     <h3 class="text-lg font-semibold mb-2 text-blue-700">視頻中額外步驟</h3>
-                    <p>視頻最後還展示了從打火機中取出火石機構 (06:10)，剝開電線 (06:28)，以及使用白色膠體對部分連接處進行密封 (07:12)。這些步驟在演示的制冷循環主體外，可能用於提高系統的穩定性或解決潛在的漏氣問題，但其在原理演示中的具體作用未明確說明。</p>
-                    <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-4xl mx-auto"> <!-- Adjusted width here too -->
-                         <img src="placeholder_06_10.jpg" alt="Lighter Part" class="w-auto mb-0 h-24 object-contain"> <!-- Keep auto width, set max height maybe -->
-                         <img src="placeholder_06_28.jpg" alt="Wire Stripping" class="w-auto mb-0 h-24 object-contain">
-                         <img src="placeholder_07_12.jpg" alt="Sealing" class="w-auto mb-0 h-24 object-contain">
+                     <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-wrench text-gray-500 mr-2"></i> 额外步骤 (可能用于改进或密封)</h3>
+                    <p>教程中还展示了从打火机中取出火石机构 (06:10)，剥开电线 (06:28)，以及使用白色密封胶对部分管路连接处进行密封 (07:12)。这些步骤可能用于提高系统的气密性或作为其他辅助功能，但不是实现基本制冷循环的必需核心步骤。</p>
+                    <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-[900px] mx-auto">
+                         <img src="placeholder_06_10.jpg" alt="打火机火石" class="w-auto mb-0 h-24 object-contain">
+                         <img src="placeholder_06_28.jpg" alt="剥线" class="w-auto mb-0 h-24 object-contain">
+                         <img src="placeholder_07_12.jpg" alt="使用密封胶" class="w-auto mb-0 h-24 object-contain">
                     </div>
                 </div>
             </div>
         </motion.section>
 
         <!-- Demonstration Section -->
-        <motion.section class="wechat-item text-center highlight-gradient-alt"
+        <motion.section class="wechat-bento-item text-center highlight-gradient-alt"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.8 }}>
-             <i class="fas fa-thermometer-quarter text-4xl text-green-700 mb-3"></i>
-             <h2 class="text-4xl font-bold text-blue-900 mb-3">成功結霜！</h2>
-             <p class="text-lg text-gray-700 max-w-sm mx-auto mb-4">在室溫約 25.5°C、濕度 63.1% 的環境下，大型銅管盤管（蒸發器）表面迅速降溫，空氣中的水蒸氣在其表面凝結並結成了細密的霜層。</p>
-             <img src="placeholder_07_51.jpg" alt="Frost on Coil Close Up" class="w-full max-w-4xl mx-auto rounded-lg shadow-xl">
-             <p class="text-sm text-gray-600 mt-3">這證明了這個迷你蒸氣壓縮制冷系統的基本功能成功實現。</p>
+             <i class="fas fa-thermometer-full text-4xl text-green-700 mb-3"></i>
+             <h2 class="text-4xl font-bold text-blue-900 mb-3">令人惊叹的制冷效果！</h2>
+             <p class="text-lg text-gray-700 max-w-sm mx-auto mb-4">系统启动后，您可以亲眼看到大型铜管盘管（蒸发器）表面如何迅速降温，空气中的水蒸气凝结并在其表面形成漂亮的霜层。在室温约 25.5°C、湿度 63.1% 的环境中，结霜效果非常明显。</p>
+             <img src="placeholder_07_51.jpg" alt="铜管表面结霜特写" class="w-full max-w-[900px] mx-auto rounded-lg shadow-xl">
+             <p class="text-sm text-gray-600 mt-3">这证明了我们自制的迷你蒸汽压缩制冷系统能够有效运行，达到制冷效果。</p>
              <!-- Placeholder for Data Visualization (if needed) -->
              <div class="w-full max-w-sm mx-auto mt-6 h-48 bg-gray-100 rounded-md flex items-center justify-center text-gray-500 border border-dashed border-gray-300 text-sm">
-                 [溫度數據變化示意圖]
+                 [此处可插入温度随时间变化的图表，如使用 Chart.js 等库实现]
                  <br>
-                 (Placeholder for Data Chart)
+                 (Placeholder for Temperature Chart)
              </div>
         </motion.section>
 
@@ -244,11 +275,9 @@
     </div>
 
     <script>
-        // Framer Motion with CDN doesn't automatically use React component hooks like useScroll.
-        // The 'whileInView' attribute provides basic scroll-triggered animation.
-        // For more complex or precise scroll-linked animations without a build step,
-        // you would typically need a different library or manually calculate scroll progress.
-        // The current setup uses 'whileInView' for simple fade-in and subtle movement as elements enter the viewport.
+        // Framer Motion with CDN (without React/ReactDOM as part of your build) primarily relies on the 'whileInView' attribute.
+        // More complex animations tied directly to scroll position often require using Framer Motion with a React environment and hooks like useScroll.
+        // The current setup provides a basic, declarative scroll-triggered animation for each section as it enters the viewport.
     </script>
 
 </body>
