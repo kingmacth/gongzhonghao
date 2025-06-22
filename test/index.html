@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>極致降溫 DIY：迷你制冷系統製作教程</title>
+    <title>如何制造一个瞬间结霜的迷你冰箱？手把手教你DIY！</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
@@ -16,22 +16,22 @@
             }
         }
         @layer components {
-            /* 適應微信公眾號的單列 Item 樣式，帶有 Bento Grid 視覺感 */
+            /* 适用于微信公众号的单列 Item 样式，带有 Bento Grid 视觉感 */
             .wechat-bento-item {
-                @apply bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-sm border border-gray-200 overflow-hidden; /* 避免內容溢出影響圓角 */
+                @apply bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-sm border border-gray-200 overflow-hidden; /* 避免内容溢出影响圆角 */
             }
-            /* 修改圖片樣式，設置默認最大寬度 900px 且居中 */
+            /* 修改图片样式，设置默认最大宽度 900px 且居中 */
             .wechat-bento-item img {
-                 @apply w-full max-w-[900px] mx-auto mb-2 rounded-md shadow-sm block; /* 居中圖片，設置最大寬度 */
+                 @apply w-full max-w-[900px] mx-auto mb-2 rounded-md shadow-sm block; /* 居中图片，设置最大宽度 */
             }
              .wechat-heading-large {
                  @apply text-3xl md:text-4xl font-bold text-blue-800 leading-tight mb-1;
              }
              .wechat-text-small {
-                 @apply text-base text-gray-600; /* 略微調大英文點綴字體，適應閱讀 */
+                 @apply text-base text-gray-600; /* 略微调大英文点缀字体，适应阅读 */
              }
 
-            /* 高亮透明漸變示例 */
+            /* 高亮透明渐变示例 */
             .highlight-gradient {
                 background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.7), rgba(59, 130, 246, 0.2)); /* Example blue gradient */
             }
@@ -47,7 +47,7 @@
     <!-- Required for Framer Motion with CDN (if using React features like useScroll) -->
     <!-- For simple whileInView, React/ReactDOM might not be strictly necessary depending on Framer Motion version -->
     <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react.production.min.js"></script>
 </head>
 <body class="bg-orange-50 text-gray-800">
 
@@ -58,10 +58,10 @@
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}>
-            <h1 class="text-5xl md:text-6xl font-bold mb-2 text-blue-900 drop-shadow-md">極致降溫 DIY</h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-4">Mini Refrigeration System Project Tutorial</p>
-            <img src="placeholder_00_00.jpg" alt="完成的迷你制冷系統" class="w-full max-w-[900px] mx-auto mb-4 rounded-lg shadow-xl">
-            <p class="text-base text-gray-700 max-w-md mx-auto">这个教程将引导您使用常见的电子和五金材料，亲手打造一个简易的迷你蒸汽压缩制冷系统。通过这个项目，您不仅能看到铜管表面瞬间结霜的奇妙现象，更能深入理解制冷循环的基础原理。</p>
+            <h1 class="text-5xl md:text-6xl font-bold mb-2 text-blue-900 drop-shadow-md">如何制造一个瞬间结霜的迷你冰箱？</h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-4">Handcrafted Mini Refrigeration System Tutorial</p>
+            <img src="placeholder_00_00.jpg" alt="完成的迷你制冷系统" class="w-full max-w-[900px] mx-auto mb-4 rounded-lg shadow-xl">
+            <p class="text-base text-gray-700 max-w-md mx-auto">想了解制冷原理是如何工作的吗？或者想亲手制作一个能瞬间降温的小装置？本教程将手把手教您如何利用常见的电子和五金材料，搭建一个迷你的蒸汽压缩制冷系统，亲眼见证铜管快速结霜的奇妙现象。</p>
         </motion.section>
 
         <!-- Key Features Section -->
@@ -72,10 +72,10 @@
                         transition={{ duration: 0.7, delay: 0.1 }}>
             <h2 class="wechat-heading-large">项目特点 <span class="wechat-text-small block md:inline">Project Highlights</span></h2>
             <ul class="list-none p-0 mt-4 space-y-3 text-gray-700">
-                <li class="flex items-center"><i class="fas fa-snowflake text-blue-600 w-6 text-center mr-3"></i> <strong>快速制冷效果:</strong> 在蒸发器盘管表面实现明显的低至冰点以下的温度。</li>
-                <li class="flex items-center"><i class="fas fa-toolbox text-green-600 w-6 text-center mr-3"></i> <strong>材料易获取:</strong> 项目所需的核心组件相对容易获得。</li>
-                <li class="flex items-center"><i class="fas fa-hand-sparkles text-yellow-600 w-6 text-center mr-3"></i> <strong>亲手实践:</strong> 适合电子或物理爱好者，通过动手加深理解。</li>
-                <li class="flex items-center"><i class="fas fa-vial text-purple-600 w-6 text-center mr-3"></i> <strong>原理可视化:</strong> 清晰展示了蒸汽压缩制冷循环的基本工作流程。</li>
+                <li class="flex items-center"><i class="fas fa-snowflake text-blue-600 w-6 text-center mr-3"></i> <strong>极速降温效果:</strong> 在蒸发器盘管表面实现快速、明显的低温结霜现象。</li>
+                <li class="flex items-center"><i class="fas fa-toolbox text-green-600 w-6 text-center mr-3"></i> <strong>组件易获取:</strong> 项目所需的核心电子和五金组件相对容易在市面上找到。</li>
+                <li class="flex items-center"><i class="fas fa-hand-sparkles text-yellow-600 w-6 text-center mr-3"></i> <strong>动手实践乐趣:</strong> 通过亲手搭建，深入理解蒸汽压缩制冷系统的物理原理。</li>
+                <li class="flex items-center"><i class="fas fa-vial text-purple-600 w-6 text-center mr-3"></i> <strong>制冷循环可视化:</strong> 装置结构清晰，能直观展示制冷剂在各部件中的状态变化。</li>
             </ul>
         </motion.section>
 
@@ -123,7 +123,7 @@
                 </div>
                  <div class="flex flex-col items-center text-center">
                     <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-[900px] mx-auto">
-                        <img src="placeholder_02_37.jpg" alt="软管" class="w-1/2 mb-0 object-contain">
+                         <img src="placeholder_02_37.jpg" alt="软管" class="w-1/2 mb-0 object-contain">
                          <img src="placeholder_05_30.jpg" alt="注射器" class="w-1/2 mb-0 object-contain">
                     </div>
                     <h3 class="text-xl font-semibold">软管与注射器</h3>
@@ -188,7 +188,7 @@
                      <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-tools text-gray-500 mr-2"></i> 步骤 2：处理毛细管与接头</h3>
                      <p>将细铜管的一端使用小刀或锉刀细心打磨至尖锐，以便后续插入。</p>
                       <img src="placeholder_01_34.jpg" alt="打磨毛细管" class="w-full max-w-[900px] mb-2">
-                     <p>清理毛细管内部和外部的雜質。</p>
+                     <p>清理毛细管内部和外部的杂质。</p>
                       <img src="placeholder_01_40.jpg" alt="清理毛细管" class="w-full max-w-[900px] mb-2">
                      <p>准备阀门组件和一个黄铜软管接头。如果接头过长，可能需要锯掉一端并打磨。</p>
                        <img src="placeholder_03_30.jpg" alt="打磨接头" class="w-full max-w-[900px] mb-2">
@@ -233,11 +233,11 @@
                     <p>通过阀门组件上的加注口，使用注射器将少量蓝色制冷剂液体缓慢注入到系统中。注意不要过量。</p>
                      <img src="placeholder_05_35.jpg" alt="加注制冷剂" class="w-full max-w-[900px] mb-2">
                     <p>连接直流电源适配器或电池组到气泵和风扇的电源接口，启动整个系统。</p>
-                    <p>观察大型盘管（蒸发器）的表面。如果一切连接正確且制冷劑適量，盤管應開始迅速降溫，並在表面形成霜層。</p>
+                    <p>观察大型盘管（蒸发器）的表面。如果一切连接正确且制冷剂适量，盘管应开始迅速降温，并在表面形成霜层。</p>
                  </div>
                 <div>
                      <h3 class="text-lg font-semibold mb-2 text-blue-700"><i class="fas fa-wrench text-gray-500 mr-2"></i> 额外步骤 (可能用于改进或密封)</h3>
-                    <p>教程中还展示了从打火机中取出火石机构 (06:10)，剥开电线 (06:28)，以及使用白色密封胶对部分管路连接处进行密封 (07:12)。这些步骤可能用于提高系统的气密性或作为其他辅助功能，但不是实现基本制冷循环的必需核心步骤。</p>
+                    <p>在搭建过程中，还可能包含一些额外步骤，例如从打火机中取出火石机构 (06:10)，剥开电线外皮 (06:28)，以及使用白色密封胶对部分管路连接处进行密封 (07:12)。这些步骤可能用于增强系统的气密性或作为其他辅助功能，但它们并非实现基本制冷循环的核心必需步骤。</p>
                     <div class="flex justify-center items-center space-x-4 mb-2 w-full max-w-[900px] mx-auto">
                          <img src="placeholder_06_10.jpg" alt="打火机火石" class="w-auto mb-0 h-24 object-contain">
                          <img src="placeholder_06_28.jpg" alt="剥线" class="w-auto mb-0 h-24 object-contain">
@@ -257,7 +257,7 @@
              <h2 class="text-4xl font-bold text-blue-900 mb-3">令人惊叹的制冷效果！</h2>
              <p class="text-lg text-gray-700 max-w-sm mx-auto mb-4">系统启动后，您可以亲眼看到大型铜管盘管（蒸发器）表面如何迅速降温，空气中的水蒸气凝结并在其表面形成漂亮的霜层。在室温约 25.5°C、湿度 63.1% 的环境中，结霜效果非常明显。</p>
              <img src="placeholder_07_51.jpg" alt="铜管表面结霜特写" class="w-full max-w-[900px] mx-auto rounded-lg shadow-xl">
-             <p class="text-sm text-gray-600 mt-3">这证明了我们自制的迷你蒸汽压缩制冷系统能够有效运行，达到制冷效果。</p>
+             <p class="text-sm text-gray-600 mt-3">这证明了这个自制的迷你蒸汽压缩制冷系统能够有效运行，达到制冷效果。</p>
              <!-- Placeholder for Data Visualization (if needed) -->
              <div class="w-full max-w-sm mx-auto mt-6 h-48 bg-gray-100 rounded-md flex items-center justify-center text-gray-500 border border-dashed border-gray-300 text-sm">
                  [此处可插入温度随时间变化的图表，如使用 Chart.js 等库实现]
