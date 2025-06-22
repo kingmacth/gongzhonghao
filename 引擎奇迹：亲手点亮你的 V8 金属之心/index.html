@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引擎奇迹：亲手点亮你的 V8 金属之心</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for gradients/effects not easily done with simple tailwind */
+        .bg-gradient-teal {
+            background: linear-gradient(to right, #00b5a4, rgba(0, 181, 164, 0.5));
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        .icon-teal {
+             color: #00b5a4; /* Accent color */
+        }
+        .border-teal {
+            border-color: #00b5a4; /* Accent color */
+        }
+        /* Simple animation substitute for Framer Motion */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto max-w-lg p-4">
+
+        <!-- Title -->
+        <header class="text-center mb-8 mt-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                <span class="text-teal-600">引擎奇迹：</span>亲手点亮你的 V8 金属之心
+            </h1>
+            <p class="text-sm text-gray-600">V8 Engine Metal Machinery Assembly Model (MODEL:DM118)</p>
+        </header>
+
+        <!-- Structural Features -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">结构特点 <span class="text-sm text-gray-600">Structural Features</span></h2>
+            <ul class="list-disc list-inside text-base">
+                <li>
+                    <i class="fas fa-engine icon-teal mr-2"></i>
+                    <strong class="text-lg">八缸 V 形布局</strong> <span class="text-sm text-gray-600">Eight-cylinder V-shaped layout structure</span>
+                </li>
+                <li>
+                    <i class="fas fa-cog icon-teal mr-2"></i>
+                    <strong class="text-lg">顶置凸轮轴传动齿轮</strong> <span class="text-sm text-gray-600">Overhead camshaft transmission gear</span>
+                </li>
+                <li>
+                    <i class="fas fa-link icon-teal mr-2"></i>
+                    <strong class="text-lg">链条传动系统</strong> <span class="text-sm text-gray-600">Chain drive transmission system</span>
+                </li>
+                <li>
+                    <i class="fas fa-bolt icon-teal mr-2"></i>
+                    <strong class="text-lg">传统曲柄连杆机构</strong> <span class="text-sm text-gray-600">Traditional crankshaft connecting rod system</span>
+                </li>
+                 <li>
+                    <i class="fas fa-cubes icon-teal mr-2"></i>
+                    <strong class="text-lg">零件数超过 500 个</strong> <span class="text-sm text-gray-600">The number of parts exceeds 500</span>
+                </li>
+                <li>
+                    <i class="fas fa-wrench icon-teal mr-2"></i>
+                    <strong class="text-lg">全金属材质，精细还原</strong> <span class="text-sm text-gray-600">All-metal material, delicate restoration</span>
+                </li>
+                <li>
+                    <i class="fas fa-video icon-teal mr-2"></i>
+                    <strong class="text-lg">动态运转，模拟真实</strong> <span class="text-sm text-gray-600">Dynamic operation, simulating reality</span>
+                </li>
+            </ul>
+            <p class="text-sm text-gray-600 mt-4 italic">
+                *注意：在组装前，请找到随附的润滑油。务必在所有需要润滑的地方充分加油，否则机器容易卡顿。
+                <br>
+                *Note: Before assembly, find the bottled lubricating oil. Be sure to put enough oil in all the places that need to be lubricated, otherwise the machine is easy to get stuck.
+            </p>
+        </section>
+
+        <!-- Assembly Steps -->
+
+        <!-- Step 1: Piston Connecting Rod Assembly -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 1：活塞连杆组装 <span class="text-sm text-gray-600">Assembly Piston Mechanism</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-tools icon-teal mr-2"></i>
+                <strong class="text-base">将连杆、活塞销和活塞组装在一起。使用随附的润滑油对活塞销进行润滑。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Assemble the connecting rod, piston pin, and piston. Lubricate the piston pin with the provided lubricating oil.</span>
+            </p>
+            <img src="placeholder_00_27.jpg" alt="Piston, connecting rod, and pin parts" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_00_38.jpg" alt="Lubricating piston pin and connecting rod" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+            <img src="placeholder_00_45.jpg" alt="Assembled piston and connecting rod" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <p class="mb-4">
+                 <i class="fas fa-check-double icon-teal mr-2"></i>
+                 <strong class="text-base">重复此步骤，为所有 8 个气缸准备活塞连杆组件。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Repeat this step to prepare piston connecting rod assemblies for all 8 cylinders.</span>
+             </p>
+             <img src="placeholder_01_01.jpg" alt="Eight piston and connecting rod assemblies" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Step 2: Crankshaft and Cylinder Block Connection -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 2：曲轴与气缸体连接 <span class="text-sm text-gray-600">Assembly And Connection Between Crankshaft And Cylinder Block</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-cogs icon-teal mr-2"></i>
+                 <strong class="text-base">将曲轴放入气缸体，注意方向。用螺丝固定曲轴轴承盖。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Place the crankshaft into the cylinder block, paying attention to the direction. Secure the crankshaft bearing caps with screws.</span>
+             </p>
+             <img src="placeholder_01_08.jpg" alt="Inserting crankshaft into cylinder block" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_01_32.jpg" alt="Securing crankshaft bearing caps" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+              <p class="mb-4">
+                <i class="fas fa-oil-can icon-teal mr-2"></i>
+                <strong class="text-base">再次润滑曲轴以确保顺畅运转。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Lubricate the crankshaft again to ensure smooth operation.</span>
+            </p>
+            <img src="placeholder_01_33.jpg" alt="Lubricating crankshaft" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 3: Assembly And Connection Between Crankshaft And Cylinder Block (Pistons) -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 3：连接活塞与曲轴 <span class="text-sm text-gray-600">Connect Pistons And Crankshaft</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-plug icon-teal mr-2"></i>
+                 <strong class="text-base">将活塞连杆组件逐个插入气缸体，并连接到曲轴上。确保活塞可以自由上下移动。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Insert the piston connecting rod assemblies one by one into the cylinder block and connect them to the crankshaft. Ensure the pistons can move freely up and down.</span>
+             </p>
+             <img src="placeholder_01_39.jpg" alt="Inserting piston into cylinder" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_01_44.jpg" alt="All pistons inserted and connected to crankshaft" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+             <p class="mb-4 mt-4">
+                 <i class="fas fa-sync-alt icon-teal mr-2"></i>
+                 <strong class="text-base">旋转曲轴，检查活塞运动是否协调顺畅。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Rotate the crankshaft to check if the piston movement is coordinated and smooth.</span>
+             </p>
+             <img src="placeholder_02_24.jpg" alt="Rotating crankshaft to check piston movement" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+
+         <!-- Step 4: Spark Plug Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 4：火花塞安装 <span class="text-sm text-gray-600">Spark Plug Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-bolt icon-teal mr-2"></i>
+                 <strong class="text-base">将火花塞安装到气缸盖上。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the spark plugs into the cylinder head.</span>
+             </p>
+             <img src="placeholder_02_33.jpg" alt="Installing spark plugs into cylinder head" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_02_45.jpg" alt="Cylinder head with spark plugs installed" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 5: Valve Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 5：气门安装 <span class="text-sm text-gray-600">Valve Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-stream icon-teal mr-2"></i>
+                 <strong class="text-base">安装气门、气门弹簧等组件到气缸盖上。注意零件方向和顺序。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the valves, valve springs, and other components onto the cylinder head. Pay attention to the direction and order of the parts.</span>
+             </p>
+             <img src="placeholder_02_54.jpg" alt="Installing valves and springs" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_03_23.jpg" alt="Cylinder head with valves installed" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+             <p class="mb-4 mt-4">
+                 <i class="fas fa-check-circle icon-teal mr-2"></i>
+                 <strong class="text-base">安装后检查每个气门是否拧紧，高度是否一致。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">After the valves are installed, check whether each valve is tightened and whether the height of each valve is at the same height.</span>
+             </p>
+        </section>
+
+        <!-- Step 6: Cam Seat Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 6：凸轮轴座安装 <span class="text-sm text-gray-600">Cam Seat Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-cogs icon-teal mr-2"></i>
+                <strong class="text-base">将凸轮轴座安装到气缸盖顶部。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the cam seats onto the top of the cylinder head.</span>
+            </p>
+            <img src="placeholder_03_34.jpg" alt="Installing cam seats" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+            <img src="placeholder_03_40.jpg" alt="Cam seats installed" width="900" class="w-w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+            <p class="mb-4">
+                <i class="fas fa-screwdriver icon-teal mr-2"></i>
+                <strong class="text-base">用螺丝固定凸轮轴座。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Secure the cam seats with screws.</span>
+            </p>
+            <img src="placeholder_03_49.jpg" alt="Screwing in cam seat bolts" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 7: Camshaft Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 7：凸轮轴安装 <span class="text-sm text-gray-600">Camshaft Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-long-arrow-alt-right icon-teal mr-2"></i>
+                 <strong class="text-base">安装凸轮轴。注意区分左右侧。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the camshafts. Pay attention to distinguish the left and right sides.</span>
+             </p>
+             <img src="placeholder_04_03.jpg" alt="Camshafts ready for installation" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+              <p class="mb-4">
+                 <i class="fas fa-oil-can icon-teal mr-2"></i>
+                 <strong class="text-base">在安装凸轮轴前或后进行润滑。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Lubricate the camshafts before or after installation.</span>
+             </p>
+             <img src="placeholder_04_07.jpg" alt="Lubricating camshafts" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+            <img src="placeholder_04_16.jpg" alt="Camshafts installed" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <p class="mb-4">
+                 <i class="fas fa-screwdriver icon-teal mr-2"></i>
+                 <strong class="text-base">用螺丝固定凸轮轴轴承盖。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Secure the camshaft bearing caps with screws.</span>
+             </p>
+             <img src="placeholder_04_30.jpg" alt="Screwing in camshaft bearing cap bolts" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 8: Installation Of Cam Synchronization Sprocket -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 8：凸轮同步链轮安装 <span class="text-sm text-gray-600">Installation Of Cam Synchronization Sprocket</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-gear icon-teal mr-2"></i>
+                 <strong class="text-base">找到标有 "RL" (左) 和 "RR" (右) 的链轮，并安装到对应的凸轮轴末端。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Find the sprockets marked "RL" (Left) and "RR" (Right), and install them onto the corresponding camshaft ends.</span>
+             </p>
+              <img src="placeholder_05_02.jpg" alt="Camshaft synchronization sprockets marked R and L" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_05_07.jpg" alt="Installing R synchronization sprocket" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_05_34.jpg" alt="Installing L synchronization sprocket" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+             <p class="mb-4 mt-4">
+                 <i class="fas fa-check-circle icon-teal mr-2"></i>
+                 <strong class="text-base">确认左右链轮上的标记方向正确。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Confirm the direction of the markings on the left and right sprockets.</span>
+             </p>
+             <img src="placeholder_05_46.jpg" alt="Correct orientation of R and L sprockets" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 9: Exhaust Pipe Assembly and Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 9：排气管组装及安装 <span class="text-sm text-gray-600">Exhaust Pipe Assembly and Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-pipe icon-teal mr-2"></i>
+                 <strong class="text-base">将排气管装到红色排气歧管底座上，注意方向。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Assemble the exhaust pipes onto the red exhaust manifold base, paying attention to the direction.</span>
+             </p>
+              <img src="placeholder_05_49.jpg" alt="Assembling exhaust pipes" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_06_06.jpg" alt="Assembled exhaust manifolds" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <p class="mb-4">
+                 <i class="fas fa-screwdriver icon-teal mr-2"></i>
+                 <strong class="text-base">将左右排气歧管安装到气缸盖外侧并拧紧螺丝。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the left and right exhaust manifolds onto the outer side of the cylinder heads and tighten the screws.</span>
+             </p>
+              <img src="placeholder_06_07.jpg" alt="Installing left exhaust manifold" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+              <img src="placeholder_06_18.jpg" alt="Installing right exhaust manifold" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Step 10: Oil Pan Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 10：油底壳安装 <span class="text-sm text-gray-600">Installation Of Oil Pan</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-oil-can icon-teal mr-2"></i>
+                <strong class="text-base">将油底壳安装到气缸体底部并拧紧螺丝。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the oil pan to the bottom of the cylinder block and tighten the screws.</span>
+            </p>
+            <img src="placeholder_06_29.jpg" alt="Installing oil pan" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+            <img src="placeholder_06_47.jpg" alt="Oil pan installed" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Step 11: Cylinder Assembly Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 11：气缸体组装 <span class="text-sm text-gray-600">Cylinder Assembly Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-compress-alt icon-teal mr-2"></i>
+                 <strong class="text-base">将左右气缸体组装到一起，形成 V 形结构。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Assemble the left and right cylinder blocks together to form the V-shaped structure.</span>
+             </p>
+              <img src="placeholder_06_48.jpg" alt="Joining left and right cylinder assemblies" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Step 12: Crankshaft End Bearing Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 12：曲轴端轴承安装 <span class="text-sm text-gray-600">Crankshaft End Bearing Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-circle-notch icon-teal mr-2"></i>
+                 <strong class="text-base">安装曲轴末端的轴承和固定座。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the bearing and retainer at the end of the crankshaft.</span>
+             </p>
+              <img src="placeholder_06_53.jpg" alt="Installing crankshaft end bearing retainer" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+
+         <!-- Step 13: Starter Motor Assembly and Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 13：启动电机组装及安装 <span class="text-sm text-gray-600">Starter Motor Assembly and Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-battery-car icon-teal mr-2"></i>
+                 <strong class="text-base">组装启动电机外壳和电机本体，然后安装到引擎本体上。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Assemble the starter motor casing and the motor itself, then install it onto the engine block.</span>
+             </p>
+              <img src="placeholder_07_03.jpg" alt="Assembling starter motor" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_07_14.jpg" alt="Installing starter motor" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Step 14: Flywheel Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 14：飞轮安装 <span class="text-sm text-gray-600">Flywheel Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-circle icon-teal mr-2"></i>
+                <strong class="text-base">将蓝色飞轮安装到曲轴末端并拧紧螺丝。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the blue flywheel onto the end of the crankshaft and tighten the screw.</span>
+            </p>
+            <img src="placeholder_07_17.jpg" alt="Installing flywheel" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 15: Generator Assembly and Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 15：发电机组装及安装 <span class="text-sm text-gray-600">Generator Assembly and Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-car-battery icon-teal mr-2"></i>
+                 <strong class="text-base">组装发电机本体和外壳，安装皮带轮，然后安装到引擎本体上。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Assemble the generator body and casing, install the pulley, then install it onto the engine block.</span>
+             </p>
+              <img src="placeholder_07_20.jpg" alt="Assembling generator" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_07_39.jpg" alt="Generator assembled with pulley" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_07_40.jpg" alt="Installing generator" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 16: Tension Seat Assembly and Installation -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 16：张紧座组装及安装 <span class="text-sm text-gray-600">Tension Seat Assembly and Installation</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-cog icon-teal mr-2"></i>
+                 <strong class="text-base">组装皮带张紧座。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Assemble the belt tension seats.</span>
+             </p>
+             <img src="placeholder_08_27.jpg" alt="Assembling tension seat 1" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+              <img src="placeholder_08_48.jpg" alt="Two tension seats assembled" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+              <p class="mb-4">
+                 <i class="fas fa-screwdriver icon-teal mr-2"></i>
+                 <strong class="text-base">将张紧座安装到引擎本体对应位置并拧紧螺丝。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Install the tension seats to the corresponding positions on the engine block and tighten the screws.</span>
+             </p>
+             <img src="placeholder_08_52.jpg" alt="Installing tension seat 1" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_08_54.jpg" alt="Installing tension seat 2" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 17: Corrected Time -->
+        <section class="card animate-fade-in">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 17：正时校准 <span class="text-sm text-gray-600">Corrected Time</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-clock icon-teal mr-2"></i>
+                 <strong class="text-base">在安装正时链之前，确保主链轮（曲轴端）和凸轮轴链轮上的标记对齐，以校准正时。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Before installing the timing chain, ensure the marks on the main sprocket (crankshaft end) and the camshaft sprockets are aligned to set the correct timing.</span>
+             </p>
+              <img src="placeholder_09_07.jpg" alt="Timing mark on main sprocket (V8)" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_09_17.jpg" alt="Timing marks on cam sprockets (RL, RR)" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+
+        <!-- Step 18: Timing Chain Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 18：正时链安装 <span class="text-sm text-gray-600">Timing Chain Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-link icon-teal mr-2"></i>
+                <strong class="text-base">安装正时链，连接曲轴链轮和凸轮轴链轮。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the timing chains, connecting the crankshaft sprocket and the camshaft sprockets.</span>
+            </p>
+            <img src="placeholder_09_22.jpg" alt="Installing timing chain 1" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_09_45.jpg" alt="Installing timing chain 2" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_09_54.jpg" alt="Timing chains installed" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 19: Installation The Starter Gear -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 19：启动齿轮安装 <span class="text-sm text-gray-600">Installation The Starter Gear</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-gear icon-teal mr-2"></i>
+                <strong class="text-base">安装启动齿轮盖。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the starter gear cover.</span>
+            </p>
+            <img src="placeholder_10_10.jpg" alt="Installing starter gear cover" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 20: Belt Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 20：皮带安装 <span class="text-sm text-gray-600">Belt Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-ribbon icon-teal mr-2"></i>
+                <strong class="text-base">安装传动皮带，绕过各个皮带轮和张紧轮。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the drive belt, routing it around the various pulleys and tensioners.</span>
+            </p>
+            <img src="placeholder_10_48.jpg" alt="Installing drive belt" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm mb-4">
+             <img src="placeholder_10_57.jpg" alt="Adjusting belt routing" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 21: Air Filter Cover (Intake Manifold) Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 21：空气滤清器盖 (进气歧管) 安装 <span class="text-sm text-gray-600">Air Filter Cover (Intake Manifold) Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-filter icon-teal mr-2"></i>
+                <strong class="text-base">安装黑色的进气歧管。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the black intake manifold.</span>
+            </p>
+            <img src="placeholder_11_17.jpg" alt="Installing intake manifold" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+         <!-- Step 22: Battery and Power Box Installation -->
+        <section class="card animate-fade-in">
+            <h2 class="text-xl font-bold text-teal-700 mb-4">步骤 22：电池和电源盒安装 <span class="text-sm text-gray-600">Battery and Power Box Installation</span></h2>
+            <p class="mb-4">
+                <i class="fas fa-battery-full icon-teal mr-2"></i>
+                <strong class="text-base">安装电池和电源盒，连接电线。</strong>
+                <br>
+                <span class="text-sm text-gray-600">Install the battery and power box, and connect the wires.</span>
+            </p>
+            <img src="placeholder_11_28.jpg" alt="Installing battery and power box" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-sm">
+        </section>
+
+        <!-- Final Assembly View -->
+         <section class="card animate-fade-in text-center">
+             <h2 class="text-xl font-bold text-teal-700 mb-4">最终组装 <span class="text-sm text-gray-600">Final Assembly</span></h2>
+             <p class="mb-4">
+                 <i class="fas fa-check-circle icon-teal mr-2"></i>
+                 <strong class="text-base">恭喜！你的 V8 引擎模型已经组装完成。</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Congratulations! Your V8 engine model assembly is complete.</span>
+             </p>
+             <img src="placeholder_11_48.jpg" alt="Fully assembled V8 engine model" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-4">
+              <p class="mb-4">
+                 <i class="fas fa-play-circle icon-teal mr-2"></i>
+                 <strong class="text-base">现在可以打开开关，观看它运转起来！</strong>
+                 <br>
+                 <span class="text-sm text-gray-600">Now you can turn on the switch and watch it run!</span>
+             </p>
+              <img src="placeholder_12_07.jpg" alt="Close up of running engine" width="900" class="w-full max-w-md mx-auto rounded-lg shadow-md">
+         </section>
+
+
+    </div>
+
+</body>
+</html>
