@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【DIY教程】如何打造一个小型便携式空调</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.24/dist/framer-motion.min.js"></script>
+    <style>
+        /* Custom styles for soft background and subtle grid feel */
+        body {
+            background-color: #e0f7fa; /* Light Teal/Aqua */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+        .container-wechat {
+            max-width: 900px; /* Consistent width */
+            margin: 0 auto;
+            padding: 16px; /* Add some padding */
+            background-color: #ffffff; /* White background for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5rem; /* Larger title */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.875rem; /* Section title */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffb700; /* Yellow accent underline */
+        }
+         h3 {
+            font-size: 1.5rem; /* Sub-section title */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .bento-card {
+            background-color: #f8f9fa; /* Light grey card background */
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef; /* Subtle border */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .highlight-text {
+             color: #ffb700; /* Yellow highlight */
+             font-weight: bold;
+        }
+         .gradient-overlay {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .gradient-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to bottom, rgba(255, 183, 0, 0.1), rgba(255, 183, 0, 0.0), rgba(255, 183, 0, 0.1)); /* Subtle gradient effect */
+            pointer-events: none; /* Allow clicks on content below */
+        }
+        .icon-large {
+            font-size: 2rem;
+            color: #00b4d8; /* Blue accent color */
+            margin-right: 0.5rem;
+        }
+         ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+         }
+         li {
+            margin-bottom: 0.5rem;
+         }
+         .image-container img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            display: block;
+            margin: 1rem auto; /* Center images */
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+         .component-details {
+            font-size: 0.9rem;
+            color: #495057; /* Dark grey for details */
+            margin-top: 0.5rem;
+         }
+         .member-list {
+             font-size: 0.8rem;
+             color: #343a40;
+             columns: 2; /* Multi-column list for members */
+             column-gap: 2rem;
+             margin-top: 1.5rem;
+         }
+         .member-list ul {
+             list-style: none;
+             margin: 0;
+             padding: 0;
+             columns: auto; /* Override parent columns for inner lists */
+             column-gap: normal;
+         }
+         .member-list li {
+             margin-bottom: 0.2rem;
+             page-break-inside: avoid; /* Prevent breaking list items across columns */
+         }
+         .member-category {
+             font-weight: bold;
+             margin-top: 1rem;
+             margin-bottom: 0.5rem;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="container-wechat">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <h1><span class="highlight-text">【DIY教程】</span>打造小型便携式空调</h1>
+            <p>
+                厌倦了炎热夏日？想亲手制作一个降温神器？本教程将引导您用简单易得的材料，制作一个能够将空气温度降至 <span class="highlight-text">-10°C</span> 的小型便携式空调。只需少量组件，即可享受清凉！
+            </p>
+             <div class="bento-card gradient-overlay">
+                 <h3><i class="fas fa-snowflake icon-large"></i>核心特性概览</h3>
+                 <ul>
+                     <li><span class="highlight-text">极简设计:</span> 采用小型化制冷系统，组件少，易于组装。</li>
+                     <li><span class="highlight-text">高效降温:</span> 利用制冷剂的蒸发吸热原理，能迅速降低周围空气温度。</li>
+                     <li><span class="highlight-text">多用途:</span> 不仅能降温，还能快速冷却饮品。</li>
+                     <li><span class="highlight-text">便携性:</span> 体积小巧，便于移动和放置。</li>
+                 </ul>
+             </div>
+        </motion.div>
+
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+        >
+            <h2><i class="fas fa-tools icon-large"></i>所需材料与工具</h2>
+            <div class="bento-card">
+                <h3>材料清单 (Materials List):</h3>
+                <ul>
+                    <li><span class="highlight-text">铜管:</span> 4x6mm 外径 (Copper Tube 4x6mm outer diameter)</li>
+                    <li><span class="highlight-text">毛细铜管:</span> Ø2mm 外径 | Ø0.8mm 内径 (Copper Capillary Tube Ø2mm outer | Ø0.8mm inner) - 约 17 cm 长 (approx. 17 cm length)</li>
+                    <li><span class="highlight-text">PVC管:</span> 6x8mm 外径 (6x8mm PVC Tube)</li>
+                    <li><span class="highlight-text">12V直流风扇:</span> SUNON MagLev MFB251V1-1000U-A99 或类似型号 (12Vdc Fan)</li>
+                    <li><span class="highlight-text">12V直流气泵:</span> (12Vdc Air pump)</li>
+                    <li><span class="highlight-text">9V直流电池座:</span> YIENLAO SBH-9V 或类似型号 (9Vdc Battery holder)</li>
+                    <li><span class="highlight-text">9V电池:</span> Energizer 或其他品牌 (9V Battery)</li>
+                    <li><span class="highlight-text">异丁烷气体:</span> (Isobutane Gas) - 例如 Clipper universal premium isobutane gas</li>
+                    <li><span class="highlight-text">注射器:</span> (Syringe)</li>
+                    <li><span class="highlight-text">塑料管夹:</span> (Plastic Tube Supports)</li>
+                    <li><span class="highlight-text">扎带:</span> (Zip Ties)</li>
+                    <li><span class="highlight-text">焊锡丝与焊锡膏:</span> (Solder wire and flux/paste)</li>
+                    <li><span class="highlight-text">木质底座:</span> (Wooden Base) - 附有安全条纹和预钻孔</li>
+                    <li><span class="highlight-text">螺丝:</span> (Screws)</li>
+                </ul>
+                <h3>工具清单 (Tools List):</h3>
+                <ul>
+                    <li><span class="highlight-text">弯管器:</span> 或圆形物体 (如喷漆罐) (Tube Bender or round object like a spray can)</li>
+                    <li><span class="highlight-text">割管器:</span> (Tube Cutter)</li>
+                    <li><span class="highlight-text">尖嘴钳/可调钳:</span> (Pliers - adjustable shown)</li>
+                    <li><span class="highlight-text">电烙铁:</span> (Soldering Iron)</li>
+                    <li><span class="highlight-text">螺丝刀:</span> (Screwdriver) - 电动或手动 (electric or manual)</li>
+                    <li><span class="highlight-text">美工刀/剪刀:</span> (Utility knife/scissors)</li>
+                    <li><span class="highlight-text">红外测温仪:</span> (Infrared Thermometer) - 用于测试效果</li>
+                </ul>
+            </div>
+        </motion.div>
+
+         <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+        >
+            <h2><i class="fas fa-wrench icon-large"></i>制作步骤详解</h2>
+             <div class="bento-card">
+                <h3>步骤 1: 准备蒸发器盘管 (Prepare Evaporator Coil)</h3>
+                <p>
+                    取 4x6mm 的铜管，使用圆形物体 (如喷漆罐) 将其弯绕成一个密集的螺旋状。我们需要大约 8 圈。完成后，使用割管器切下这段铜管。稍微弯折两端以便后续连接。这将是我们的蒸发器，依靠铜的优良导热性吸收热量。
+                </p>
+                 <div class="image-container"><img src="placeholder_00_20.jpg" alt="弯曲铜管形成蒸发器" width="900"></div>
+                 <div class="image-container"><img src="placeholder_00_44.jpg" alt="切割铜管" width="900"></div>
+                 <div class="image-container"><img src="placeholder_00_58.jpg" alt="弯折铜管末端" width="900"></div>
+             </div>
+
+            <div class="bento-card">
+                <h3>步骤 2: 准备冷凝器盘管 (Prepare Condenser Coil)</h3>
+                <p>
+                    使用剩余的 4x6mm 铜管，同样使用圆形物体将其弯绕成螺旋状。这次保持圈与圈之间更宽的间距，并减少圈数（约 3-4 圈）。切割并稍微弯折两端。这将作为我们的冷凝器单元。
+                </p>
+                 <div class="image-container"><img src="placeholder_01_26.jpg" alt="弯曲铜管形成冷凝器" width="900"></div>
+                 <div class="image-container"><img src="placeholder_1_43.jpg" alt="蒸发器和冷凝器盘管" width="900"></div>
+             </div>
+
+             <div class="bento-card">
+                <h3>步骤 3: 固定盘管到底座 (Secure Coils to Base)</h3>
+                <p>
+                    将塑料管夹安装到木质底座上预先钻好的孔中（您也可以自行钻孔以适应您的组件）。使用扎带将蒸发器盘管牢固地固定在底座的管夹上。接着，用同样的方法将冷凝器盘管固定。注意两个盘管末端的朝向，以便连接。
+                </p>
+                 <div class="image-container"><img src="placeholder_01_54.jpg" alt="安装塑料管夹" width="900"></div>
+                 <div class="image-container"><img src="placeholder_02_31.jpg" alt="使用扎带固定蒸发器" width="900"></div>
+                 <div class="image-container"><img src="placeholder_03_06.jpg" alt="固定冷凝器" width="900"></div>
+             </div>
+
+            <div class="bento-card">
+                <h3>步骤 4: 连接毛细管 (Connect Capillary Tube)</h3>
+                <p>
+                    取出毛细铜管（Ø2mm 外径 | Ø0.8mm 内径）。将管子一小段弯曲成紧密的螺旋状（可以使用笔或其他细圆柱体辅助）。这个小管子是关键，它将在蒸发器中产生突然的压力降，从而实现冷却效果。
+                </p>
+                 <div class="image-container"><img src="placeholder_03_35.jpg" alt="弯曲毛细管" width="900"></div>
+                <p>
+                    将毛细管的一端插入冷凝器盘管的出口，另一端插入蒸发器盘管的入口。使用尖嘴钳或可调钳轻轻压扁连接处的铜管，以更好地固定毛细管。
+                </p>
+                 <div class="image-container"><img src="placeholder_03_58.jpg" alt="将毛细管插入铜管" width="900"></div>
+             </div>
+
+             <div class="bento-card">
+                 <h3>步骤 5: 焊接密封连接点 (Solder and Seal Connections)</h3>
+                 <p>
+                     为了防止气体泄漏，使用焊锡膏和电烙铁将毛细管与蒸发器和冷凝器连接的两端进行焊接密封。确保焊点均匀且完全封闭。
+                 </p>
+                  <div class="image-container"><img src="placeholder_04_26.jpg" alt="焊接毛细管连接点" width="900"></div>
+             </div>
+
+            <div class="bento-card">
+                <h3>步骤 6: 安装风扇和气泵 (Install Fan and Air Pump)</h3>
+                <p>
+                    将 12V 风扇安装在底座上靠近蒸发器盘管的位置，使用螺丝固定。风扇将负责将冷空气吹出。
+                </p>
+                 <div class="image-container"><img src="placeholder_04_45.jpg" alt="安装风扇" width="900"></div>
+                <p>
+                    将 9V 电池座安装在底座的合适位置。接着，将 12V 气泵安装在另一个支架上并固定。气泵将模拟制冷系统中的压缩机功能。
+                </p>
+                 <div class="image-container"><img src="placeholder_05_14.jpg" alt="安装电池座和气泵" width="900"></div>
+            </div>
+
+             <div class="bento-card">
+                <h3>步骤 7: 连接管道与电路 (Connect Tubing and Wiring)</h3>
+                <p>
+                    切割两段 6x8mm 的 PVC 管。将其中一段连接气泵的 <span class="highlight-text">出气口 (OUT)</span> 到冷凝器盘管的 <span class="highlight-text">入口</span>。将另一段连接蒸发器盘管的 <span class="highlight-text">出口</span> 到气泵的 <span class="highlight-text">进气口 (IN)</span>。这样就形成了一个循环回路。
+                </p>
+                 <div class="image-container"><img src="placeholder_05_55.jpg" alt="连接气泵与铜管" width="900"></div>
+                <p>
+                    将风扇和气泵的导线连接到 9V 电池座上。注意正负极连接正确。可以使用热缩管或绝缘胶带保护连接点。
+                </p>
+                 <div class="image-container"><img src="placeholder_06_30.jpg" alt="连接风扇和气泵到电池座" width="900"></div>
+             </div>
+
+            <div class="bento-card">
+                <h3>步骤 8: 注入制冷剂 (Charge with Refrigerant)</h3>
+                <p>
+                    现在是为系统注入制冷剂的时候了。我们将使用异丁烷气体。使用注射器抽取适量的异丁烷液体，然后从气泵的 <span class="highlight-text">进气口 (IN)</span> 处注入回路中。异丁烷是实现冷却效果的关键，因为它在蒸发时会吸收周围环境的热量。
+                </p>
+                 <div class="image-container"><img src="placeholder_07_34.jpg" alt="使用注射器注入异丁烷" width="900"></div>
+                 <div class="image-container"><img src="placeholder_08_11.jpg" alt="注入异丁烷" width="900"></div>
+            </div>
+
+             <div class="bento-card gradient-overlay">
+                <h3><i class="fas fa-bolt icon-large"></i>工作原理浅析 (How it Works):</h3>
+                <p>
+                    这个小型空调的核心是一个简单的制冷循环。气泵（模拟压缩机）将低压的异丁烷气体吸入并压缩，使其温度升高，变成高压蒸汽。高压蒸汽进入冷凝器盘管，在这里释放热量给周围空气，并冷凝成高压液体。
+                </p>
+                 <div class="image-container"><img src="placeholder_08_20.jpg" alt="压缩机工作原理图" width="900"></div>
+                <p>
+                    接着，高压液体通过细长的毛细管。毛细管的阻力造成液体突然减压。压力骤降导致异丁烷迅速从液态变为气态（蒸发）。这个蒸发过程需要吸收大量的热量，这些热量就来自于周围的空气以及连接的蒸发器盘管。这就是为什么蒸发器会变得非常冷。
+                </p>
+                 <div class="image-container"><img src="placeholder_08_29.jpg" alt="制冷循环图" width="900"></div>
+                <p>
+                     冷气流通过蒸发器盘管，被风扇吹出，从而实现降温。蒸发后的低压气体再次被气泵吸入，循环重新开始。
+                </p>
+             </div>
+
+
+            <div class="bento-card">
+                <h3>步骤 9: 测试您的空调 (Test Your Air Conditioner)</h3>
+                <p>
+                    将 9V 电池装入电池座，并打开开关。风扇和气泵应该会启动。观察蒸发器盘管，您会很快看到它开始凝结水珠，并逐渐结霜。
+                </p>
+                 <div class="image-container"><img src="placeholder_08_51.jpg" alt="启动并观察结霜" width="900"></div>
+                <p>
+                     使用红外测温仪测量蒸发器盘管的温度。最初可能会显示 -7°C 左右，但随着系统运行，温度会持续下降。
+                </p>
+                 <div class="image-container"><img src="placeholder_09_22.jpg" alt="测量温度" width="900"></div>
+                 <p>
+                    最终，我们的制冷系统成功将温度降至了惊人的 <span class="highlight-text">-10°C</span>！
+                 </p>
+                  <div class="image-container"><img src="placeholder_09_48.jpg" alt="测得温度达到-10℃" width="900"></div>
+             </div>
+
+             <div class="bento-card gradient-overlay">
+                 <h3><i class="fas fa-check-circle icon-large"></i>成功! (Success!)</h3>
+                 <p>
+                     恭喜您！您已经成功制作了一个功能齐全的小型便携式空调。再也不用为夏季的酷热难耐而烦恼了！
+                 </p>
+                 <p>
+                     如果您也尝试制作了自己的空调，或者有更高效的制冷方法，欢迎在评论区分享您的经验！
+                 </p>
+             </div>
+        </motion.div>
+
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+        >
+             <h2><i class="fas fa-heart icon-large"></i>支持我们 (Support Us)</h2>
+             <p>
+                 感谢所有会员的支持！您的支持是我们创作更多精彩内容的动力！
+             </p>
+
+             <div class="bento-card">
+                  <h3>Thanks to all of our members!</h3>
+                   <div class="member-list">
+                       <div class="member-category">HIDDEN SPONSORS</div>
+                       <ul>
+                           <li>- TESLA777</li>
+                           <li>atowman</li>
+                           <li>- ANON2038</li>
+                       </ul>
+                        <div class="member-category">ELITE SPONSORS</div>
+                       <ul>
+                           <li>BRIAN BLACKMORE</li>
+                           <li>GERALD CONCHE</li>
+                           <li>JOHN LU</li>
+                           <li>KOLLIN KING</li>
+                            <li>P CH</li>
+                            <li>SCOTT FOGARTY</li>
+                            <li>市ノ澤 隆</li>
+                       </ul>
+                        <div class="member-category">PREMIUM SPONSORS</div>
+                       <ul>
+                            <li>Alberto López Urrego</li>
+                            <li>Azzur Elakim Traoqo</li>
+                            <li>Chancavate</li>
+                            <li>Custom Computer Designs</li>
+                            <li>Dataphl</li>
+                            <li>David Maxwell</li>
+                            <li>dmitriy kokotsakis</li>
+                            <li>Driss Naamane</li>
+                            <li>Edward Zwediuk</li>
+                            <li>Francis Muller</li>
+                            <li>Frankie</li>
+                            <li>Freddy Carels</li>
+                            <li>Herald Maier</li>
+                            <li>jean pierre morgan</li>
+                            <li>Joe Hostetler</li>
+                            <li>John Lumen</li>
+                            <li>Kieren Hutchison</li>
+                            <li>Lech Wojdan</li>
+                            <li>MarcAndre9999</li>
+                            <li>Mark Nimmons</li>
+                            <li>Matt Owens</li>
+                            <li>Nico Ganzer</li>
+                            <li>Patrick Muller</li>
+                            <li>Ransfield Manyara</li>
+                            <li>Risen From Ashes</li>
+                            <li>Ryan Bleyer</li>
+                            <li>Theta Wellness Center</li>
+                            <li>Travas Bartlett</li>
+                            <li>Wojciech Gewel</li>
+                            <li>zork9653</li>
+                        </ul>
+                         <div class="member-category">STARTER MEMBERS</div>
+                       <ul>
+                           <li>70powermax</li>
+                           <li>9N0s7mlqht7</li>
+                           <li>Above All Drone Service LLC</li>
+                           <li>albert castlunger</li>
+                           <li>Alberto Berduzco</li>
+                           <li>Alberto León</li>
+                           <li>Alberto Oleyn</li>
+                           <li>Aldrin Montederramos</li>
+                           <li>Ale Paxi</li>
+                           <li>Alejo Cornejo</li>
+                           <li>Alex Jones</li>
+                           <li>Alexandre Meyer</li>
+                           <li>Alexandre Melchades</li>
+                           <li>ALI ŞENGÜL</li>
+                           <li>Amauri Torres</li>
+                           <li>Amit Sharma</li>
+                           <li>Antonio Ramos</li>
+                           <li>Antônio Izaguirre</li>
+                           <li>Arcvtg Saas</li>
+                           <li>ariel tzur irzhak</li>
+                           <li>arnfinn kaaby</li>
+                           <li>arun sriram</li>
+                           <li>AVBR 208</li>
+                           <li>Ayara Negrea</li>
+                           <li>Azzzel González Miranda</li>
+                           <li>ęųšųįųñąŋŋø</li>
+                           <li>B W</li>
+                           <li>Bahnan Kawira</li>
+                           <li>Bernardo João correa</li>
+                           <li>BlueSky 7</li>
+                           <li>brendo</li>
+                           <li>Bruno Laubenberger</li>
+                           <li>Bryan Kowacich</li>
+                           <li>Bryant Judgement Enforcers</li>
+                           <li>Burak Senturk</li>
+                           <li>Carl Samples</li>
+                           <li>Carlos Barretto</li>
+                           <li>Carlos Dittmar Sprengel</li>
+                           <li>Carlos Orlando Beltre Pujols</li>
+                           <li>Carlos Rojas</li>
+                           <li>cedric etienne</li>
+                           <li>Cengiz Baki</li>
+                           <li>Cengiz Bakı</li>
+                           <li>Cengizhan Alici</li>
+                           <li>Cesar Mejía</li>
+                           <li>Charl Croeser</li>
+                           <li>Chris Edwards</li>
+                           <li>Christian Eigenbauer</li>
+                           <li>CHRISTIAN MARCOUX</li>
+                           <li>Christoph K</li>
+                           <li>Christopher Christian</li>
+                           <li>Cipruta Residence One</li>
+                           <li>CISAT E-Learning</li>
+                           <li>claudio desilva silva</li>
+                           <li>Colin Junkin</li>
+                           <li>comment deveniu riche</li>
+                           <li>Daniel Powerv</li>
+                           <li>daniel prepelita</li>
+                           <li>Daniel Restrepo</li>
+                           <li>Dario Kiener</li>
+                           <li>Darris German</li>
+                           <li>David Williams</li>
+                           <li>Dean Walls</li>
+                           <li>Dennis Dean</li>
+                           <li>dentinho barbosa</li>
+                           <li>devaraj gowda</li>
+                           <li>Diamond Lee</li>
+                           <li>Dieter Meissner</li>
+                           <li>Divi 2</li>
+                           <li>doabdsl doabdsl</li>
+                           <li>dodi iskandar fauzi</li>
+                           <li>Domenico Limone</li>
+                           <li>doug jewell</li>
+                           <li>Dušan Veselý</li>
+                           <li>E J Atkins</li>
+                           <li>Eddie Lieberman</li>
+                           <li>Edson ramos Biriba Biriba</li>
+                           <li>Edward Timmers</li>
+                           <li>Edward Webb</li>
+                           <li>EKRAZf</li>
+                           <li>Emil Istrate</li>
+                           <li>emil ulep</li>
+                           <li>Enrique Quiles</li>
+                           <li>Erick Bahr</li>
+                           <li>espaco negro</li>
+                           <li>esteban josé pozzi</li>
+                           <li>Ettore Borg</li>
+                           <li>Evgeny Pavlov</li>
+                           <li>Fabian Muñoz</li>
+                           <li>Fabiano Dos Reis</li>
+                           <li>Financeiro Fácil</li>
+                           <li>Fisek</li>
+                           <li>Florian Ho</li>
+                           <li>Florin Ruset</li>
+                           <li>floyd sendmeyer</li>
+                           <li>Francs Methuen-Hall</li>
+                           <li>Francis Foraster</li>
+                           <li>frank rubino</li>
+                           <li>Freddy Papai</li>
+                           <li>frequencyguy</li>
+                           <li>Georg Steidl</li>
+                           <li>Gill Vachon</li>
+                           <li>Giov</li>
+                           <li>Giovanni Falco</li>
+                           <li>Go Shops</li>
+                           <li>Goshen</li>
+                           <li>guido minussi</li>
+                           <li>Gustavo Alberto Camacho</li>
+                           <li>Harold Mathieu</li>
+                           <li>Harold Miller</li>
+                           <li>Hector Manuel Cotta Pollo</li>
+                           <li>Hector Valadez</li>
+                           <li>henrydz</li>
+                           <li>Herbert Bouchez</li>
+                           <li>Hữu Phạm</li>
+                           <li>Horst Steinkogler</li>
+                            <li>Hubert Nimtz</li>
+                           <li>Huisan Méndez May</li>
+                           <li>infamousGTZ</li>
+                           <li>inoH8</li>
+                           <li>Iulian Lupoiu</li>
+                           <li>Ivo Carlos Schmidt</li>
+                           <li>Jame loro</li>
+                           <li>Jamaludin Salam</li>
+                           <li>james vukos</li>
+                           <li>Ján Blahutka</li>
+                           <li>Janos Gecse</li>
+                           <li>Jarno Tapanı</li>
+                           <li>Jason Piazza</li>
+                           <li>jean gettin</li>
+                           <li>jelle de bruyn</li>
+                           <li>Jerry Reglin</li>
+                           <li>Jesús Antonio Cristancho</li>
+                           <li>Oller</li>
+                           <li>Jill Hacky</li>
+                           <li>Jochen Bergmann</li>
+                           <li>joe emma</li>
+                           <li>Joe Youdell</li>
+                           <li>John Hollingsworth</li>
+                           <li>John Karolernest</li>
+                           <li>john wayne</li>
+                           <li>joão Daniel Urbański</li>
+                           <li>jonny packham</li>
+                           <li>Jordan Blake</li>
+                           <li>Jos Tromp</li>
+                            <li>Jose Miguel Almendra Minaya</li>
+                           <li>Josep Danzinger</li>
+                           <li>josep moyá solà</li>
+                           <li>Joseph baranek</li>
+                           <li>Jozsi Balogh</li>
+                           <li>Juan Senz</li>
+                           <li>Juan Schweizer</li>
+                           <li>Juliano Benedito Mirley</li>
+                           <li>Junior Rodriguez</li>
+                           <li>Junior Tarrnu</li>
+                           <li>JV LIFETIME</li>
+                           <li>K1</li>
+                           <li>KENIA RG</li>
+                           <li>Kenneth Willard</li>
+                           <li>Kersten Lierker</li>
+                           <li>Kevin Neshausen</li>
+                           <li>khalifa alhajri</li>
+                           <li>klaus moser</li>
+                           <li>Klaus Moser</li>
+                           <li>Kris Marc</li>
+                           <li>lechorrok</li>
+                           <li>Lemuel Connell</li>
+                           <li>Lossa LaLode</li>
+                           <li>Lucian Balint</li>
+                           <li>M. Dañbro</li>
+                           <li>M.A.</li>
+                           <li>Maciej Maikowski</li>
+                           <li>Maifert Jpierre</li>
+                           <li>maiferit jpierre</li>
+                           <li>Makdum afsar khan</li>
+                           <li>marco cattaneo</li>
+                           <li>Margaret Ruhe</li>
+                           <li>Mario W.</li>
+                           <li>mark fitzpatrick</li>
+                           <li>Martha Calvillo</li>
+                           <li>martinho barbosa</li>
+                           <li>martynas savickas</li>
+                           <li>Massimo Frisoni</li>
+                           <li>Matheus Carvalho De Vasconcelos</li>
+                           <li>Mcfly</li>
+                           <li>Mehmet Mumcu</li>
+                           <li>Mel</li>
+                           <li>Metal Rules The World</li>
+                           <li>Mga Ko Daddy</li>
+                           <li>michael bonitto sr.</li>
+                           <li>Michael Ellard</li>
+                           <li>Michael Marino</li>
+                           <li>miguel fortes.n</li>
+                           <li>Mihai RB X</li>
+                           <li>mikail kosmac</li>
+                           <li>Miklos Nagy</li>
+                           <li>Moisés Letaciana</li>
+                           <li>Mr Kim</li>
+                           <li>MrFercho126</li>
+                           <li>MrManole</li>
+                           <li>Muammer cter</li>
+                           <li>muhammad rodhy</li>
+                           <li>Mustafa Onur Uçak</li>
+                           <li>Natural In- curable Heat</li>
+                           <li>NAURis SLITERS</li>
+                           <li>nb3west</li>
+                           <li>Neilu Schiopu</li>
+                           <li>Ngel Grie</li>
+                           <li>NOBT</li>
+                           <li>oramsotam</li>
+                           <li>Onur RAş</li>
+                           <li>oscar valencia</li>
+                           <li>osvaldolomar</li>
+                           <li>Otr Ray Mar Di</li>
+                           <li>pablo werner</li>
+                           <li>patriotdecolombia</li>
+                           <li>Patty Cavana</li>
+                           <li>Paul Nobody</li>
+                           <li>Paul SuperCOP</li>
+                           <li>Paul-Emile Godin</li>
+                           <li>Paulo Cesar Vica Mamani</li>
+                           <li>Pavel Štorek</li>
+                           <li>Pavlin Georgiev</li>
+                           <li>Pavol Michalik</li>
+                           <li>pedrosura</li>
+                           <li>Philipp Drechsler</li>
+                           <li>pi 314</li>
+                           <li>Pongsak Thongmoon</li>
+                           <li>PRO ШИНОМОНТАЖ.</li>
+                           <li>Rabih Zakria</li>
+                           <li>Rastislav Tomčák</li>
+                            <li>Raul Solano</li>
+                           <li>rav valle</li>
+                           <li>Recupera a tu Ex</li>
+                           <li>REDRIFT</li>
+                           <li>Regis Beeken</li>
+                           <li>Rene Easting</li>
+                           <li>Ric Miller</li>
+                           <li>Ricardo Damian</li>
+                           <li>Richard Fox</li>
+                           <li>Richard Hall</li>
+                           <li>Riki Ellis</li>
+                           <li>Rimantas Kutka</li>
+                           <li>Riqui Tobia</li>
+                           <li>Robert Norberg</li>
+                           <li>Rodney Baxter (Home Decor)</li>
+                           <li>Rodrigo J. Skaric Nualart</li>
+                           <li>Roger Antillon</li>
+                           <li>Roger Zubarik</li>
+                           <li>rolffe</li>
+                           <li>Ronal Fuentes</li>
+                           <li>Ronald Ambrose</li>
+                           <li>Royon Powell</li>
+                           <li>Rudolf Jozsef Mészáros</li>
+                           <li>Ryan Cabral</li>
+                           <li>saif bakihan</li>
+                           <li>Scott Black - Author, Coach & Off Grid Enthusiast</li>
+                           <li>Sean Lawhead</li>
+                           <li>Selahattin Özcinar</li>
+                           <li>seop bri</li>
+                           <li>shane jenkins</li>
+                           <li>Shrek46</li>
+                           <li>Shuichi Nagata</li>
+                           <li>Sigmar Zachow</li>
+                           <li>Siphlo Makhanya</li>
+                           <li>spartan 117</li>
+                           <li>Stanislav Bak</li>
+                           <li>Supot Yannadol</li>
+                           <li>T</li>
+                           <li>TaxitF</li>
+                           <li>TECHRESO@gmail.com</li>
+                           <li>Tg krtanar</li>
+                           <li>Theer Salahat</li>
+                           <li>The Baby Bottle Holder</li>
+                           <li>ᴛʜᴇ ᴋᴏꜱᴛᴇʀ</li>
+                           <li>The Motivation Project</li>
+                           <li>TheStargateSG2</li>
+                           <li>THIERRY BONNET</li>
+                           <li>Thilo Boller</li>
+                           <li>Thomas Haefele</li>
+                           <li>Tom H</li>
+                           <li>Tom Izzard</li>
+                           <li>Ulf Vikberg</li>
+                           <li>Uthal Kanto</li>
+                           <li>Valer Mircea</li>
+                           <li>Maifert Jpierre</li>
+                       </ul>
+                       <ul>
+                           <li>Vito Falconieri</li>
+                           <li>v.ajedrez.vaca perez</li>
+                           <li>Wade Hood</li>
+                           <li>washington moreira</li>
+                           <li>Wayne Goss</li>
+                           <li>We Love to Transform</li>
+                           <li>Werner Nell</li>
+                           <li>William</li>
+                           <li>William Bowman</li>
+                           <li>xto wen</li>
+                           <li>Yahaya Tairu</li>
+                           <li>Y H Y</li>
+                           <li>Yona Martinez</li>
+                           <li>yoshi hirano</li>
+                           <li>Zhigniew Sawa</li>
+                           <li>Zoilo Ruiz</li>
+                           <li>Κωνσταντινος Κλαουδάτος</li>
+                           <li>Вячеслав Любас</li>
+                           <li>Игорь Скиба</li>
+                           <li>Христо Бочев</li>
+                           <li>יגאל עזריהו</li>
+                           <li>العرض</li>
+                           <li>محمد عاشور</li>
+                           <li>안만식</li>
+                           <li>이범식</li>
+                           <li>정국팜</li>
+                           <li>木暮 徹</li>
+                           <li>本田誠</li>
+                           <li>曹託熙</li>
+                       </ul>
+                   </div>
+             </div>
+
+              <div class="bento-card text-center">
+                  <h3><i class="fas fa-hand-holding-heart icon-large"></i>成为会员支持我们! (Become a member to support our videos!)</h3>
+                   <p>
+                       点击下方按钮，了解如何通过成为会员来支持我们的创作，共同参与这场“能源革命”！
+                   </p>
+                    <a href="#" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                        <i class="fas fa-handshake mr-2"></i>支持我们
+                    </a>
+             </div>
+        </motion.div>
+
+         <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+        >
+             <div class="bento-card text-center">
+                 <p>
+                     <span class="highlight-text">分享此教程</span>，加入能源革命！<br>(Share this tutorial and join the Energy Revolution!)
+                 </p>
+                 <div class="text-2xl mt-4">
+                     <a href="#" class="mx-2 text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-square"></i></a>
+                     <a href="#" class="mx-2 text-twitter-600 hover:text-twitter-800"><i class="fab fa-twitter-square"></i></a>
+                      <a href="#" class="mx-2 text-green-600 hover:text-green-800"><i class="fab fa-whatsapp-square"></i></a>
+                      <!-- Add other share icons as needed -->
+                 </div>
+                 <p class="mt-4 text-sm text-gray-500">Thanks for watching!</p>
+             </div>
+        </motion.div>
+
+    </div>
+</body>
+</html>

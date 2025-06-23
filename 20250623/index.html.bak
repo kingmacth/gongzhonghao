@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打造逼真模型卡车轮毂和轮胎：完整指南</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom gradient colors (example) */
+        .gradient-blue-light {
+            background: linear-gradient(to right, #a7c1f1, #e0e9fc); /* Soft blue gradient */
+        }
+         .gradient-gray-light {
+            background: linear-gradient(to right, #e2e8f0, #f8fafc); /* Soft gray gradient */
+        }
+        /* Bento Grid-like styling for sections */
+        .bento-card {
+            background-color: #ffffff;
+            border-radius: 16px; /* Rounded corners */
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Ensure images are responsive and max-width */
+        .responsive-img {
+            max-width: 900px;
+            width: 100%; /* Make it responsive within container */
+            height: auto;
+            border-radius: 8px; /* Soft corners for images */
+            margin-bottom: 16px; /* Space below images */
+        }
+        /* Large Chinese text style */
+        .large-zh-bold {
+            font-size: 2.5rem; /* Adjust size as needed */
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        /* Small English text style */
+        .small-en {
+            font-size: 0.9rem;
+            color: #555; /* Muted color */
+            margin-bottom: 16px;
+        }
+        /* Icon styling */
+        .step-icon {
+            font-size: 1.5rem;
+            color: #3b82f6; /* Tailwind blue-500 */
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+         .feature-icon {
+            font-size: 1.8rem;
+            color: #10b981; /* Tailwind green-500 */
+            margin-bottom: 12px;
+         }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <div class="container mx-auto max-w-3xl px-4 py-8">
+
+        <!-- Title Section -->
+        <header class="text-center mb-12 p-6 rounded-lg gradient-blue-light">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">打造逼真模型卡车轮毂和轮胎</h1>
+            <p class="text-xl text-gray-700 mt-2">Crafting Realistic Model Truck Hubs and Tires</p>
+        </header>
+
+        <!-- Summary / Features Section -->
+        <section class="bento-card mb-12 gradient-gray-light">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">项目总览：手工制作细节丰富的模型车轮</h2>
+            <p class="text-gray-700 mb-6">
+                本教程将逐步指导您如何利用简单的材料，如PVC管、橡胶、木材和塑料板，手工制作出高度仿真的模型卡车轮毂和轮胎。我们将涵盖从材料准备、初步塑形、细节加工到纹理添加的完整过程。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <i class="feature-icon fas fa-hand-crafts"></i>
+                    <div>
+                        <div class="large-zh-bold text-lg">完全手工制作</div>
+                        <div class="small-en">Entirely Handcrafted Process</div>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                     <i class="feature-icon fas fa-tools"></i>
+                    <div>
+                        <div class="large-zh-bold text-lg">利用常见工具</div>
+                        <div class="small-en">Utilizing Common Tools</div>
+                    </div>
+                </div>
+                 <div class="flex items-start">
+                     <i class="feature-icon fas fa-tire-rugged"></i>
+                    <div>
+                        <div class="large-zh-bold text-lg">逼真轮胎纹路</div>
+                        <div class="small-en">Realistic Tire Tread Details</div>
+                    </div>
+                </div>
+                 <div class="flex items-start">
+                     <i class="feature-icon fas fa-car-side"></i>
+                    <div>
+                        <div class="large-zh-bold text-lg">模型卡车适配</div>
+                        <div class="small-en">Suitable for Model Trucks</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step-by-Step Guide -->
+        <section class="space-y-8">
+
+            <!-- Step 1 -->
+            <motion.div
+                class="bento-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 1：准备轮胎基座</div>
+                <div class="small-en">Step 1: Prepare the Tire Base</div>
+                <img src="placeholder_00_08.jpg" alt="测量PVC管材" class="responsive-img">
+                <img src="placeholder_00_10.jpg" alt="标记PVC管材切点" class="responsive-img">
+                <img src="placeholder_00_11.jpg" alt="切割PVC管材" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-ruler-horizontal"></i>使用游标卡尺测量并标记直径 <span class="font-semibold text-blue-600">30.0mm</span> 的PVC管材。
+                    <i class="step-icon fas fa-cut"></i>使用合适的工具将管材切割成所需宽度的圆环，作为轮胎的内圈基座。
+                </p>
+                <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：PVC管材 (30.0mm直径), 游标卡尺, 记号笔, 小型锯。
+                </p>
+            </motion.div>
+
+             <!-- Step 2 -->
+            <motion.div
+                class="bento-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 2：制作轮胎主体</div>
+                <div class="small-en">Step 2: Form the Tire Body</div>
+                 <img src="placeholder_00_14.jpg" alt="标记橡胶条" class="responsive-img">
+                 <img src="placeholder_00_18.jpg" alt="切割橡胶条" class="responsive-img">
+                 <img src="placeholder_00_21.jpg" alt="粘贴橡胶条" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-marker"></i>根据PVC环的周长在黑色橡胶或泡沫条上做标记。
+                    <i class="step-icon fas fa-cut"></i>使用刀具精确切割橡胶条。
+                    <i class="step-icon fas fa-adhesive"></i>在切割好的橡胶条一侧涂上胶水。
+                    <i class="step-icon fas fa-hand-sparkles"></i>将涂胶的橡胶条环绕粘贴在PVC环外侧，形成轮胎的雏形。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：黑色橡胶/泡沫条, 记号笔, 刀具, 胶水。
+                </p>
+            </motion.div>
+
+            <!-- Step 3 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 3：打磨轮胎外形</div>
+                <div class="small-en">Step 3: Sand the Tire Profile</div>
+                <img src="placeholder_00_26.jpg" alt="打磨轮胎侧面" class="responsive-img">
+                 <img src="placeholder_00_30.jpg" alt="打磨轮胎外缘" class="responsive-img">
+                 <img src="placeholder_00_34.jpg" alt="细致打磨" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-sander-highway"></i>将组装好的轮胎固定在电动工具上。
+                    <i class="step-icon fas fa-file-alt"></i>使用砂纸或砂轮对轮胎的外侧和边缘进行打磨，修正形状，使其更圆润，并去除多余的橡胶。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：砂纸/砂轮, 电动打磨工具, 安全防护（建议佩戴口罩和眼镜）。
+                </p>
+            </motion.div>
+
+            <!-- Step 4 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 4：制作轮毂模具</div>
+                <div class="small-en">Step 4: Create the Hub Mold</div>
+                 <img src="placeholder_00_40.jpg" alt="切割木棍" class="responsive-img">
+                 <img src="placeholder_00_43.jpg" alt="打磨木棍端面" class="responsive-img">
+                 <img src="placeholder_00_49.jpg" alt="凿刻木块" class="responsive-img">
+                 <img src="placeholder_00_54.jpg" alt="修整模具" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-tree"></i>选择一根合适的木棍。
+                    <i class="step-icon fas fa-cut"></i>使用锯子将木棍切割成几段。
+                    <i class="step-icon fas fa-sander-highway"></i>利用打磨工具或车床，将其中一段木块的一端打磨成轮毂内凹的形状。
+                    <i class="step-icon fas fa-drill"></i>在打磨好的端面中心钻一个孔。
+                    <i class="step-icon fas fa-chisel"></i>将另一段木块的边缘进行凿刻和打磨，使其与前一块木块配合形成用于热塑轮毂的简易模具。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：木棍, 锯, 打磨工具/车床, 凿子, 钻头, 砂纸。
+                </p>
+            </motion.div>
+
+            <!-- Step 5 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 5：热塑成型轮毂</div>
+                <div class="small-en">Step 5: Thermoform the Hub</div>
+                 <img src="placeholder_00_56.jpg" alt="加热塑料板" class="responsive-img">
+                 <img src="placeholder_01_03.jpg" alt="弯曲塑料板" class="responsive-img">
+                 <img src="placeholder_01_04.jpg" alt="模压轮毂形状" class="responsive-img">
+                 <img src="placeholder_01_10.jpg" alt="定型轮毂" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-fire-alt"></i>将一块白色或灰色的塑料板放在热源（如燃气灶火焰上方）加热，使其变软。请务必小心操作，避免烫伤和塑料燃烧产生有害气体。
+                    <i class="step-icon fas fa-hand-sparkles"></i>趁塑料变软时，使用钳子或剪刀辅助操作。迅速将软化的塑料板放在木质模具上，并使用PVC环或另一块圆柱形木块压下，将塑料压入模具的形状中，形成轮毂的圆顶和边缘。
+                    <i class="step-icon fas fa-compress-arrows-alt"></i>保持压力直到塑料冷却并定型。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：白色/灰色塑料板, 热源 (燃气灶), 钳子, 剪刀, 木质模具, PVC环/圆柱形木块。
+                </p>
+            </motion.div>
+
+            <!-- Step 6 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 6：修整塑料轮毂</div>
+                <div class="small-en">Step 6: Trim and Sand the Plastic Hub</div>
+                 <img src="placeholder_01_31.jpg" alt="切割多余塑料" class="responsive-img">
+                 <img src="placeholder_01_34.jpg" alt="打磨轮毂边缘" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-cut"></i>使用锯子或刀具小心地沿边缘切割掉热塑成型后多余的塑料。
+                    <i class="step-icon fas fa-file-alt"></i>使用砂纸对轮毂的边缘进行打磨，使其光滑整齐。
+                </p>
+                <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：锯/刀具, 砂纸。
+                </p>
+            </motion.div>
+
+            <!-- Step 7 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 7：挖空轮毂孔洞</div>
+                <div class="small-en">Step 7: Cut Out Hub Holes</div>
+                 <img src="placeholder_01_36.jpg" alt="标记孔洞位置" class="responsive-img">
+                 <img src="placeholder_01_38.jpg" alt="钻/切割孔洞" class="responsive-img">
+                 <img src="placeholder_01_42.jpg" alt="修整孔洞边缘" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-marker"></i>在塑料轮毂圆顶上标记出需要挖空的孔洞位置，通常是模拟卡车轮毂的散热孔或装饰孔。
+                    <i class="step-icon fas fa-drill"></i>使用钻头、手钻或小刀沿标记线挖出或钻出孔洞。
+                    <i class="step-icon fas fa-file-alt"></i>使用锉刀或砂纸修整孔洞的边缘，使其光滑整齐。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：记号笔, 钻头/手钻/小刀, 锉刀/砂纸。
+                </p>
+            </motion.div>
+
+             <!-- Step 8 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 8：组装轮毂与轮胎</div>
+                <div class="small-en">Step 8: Assemble the Hub and Tire</div>
+                 <img src="placeholder_01_45.jpg" alt="将轮毂插入轮胎" class="responsive-img">
+                 <img src="placeholder_01_49.jpg" alt="固定轮毂" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-tools"></i>将制作好的塑料轮毂插入橡胶轮胎环的内侧。
+                    <i class="step-icon fas fa-adhesive"></i>（视频中未明确展示，但通常需要）使用胶水将塑料轮毂固定在橡胶轮胎上，确保其牢固不松动。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：橡胶轮胎, 塑料轮毂, 胶水 (推荐橡胶专用胶或快干胶)。
+                </p>
+            </motion.div>
+
+            <!-- Step 9 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 9：添加螺栓孔</div>
+                <div class="small-en">Step 9: Add Bolt Holes</div>
+                 <img src="placeholder_01_59.jpg" alt="钻螺栓孔" class="responsive-img">
+                 <img src="placeholder_02_00.jpg" alt="钻孔细节" class="responsive-img">
+                 <img src="placeholder_02_02.jpg" alt="轮毂细节" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-marker"></i>在塑料轮毂上标记出螺栓孔的位置。
+                    <i class="step-icon fas fa-drill"></i>使用细钻头或手钻在标记点上钻出小孔，模拟卡车轮毂上的螺栓。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：记号笔, 细钻头/手钻。
+                </p>
+            </motion.div>
+
+            <!-- Step 10 -->
+            <motion.div
+                class="bento-card"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">步骤 10：制作轮胎纹路</div>
+                <div class="small-en">Step 10: Create Tire Tread Pattern</div>
+                 <img src="placeholder_02_07.jpg" alt="准备烫纹工具" class="responsive-img">
+                 <img src="placeholder_02_09.jpg" alt="烫制纹路" class="responsive-img">
+                 <img src="placeholder_02_12.jpg" alt="纹路细节" class="responsive-img">
+                <p class="text-gray-700">
+                    <i class="step-icon fas fa-burn"></i>制作一个简易的烫纹工具，例如在烙铁头上缠绕并塑形一段金属丝。
+                    <i class="step-icon fas fa-car"></i>加热烫纹工具，然后小心地将其压在橡胶轮胎表面，烫出模拟轮胎纹路的凹槽。沿着轮胎外圈重复此操作，直到纹路覆盖整个胎面。
+                </p>
+                 <p class="text-gray-700 mt-2">
+                    <i class="step-icon fas fa-tools"></i>工具/材料：烙铁, 金属丝, 安全防护（确保通风并小心操作）。
+                </p>
+            </motion.div>
+
+             <!-- Step 11 -->
+            <motion.div
+                class="bento-card text-center"
+                 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                <div class="large-zh-bold">成品展示</div>
+                <div class="small-en">Final Result Display</div>
+                <img src="placeholder_02_18.jpg" alt="成品模型轮毂和轮胎" class="responsive-img">
+                <p class="text-gray-700 mt-4">
+                    <i class="step-icon fas fa-check-circle"></i>恭喜！您的手工模型卡车轮毂和轮胎已制作完成。您可以根据需要制作多个，用于您的模型项目。
+                </p>
+            </motion.div>
+
+        </section>
+
+        <footer class="text-center mt-12 text-gray-600 text-sm">
+            <p>© 2023 手工制作教程</p>
+        </footer>
+
+    </div>
+
+    <!-- Framer Motion CDN -->
+    <script src="https://unpkg.com/framer-motion@6.5.1/dist/framer-motion.js"></script>
+    <script>
+        // Basic script to enable Framer Motion - no extra JS needed for whileInView
+    </script>
+
+</body>
+</html>
