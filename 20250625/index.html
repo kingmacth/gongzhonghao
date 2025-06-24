@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制造能持续旋转的飞轮装置：揭秘与实践</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN (React version, but can be used with plain JS via standalone build) -->
+    <!-- For simplicity in a plain HTML example without React, we'll use simple JS animation or just Tailwind transitions -->
+    <!-- If Framer Motion is strictly required with plain JS, a more complex setup or a different library might be better for this simple use case. Let's imply its use for potentially richer animations in a full framework context, but rely on CSS for basic visuals in this HTML. -->
+    <style>
+        /* Custom styles for Bento-like feel and gradients */
+        .bento-item {
+            background-color: #f3f4f6; /* Soft gray */
+            border-radius: 1rem; /* Rounded corners */
+            padding: 1.5rem; /* Internal padding */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.5), rgba(59, 130, 246, 0.1));
+        }
+         .highlight-gradient-red {
+            background: linear-gradient(to right, rgba(239, 68, 68, 0.5), rgba(239, 68, 68, 0.1));
+        }
+         .highlight-gradient-yellow {
+            background: linear-gradient(to right, rgba(253, 224, 71, 0.5), rgba(253, 224, 71, 0.1));
+        }
+         .text-outline {
+            -webkit-text-stroke: 1px white; /* Outline for bold text */
+            text-stroke: 1px white;
+        }
+         .fake-stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-20deg);
+            font-size: 6rem;
+            font-weight: bold;
+            color: red;
+            opacity: 0.8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <div class="container mx-auto px-4 py-8 max-w-screen-sm">
+
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-red-600 mb-4">
+                <span class="block text-outline">制造能持续旋转的</span>
+                <span class="block highlight-gradient-red inline-block p-2">飞轮装置</span>
+            </h1>
+            <p class="text-lg text-gray-600">
+                揭秘网络假象，实践物理原理，打造一个持续运转的机械系统。
+            </p>
+        </div>
+
+        <!-- Summary of Working Product -->
+        <div class="bento-item mb-8 highlight-gradient-blue">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                <i class="fas fa-wrench mr-2 text-blue-600"></i>
+                <span class="highlight-gradient-blue inline-block p-1">核心特点</span>
+            </h2>
+            <p class="text-base text-gray-700">
+                这个项目深入分析了多种网络上流传的“永动机”视频，揭示了它们无法持续运转的原因。基于严谨的物理学原理，特别是<strong>动力学共振耦合</strong>，我们设计并制造了一个能够<strong class="text-blue-600">在获得初始动能后长时间持续旋转</strong>的飞轮装置。它并非能量凭空产生，而是通过优化能量在系统内部（弹簧与飞轮之间）的传递效率，最大限度减少损耗。
+            </p>
+        </div>
+
+        <!-- Key Components -->
+         <div class="bento-item mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                 <i class="fas fa-cogs mr-2 text-gray-600"></i>
+                <span class="p-1">关键组成部分</span>
+            </h2>
+             <ul class="list-disc list-inside text-gray-700 space-y-2">
+                 <li><strong class="text-red-600">重型飞轮 (Flywheel)</strong>: 存储和释放转动动能。</li>
+                 <li><strong class="text-red-600">曲轴 (Crankshaft)</strong>: 将旋转运动转化为弹簧的往复运动，并将弹簧能量反馈给飞轮。</li>
+                 <li><strong class="text-red-600">多个弹簧 (Multiple Springs)</strong>: 存储和释放弹性势能。特定的排列和协调至关重要。</li>
+                 <li><strong class="text-red-600">精密轴承 (Precision Bearings)</strong>: 减少摩擦损耗，提高系统效率。</li>
+                 <li><strong class="text-red-600">稳定框架 (Robust Frame)</strong>: 支撑所有组件，确保机械稳定性。</li>
+             </ul>
+         </div>
+
+
+        <!-- Debunking Fake Systems -->
+        <div class="bento-item mb-8 highlight-gradient-red">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                 <i class="fas fa-times-circle mr-2 text-red-600"></i>
+                <span class="highlight-gradient-red inline-block p-1">为何它们是“假的”？</span>
+            </h2>
+
+            <div class="mb-6">
+                 <h3 class="text-xl font-bold mb-2">
+                     <i class="fas fa-video mr-2 text-gray-500"></i>
+                     案例 1: 黄色飞轮装置
+                 </h3>
+                 <p class="text-base text-gray-700 mb-4">
+                     表面上看，这个黄色飞轮装置似乎仅靠弹簧就能持续旋转（如视频0:50所示）。
+                 </p>
+                 <div class="relative">
+                    <img src="placeholder_00_50.jpg" alt="黄色飞轮装置" width="900" class="mx-auto rounded">
+                    <div class="fake-stamp">FAKE</div>
+                 </div>
+                 <p class="text-sm text-gray-600 mt-2">
+                     <i class="fas fa-info-circle mr-1"></i> 视频截图：看似自行旋转的装置
+                 </p>
+
+                 <p class="text-base text-gray-700 mt-4">
+                     然而，仔细观察会发现异常的运动模式和倒放的声音（视频1:08-1:20）。当视频<strong class="text-red-600">正常播放</strong>时（视频1:22开始模拟），可以清楚地看到机器的速度<strong class="text-red-600">逐渐减慢</strong>。根据能量守恒定律，如果没有外部能量输入，任何实际的机械系统都会因摩擦、空气阻力、声波和热量等损耗而最终停止。弹簧只能储存有限的弹性势能（<code class="font-mono text-sm">E = 1/2 kx²</code>），释放完毕后，系统无法自我驱动。
+                 </p>
+                  <div class="relative mt-4">
+                    <img src="placeholder_01_25.jpg" alt="黄色飞轮装置正常播放" width="900" class="mx-auto rounded">
+                     <div class="fake-stamp">FAKE</div>
+                 </div>
+                 <p class="text-sm text-gray-600 mt-2">
+                     <i class="fas fa-info-circle mr-1"></i> 视频截图：正常速度播放，机器正在减速
+                 </p>
+             </div>
+
+            <div class="mb-6">
+                 <h3 class="text-xl font-bold mb-2">
+                    <i class="fas fa-video mr-2 text-gray-500"></i>
+                    案例 2: V形弹簧装置
+                 </h3>
+                 <p class="text-base text-gray-700 mb-4">
+                     另一个案例尝试使用V形排列的弹簧（视频2:09所示）。
+                 </p>
+                  <div class="relative">
+                    <img src="placeholder_02_09.jpg" alt="V形弹簧装置" width="900" class="mx-auto rounded">
+                     <div class="fake-stamp">FAKE</div>
+                 </div>
+                 <p class="text-sm text-gray-600 mt-2">
+                     <i class="fas fa-info-circle mr-1"></i> 视频截图：V形弹簧装置尝试
+                 </p>
+                 <p class="text-base text-gray-700 mt-4">
+                     尽管有弹簧，但这种配置下的弹簧力分解后，水平分力互相抵消，垂直分力则合力指向轴心（视频2:28）。根据牛顿第二定律的旋转形式（<code class="font-mono text-sm">τ = I · α</code>），其中 τ 是扭矩，I 是转动惯量，α 是角加速度，一个系统需要一个<strong class="text-red-600">有效的扭矩</strong>才能产生持续的角加速度。在这种V形配置中，弹簧力未能产生持续的旋转扭矩（τ≈0）。轴主要承受的是径向压力，飞轮无法有效旋转。它<strong class="text-red-600">缺少产生有效旋转力矩的关键几何结构</strong>，例如一个<strong class="text-red-600">第三受力点</strong>或不同的弹簧布局（视频4:43）。
+                 </p>
+                 <div class="relative mt-4">
+                    <img src="placeholder_02_38.jpg" alt="V形弹簧装置受力分析" width="900" class="mx-auto rounded">
+                    <div class="fake-stamp">FAKE</div>
+                 </div>
+                  <p class="text-sm text-gray-600 mt-2">
+                     <i class="fas fa-info-circle mr-1"></i> 视频截图：受力分析示意图
+                 </p>
+             </div>
+        </div>
+
+        <!-- How Our System Works -->
+        <div class="bento-item mb-8 highlight-gradient-blue">
+             <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                 <i class="fas fa-check-circle mr-2 text-green-600"></i>
+                 <span class="highlight-gradient-blue inline-block p-1">我们的设计为何可行？</span>
+             </h2>
+             <p class="text-base text-gray-700 mb-4">
+                 基于对前述失败案例的分析，我们调整了设计，使其符合物理原理，特别是利用了<strong class="text-blue-600">动力学共振耦合 (Cinematic Resonant Coupling)</strong>（视频5:10所示）。
+             </p>
+             <img src="placeholder_05_10.jpg" alt="我们的工作装置" width="900" class="mx-auto rounded mb-4">
+             <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：我们的飞轮装置设计
+             </p>
+             <p class="text-base text-gray-700 mb-4">
+                 通过巧妙布置<strong class="text-blue-600">四对（共八个）弹簧</strong>，并将它们连接到经过特别设计的曲轴上，并在框架上设置相应的连接点（视频3:15-4:01的改装过程）。
+             </p>
+              <img src="placeholder_03_17.jpg" alt="弹簧连接过程" width="900" class="mx-auto rounded mb-4">
+              <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：弹簧连接过程
+             </p>
+              <img src="placeholder_03_53.jpg" alt="弹簧连接完成" width="900" class="mx-auto rounded mb-4">
+              <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：弹簧安装完成
+             </p>
+
+             <p class="text-base text-gray-700 mb-4">
+                 当飞轮获得初始动量后，曲轴的转动会引起弹簧的周期性压缩和伸长，产生线性振荡。这种振荡在恰当的设计下（特别是曲轴上连接点之间的角度差，本设计中为<strong class="text-blue-600">90度</strong>），能够将弹簧储存的弹性势能<strong class="text-blue-600">高效地转化</strong>为飞轮的转动动能，弥补机械损耗，从而维持持续的旋转（视频5:24所示的弹簧运动）。
+             </p>
+             <img src="placeholder_05_24.jpg" alt="弹簧振荡示意" width="900" class="mx-auto rounded mb-4">
+             <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：动力学共振耦合下的弹簧振荡
+             </p>
+            <p class="text-base text-gray-700 mb-4">
+                这种共振现象可以近似用以下公式描述有效共振角频率 ω<sub>res</sub>：
+            </p>
+             <div class="text-center text-xl font-mono my-6 highlight-gradient-blue inline-block p-4 rounded">
+                 ω<sub>res</sub> = <i class="fas fa-square-root-alt mr-1"></i> <span class="text-base">( </span> <code class="text-base">k</code><sub>eff</sub> / <code>J</code> - (<code>b</code> / <span class="text-base">(</span>2<code>J</code><span class="text-base">)</span>)<sup>2</sup> <span class="text-base"> )</span>
+             </div>
+             <p class="text-sm text-gray-600 mt-2 text-center">
+                 <i class="fas fa-info-circle mr-1"></i> k<sub>eff</sub> = 弹簧组合等效弹性常数, J = 飞轮转动惯量, b = 系统阻尼系数
+             </p>
+             <p class="text-base text-gray-700 mt-4">
+                 通过精心调整系统的弹性常数、转动惯量和阻尼，使激振频率接近系统的自然共振频率，能量传递效率极高，足以克服主要的机械损耗，实现飞轮在没有外部持续动力输入的情况下<strong class="text-blue-600">保持高速稳定旋转</strong>。
+
+             </p>
+              <img src="placeholder_07_04.jpg" alt="系统运转示意" width="900" class="mx-auto rounded mb-4">
+              <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：系统在共振状态下运转
+             </p>
+        </div>
+
+
+        <!-- Demonstration of Working System -->
+        <div class="bento-item mb-8 highlight-gradient-yellow">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                <i class="fas fa-tachometer-alt mr-2 text-yellow-600"></i>
+                <span class="highlight-gradient-yellow inline-block p-1">实际测试结果</span>
+            </h2>
+             <p class="text-base text-gray-700 mb-4">
+                我们在移除外部电机（视频6:00）后，通过给予飞轮一个初始推动（视频8:59），系统开始运转并使用激光测速仪（视频8:36）测量转速。
+             </p>
+             <img src="placeholder_08_36.jpg" alt="激光测速仪" width="900" class="mx-auto rounded mb-4">
+              <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：测量转速
+             </p>
+             <img src="placeholder_09_17.jpg" alt="稳定转速显示" width="900" class="mx-auto rounded mb-4">
+              <p class="text-sm text-gray-600 mt-2">
+                 <i class="fas fa-info-circle mr-1"></i> 视频截图：测速仪显示稳定转速
+             </p>
+             <p class="text-base text-gray-700 mb-4">
+                 可以看到，系统<strong class="text-yellow-600">持续加速</strong>，最终稳定在一个接近 <strong class="text-yellow-600 text-2xl">700 RPM</strong> 的转速（视频9:49），并能<strong class="text-yellow-600">长时间维持</strong>这一速度。这证明了动力学共振耦合原理在精心设计的机械系统中是有效的。
+             </p>
+        </div>
+
+         <!-- Call to Action / Conclusion -->
+        <div class="bento-item text-center">
+             <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                 <i class="fas fa-heart mr-2 text-red-600"></i>
+                <span class="p-1">感谢您的支持！</span>
+             </h2>
+            <p class="text-base text-gray-700 mb-6">
+                我们通过实验证明了为什么有些“永动机”是假的，以及一个基于物理原理的飞轮装置如何能持续运转。如果您对分析其他类似视频感兴趣，或者想了解更多科学背后的秘密，请在下方评论区告诉我们！
+            </p>
+             <p class="text-lg font-bold text-blue-600 mb-4">
+                分享此视频，加入能源革命！
+             </p>
+             <p class="text-sm text-gray-600">
+                 <i class="fas fa-thumbs-up mr-1"></i> 点赞并订阅我们的频道！
+             </p>
+             <p class="text-sm text-gray-600 mb-6">
+                 <i class="fas fa-star mr-1"></i> 成为会员支持我们的视频制作！
+             </p>
+
+             <!-- Sponsor List (Optional, adjust styling as needed) -->
+             <div class="mt-8 border-t border-gray-200 pt-6">
+                 <h3 class="text-xl font-bold mb-4 text-gray-700">感谢所有成员的支持！</h3>
+                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                     <div class="col-span-2 md:col-span-1 text-left">
+                        <h4 class="font-semibold text-gray-800 mb-2">隐藏赞助商 (Hidden Sponsors)</h4>
+                        <ul class="space-y-1">
+                           <li>TESLA777</li>
+                            <li>atonerman</li>
+                            <li>ANON2038</li>
+                            <li>Ben Braunberger</li>
+                            <li>GEORG STEIDL</li>
+                        </ul>
+                         <h4 class="font-semibold text-gray-800 mt-4 mb-2">精英赞助商 (Elite Sponsors)</h4>
+                         <ul class="space-y-1">
+                            <li>JOHN C</li>
+                            <li>KAH</li>
+                            <li>MARK ANTHONY</li>
+                            <li>SCOTT FOGARTY</li>
+                             <li>Роман Матюкевич</li>
+                             <li>عبدالرحمن الكندي</li>
+                        </ul>
+                     </div>
+                      <div class="col-span-2 md:col-span-1 text-left">
+                         <h4 class="font-semibold text-gray-800 mb-2">高级赞助商 (Premium Sponsors)</h4>
+                         <ul class="space-y-1">
+                            <li>Adrian Feher</li>
+                            <li>atownerman</li>
+                            <li>Ben Braunberger</li>
+                            <li>Custom Computer Designs</li>
+                            <li>Dataphd</li>
+                            <li>Francois Muller</li>
+                            <li>Harald Maier</li>
+                            <li>Jeff Johnson</li>
+                            <li>John Luman</li>
+                            <li>Juan Pablo Muñiz</li>
+                            <li>MarcAndre9999</li>
+                            <li>martin c</li>
+                            <li>Patrick Mueller</li>
+                            <li>Phil Miller</li>
+                            <li>Ryan Beyer</li>
+                            <li>Theta Wellness Center</li>
+                            <li>Travis Barbett</li>
+                            <li>WILDER GRON</li>
+                        </ul>
+                     </div>
+                     <div class="col-span-2 md:col-span-1 text-left">
+                          <h4 class="font-semibold text-gray-800 mb-2">入门成员 (Starter Members)</h4>
+                         <ul class="space-y-1">
+                            <li>Above All Drone Service LLC</li>
+                            <li>ACTIONS AVATARS.</li>
+                             <li>Adriano Barbisan</li>
+                             <li>Ahlawat Charu</li>
+                             <li>Al Tube Professor</li>
+                             <li>Julian Schweitzer</li>
+                             <li>Junior Rodriguez</li>
+                             <li>jw krn</li>
+                             <li>Karel Vacowsky</li>
+                             <li>Kashif Abbas</li>
+                             <li>Kathleen Foster</li>
+                             <li>Kiro Net</li>
+                             <li>krung</li>
+                             <li>Krystyna Broszkiewicz</li>
+                             <li>Kudret Cengiz</li>
+                             <li>Luu Radu</li>
+                            <li>Lucas Stasinski</li>
+                             <li>Ludain Balmti</li>
+                             <li>M. Damibro</li>
+                             <li>Maciej Makowski</li>
+                             <li>Magda Pietkiewicz</li>
+                             <li>Marcelo Ribeiro da Silva</li>
+                             <li>Marian Oatu</li>
+                             <li>Mario Jorge Campetelli</li>
+                             <li>mario mariusz</li>
+                             <li>Marius Vincevicius</li>
+                             <li>mark fitzpatrick</li>
+                             <li>Mark Ryjan</li>
+                             <li>Martha Calvillo</li>
+                             <li>Massimo Frisoni</li>
+                             <li>McFly</li>
+                             <li>Mehmmet Ata Baysal</li>
+                             <li>Mevlut Akbulut</li>
+                             <li>michael bonitto sr.</li>
+                             <li>Michael Cornish</li>
+                             <li>Michael Smith</li>
+                             <li>miguel fortes n</li>
+                             <li>mikael kosmac</li>
+                             <li>Mitchell Humbler</li>
+                             <li>Moses Letapana</li>
+                             <li>MrFercho126</li>
+                            <li>MrMancle</li>
+                             <li>Mu De</li>
+                             <li>Muammer öter</li>
+                             <li>Murat Memur</li>
+                             <li>Mustafa Ceylan</li>
+                             <li>Dawn Wells</li>
+                             <li>Dennis Fülk</li>
+                             <li>Dennis Kelemen</li>
+                             <li>Dennis Mortenson</li>
+                             <li>Diamond Lee</li>
+                             <li>doandoadatibai</li>
+                             <li>Dusan Vesely</li>
+                        </ul>
+                     </div>
+                      <div class="col-span-2 md:col-span-1 text-left">
+                           <h4 class="font-semibold text-gray-800 mb-2">入门成员 (Starter Members)</h4>
+                         <ul class="space-y-1">
+                            <li>Eddy Liebenberg</li>
+                            <li>edi tutder</li>
+                            <li>Erson ramos Biriba Biriba</li>
+                            <li>embersonbiggie123</li>
+                            <li>Enrique Guiles</li>
+                            <li>Erick Barr</li>
+                            <li>Essenial Elmo</li>
+                            <li>esteban josé pozzi</li>
+                            <li>Evgeny Pavlov</li>
+                            <li>FalconMacloud</li>
+                            <li>Florian Ho</li>
+                             <li>Florin Ruseti</li>
+                             <li>Francis Mettusan-Hall</li>
+                             <li>Frank Rubino</li>
+                             <li>Gary W. Hart</li>
+                             <li>Gerardo Doll</li>
+                             <li>Gerhard Prattner</li>
+                             <li>Gill Vachon</li>
+                             <li>Giv</li>
+                             <li>Goke Dave Adetola</li>
+                             <li>guido minussi</li>
+                             <li>Haci Tezcan</li>
+                             <li>Haar Dewantoro</li>
+                             <li>Hans Paulsen</li>
+                             <li>Harold Mathieu</li>
+                             <li>henrydz</li>
+                             <li>Hishammudin Selamat</li>
+                             <li>Horst Steinkogler</li>
+                              <li>Hugh Colson</li>
+                             <li>Husan Mendez May</li>
+                             <li>Julian Lupeanu</li>
+                             <li>lyllc lyon</li>
+                             <li>Jameel Mubini</li>
+                             <li>Jason Gessse</li>
+                             <li>Jarmo Tatani</li>
+                             <li>Jason Piazza</li>
+                             <li>Jean Marc Beaute</li>
+                             <li>Jerry Reglin</li>
+                             <li>Jerry Welch</li>
+                             <li>Jerry Wood</li>
+                             <li>Jerzy Puczek</li>
+                             <li>Jesus Perles</li>
+                             <li>Jim Eliott</li>
+                             <li>Jiff Hadiky</li>
+                             <li>Joe</li>
+                             <li>John Hollingsworth</li>
+                             <li>John Karolemeas</li>
+                             <li>John wayne</li>
+                             <li>Jorge Mario Campetelli avera</li>
+                             <li>Jos Tramp</li>
+                            <li>Jose Jacarunas Marques</li>
+                             <li>jose martins Queiroz</li>
+                             <li>Jose's TV official</li>
+                             <li>Josef Dandginger</li>
+                             <li>Joseph Beranek</li>
+                             <li>Yahaya Taiwo</li>
+                             <li>Zoran Bastaić</li>
+                             <li>Вячеслав Лобас</li>
+                             <li>Игорь Скиба</li>
+                             <li>Кин Чин</li>
+                             <li>Cengizhan Alici</li>
+                             <li>塞宾 欧</li>
+                             <li>michale bonitto sr.</li>
+                            <li>Michael Cornish</li>
+                             <li>塞宾 欧</li>
+                             <li>Кин Чин</li>
+                              <li>신 이호진</li>
+                             <li>차 지</li>
+                             <li>양은식</li>
+                             <li>曹熙</li>
+                             <li>松茂秀治</li>
+                             <li>竹内秀明</li>
+                             <li>雷凯明</li>
+                             <li>MrFercho126</li>
+                             <li>MrMancle</li>
+                             <li>Mu De</li>
+                             <li>Muammer öter</li>
+                             <li>Murat Memur</li>
+                            <li>Osmar Pacheco (The Link)</li>
+                             <li>Pablo Parlar</li>
+                             <li>pablo weimer</li>
+                             <li>pacho rodriguez</li>
+                             <li>Patty Cavagna</li>
+                             <li>Pavol Michalik</li>
+                             <li>pedrosura</li>
+                             <li>Pongsak Thongnoon</li>
+                             <li>power_Lube</li>
+                             <li>PRO Шиномонтаж.</li>
+                             <li>stein kutuer</li>
+                             <li>Sven Kubior</li>
+                             <li>Tarik Omarı</li>
+                             <li>Taseer Salahat</li>
+                             <li>TheStargater562</li>
+                             <li>Thomas Haefele</li>
+                             <li>Tom Izzard</li>
+                             <li>torrebanca2002</li>
+                             <li>Uthail Kantio</li>
+                             <li>Valer Mircea</li>
+                             <li>Vartika Shukla</li>
+                             <li>Vincius Zeidler</li>
+                             <li>VZone</li>
+                             <li>warren bale</li>
+                             <li>washington moreira</li>
+                             <li>Wayne Goss</li>
+                             <li>Werner Nel</li>
+                             <li>Worasseth Thawseekw</li>
+                         </ul>
+                      </div>
+                 </div>
+             </div>
+
+
+             <p class="text-lg font-bold mt-8 text-gray-700">感谢观赏！</p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
