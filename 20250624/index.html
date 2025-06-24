@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打造属于你的迷你级TDA7265B蓝牙低音增强立体声放大器</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.2.17/dist/framer-motion.min.js"></script>
+    <style>
+        /* Custom styles for Bento Grid feel and WeChat compatibility */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5; /* Soft background */
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px; /* Typical WeChat column width */
+            margin: 0 auto;
+            background-color: #ffffff; /* White background for content */
+            padding: 20px;
+            border-radius: 12px; /* Rounded corners for Bento feel */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: flex;
+            flex-direction: column;
+            gap: 32px; /* Space between sections */
+        }
+        .section {
+            border: 1px solid #e2e8f0; /* Light border for sections */
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9fafb; /* Slightly different background for contrast */
+        }
+        .highlight-text {
+            font-size: 2.5rem; /* Extra large font */
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        .chinese-title {
+            font-size: 1.5rem; /* Large bold Chinese title */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .english-subtitle {
+            font-size: 0.9rem; /* Smaller English subtitle */
+            color: #6b7280;
+            margin-top: 0.2rem;
+        }
+        .component-list li {
+            margin-bottom: 8px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .component-list li::before {
+            content: '\f061'; /* Font Awesome caret right icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #22c55e; /* Green checkmark color */
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .step-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #3b82f6; /* Blue color for step numbers */
+        }
+        .connection-label {
+            font-weight: bold;
+            color: #ef4444; /* Red color for labels */
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden; /* Keep image inside rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .image-container img {
+            max-width: 900px; /* Ensure image width */
+            height: auto;
+            display: block; /* Remove extra space below image */
+        }
+        .bass-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 16px;
+        }
+         .woofer-icon {
+            font-size: 4rem; /* Large icon */
+            color: #f97316; /* Orange color */
+            animation: pulse 1s infinite alternate; /* Simple pulsing effect */
+         }
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 0.8; }
+            to { transform: scale(1.1); opacity: 1; }
+        }
+         .bass-text {
+             font-size: 1.8rem;
+             font-weight: bold;
+             margin-left: 16px;
+             color: #f97316; /* Orange color */
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Branding / Title Section -->
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2">
+                 <img src="placeholder_00_07.jpg" alt="Amy.i Logo" class="w-10 h-10 rounded-full">
+                 <div>
+                    <h1 class="text-xl font-bold text-gray-800">AMY.i</h1>
+                    <p class="text-sm text-gray-600">All components ⚡ Best price ⚡ Best quality</p>
+                 </div>
+            </div>
+            <div class="text-sm text-gray-500">practical videos</div>
+        </div>
+
+        <!-- Main Title -->
+        <motion.h1
+            class="text-center text-2xl font-bold mb-8 text-gray-900"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <span class="highlight-text">打造属于你的迷你级</span><br>
+            <span class="text-base">TDA7265B</span> 蓝牙低音增强立体声放大器
+        </motion.h1>
+
+        <!-- Product Features Section -->
+        <motion.div
+            class="section"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+        >
+            <h2 class="chinese-title">产品特点</h2>
+            <p class="english-subtitle">Key Features</p>
+            <ul class="mt-4 component-list">
+                <li>基于强大的TDA7265B集成电路 (Based on the powerful TDA7265B integrated circuit)</li>
+                <li>集成蓝牙功能，无线连接音频源 (Integrated Bluetooth functionality for wireless audio source connection)</li>
+                <li>紧凑的迷你设计，方便携带和部署 (Compact mini design for easy portability and deployment)</li>
+                <li>享受震撼的低音效果，特别是与重低音扬声器配合 (Enjoy powerful bass effects, especially with a woofer speaker)</li>
+                <li>立体声输出，提供沉浸式听觉体验 (Stereo output for immersive listening experience)</li>
+            </ul>
+        </motion.div>
+
+         <!-- Required Components Section -->
+        <motion.div
+            class="section"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+        >
+            <h2 class="chinese-title">所需组件</h2>
+            <p class="english-subtitle">Required Components</p>
+            <ul class="mt-4 component-list">
+                <li>TDA 7265. IC (1个)</li>
+                <li>零度PCB板 (Zero PCB board - 1块)</li>
+                <li>电阻 (Resistors): 39KΩ (2个), 680Ω (2个)</li>
+                <li>电容 (Capacitors): PF电容 104J/2A (2个), PF电容 682J/2A (1个), 电解电容 1uF/50V (2个)</li>
+                <li>散热片 (Heat Sink - 1个)</li>
+                <li>蓝牙模块 (Bluetooth Module - 1个, 如JDY-62)</li>
+                <li>电源滤波电容 (Power Filtering Capacitors): 2200uF/35V (2个)</li>
+                <li>连接线 (Connecting Wires - 红、黄、橙、绿、白等颜色)</li>
+                <li>扬声器 (Speaker - 1个, 视频中使用5"重低音扬声器)</li>
+            </ul>
+        </motion.div>
+
+        <!-- Tutorial Steps Section -->
+        <motion.div
+            class="section"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+        >
+            <h2 class="chinese-title">制作步骤</h2>
+            <p class="english-subtitle">Construction Steps</p>
+
+            <div class="step mt-4">
+                <div class="step-number">步骤 1 / Step 1</div>
+                <p>准备零度PCB板。</p>
+                <div class="image-container"><img src="placeholder_00_18.jpg" alt="Zero PCB"></div>
+            </div>
+
+            <div class="step mt-4">
+                 <div class="step-number">步骤 2 / Step 2</div>
+                 <p>将TDA 7265B IC插入PCB板。</p>
+                 <div class="image-container"><img src="placeholder_00_25.jpg" alt="Insert IC"></div>
+            </div>
+
+             <div class="step mt-4">
+                 <div class="step-number">步骤 3 / Step 3</div>
+                 <p>使用焊锡在IC引脚之间创建必要的连接路径，并焊接部分引脚固定IC。</p>
+                 <div class="image-container"><img src="placeholder_00_49.jpg" alt="Solder IC pins and traces"></div>
+            </div>
+
+            <div class="step mt-4">
+                <div class="step-number">步骤 4 / Step 4</div>
+                <p>根据电路图插入并焊接电阻（39KΩ 和 680Ω）。</p>
+                <div class="image-container"><img src="placeholder_01_57.jpg" alt="Insert resistors"></div>
+                 <div class="image-container"><img src="placeholder_02_35.jpg" alt="Solder resistors"></div>
+                 <p>并连接电阻间的路径。</p>
+                 <div class="image-container"><img src="placeholder_03_51.jpg" alt="Solder resistor traces"></div>
+            </div>
+
+             <div class="step mt-4">
+                <div class="step-number">步骤 5 / Step 5</div>
+                <p>插入并焊接PF电容（红色 104J/2A，绿色 682J/2A）。</p>
+                <div class="image-container"><img src="placeholder_03_16.jpg" alt="Insert PF capacitors"></div>
+                <p>并连接电容与IC引脚间的路径。</p>
+                 <div class="image-container"><img src="placeholder_03_09.jpg" alt="Solder PF capacitors"></div>
+            </div>
+
+             <div class="step mt-4">
+                <div class="step-number">步骤 6 / Step 6</div>
+                <p>插入并焊接电解电容（1uF/50V），注意正负极性。</p>
+                <div class="image-container"><img src="placeholder_04_32.jpg" alt="Insert electrolytic capacitors"></div>
+                <p>并连接电解电容与IC引脚间的路径。</p>
+                 <div class="image-container"><img src="placeholder_04_58.jpg" alt="Solder electrolytic capacitors"></div>
+            </div>
+
+            <div class="step mt-4">
+                <div class="step-number">步骤 7 / Step 7</div>
+                <p>完成放大器电路板上的所有连线和焊接，确保所有组件连接正确。</p>
+                <div class="image-container"><img src="placeholder_08_03.jpg" alt="Completed amplifier board soldering"></div>
+                <p>修剪多余的引脚。</p>
+                 <div class="image-container"><img src="placeholder_08_11.jpg" alt="Trim leads"></div>
+            </div>
+
+            <div class="step mt-4">
+                <div class="step-number">步骤 8 / Step 8</div>
+                <p>焊接电源线和音频输入线到放大器板。根据视频标识：</p>
+                <p><span class="connection-label">黄色线:</span> GND (地线)<br>
+                   <span class="connection-label">红色线:</span> 音频信号输入<br>
+                   <span class="connection-label">橙色线:</span> -12V 负电源<br>
+                   <span class="connection-label">红色线:</span> +12V 正电源
+                </p>
+                 <div class="image-container"><img src="placeholder_08_40.jpg" alt="Power and audio input wires"></div>
+            </div>
+
+            <div class="step mt-4">
+                <div class="step-number">步骤 9 / Step 9</div>
+                <p>焊接扬声器输出线（白色线）到放大器板上的输出点。该放大器支持连接 2 或 4 欧姆扬声器。</p>
+                 <div class="image-container"><img src="placeholder_09_07.jpg" alt="Speaker output wires"></div>
+            </div>
+
+             <div class="step mt-4">
+                <div class="step-number">步骤 10 / Step 10</div>
+                <p>在TDA7265B IC上安装散热片，以保证其正常工作并防止过热。</p>
+                 <div class="image-container"><img src="placeholder_09_22.jpg" alt="Install heat sink"></div>
+                 <div class="image-container"><img src="placeholder_09_39.jpg" alt="Screw heat sink"></div>
+            </div>
+
+             <div class="step mt-4">
+                <div class="step-number">步骤 11 / Step 11</div>
+                <p>连接电源滤波电容 (2200uF/35V) 和蓝牙模块。将电源线 (+12V, -12V, GND) 连接到滤波电容和蓝牙模块上，并将蓝牙模块的音频输出连接到放大器板的音频输入（红色线）。</p>
+                 <div class="image-container"><img src="placeholder_09_53.jpg" alt="Connect power filtering and Bluetooth module"></div>
+                  <div class="image-container"><img src="placeholder_10_18.jpg" alt="Final connections"></div>
+                  <p>连接图示:</p>
+                  <div class="image-container"><img src="placeholder_09_47.jpg" alt="Connection diagram"></div>
+            </div>
+
+        </motion.div>
+
+         <!-- Testing Section -->
+        <motion.div
+            class="section"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+        >
+            <h2 class="chinese-title">测试</h2>
+            <p class="english-subtitle">Testing</p>
+            <p>将电路连接到电源（±12V）和扬声器。通过手机蓝牙连接到名为“3.0BT”的设备，即可播放音乐。</p>
+            <div class="image-container"><img src="placeholder_10_36.jpg" alt="Testing setup"></div>
+             <div class="bass-visual">
+                 <!-- Placeholder for a graphical bass visualization if desired -->
+                 <i class="fa-solid fa-volume-high woofer-icon"></i>
+                 <span class="bass-text">重低音效果明显!</span>
+             </div>
+             <div class="image-container mt-4"><img src="placeholder_11_21.jpg" alt="Speaker cone movement"></div>
+        </motion.div>
+
+         <!-- Next Steps Section -->
+        <motion.div
+            class="section"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+        >
+            <h2 class="chinese-title">进阶与展望</h2>
+            <p class="english-subtitle">Next Steps & Future Enhancements</p>
+            <p>本教程展示了基础的蓝牙音频放大器制作。在接下来的教程中，我们将深入介绍如何使用独立的蓝牙电路板以及增加额外的重低音增强电路，以获得更震撼的音频体验！</p>
+             <div class="image-container mt-4"><img src="placeholder_12_31.jpg" alt="Future video hint"></div>
+        </motion.div>
+
+
+    </div>
+
+    <script>
+        // Initialize Framer Motion after the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure motion is available
+            if (typeof motion !== 'undefined') {
+                 // Select all motion elements and apply animations
+                 const motionElements = document.querySelectorAll('[initial]');
+                 motionElements.forEach(el => {
+                    // Simple fade-in / slide-up animation for sections
+                    if (el.classList.contains('section')) {
+                        motion(el).animate({ opacity: 1, y: 0, scale: 1 }, { duration: el.transition.duration, delay: el.transition.delay });
+                    } else {
+                         // Animation for the main title
+                         motion(el).animate({ opacity: 1, y: 0 }, { duration: el.transition.duration });
+                    }
+                 });
+            } else {
+                console.warn("Framer Motion not loaded. Animations will not run.");
+            }
+        });
+    </script>
+
+</body>
+</html>
