@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易喷雾小风扇：随身清凉降温！</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6; /* Soft background */
+        }
+        .container {
+            max-width: 700px; /* Simulate WeChat公众号 width */
+        }
+        /* Custom gradient for techy feel */
+        .tech-gradient-blue {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.8), rgba(29, 78, 216, 0.6)); /* Blue with transparency */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tech-gradient-cyan {
+            background: linear-gradient(to right, rgba(6, 182, 212, 0.8), rgba(8, 145, 178, 0.6)); /* Cyan with transparency */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+         .tech-gradient-green {
+            background: linear-gradient(to right, rgba(34, 197, 94, 0.8), rgba(22, 163, 74, 0.6)); /* Green with transparency */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Bento Grid like card styling */
+        .bento-card {
+            background-color: #ffffff;
+            border-radius: 16px; /* Rounded corners */
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+        }
+        .bento-card h2 {
+             margin-bottom: 16px;
+        }
+         .bento-card img {
+            border-radius: 8px; /* Slightly rounded images */
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.20/dist/framer-motion.min.js"></script>
+</head>
+<body class="p-4">
+    <div class="container mx-auto">
+
+        <!-- Title -->
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card text-center mb-8"
+        >
+             <h1 class="text-3xl md:text-4xl font-extrabold mb-2 tech-gradient-green">简易喷雾小风扇</h1>
+             <p class="text-gray-600">Simple Spray Fan</p>
+        </motion.div>
+
+         <!-- Project Summary / Highlights -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">项目概述：清凉就在身边</h2>
+            <p class="text-sm text-gray-600 mb-4">Project Overview: Coolness By Your Side</p>
+
+            <p class="text-lg text-gray-700 mb-6">
+                告别炎热！本教程教您利用简单的材料，制作一个可以在水瓶上使用的简易喷雾小风扇。它体积小巧，制作成本低，能有效结合喷雾降温和风扇送风，随时随地为您带来清凉。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                 <div class="p-4 bg-green-50 rounded-lg">
+                     <div class="text-5xl font-extrabold tech-gradient-green">
+                        <span class="fa-solid fa-leaf text-3xl mr-2"></span>Simple
+                    </div>
+                    <p class="text-sm text-gray-600">Design</p>
+                    <p class="text-lg font-semibold mt-2">设计简单</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg">
+                     <div class="text-5xl font-extrabold tech-gradient-blue">
+                        <span class="fa-solid fa-faucet-drip text-3xl mr-2"></span>Mist
+                    </div>
+                    <p class="text-sm text-gray-600">Cooling</p>
+                     <p class="text-lg font-semibold mt-2">喷雾降温</p>
+                </div>
+                 <div class="p-4 bg-cyan-50 rounded-lg col-span-1 md:col-span-2">
+                     <div class="text-5xl font-extrabold tech-gradient-cyan">
+                        <span class="fa-solid fa-mobile-alt text-3xl mr-2"></span>Portable
+                    </div>
+                    <p class="text-sm text-gray-600">and Effective</p>
+                     <p class="text-lg font-semibold mt-2">便携有效</p>
+                </div>
+            </div>
+        </motion.div>
+
+        <!-- Materials List -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">所需材料</h2>
+            <p class="text-sm text-gray-600 mb-4">Materials List</p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>微型电机 (Miniature Motor): #408 Motor, 4×8 mm, 3.7v</li>
+                <li>注射器 (Syringe): 2.5ml Syringe</li>
+                <li>纽扣电池包装的塑料片 (Plastic sheet from button cell packaging)</li>
+                <li>剪刀 (Scissors)</li>
+                <li>镊子 (Tweezers)</li>
+                <li>美工刀 (Utility knife / Craft knife)</li>
+                <li>老虎钳 (Bench vise)</li>
+                <li>钢锯 (Hacksaw)</li>
+                <li>小螺丝刀 (Small screwdriver)</li>
+                <li>704 硅橡胶或类似胶水 (704 Silastic or similar adhesive)</li>
+                <li>细导线 (Thin wires)</li>
+                <li>电阻 (Resistor)</li>
+                 <li>小纸板 (Small piece of cardboard)</li>
+                <li>纽扣电池 (Button cell battery)</li>
+                <li>塑料水瓶 (Plastic water bottle): 550ml (或其他尺寸)</li>
+            </ul>
+        </motion.div>
+
+         <!-- Step-by-Step Instructions -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">制作步骤</h2>
+            <p class="text-sm text-gray-600 mb-4">Step-by-Step Instructions</p>
+
+            <!-- Step 1 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 1: 准备风扇叶片 (Preparing the Fan Blade)</h3>
+                <p class="text-gray-700">
+                    从纽扣电池包装的塑料片上剪下一小块。用卡尺测量并确定尺寸，这里是 8.8mm。在中心钻一个小孔。
+                    <span class="text-sm text-gray-600 block mt-1">Cut a small piece from the plastic sheet of button cell packaging. Use calipers to measure and determine the size, which is 8.8mm here. Drill a small hole in the center.</span>
+                </p>
+                <img src="placeholder_00_21.jpg" width="900" alt="Cutting and preparing a small plastic piece for the fan blade" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 2: 制作简易模具 (Making a Simple Mold)</h3>
+                 <p class="text-gray-700">
+                    取一小块纸板，对折后在中间挖个槽。把花生仁放入槽中。
+                    <span class="text-sm text-gray-600 block mt-1">Take a small piece of cardboard, fold it in half, and cut a groove in the middle. Place peanut kernels in the groove.</span>
+                </p>
+                 <img src="placeholder_01_00.jpg" width="900" alt="Preparing a simple cardboard mold with peanuts" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 3: 制作塑料风扇叶片 (Forming the Plastic Fan Blade)</h3>
+                 <p class="text-gray-700">
+                    将剪好的塑料片放在花生仁上，然后用老虎钳夹紧。花生仁的形状会把塑料片压制成带有弧度的叶片。
+                    <span class="text-sm text-gray-600 block mt-1">Place the cut plastic piece over the peanuts, then clamp it tightly with the bench vise. The shape of the peanuts will press the plastic piece into curved blades.</span>
+                </p>
+                 <img src="placeholder_01_10.jpg" width="900" alt="Using a vise and peanuts to shape the plastic fan blade" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 4 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 4: 修整风扇叶片 (Trimming the Fan Blade)</h3>
+                 <p class="text-gray-700">
+                    取出压制好的塑料片。用美工刀小心地沿着压出的痕迹切割，形成四个独立的叶片。
+                    <span class="text-sm text-gray-600 block mt-1">Take out the pressed plastic piece. Carefully cut along the pressed lines with a utility knife to form four separate blades.</span>
+                </p>
+                 <img src="placeholder_02_10.jpg" width="900" alt="Trimming the plastic fan blade with a utility knife" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 5 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 5: 固定叶片到电机轴 (Attaching Blade to Motor Shaft)</h3>
+                 <p class="text-gray-700">
+                    在微型电机 (#408 Motor) 的轴上滴一小滴 704 硅橡胶 (或其他胶水)。将修整好的塑料叶片（带有中心孔）固定到电机轴上，等待胶水凝固。
+                    <span class="text-sm text-gray-600 block mt-1">Put a small drop of 704 Silastic (or other adhesive) on the shaft of the miniature motor (#408 Motor). Attach the trimmed plastic blade (with the center hole) to the motor shaft and wait for the adhesive to set.</span>
+                </p>
+                 <img src="placeholder_01_36.jpg" width="900" alt="Applying adhesive to the motor shaft and attaching the fan blade" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 6 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 6: 制作喷雾头组件（底部）(Making the Spray Head Component - Bottom)</h3>
+                 <p class="text-gray-700">
+                    取 2.5ml 注射器的活塞杆。用美工刀和钢锯将其切割成图示形状的喷雾头底部，包括一个中心孔和一个侧面喷雾口。
+                    <span class="text-sm text-gray-600 block mt-1">Take the plunger rod of the 2.5ml syringe. Use a utility knife and hacksaw to cut it into the shape of the spray head bottom as shown, including a central hole and a side spray outlet.</span>
+                </p>
+                 <img src="placeholder_02_47.jpg" width="900" alt="Cutting the syringe plunger rod to make the spray head bottom" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 7 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 7: 制作喷雾头组件（顶部）(Making the Spray Head Component - Top)</h3>
+                 <p class="text-gray-700">
+                    取 2.5ml 注射器的主体部分。用美工刀和钢锯将其切割成图示形状的喷雾头顶部，包括一个用于连接水管的侧口。
+                    <span class="text-sm text-gray-600 block mt-1">Take the main body of the 2.5ml syringe. Use a utility knife and hacksaw to cut it into the shape of the spray head top as shown, including a side port for connecting the water tube.</span>
+                </p>
+                 <img src="placeholder_04_09.jpg" width="900" alt="Cutting the syringe body to make the spray head top" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 8 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 8: 组装喷雾头和电机 (Assembling the Spray Head and Motor)</h3>
+                 <p class="text-gray-700">
+                    将微型电机固定在喷雾头底部组件的中心孔上方，确保电机轴可以通过该孔。使用胶水固定。然后将喷雾头顶部组件固定在电机上方，确保侧面喷雾口与叶片旋转平面垂直。
+                    <span class="text-sm text-gray-600 block mt-1">Fix the miniature motor above the central hole of the spray head bottom component, ensuring the motor shaft can pass through the hole. Use adhesive to secure it. Then fix the spray head top component above the motor, ensuring the side spray outlet is perpendicular to the fan blade's rotation plane.</span>
+                </p>
+                 <img src="placeholder_04_40.jpg" width="900" alt="Assembling the spray head components and motor" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 9 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">步骤 9: 连接水管和电源 (Connecting Water Tube and Power)</h3>
+                 <p class="text-gray-700">
+                    在喷雾头顶部的侧口连接一段软管。将软管的另一端插入装满水的塑料水瓶中。将微型电机的导线连接到电池或电池盒上。视频中使用了纽扣电池连接导线。
+                    <span class="text-sm text-gray-600 block mt-1">Connect a soft tube to the side port of the spray head top. Insert the other end of the tube into a plastic water bottle filled with water. Connect the miniature motor's wires to a battery or battery holder. The video shows connecting wires to a button cell battery.</span>
+                </p>
+                 <img src="placeholder_06_00.jpg" width="900" alt="Connecting the water tube and motor wires to the battery" class="w-full h-auto object-cover mt-4 rounded-lg">
+                 <p class="text-gray-700 mt-4">
+                    也可以使用电池盒连接，提供更稳定的电力。
+                    <span class="text-sm text-gray-600 block mt-1">A battery holder can also be used for a more stable power source.</span>
+                 </p>
+                 <img src="placeholder_06_09.jpg" width="900" alt="Connecting to a battery holder (alternative)" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- How it Works Section -->
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                class="bento-card"
+            >
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">工作原理：简单而有效</h2>
+                <p class="text-sm text-gray-600 mb-4">How it Works: Simple and Effective</p>
+
+                <p class="text-gray-700">
+                    当电机转动时，风扇叶片快速旋转。同时，由于喷雾头的设计和水管插入水瓶中，风扇产生的气流会在水管上方形成负压，将水从水瓶中吸上来。水被吸到喷雾口后，被高速旋转的叶片打散成细小的水雾。风扇继续将这些水雾吹向前方，通过水分蒸发带走热量，从而达到降温效果。
+                    <span class="text-sm text-gray-600 block mt-1">When the motor rotates, the fan blades spin rapidly. At the same time, due to the design of the spray head and the water tube inserted into the bottle, the airflow generated by the fan creates a negative pressure above the tube, drawing water up from the bottle. As water is drawn to the spray outlet, it is dispersed into fine mist by the high-speed rotating blades. The fan continues to blow this mist forward, and the evaporation of the water removes heat, achieving a cooling effect.</span>
+                </p>
+            </motion.div>
+
+
+            <!-- Testing and Results -->
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                class="bento-card"
+            >
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">测试与效果：即时降温体验</h2>
+                <p class="text-sm text-gray-600 mb-4">Testing and Results: Instant Cooling Experience</p>
+
+                <p class="text-gray-700 mb-4">
+                    将制作好的喷雾小风扇固定在装有水的塑料水瓶口，连接电源。可以看到细密的水雾伴随风被吹出，带来清凉感。
+                     <span class="text-sm text-gray-600 block mt-1">Attach the completed spray fan to the opening of a plastic water bottle filled with water and connect the power. You can see fine mist being blown out with the air, providing a cooling sensation.</span>
+                </p>
+                <img src="placeholder_00_00.jpg" width="900" alt="Testing the spray fan attached to a water bottle with a thermometer showing ambient temperature" class="w-full h-auto object-cover mt-4 rounded-lg">
+
+                 <p class="text-gray-700 mb-4">
+                   在炎热的天气下，这种喷雾结合送风的方式可以有效地降低体感温度，是户外或没有空调环境下的实用小工具。
+                     <span class="text-sm text-gray-600 block mt-1">In hot weather, this combination of mist and airflow can effectively lower the perceived temperature, making it a practical gadget for outdoors or environments without air conditioning.</span>
+                </p>
+
+
+            </motion.div>
+
+
+        <!-- Call to Action -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card text-center"
+        >
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">动手制作，享受清凉！</h2>
+             <p class="text-sm text-gray-600 mb-4">Get Your Hands Dirty and Enjoy the Coolness!</p>
+            <p class="text-lg text-gray-700 mb-6">
+                制作这个简易喷雾小风扇非常简单，材料也容易获取。快来试试看，在这个夏天给自己和家人朋友带来一份随身的清凉吧！
+                <span class="text-sm text-gray-600 block mt-1">Building this simple spray fan is very easy, and the materials are readily available. Give it a try and bring some portable coolness to yourself, family, and friends this summer!</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                 <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center">
+                     <i class="fa-solid fa-share-alt mr-2"></i> 分享此教程 (Share This Tutorial)
+                 </a>
+                 <a href="#" class="border border-green-500 text-green-500 hover:bg-green-50 text-green-600 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center">
+                    <i class="fa-solid fa-heart mr-2"></i> 支持我们 (Support Us)
+                 </a>
+            </div>
+             <p class="text-sm text-gray-600 mt-6">
+                 在制作过程中遇到问题？或者有任何改进建议？欢迎在评论区留言！
+                <span class="text-sm text-gray-600 block mt-1">Encountering problems during the process? Or have any improvement suggestions? Leave a comment below!</span>
+            </p>
+        </motion.div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-sm mt-8">
+            <p>© 2024 DIY Tutorials. All rights reserved.</p>
+        </div>
+
+    </div>
+
+    <!-- Framer Motion initialization for viewport -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('[whileInView]');
+            elements.forEach(el => {
+                if (el.motion) { // Check if framer-motion is attached
+                   el.motion.syncInitialState();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
