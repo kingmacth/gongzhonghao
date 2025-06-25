@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY 迷你空调：夏季降温神器！</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6; /* Soft background */
+        }
+        .container {
+            max-width: 700px; /* Simulate WeChat公众号 width */
+        }
+        /* Custom gradient for techy feel */
+        .tech-gradient-blue {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.8), rgba(29, 78, 216, 0.6)); /* Blue with transparency */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tech-gradient-cyan {
+            background: linear-gradient(to right, rgba(6, 182, 212, 0.8), rgba(8, 145, 178, 0.6)); /* Cyan with transparency */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Bento Grid like card styling */
+        .bento-card {
+            background-color: #ffffff;
+            border-radius: 16px; /* Rounded corners */
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+        }
+        .bento-card h2 {
+             margin-bottom: 16px;
+        }
+         .bento-card img {
+            border-radius: 8px; /* Slightly rounded images */
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.20/dist/framer-motion.min.js"></script>
+</head>
+<body class="p-4">
+    <div class="container mx-auto">
+
+        <!-- Title -->
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card text-center mb-8"
+        >
+             <h1 class="text-3xl md:text-4xl font-extrabold mb-2 tech-gradient-blue">DIY 迷你空调</h1>
+             <p class="text-gray-600">Homemade Air Conditioner</p>
+        </motion.div>
+
+
+        <!-- Project Summary / Highlights -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">项目概述：制造一个真正的制冷系统</h2>
+            <p class="text-sm text-gray-600 mb-4">Project Overview: Building a Real Refrigeration System</p>
+
+            <p class="text-lg text-gray-700 mb-6">
+                炎炎夏日，想拥有一个便携高效的降温神器吗？本教程将带您用最少的材料，打造一个功能齐全的迷你空调，它能够快速降低空气温度，甚至让铜管结霜，带来极速清凉体验！
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                     <div class="text-5xl font-extrabold tech-gradient-blue">
+                        <span class="fa-solid fa-temperature-arrow-down text-3xl mr-2"></span>-10℃
+                    </div>
+                    <p class="text-sm text-gray-600">Cooling Temperature</p>
+                    <p class="text-lg font-semibold mt-2">极速降温</p>
+                </div>
+                <div class="p-4 bg-cyan-50 rounded-lg">
+                     <div class="text-5xl font-extrabold tech-gradient-cyan">
+                        <span class="fa-solid fa-toolbox text-3xl mr-2"></span>Few
+                    </div>
+                    <p class="text-sm text-gray-600">Components Needed</p>
+                     <p class="text-lg font-semibold mt-2">所需材料少</p>
+                </div>
+                 <div class="p-4 bg-green-50 rounded-lg col-span-1 md:col-span-2">
+                     <div class="text-5xl font-extrabold text-green-600">
+                        <span class="fa-solid fa-fan text-3xl mr-2"></span>Portable
+                    </div>
+                    <p class="text-sm text-gray-600">Design</p>
+                     <p class="text-lg font-semibold mt-2">便携易用</p>
+                </div>
+            </div>
+        </motion.div>
+
+        <!-- Materials List -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">所需材料</h2>
+            <p class="text-sm text-gray-600 mb-4">Materials List</p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>铜管 (Copper tube): 4x6mm 直径，长度约需 1.5-2 米 (Approx. 1.5-2m length)</li>
+                <li>毛细铜管 (Capillary copper tube): Ø2mm 外径 | Ø0.8mm 内径，约 17cm 长 (Approx. 17cm length)</li>
+                <li>圆形物体用于弯管 (Round object for bending, e.g., a spray can)</li>
+                <li>割管器 (Tube cutter)</li>
+                <li>塑料固定夹 (Plastic tube clamps)</li>
+                <li>扎带 (Cable ties / Zip ties)</li>
+                <li>尖嘴钳 (Pliers)</li>
+                <li>电烙铁 (Soldering iron)</li>
+                <li>焊锡丝 (Solder wire)</li>
+                <li>焊锡膏 (Flux)</li>
+                <li>12V 风扇 (12V Fan): SUNON Maglev MF80251V1-1000U-A99 12VDC 1.44W (或其他 12V 风扇)</li>
+                <li>9V 电池盒 (9V Battery holder): SBH-9V (或其他 9V 电池盒)</li>
+                <li>9V 电池 (9V Battery): Energizer (或其他 9V 电池)</li>
+                <li>12V 微型气泵 (12V Miniature air pump): 带有 IN 和 OUT 标记 (with IN and OUT labels)</li>
+                <li>PVC 软管 (PVC Soft tube): 6x8mm 直径</li>
+                <li>小木块和金属支架 (Small wooden block and metal strap)</li>
+                <li>异丁烷气体 (Isobutane Gas): CLIPPER universal (或其他高纯度异丁烷气体)</li>
+                <li>注射器和细针头 (Syringe and fine needle)</li>
+                <li>一块木板或其他底座 (Wooden board or other base)</li>
+                <li>螺丝 (Screws)</li>
+            </ul>
+        </motion.div>
+
+         <!-- Step-by-Step Instructions -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">制作步骤</h2>
+            <p class="text-sm text-gray-600 mb-4">Step-by-Step Instructions</p>
+
+            <!-- Step 1 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 1: 制作蒸发器线圈 (Making the Evaporator Coil)</h3>
+                <p class="text-gray-700">
+                    使用 4x6mm 铜管和圆形物体 (如漆罐) 弯绕形成螺旋形线圈。这将作为我们制冷系统的蒸发器。绕制大约 8 圈。
+                    <span class="text-sm text-gray-600 block mt-1">Bend the 4x6mm copper tube around a round object like a spray can to form a spiral coil. This will be our evaporator. Make about 8 turns.</span>
+                </p>
+                <img src="placeholder_00_18.jpg" width="900" alt="Bending copper tube into a spiral" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 2: 切割并调整形状 (Cutting and Shaping)</h3>
+                 <p class="text-gray-700">
+                    使用割管器切断蒸发器线圈的铜管。稍微调整线圈的形状，并将两端稍微弯曲，方便后续连接。
+                    <span class="text-sm text-gray-600 block mt-1">Use the tube cutter to cut the copper tube for the evaporator coil. Slightly adjust the shape and bend the ends slightly for later connections.</span>
+                </p>
+                 <img src="placeholder_00_45.jpg" width="900" alt="Cutting the copper tube coil" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 3: 制作冷凝器线圈 (Making the Condenser Coil)</h3>
+                 <p class="text-gray-700">
+                    使用剩余的 4x6mm 铜管，同样用圆形物体弯绕，但这次留出更宽的间距，并减少圈数。这将是冷凝器。
+                    <span class="text-sm text-gray-600 block mt-1">Using the remaining 4x6mm copper tube, bend it around a round object, but leave more space between turns and make fewer turns. This will be the condenser.</span>
+                </p>
+                 <img src="placeholder_01_09.jpg" width="900" alt="Bending copper tube for the condenser" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 4 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 4: 准备底座和固定件 (Preparing the Base and Fixings)</h3>
+                 <p class="text-gray-700">
+                    准备一块木板作为底座。在木板上预先打好孔，用于固定塑料固定夹和其他组件。这些孔的位置需要根据您的组件尺寸调整。
+                    <span class="text-sm text-gray-600 block mt-1">Prepare a wooden board as the base. Drill holes beforehand to fix the plastic clamps and other components. The hole positions should be adjusted based on your component sizes.</span>
+                </p>
+                 <img src="placeholder_01_46.jpg" width="900" alt="Wooden base with pre-drilled holes and plastic clamps" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 5 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 5: 固定铜管线圈 (Fixing the Copper Coils)</h3>
+                 <p class="text-gray-700">
+                    使用扎带穿过底座上的孔和塑料固定夹，将蒸发器和冷凝器线圈固定在木板上。确保铜管牢固不晃动。
+                    <span class="text-sm text-gray-600 block mt-1">Use cable ties inserted through the base holes and plastic clamps to fix the evaporator and condenser coils to the wooden board. Ensure the tubes are secure.</span>
+                </p>
+                 <img src="placeholder_02_23.jpg" width="900" alt="Fixing the evaporator coil with cable ties" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 6 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 6: 制作毛细管 (Creating the Capillary Tube)</h3>
+                 <p class="text-gray-700">
+                    取一根毛细铜管 (Ø2mm 外径 | Ø0.8mm 内径)，用钢笔或类似细圆棒弯绕一小段，形成紧密的螺旋。这段毛细管是制冷循环中的关键组件。
+                    <span class="text-sm text-gray-600 block mt-1">Take a capillary copper tube (Ø2mm outer | Ø0.8mm inner) and bend a small section tightly around a pen or similar thin rod. This capillary tube is a key component in the refrigeration cycle.</span>
+                </p>
+                 <img src="placeholder_03_19.jpg" width="900" alt="Bending the capillary tube around a pen" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 7 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 7: 连接毛细管 (Connecting the Capillary Tube)</h3>
+                 <p class="text-gray-700">
+                    将毛细管的一端插入冷凝器的一端，另一端插入蒸发器的一端。使用尖嘴钳轻轻挤压连接处，将大铜管的管口收紧，固定住毛细管。
+                    <span class="text-sm text-gray-600 block mt-1">Insert one end of the capillary tube into one end of the condenser, and the other end into one end of the evaporator. Use pliers to gently crimp the larger tubes around the capillary tube at the connections.</span>
+                </p>
+                 <img src="placeholder_03_47.jpg" width="900" alt="Inserting and crimping the capillary tube connections" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 8 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 8: 焊接密封连接处 (Soldering the Connections)</h3>
+                 <p class="text-gray-700">
+                    为了确保制冷剂不会泄漏，使用电烙铁和焊锡丝将毛细管与大铜管的连接处焊接密封。焊接前可以使用焊锡膏帮助焊接。
+                    <span class="text-sm text-gray-600 block mt-1">To ensure no refrigerant leaks, use a soldering iron and solder wire to seal the connections between the capillary tube and the larger copper tubes. Use flux beforehand to aid soldering.</span>
+                </p>
+                 <img src="placeholder_04_10.jpg" width="900" alt="Soldering the copper tube connections" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 9 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 9: 安装风扇和气泵 (Installing the Fan and Air Pump)</h3>
+                 <p class="text-gray-700">
+                    将 12V 风扇和 12V 微型气泵固定在底座上。气泵可以使用小木块和金属支架辅助固定。确保风扇的出风方向正对着蒸发器线圈。
+                    <span class="text-sm text-gray-600 block mt-1">Fix the 12V fan (SUNON Maglev) and the 12V miniature air pump to the base. Use a small wooden block and metal strap to help secure the pump. Ensure the fan blows air directly onto the evaporator coil.</span>
+                </p>
+                 <img src="placeholder_04_34.jpg" width="900" alt="Fixing the fan and pump to the base" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- Step 10 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 10: 连接 PVC 软管 (Connecting PVC Tubes)</h3>
+                 <p class="text-gray-700">
+                    切割两段 PVC 软管 (6x8mm)。将一段软管连接到气泵的 <span class="font-semibold">OUT</span> 口，另一端连接到冷凝器的 <span class="font-semibold">输入</span> 端。将另一段软管连接到蒸发器的 <span class="font-semibold">输出</span> 端，另一端连接到气泵的 <span class="font-semibold">IN</span> 口。这样就形成了密闭的循环回路。
+                    <span class="text-sm text-gray-600 block mt-1">Cut two pieces of PVC soft tube (6x8mm). Connect one tube from the air pump's <span class="font-semibold">OUT</span> port to the condenser's <span class="font-semibold">input</span> end. Connect the other tube from the evaporator's <span class="font-semibold">output</span> end to the air pump's <span class="font-semibold">IN</span> port. This creates a closed loop circuit.</span>
+                </p>
+                 <img src="placeholder_05_17.jpg" width="900" alt="Connecting PVC tubes to the pump and copper coils" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 11 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 11: 连接电源 (Connecting Power)</h3>
+                 <p class="text-gray-700">
+                    将风扇和气泵的电源线连接到 9V 电池盒的输出端。注意正负极的连接。可以使用焊锡加强连接。
+                    <span class="text-sm text-gray-600 block mt-1">Connect the power wires of the fan and air pump to the output terminals of the 9V battery holder. Pay attention to positive and negative connections. Soldering can be used to strengthen the connections.</span>
+                </p>
+                 <img src="placeholder_06_07.jpg" width="900" alt="Wiring the pump and fan to the battery holder" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+             <!-- Step 12 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">步骤 12: 注入制冷剂 (Injecting Refrigerant)</h3>
+                 <p class="text-gray-700">
+                    使用注射器和细针头，从毛细管 <span class="font-semibold">进入蒸发器</span> 的一端（即靠近蒸发器线圈的连接处）注入异丁烷气体。异丁烷是本系统的核心制冷剂。
+                    <span class="text-sm text-gray-600 block mt-1">Using a syringe and fine needle, inject Isobutane gas into the system from the end of the capillary tube <span class="font-semibold">entering the evaporator</span> (the connection point near the evaporator coil). Isobutane is the core refrigerant for this system.</span>
+                </p>
+                 <img src="placeholder_07_07.jpg" width="900" alt="Injecting isobutane gas with a syringe" class="w-full h-auto object-cover mt-4 rounded-lg">
+            </div>
+
+            <!-- How it Works Section -->
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                class="bento-card"
+            >
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">制冷原理：简单的物理循环</h2>
+                <p class="text-sm text-gray-600 mb-4">How it Works: A Simple Physics Cycle</p>
+
+                <img src="placeholder_07_14.jpg" width="900" alt="Diagram of refrigeration cycle with compressor, condenser, capillary tube, and evaporator" class="w-full h-auto object-cover mt-4 rounded-lg">
+
+                <p class="text-gray-700 mt-4">
+                    本迷你空调基于简单的制冷循环原理。核心在于异丁烷气体（C₄H₁₀）。
+                    <span class="text-sm text-gray-600 block mt-1">This mini air conditioner is based on a simple refrigeration cycle principle. The core is Isobutane gas (C₄H₁₀).</span>
+                </p>
+                 <ul class="list-disc list-inside text-gray-700 mt-2">
+                     <li><span class="font-semibold">蒸发器 (Evaporator):</span> 异丁烷在低压环境下从液体变为气体时，需要吸收大量热量。它从周围的空气中吸收热量，从而使铜管和流经的风扇吹出的空气迅速冷却。
+                     <span class="text-sm text-gray-600 block mt-1">When isobutane changes from liquid to gas in a low-pressure environment, it absorbs a lot of heat. It absorbs heat from the surrounding air, rapidly cooling the copper tube and the air blown by the fan.</span></li>
+                    <li><span class="font-semibold">气泵/模拟压缩机 (Pump/Simulated Compressor):</span> 气泵吸入低压的异丁烷气体，并将其压缩，提高温度和压力。
+                     <span class="text-sm text-gray-600 block mt-1">The pump (simulating a compressor) draws in the low-pressure isobutane gas and compresses it, increasing its temperature and pressure.</span></li>
+                     <li><span class="font-semibold">冷凝器 (Condenser):</span> 高压高温的异丁烷气体流经冷凝器（另一段铜管线圈），将热量散发到环境中，重新冷凝成液体。
+                     <span class="text-sm text-gray-600 block mt-1">The high-pressure, high-temperature isobutane gas flows through the condenser (the other copper tube coil), releasing heat to the environment and condensing back into a liquid.</span></li>
+                     <li><span class="font-semibold">毛细管 (Capillary Tube):</span> 液态异丁烷通过极细的毛细管时，会发生压力骤降，为其在蒸发器中迅速蒸发创造条件。
+                     <span class="text-sm text-gray-600 block mt-1">As the liquid isobutane passes through the extremely narrow capillary tube, there is a sudden pressure drop, creating conditions for it to quickly evaporate in the evaporator.</span></li>
+                 </ul>
+                 <p class="text-gray-700 mt-4">
+                    这个循环不断重复，持续从环境中吸收热量，实现制冷效果。
+                     <span class="text-sm text-gray-600 block mt-1">This cycle repeats continuously, absorbing heat from the environment to achieve cooling.</span>
+                 </p>
+            </motion.div>
+
+
+            <!-- Testing and Results -->
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                class="bento-card"
+            >
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">测试与效果：铜管迅速结霜！</h2>
+                <p class="text-sm text-gray-600 mb-4">Testing and Results: Rapid Frosting!</p>
+
+                <p class="text-gray-700 mb-4">
+                    连接电池后，气泵和风扇开始工作。异丁烷在蒸发器中迅速蒸发，吸收热量。可以看到蒸发器铜管表面很快出现凝结水并开始结霜。
+                    <span class="text-sm text-gray-600 block mt-1">After connecting the battery, the air pump and fan start working. The isobutane quickly evaporates in the evaporator, absorbing heat. You can see condensation appearing on the evaporator copper tube surface and quickly starting to frost.</span>
+                </p>
+                <img src="placeholder_08_52.jpg" width="900" alt="Frost forming on the evaporator coil" class="w-full h-auto object-cover mt-4 rounded-lg">
+
+                <p class="text-gray-700 mb-4">
+                    使用测温仪测量，蒸发器表面的温度迅速下降。
+                     <span class="text-sm text-gray-600 block mt-1">Using a thermometer, the surface temperature of the evaporator drops rapidly.</span>
+                </p>
+                 <img src="placeholder_09_21.jpg" width="900" alt="Thermometer showing -7 degrees Celsius on the copper tube" class="w-full h-auto object-cover mt-4 rounded-lg">
+
+                <p class="text-gray-700 mb-4">
+                    经过一段时间运行，温度可以达到惊人的 -10°C！风扇将流经冰冷铜管的空气吹出，形成强劲的冷风。
+                     <span class="text-sm text-gray-600 block mt-1">After running for some time, the temperature can reach an amazing -10°C! The fan blows air passing over the freezing cold copper tube, creating a strong cool breeze.</span>
+                </p>
+                 <img src="placeholder_09_44.jpg" width="900" alt="Thermometer showing -10 degrees Celsius on the copper tube with frost" class="w-full h-auto object-cover mt-4 rounded-lg">
+
+                 <div class="text-center mt-6">
+                     <div class="text-6xl font-extrabold tech-gradient-cyan animate-pulse">
+                        <span class="fa-solid fa-snowflake text-4xl mr-2"></span>成功!
+                    </div>
+                    <p class="text-sm text-gray-600">Success!</p>
+                 </div>
+
+            </motion.div>
+
+
+        <!-- Call to Action -->
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card text-center"
+        >
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">告别炎热，自制清凉！</h2>
+             <p class="text-sm text-gray-600 mb-4">Say Goodbye to Heat, Make Your Own Coolness!</p>
+            <p class="text-lg text-gray-700 mb-6">
+                现在您不必为昂贵的商业空调发愁了。用这些简单的材料和步骤，您也能拥有一个实用的迷你空调，在炎热的夏夜享受清凉！
+                <span class="text-sm text-gray-600 block mt-1">Now you don't have to worry about expensive commercial air conditioners. With these simple materials and steps, you can also have a practical mini air conditioner to enjoy coolness on hot summer nights!</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                 <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center">
+                     <i class="fa-solid fa-share-alt mr-2"></i> 分享此教程 (Share This Tutorial)
+                 </a>
+                 <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 text-blue-600 font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center">
+                    <i class="fa-solid fa-heart mr-2"></i> 支持我们 (Support Us)
+                 </a>
+            </div>
+             <p class="text-sm text-gray-600 mt-6">
+                 如果您成功制作或有更好的方法，请在评论区分享您的经验！
+                <span class="text-sm text-gray-600 block mt-1">If you successfully built it or have better methods, please share your experience in the comments!</span>
+            </p>
+        </motion.div>
+
+
+        <!-- Sponsors/Members (Optional based on video end screen) -->
+         <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            class="bento-card text-center"
+        >
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">鸣谢我们的支持者</h3>
+            <p class="text-sm text-gray-600 mb-4">Special Thanks to Our Supporters</p>
+            <p class="text-gray-600 text-sm">
+                感谢所有通过不同方式支持我们的朋友们！
+                 <span class="text-sm text-gray-600 block mt-1">Thank you to all friends who support us in various ways!</span>
+            </p>
+             <!-- You could list names here if desired, but keeping it simple for this template -->
+        </motion.div>
+
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-sm mt-8">
+            <p>© 2024 DIY Tutorials. All rights reserved.</p>
+        </div>
+
+    </div>
+
+    <!-- Framer Motion initialization for viewport -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('[whileInView]');
+            elements.forEach(el => {
+                if (el.motion) { // Check if framer-motion is attached
+                   el.motion.syncInitialState();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
