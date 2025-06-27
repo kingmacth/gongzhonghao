@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精密模型：打造一台高性能卡车底盘的终极指南</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+            background-color: #f0f4f8; /* Soft background */
+        }
+        .container {
+            max-width: 700px; /* Single column width */
+        }
+        .bento-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Rounded corners for Bento feel */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden; /* For large visual elements */
+            position: relative;
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(to right, rgba(0, 128, 255, 0.2), rgba(0, 128, 255, 0.05));
+        }
+        .highlight-gradient-orange {
+            background: linear-gradient(to right, rgba(255, 165, 0, 0.2), rgba(255, 165, 0, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(to right, rgba(0, 200, 0, 0.2), rgba(0, 200, 0, 0.05));
+        }
+        .large-text-cn {
+            font-size: 2.5rem; /* Large Chinese text */
+            font-weight: 700;
+        }
+        .small-text-en {
+            font-size: 1rem; /* Small English text */
+            color: #6b7280;
+        }
+        .icon-outline {
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4a90e2; /* Accent color for numbers */
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .image-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .image-wrapper img {
+            max-width: 900px; /* Fixed width as requested */
+            width: 100%; /* Ensure it scales down on smaller screens */
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div id="app" class="container mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                <span class="block large-text-cn">精密模型：打造一台高性能卡车底盘的终极指南</span>
+                <span class="block small-text-en mt-2">Precision Model: The Ultimate Guide to Building a High-Performance Truck Chassis</span>
+            </h1>
+            <p class="text-lg text-gray-700">探索手工制作微缩模型，将创意变为现实。</p>
+        </header>
+
+        <section id="features" class="bento-card highlight-gradient-blue text-center">
+            <h2 class="large-text-cn mb-6">核心亮点 <span class="small-text-en block">Key Features</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-blue-50/50 rounded-lg shadow-sm">
+                    <i class="fas fa-hammer text-blue-600 text-3xl mb-3 icon-outline"></i>
+                    <h3 class="large-text-cn text-blue-800">坚固耐用 <span class="small-text-en block">Sturdy & Durable</span></h3>
+                    <p class="text-gray-700 mt-2">采用高品质铝材与塑料，确保结构稳定与长久使用。</p>
+                </div>
+                <div class="p-6 bg-blue-50/50 rounded-lg shadow-sm">
+                    <i class="fas fa-ruler-combined text-blue-600 text-3xl mb-3 icon-outline"></i>
+                    <h3 class="large-text-cn text-blue-800">精密制造 <span class="small-text-en block">Precision Engineering</span></h3>
+                    <p class="text-gray-700 mt-2">每一步都精细测量与切割，达到毫米级精度。</p>
+                </div>
+                <div class="p-6 bg-blue-50/50 rounded-lg shadow-sm">
+                    <i class="fas fa-puzzle-piece text-blue-600 text-3xl mb-3 icon-outline"></i>
+                    <h3 class="large-text-cn text-blue-800">模块化设计 <span class="small-text-en block">Modular Design</span></h3>
+                    <p class="text-gray-700 mt-2">各部件独立制作后精确组装，方便定制与维护。</p>
+                </div>
+                <div class="p-6 bg-blue-50/50 rounded-lg shadow-sm">
+                    <i class="fas fa-truck-pickup text-blue-600 text-3xl mb-3 icon-outline"></i>
+                    <h3 class="large-text-cn text-blue-800">真实还原 <span class="small-text-en block">Realistic Replication</span></h3>
+                    <p class="text-gray-700 mt-2">细节处还原真实卡车底盘结构，极具收藏价值。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction" class="bento-card">
+            <h2 class="large-text-cn mb-4">引言 <span class="small-text-en block">Introduction</span></h2>
+            <p class="text-gray-700 leading-relaxed">本教程将带您一步步了解如何手工制作一个高质量的卡车底盘模型。从材料选择到精密加工，再到最终组装和喷漆，您将体验到微缩模型制作的乐趣与挑战。</p>
+        </section>
+
+        <section id="materials-tools" class="bento-card highlight-gradient-orange">
+            <h2 class="large-text-cn mb-6">材料与工具 <span class="small-text-en block">Materials & Tools</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-4 bg-orange-50/50 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-orange-800 mb-3">材料清单 <span class="text-sm text-gray-600">Material List</span></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>铝制U型材 (主梁与横梁)</li>
+                        <li>铝制扁平条 (内部支撑)</li>
+                        <li>灰色PVC塑料板 (板簧与支架)</li>
+                        <li>轮胎模型 (卡车模型用)</li>
+                        <li>铝焊锡丝 (用于铝材焊接)</li>
+                        <li>模型专用快干胶 (Super Glue)</li>
+                        <li>黑色喷漆 (Black Spray Paint)</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-orange-50/50 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl text-orange-800 mb-3">工具清单 <span class="text-sm text-gray-600">Tool List</span></h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>钢锯 / 弓锯 (Hacksaw)</li>
+                        <li>迷你台锯 (Mini Table Saw)</li>
+                        <li>迷你电钻 (Mini Drill)</li>
+                        <li>线锯 / 首饰锯 (Hobby Saw / Jeweler's Saw)</li>
+                        <li>抛光轮 / 砂轮 (Polishing Wheel / Grinder)</li>
+                        <li>台钳 (Vise)</li>
+                        <li>数字游标卡尺 (Digital Caliper)</li>
+                        <li>记号笔 (Marker)</li>
+                        <li>尖嘴钳 (Pliers)</li>
+                        <li>焊锡枪 (Soldering Iron)</li>
+                        <li>打火机 (Lighter)</li>
+                        <li>镊子 (Tweezers)</li>
+                        <li>手钻 (Pin Vise)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="steps" class="bento-card">
+            <h2 class="large-text-cn mb-6">制作步骤 <span class="small-text-en block">Manufacturing Steps</span></h2>
+
+            <div class="mb-8">
+                <div class="step-number">1</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">主梁与横梁加工 <span class="small-text-en">Main Beam & Cross Member Processing</span></h3>
+                <p class="text-gray-700 mb-4">使用记号笔和卷尺在铝制U型材上标记切割线。使用钢锯将U型材切割成所需长度。随后，用抛光轮打磨切割边缘，确保平整光滑。最后，使用电钻在U型材上精确钻孔，孔洞位置用于后续连接。</p>
+                <div class="image-wrapper"><img src="placeholder_00_17.jpg" alt="切割U型铝材" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_00_28.jpg" alt="切割U型铝材细节" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_00_37.jpg" alt="抛光U型铝材" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_00_53.jpg" alt="钻孔U型铝材" width="900"></div>
+                <p class="text-gray-700 mt-2">切割后的U型材尺寸为：主梁长约 <span class="font-bold text-blue-600">300mm</span>，横梁短段长约 <span class="font-bold text-blue-600">9.22mm</span>，横梁长段长约 <span class="font-bold text-blue-600">4.85mm</span>。</p>
+            </div>
+
+            <div class="mb-8">
+                <div class="step-number">2</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">内部支撑结构组装 <span class="small-text-en">Internal Support Structure Assembly</span></h3>
+                <p class="text-gray-700 mb-4">将切割好的U型材横梁插入主梁内侧，用榔头敲打使其紧密结合。然后将铝制扁平条切割成小段，打磨边缘。这些小段将作为内部的斜向支撑，进一步增强底盘的结构强度。</p>
+                <div class="image-wrapper"><img src="placeholder_01_20.jpg" alt="组装U型材" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_01_30.jpg" alt="敲打组装" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_01_46.jpg" alt="切割扁平铝条" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_02_20.jpg" alt="斜向支撑" width="900"></div>
+                <p class="text-gray-700 mt-2">内部斜向支撑的切割角度经过精确计算，确保最佳的结构稳定性。</p>
+            </div>
+
+            <div class="mb-8">
+                <div class="step-number">3</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">板簧与支架制作 <span class="small-text-en">Leaf Spring & Bracket Fabrication</span></h3>
+                <p class="text-gray-700 mb-4">使用迷你台锯切割灰色PVC塑料板，获得长方形的小块。将这些小块用快干胶粘合，形成较厚的板材。在粘合好的板材上用记号笔画出板簧的曲线形状，然后使用线锯沿着标记线进行精密切割，再用抛光轮打磨出圆润的边缘。</p>
+                <div class="image-wrapper"><img src="placeholder_02_45.jpg" alt="切割塑料板" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_03_09.jpg" alt="粘合塑料板" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_03_20.jpg" alt="切割板簧形状" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_04_00.jpg" alt="抛光板簧" width="900"></div>
+                <p class="text-gray-700 mt-2">制作好的板簧将有多个孔洞，用于固定在底盘上，同时制作U型支架，用于连接车轴。所有孔洞都需用电钻精密打孔。</p>
+                <div class="image-wrapper"><img src="placeholder_04_37.jpg" alt="板簧钻孔" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_05_44.jpg" alt="切割U型支架" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_06_10.jpg" alt="组装U型支架" width="900"></div>
+            </div>
+
+            <div class="mb-8">
+                <div class="step-number">4</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">部件组装与焊接 <span class="small-text-en">Component Assembly & Soldering</span></h3>
+                <p class="text-gray-700 mb-4">将制作好的板簧和U型支架用快干胶固定在底盘相应位置。对于铝制部件之间的连接，采用低温铝焊锡工艺。用焊锡枪将焊锡丝熔化在铝材的连接处，形成牢固的焊接点。这个步骤需要一定的技巧和耐心，确保焊接平滑且强度足够。</p>
+                <div class="image-wrapper"><img src="placeholder_04_49.jpg" alt="固定板簧" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_05_00.jpg" alt="注入快干胶" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_06_25.jpg" alt="固定U型支架" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_07_21.jpg" alt="铝材焊接" width="900"></div>
+                <p class="text-gray-700 mt-2">焊接是确保底盘结构整体性和强度的关键步骤。每个焊点都经过精心处理，保证外观与功能兼备。</p>
+            </div>
+
+            <div class="mb-8">
+                <div class="step-number">5</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">表面处理与最终组装 <span class="small-text-en">Surface Treatment & Final Assembly</span></h3>
+                <p class="text-gray-700 mb-4">在完成所有部件的组装和焊接后，将整个底盘模型进行清洁，去除表面的灰尘和杂质。然后，在通风良好的环境中，均匀喷涂黑色喷漆，为底盘提供真实的金属质感和保护层。待漆面完全干燥后，安装车轮模型，完成整个卡车底盘的制作。</p>
+                <div class="image-wrapper"><img src="placeholder_07_30.jpg" alt="喷涂底盘" width="900"></div>
+                <div class="image-wrapper"><img src="placeholder_08_03.jpg" alt="安装车轮" width="900"></div>
+            </div>
+        </section>
+
+        <section id="final-product" class="bento-card highlight-gradient-green text-center">
+            <h2 class="large-text-cn mb-6">成品展示 <span class="small-text-en block">Final Product Display</span></h2>
+            <p class="text-gray-700 mb-4">经过一系列精密而细致的步骤，一台坚固且高度还原的卡车底盘模型已呈现在您眼前。其精湛的工艺和逼真的细节，完美展现了微缩模型制作的魅力。</p>
+            <div class="image-wrapper"><img src="placeholder_00_00.jpg" alt="最终成品总览" width="900"></div>
+            <div class="image-wrapper"><img src="placeholder_00_07.jpg" alt="最终成品细节" width="900"></div>
+            <div class="image-wrapper"><img src="placeholder_00_15.jpg" alt="最终成品带轮胎" width="900"></div>
+        </section>
+
+        <footer class="text-center mt-10 text-gray-600 text-sm">
+            <p>© 2023 精密模型制作指南. 版权所有.</p>
+        </footer>
+    </div>
+
+    <!-- Framer Motion CDN (UMD build for browser) -->
+    <script src="https://unpkg.com/framer-motion@latest/dist/framer-motion.umd.js"></script>
+    <script>
+        // Simple Framer Motion setup for section animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const motion = window.FramerMotion;
+            const animateSections = () => {
+                const sections = document.querySelectorAll('section');
+                sections.forEach((section) => {
+                    motion.motion(section).set({ y: 50, opacity: 0 }); // Initial hidden state
+                    motion.motion(section).animate({ y: 0, opacity: 1 }, {
+                        duration: 0.8,
+                        delay: 0.2,
+                        ease: "easeOut"
+                    });
+                });
+            };
+            animateSections();
+        });
+    </script>
+</body>
+</html>

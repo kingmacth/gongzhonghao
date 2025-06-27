@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY：铸造精巧叶片弹簧</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.5/framer-motion.js"></script>
+
+    <style>
+        /* 自定义背景渐变，符合科技感 */
+        .hero-background {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .section-divider {
+            border: none;
+            height: 1px;
+            background-color: #4a5568; /* 深灰分隔线 */
+            margin: 2rem 0;
+        }
+
+        /* Bento Grid Item Styling */
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem; /* 12px */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem; /* 24px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .bento-item-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .bento-item-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        /* Specific gradients for visual flair */
+        .gradient-blue { background: linear-gradient(to right, #4299e1, #63b3ed); }
+        .gradient-green { background: linear-gradient(to right, #48bb78, #68d391); }
+        .gradient-purple { background: linear-gradient(to right, #805ad5, #9f7aea); }
+        .gradient-orange { background: linear-gradient(to right, #f6ad55, #ffc107); }
+        .gradient-red { background: linear-gradient(to right, #f56565, #feb2b2); }
+        .gradient-teal { background: linear-gradient(to right, #38b2ac, #4dc0b5); }
+        .gradient-indigo { background: linear-gradient(to right, #667eea, #90cdf4); }
+
+
+        /* Font sizing for emphasis */
+        .text-huge { font-size: 3rem; line-height: 1.2; } /* 48px */
+        .text-extra-large { font-size: 2.5rem; line-height: 1.2; } /* 40px */
+        .text-large { font-size: 2rem; line-height: 1.2; } /* 32px */
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans antialiased leading-relaxed">
+
+    <!-- Header Section -->
+    <header class="hero-background text-white py-24 px-6 flex flex-col items-center justify-center min-h-[50vh]">
+        <div class="max-w-4xl text-center">
+            <h1 class="text-huge font-bold mb-4 tracking-tight">
+                DIY：<span class="text-gradient-orange">铸造精巧</span> 叶片弹簧
+            </h1>
+            <p class="text-large font-semibold text-gray-300">
+                Master the art of crafting intricate leaf springs for your models and creative projects.
+            </p>
+        </div>
+    </header>
+
+    <!-- Product Features Section -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-extra-large font-bold text-center mb-12 text-gray-200">
+                <span class="text-gradient-teal">产品特性一览</span> <i class="fas fa-star ml-2"></i>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bento-item gradient-blue">
+                    <div class="bento-item-content">
+                        <i class="fas fa-leaf text-5xl mb-4 text-white opacity-80"></i>
+                        <h3 class="text-xl font-bold mb-2">
+                            坚固与韧性兼备 <span class="text-sm font-normal block">(DURABILITY & FLEXIBILITY)</span>
+                        </h3>
+                        <p class="text-sm text-blue-100">
+                            精选高品质塑料材料，确保结构的稳固性，同时具备出色的弹性，能承受反复弯曲。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bento-item gradient-purple">
+                    <div class="bento-item-content">
+                        <i class="fas fa-tools text-5xl mb-4 text-white opacity-80"></i>
+                        <h3 class="text-xl font-bold mb-2">
+                            精密工艺打磨 <span class="text-sm font-normal block">(PRECISION CRAFTSMANSHIP)</span>
+                        </h3>
+                        <p class="text-sm text-purple-100">
+                            每一个切面、每一个弧度都经过细致处理，追求极致的细节完美，展现匠心独运。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bento-item gradient-green">
+                    <div class="bento-item-content">
+                        <i class="fas fa-plug text-5xl mb-4 text-white opacity-80"></i>
+                        <h3 class="text-xl font-bold mb-2">
+                            多功能应用场景 <span class="text-sm font-normal block">(VERSATILE APPLICATIONS)</span>
+                        </h3>
+                        <p class="text-sm text-green-100">
+                            不仅是精美的模型组件，更能作为您创意无限的DIY项目中独特的点睛之笔，增添别样风采。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bento-item gradient-red">
+                    <div class="bento-item-content">
+                        <i class="fas fa-sliders-h text-5xl mb-4 text-white opacity-80"></i>
+                        <h3 class="text-xl font-bold mb-2">
+                            高度个性化定制 <span class="text-sm font-normal block">(HIGHLY CUSTOMIZABLE)</span>
+                        </h3>
+                        <p class="text-sm text-red-100">
+                            尺寸、弧度、层数均可灵活调整，满足您天马行空的创作构想，打造独一无二的作品。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider max-w-4xl mx-auto">
+
+    <!-- Tutorial Steps Section -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-extra-large font-bold text-center mb-16 text-gray-200">
+                <span class="text-gradient-purple">制作流程</span> 深度解析 <i class="fas fa-code-branch ml-2"></i>
+            </h2>
+
+            <!-- Step 1 -->
+            <div class="mb-20">
+                <h3 class="text-large font-bold text-gradient-orange mb-6 flex items-center">
+                    <i class="fas fa-hammer mr-3 text-orange-400"></i>
+                    第一步：匠心筹备 - 材料与工具的精挑细选
+                </h3>
+                <p class="text-lg mb-8 text-gray-300">
+                    在我们开始这场精巧的DIY之旅前，请确保您的工作台上已备齐以下<strong>“秘密武器”</strong>：
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-3 mb-8">
+                    <li>
+                        <strong>核心基材 (Core Material):</strong> 精致的白色工程塑料片材，提供优良的可塑性与强度。
+                    </li>
+                    <li>
+                        <strong>精准切割系统 (Precision Cutting System):</strong>
+                        <ul>
+                            <li class="ml-4"><strong>手动利器 (Manual Tool):</strong> 高精度手锯，用于初步的轮廓切割。</li>
+                            <li class="ml-4"><strong>动力辅助 (Powered Tool):</strong> 小型精密台锯，推荐搭配<strong>直径80mm</strong>的细齿锯片，以实现边缘的平滑与精度。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>稳固固定装置 (Secure Fixturing):</strong>
+                        <ul>
+                            <li class="ml-4">台钳 (Workbench Vise): 提供牢固的夹持力，确保切割过程中的稳定性。</li>
+                            <li class="ml-4">微型夹具 (Mini Clamps): 辅助固定小部件，实现更精细的操作。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>形态塑塑成器 (Form Sculpting Tools):</strong>
+                        <ul>
+                            <li class="ml-4">温和热源 (Gentle Heat Source): 例如微型蜡烛，用于软化塑料，便于塑形。</li>
+                            <li class="ml-4">精密镊子 (Precision Tweezers): 精准夹持加热后的塑料片，进行弯曲和定位。</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>精准测量尺 (Accurate Measuring Tools):</strong> 标准的金属尺，用于精确标记和测量。
+                    </li>
+                    <li>
+                        <strong>细节修饰工具 (Detailing Tools):</strong>
+                        <ul>
+                            <li class="ml-4">高强度剪刀 (Heavy-Duty Scissors): 用于精确剪裁和修饰。</li>
+                            <li class="ml-4">专业级胶水 (Specialized Adhesive): 确保粘合强度与持久性。</li>
+                            <li class="ml-4">螺丝刀套装 (Screwdriver Set): 用于安装和调整辅助工具。</li>
+                            <li class="ml-4">打磨砂轮 (Grinding Wheel): 提升表面光洁度，去除毛刺。</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                    <img src="placeholder_00_17.jpg" alt="工具与材料展示" class="w-full h-auto object-cover">
+                    <div class="p-4 bg-gray-800 text-center">
+                        <p class="text-sm text-gray-400 italic">
+                            <strong>视觉重点:</strong> 数条不同长度的塑料条整齐排列，象征着精密的准备。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mb-20">
+                <h3 class="text-large font-bold text-gradient-blue mb-6 flex items-center">
+                    <i class="fas fa-cut mr-3 text-blue-400"></i>
+                    第二步：精准切割 - 精雕细琢的第一刀
+                </h3>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        1. 尺寸勘定与标记 (Dimensioning & Marking)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        运用您的<strong>精密测量尺</strong>，在洁白的塑料片上清晰地勾勒出每一个叶片的精确轮廓。请根据您想要的叶片弹簧的最终形态，确定每一片塑料的长度与宽度差异。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_00_20.jpg" alt="标记塑料片" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>视觉元素:</strong> 手部特写，展示手锯切割塑料的动作，强调精确的标记。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        2. 初步廓形切割 (Initial Outline Cutting)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        使用<strong>高精度手锯</strong>，沿着您精心标记的线条，进行第一次切割。请保持操作的平稳与精准，为后续的精加工奠定基础。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_00_21.jpg" alt="手锯切割塑料片" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>视觉元素:</strong> 台锯切割塑料片的特写镜头，伴随细小的塑料粉末飞散，展现切割的精密度。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        3. 精密切割与细节打磨 (Precision Cutting & Edge Refinement)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        将初步切割的塑料条安全地固定在<strong>台钳</strong>中。使用<strong>小型精密台锯</strong>进行第二次精准切割，确保每一条塑料片的尺寸公差控制在<strong>±0.1mm</strong>以内。切割完成后，使用<strong>打磨砂轮</strong>对所有切割边缘进行初步打磨，去除可能存在的毛刺，保证表面的光滑。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_00_55.jpg" alt="台锯精密切割" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>操作细节:</strong> 台锯切割塑料片的近景，强调边缘的平滑处理。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Step 3 -->
+            <div class="mb-20">
+                <h3 class="text-large font-bold text-gradient-green mb-6 flex items-center">
+                    <i class="fas fa-fire-alt mr-3 text-green-400"></i>
+                    第三步：热塑塑形 - 赋予材料生命之弧
+                </h3>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        1. 温和热塑化处理 (Gentle Thermal Softening)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        用<strong>精密镊子</strong>夹住每一片塑料的末端。在<strong>微型蜡烛</strong>的温和火焰上，均匀地加热塑料片的端部。请注意控制加热时间与距离，只需使塑料片微微软化即可，切勿过度加热导致焦化。
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300">
+                        <strong>工具提示:</strong>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><strong>蜡烛:</strong> 选用高品质的无烟蜡烛，提供稳定温和的热源。</li>
+                            <li><strong>镊子:</strong> 采用防烫材质，确保操作安全。</li>
+                        </ul>
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_01_04.jpg" alt="蜡烛加热塑料片" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>视觉重点:</strong> 三支点燃的蜡烛，温暖的烛光聚焦在塑料片的一端，营造出细致的工艺氛围。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        2. 弧度定型与精准塑形 (Arc Shaping & Precision Molding)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        在塑料片达到理想的软化状态后，立即用手施加精准的力道，或借助<strong>台钳</strong>的辅助槽口，将其弯曲成优雅的弧形。这个步骤需要您的耐心和精确度，可以反复试验，直到每一片塑料都呈现出完美的“叶片”曲线。
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_01_07.jpg" alt="弯曲塑料片" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>视觉元素:</strong> 手部特写，展示用镊子和手指将软化的塑料片弯曲成弧形的动作。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_01_11.jpg" alt="不同弧度的塑料片" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>画面元素:</strong> 展示不同弧度弯曲的塑料片，体现塑形的灵活性。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_01_44.jpg" alt="弯曲细节特写" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>细节展示:</strong> 特写正在被弯曲的塑料片末端，强调精准的塑形过程。
+                                </p>
+                            </div>
+                        </div>
+                         <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_01_48.jpg" alt="成品手持展示" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>成果展示:</strong> 手持弯曲完成的叶片，展现其优美的弧线。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_01_31.jpg" alt="多片对比" class="w-full h-auto object-cover">
+                             <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>对比展示:</strong> 多片已塑形塑料片并排展示，便于比较其弧度与长度。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Step 4 -->
+            <div class="mb-20">
+                <h3 class="text-large font-bold text-gradient-teal mb-6 flex items-center">
+                    <i class="fas fa-link mr-3 text-teal-400"></i>
+                    第四步：结构组装 - 精致的层叠艺术
+                </h3>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        1. 层叠排序与结构堆叠 (Layering & Structural Stacking)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        将所有塑形完成的塑料片，按照从长到短的顺序，精准地层叠在一起，形成一个具有层次感的整体结构。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_02_54.jpg" alt="层叠的塑料片" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>视觉重点:</strong> 特写叶片弹簧的中间部分，金属丝或卡扣将层叠的塑料片紧紧固定。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        2. 金属束缚与精巧固定 (Metal Binding & Secure Fastening)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        利用<strong>高强度剪刀</strong>剪取合适长度的细<strong>不锈钢丝</strong>（建议直径约1mm），或者使用<strong>专用金属卡扣</strong>。在叶片弹簧的中心位置以及两端叶片的交汇处，进行多次缠绕或夹紧，确保所有层叠的叶片被牢固地束缚在一起。这一步是关键，它将所有单独的叶片凝聚成一个坚固而优雅的整体。
+                    </p>
+                     <p class="text-lg mb-6 text-gray-300">
+                        <strong>组件提示:</strong>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><strong>不锈钢丝:</strong> 选用高强度、耐腐蚀的细不锈钢丝。</li>
+                            <li><strong>金属卡扣:</strong> 精致的金属扣件，提供快速可靠的固定方式。</li>
+                        </ul>
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_02_55.jpg" alt="金属丝捆绑细节" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>操作细节:</strong> 手部特写，展示如何用金属丝进行捆绑。
+                                </p>
+                            </div>
+                        </div>
+                         <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_02_57.jpg" alt="金属丝缠绕近景" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>细节聚焦:</strong> 金屬絲纏繞的近景，展示固定过程的精细。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                            <img src="placeholder_03_00.jpg" alt="钳子紧固金属丝" class="w-full h-auto object-cover">
+                            <div class="p-4 bg-gray-800 text-center">
+                                <p class="text-sm text-gray-400 italic">
+                                    <strong>最终固定:</strong> 展示用钳子对金属丝进行最后紧固的动作。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        3. 精细修剪与整体校准 (Fine Trimming & Overall Calibration)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        使用<strong>高强度剪刀</strong>，将多余的金属丝末端进行整齐修剪，避免刮伤。同时，仔细检查叶片弹簧的整体弧度和层叠效果，如有微小偏差可进行轻微调整，确保成品的美观与对称。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_02_97.jpg" alt="剪刀修剪金属丝" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>操作展示:</strong> 用剪刀修剪多余的金属丝，确保整体的整洁。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Step 5 -->
+            <div>
+                <h3 class="text-large font-bold text-gradient-red mb-6 flex items-center">
+                    <i class="fas fa-brush mr-3 text-red-400"></i>
+                    第五步：表面润饰 - 光滑如镜的艺术升华
+                </h3>
+
+                <div class="mb-8">
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        1. 边缘精细打磨 (Edge Finishing & Deburring)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        利用<strong>打磨砂轮</strong>的细腻研磨能力，轻柔地打磨塑料片的所有切割边缘和可能存在的微小凸起。这一步旨在彻底消除任何可能影响触感或观感的毛刺，使边缘触感如丝绸般光滑。
+                    </p>
+                     <p class="text-lg mb-6 text-gray-300">
+                        <strong>工具提示:</strong>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><strong>打磨砂轮:</strong> 选择细颗粒的打磨砂轮，以获得最佳的抛光效果。</li>
+                        </ul>
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_00_45.jpg" alt="砂轮打磨边缘" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>视觉元素:</strong> 打磨砂轮工作时的特写，塑料边缘被打磨得非常光滑。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-300 mb-4">
+                        2. 整体表面抛光 (Overall Surface Polishing)
+                    </h4>
+                    <p class="text-lg mb-6 text-gray-300">
+                        轻轻地对整个叶片弹簧的表面进行打磨抛光。这一过程不仅能进一步提升表面的光洁度，使其反射出温和的光泽，更能为您的作品注入专业级的质感。
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gray-700">
+                        <img src="placeholder_03_17.jpg" alt="抛光完成的叶片弹簧" class="w-full h-auto object-cover">
+                        <div class="p-4 bg-gray-800 text-center">
+                            <p class="text-sm text-gray-400 italic">
+                                <strong>工艺升华:</strong> 展示抛光处理后的叶片弹簧成品，其表面光泽细腻。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div>
+                <h3 class="text-large font-bold text-gradient-orange mb-6 flex items-center">
+                    <i class="fas fa-trophy mr-3 text-orange-400"></i>
+                    第六步：匠心呈现 - 成果的完美展示
+                </h3>
+                <p class="text-lg mb-12 text-gray-300">
+                    至此，您已成功完成了整个精巧叶片弹簧的制作过程。您可以根据项目的需求，重复以上步骤，制作出不同尺寸、不同层数的叶片弹簧组合，用于您的模型创作、工艺品设计，或是任何需要精细机械元素的场合。
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bento-item gradient-blue rounded-lg">
+                        <img src="placeholder_00_01.jpg" alt="单个叶片弹簧" class="bento-item-image">
+                        <div class="bento-item-content">
+                            <p class="text-sm"><strong>成品展示:</strong> 单个精美的叶片弹簧。</p>
+                        </div>
+                    </div>
+                    <div class="bento-item gradient-purple rounded-lg">
+                        <img src="placeholder_00_03.jpg" alt="不同尺寸叶片弹簧" class="bento-item-image">
+                        <div class="bento-item-content">
+                            <p class="text-sm"><strong>系列展示:</strong> 多组不同尺寸的叶片弹簧。</p>
+                        </div>
+                    </div>
+                     <div class="bento-item gradient-green rounded-lg">
+                        <img src="placeholder_00_05.jpg" alt="叶片弹簧集合" class="bento-item-image">
+                        <div class="bento-item-content">
+                            <p class="text-sm"><strong>集合展示:</strong> 一组大小不一的叶片弹簧。</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bento-item gradient-orange rounded-lg">
+                         <img src="placeholder_01_01.jpg" alt="应用场景暗示" class="bento-item-image">
+                         <div class="bento-item-content">
+                             <p class="text-sm"><strong>场景暗示:</strong> 展示多样化的应用可能性。</p>
+                         </div>
+                    </div>
+                    <div class="bento-item gradient-red rounded-lg">
+                         <img src="placeholder_01_25.jpg" alt="切割细节" class="bento-item-image">
+                         <div class="bento-item-content">
+                             <p class="text-sm"><strong>制作细节回顾:</strong> 塑料片切割的场景。</p>
+                         </div>
+                    </div>
+                     <div class="bento-item gradient-teal rounded-lg">
+                         <img src="placeholder_02_11.jpg" alt="层叠细节" class="bento-item-image">
+                         <div class="bento-item-content">
+                            <p class="text-sm"><strong>层叠细节:</strong> 近距离展示塑料片层叠的紧密程度。</p>
+                         </div>
+                    </div>
+                </div>
+
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bento-item gradient-blue rounded-lg">
+                         <img src="placeholder_02_14.jpg" alt="固定细节" class="bento-item-image">
+                         <div class="bento-item-content">
+                             <p class="text-sm"><strong>固定细节展示:</strong> 金属丝或卡扣固定层叠的塑料片。</p>
+                         </div>
+                    </div>
+                    <div class="bento-item gradient-purple rounded-lg">
+                        <img src="placeholder_02_53.jpg" alt="成品展示" class="bento-item-image">
+                        <div class="bento-item-content">
+                            <p class="text-sm"><strong>最终成品:</strong> 叶片弹簧的整体外观。</p>
+                        </div>
+                    </div>
+                     <div class="bento-item gradient-green rounded-lg">
+                         <img src="placeholder_03_17.jpg" alt="抛光处理" class="bento-item-image">
+                         <div class="bento-item-content">
+                             <p class="text-sm"><strong>工艺升华:</strong> 抛光处理后的表面光泽。</p>
+                         </div>
+                    </div>
+                </div>
+                
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bento-item gradient-orange rounded-lg">
+                         <img src="placeholder_02_94.jpg" alt="修剪细节" class="bento-item-image">
+                         <div class="bento-item-content">
+                            <p class="text-sm"><strong>收尾修剪:</strong> 精致的收尾动作。</p>
+                         </div>
+                    </div>
+                    <div class="bento-item gradient-red rounded-lg">
+                        <img src="placeholder_03_30.jpg" alt="成品集合" class="bento-item-image">
+                        <div class="bento-item-content">
+                            <p class="text-sm"><strong>完美集合:</strong> 所有制作完成的叶片弹簧。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Safety Notice -->
+            <div class="bg-yellow-800 bg-opacity-50 p-6 rounded-xl border-2 border-yellow-600 mt-16 text-center">
+                <h3 class="text-xl font-bold mb-4 text-yellow-300 flex items-center justify-center">
+                    <i class="fas fa-exclamation-triangle mr-3 text-yellow-400"></i>
+                    安全与建议 (Safety & Advice)
+                </h3>
+                <p class="text-lg text-yellow-100">
+                    在进行加热和使用切割工具时，请务必<strong>高度重视安全</strong>，佩戴防护眼镜和手套。建议在通风良好的环境中操作。
+                </p>
+                 <p class="text-lg mt-4 text-yellow-100">
+                    祝愿您在这场DIY挑战中，收获满满的成就感！
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-center py-8 mt-16">
+        <p class="text-gray-500 text-sm">
+            Copyright © 2023 All Rights Reserved. Crafted with passion and precision.
+        </p>
+    </footer>
+
+    <!-- JavaScript for potential Framer Motion animations (example) -->
+    <script>
+        // You would typically initialize Framer Motion animations here
+        // For example, to animate the bento items on scroll:
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const bentoItems = document.querySelectorAll('.bento-item');
+        //     bentoItems.forEach((item, index) => {
+        //         item.style.opacity = 0;
+        //         item.style.transform = 'translateY(20px)';
+        //         motion.custom(item, {
+        //             opacity: [0, 1],
+        //             y: [20, 0],
+        //             transition: { delay: index * 0.1, duration: 0.6, ease: "easeOut" }
+        //         });
+        //     });
+        // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何制造一个逼真的微缩卡车轮胎：从零到一的精工细作</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .bento-grid-item {
+            background-color: #ffffff;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem; /* p-6 */
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-gray-50 text-gray-800 font-sans leading-relaxed">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-4 text-gradient bg-gradient-to-r from-blue-600 to-purple-600">
+                如何制造一个逼真的微缩卡车轮胎
+            </h1>
+            <p class="text-xl text-gray-600">从零到一的精工细作 <span class="font-bold text-blue-500">DIY Realistic Model Truck Tires</span></p>
+        </header>
+
+        <!-- Product Features Section -->
+        <section class="mb-12">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-700">
+                产品特点汇总 <span class="text-2xl font-normal text-gray-500">Key Product Features</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Feature Card 1 -->
+                <div class="bento-grid-item fade-in" data-delay="0.1">
+                    <i class="fas fa-truck-monster text-5xl text-blue-500 opacity-70 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">逼真外观 <span class="text-base font-normal text-gray-600">Realistic Appearance</span></h3>
+                    <p class="text-gray-700">细节丰富，完美还原卡车轮胎的真实质感与造型，视觉效果令人惊叹。</p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bento-grid-item fade-in" data-delay="0.2">
+                    <i class="fas fa-weight-hanging text-5xl text-green-500 opacity-70 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">耐久材料 <span class="text-base font-normal text-gray-600">Durable Materials</span></h3>
+                    <p class="text-gray-700">采用坚固的PVC、耐用橡胶与高强度塑料，确保轮胎寿命长久。</p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bento-grid-item fade-in" data-delay="0.3">
+                    <i class="fas fa-arrows-alt-h text-5xl text-purple-500 opacity-70 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">可定制尺寸 <span class="text-base font-normal text-gray-600">Customizable Size</span></h3>
+                    <p class="text-gray-700">灵活调整尺寸，适应不同比例的模型车辆，满足多样化需求。</p>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="bento-grid-item fade-in" data-delay="0.4">
+                    <i class="fas fa-tools text-5xl text-orange-500 opacity-70 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">精工细作 <span class="text-base font-normal text-gray-600">Precision Craftsmanship</span></h3>
+                    <p class="text-gray-700">从胎面纹理到轮毂细节，每一步都精心打磨，追求极致仿真度。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production Steps Section -->
+        <section class="mb-12">
+            <h2 class="text-4xl font-bold mb-8 text-center text-blue-700">
+                制作步骤详解 <span class="text-2xl font-normal text-gray-500">Detailed Production Steps</span>
+            </h2>
+            <div class="space-y-12">
+
+                <!-- Step 1: PVC 胎体准备 -->
+                <div class="flex flex-col md:flex-row items-start gap-8 p-6 bg-white rounded-xl shadow-xl fade-in" data-delay="0.5">
+                    <div class="flex-shrink-0 text-center">
+                        <div class="text-7xl font-extrabold text-blue-600 opacity-70 mb-2 leading-none">01</div>
+                        <i class="fas fa-cogs text-4xl text-purple-500 opacity-70"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-4">PVC 胎体准备 <span class="text-xl font-normal text-gray-600">PVC Tire Body Preparation</span></h3>
+                        <p class="mb-4 text-gray-700">
+                            使用 <span class="font-semibold text-blue-600">PVC 管</span> (管径: ~30mm) 制作轮胎的内胎体。精确测量并切割成等宽圆环。
+                        </p>
+                        <ul class="list-none text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">测量与标记：</span>使用数显游标卡尺精确标记切割点，确保每个圆环的宽度一致。<br><small><i>工具：数显游标卡尺 (Digital Caliper), 记号笔 (Marker)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">精准切割：</span>将PVC管切割成宽度均匀的圆环。<br><small><i>工具：小型台锯 (Mini Table Saw)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">边缘打磨：</span>使用研磨盘对切割后的PVC环边缘进行打磨，使其光滑。<br><small><i>工具：小型研磨机 (Mini Polisher/Grinder)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">成品尺寸：</span>每个PVC环外径约 <span class="font-bold text-red-500">42mm</span>，内径约 <span class="font-bold text-red-500">34mm</span>，宽度约 <span class="font-bold text-red-500">25mm</span>。</li>
+                        </ul>
+                        <img src="placeholder_00_20.jpg" alt="PVC Pipe Measurement and Cutting" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_00_33.jpg" alt="Polishing PVC Pipe" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- Step 2: 胎面成型 -->
+                <div class="flex flex-col md:flex-row items-start gap-8 p-6 bg-white rounded-xl shadow-xl fade-in" data-delay="0.6">
+                    <div class="flex-shrink-0 text-center">
+                        <div class="text-7xl font-extrabold text-blue-600 opacity-70 mb-2 leading-none">02</div>
+                        <i class="fas fa-shapes text-4xl text-blue-500 opacity-70"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-4">胎面成型 <span class="text-xl font-normal text-gray-600">Tire Tread Formation</span></h3>
+                        <p class="mb-4 text-gray-700">
+                            将 <span class="font-semibold text-green-600">黑色橡胶板</span> 加工成胎面。
+                        </p>
+                        <ul class="list-none text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">切割形状：</span>根据PVC环的周长和胎面宽度，在黑色橡胶板上标记并切割出弧形。橡胶板厚度约 <span class="font-bold text-red-500">10mm</span>。</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">精修倒角：</span>使用刀具将橡胶板边缘进行修剪和倒角，使其更贴合。<br><small><i>工具：美工刀 (Craft Knife) 或薄刀 (Thin Knife)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">粘贴固定：</span>使用快速胶将加工好的橡胶板小心地粘贴到PVC环的外侧，形成一个环。<br><small><i>材料：快速胶 (Super Glue)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">整体打磨：</span>使用研磨机对胎面外侧进行整体打磨，使其表面平整并初步形成轮胎弧度。<br><small><i>工具：小型研磨机 (Mini Polisher/Grinder)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">手工细磨：</span>使用砂纸对胎面进行精细打磨，去除毛边和不平整之处，达到光滑均匀的表面。<br><small><i>工具：砂纸 (Sandpaper)</i></small></li>
+                        </ul>
+                        <img src="placeholder_00_55.jpg" alt="Cutting Rubber Sheet" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_01_06.jpg" alt="Gluing Rubber to PVC" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_01_41.jpg" alt="Grinding Outer Rubber Layer" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_02_20.jpg" alt="Sanding Rubber Tire" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- Step 3: 木质轮毂模具制作 -->
+                <div class="flex flex-col md:flex-row items-start gap-8 p-6 bg-white rounded-xl shadow-xl fade-in" data-delay="0.7">
+                    <div class="flex-shrink-0 text-center">
+                        <div class="text-7xl font-extrabold text-blue-600 opacity-70 mb-2 leading-none">03</div>
+                        <i class="fas fa-tree text-4xl text-green-600 opacity-70"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-4">木质轮毂模具制作 <span class="text-xl font-normal text-gray-600">Wooden Hubcap Mold Creation</span></h3>
+                        <p class="mb-4 text-gray-700">
+                            制作用于压制塑料轮毂的 <span class="font-semibold text-orange-600">木质模具</span>。
+                        </p>
+                        <ul class="list-none text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">切割木段：</span>从圆木棒上切割出长度合适的木段。<br><small><i>工具：钢锯 (Hacksaw)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">初步成型：</span>使用研磨机对木段进行初步打磨，使其两端平整。<br><small><i>工具：小型研磨机 (Mini Polisher/Grinder)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">钻孔与分段：</span>使用电钻和开孔器在木段中心钻孔，并根据轮毂的形状要求，在台锯上将木段切割成两个部分，形成模具的凸形和凹形。<br><small><i>工具：电钻 (Electric Drill), 开孔器 (Hole Saw), 小型台锯 (Mini Table Saw)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">精修模具：</span>使用木雕凿刀对木质模具的细节进行精修，确保轮毂的弧度和边缘平滑。<br><small><i>工具：木雕凿刀 (Wood Chisels)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">模具抛光：</span>使用细砂纸或抛光布对木质模具进行抛光，使其表面光滑，以便后续压制塑料件。<br><small><i>工具：砂纸 (Sandpaper) 或抛光布</i></small></li>
+                        </ul>
+                        <img src="placeholder_02_37.jpg" alt="Cutting Wooden Dowel" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_02_50.jpg" alt="Drilling Wooden Dowel" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_03_19.jpg" alt="Cutting Wood Mold Parts" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_03_35.jpg" alt="Refining Wood Mold" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_03_50.jpg" alt="Polishing Wood Mold" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- Step 4: 轮毂压制与加工 -->
+                <div class="flex flex-col md:flex-row items-start gap-8 p-6 bg-white rounded-xl shadow-xl fade-in" data-delay="0.8">
+                    <div class="flex-shrink-0 text-center">
+                        <div class="text-7xl font-extrabold text-blue-600 opacity-70 mb-2 leading-none">04</div>
+                        <i class="fas fa-fire text-4xl text-red-500 opacity-70"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-4">轮毂压制与加工 <span class="text-xl font-normal text-gray-600">Hubcap Pressing and Processing</span></h3>
+                        <p class="mb-4 text-gray-700">
+                            将 <span class="font-semibold text-purple-600">白色塑料板</span> 软化并压制成轮毂。
+                        </p>
+                        <ul class="list-none text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">加热软化：</span>使用炉灶或热风枪加热白色塑料板，使其变软。<br><small><i>材料：白色塑料板 (White Plastic Sheet)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">模具压制：</span>将软化的塑料板迅速放置在木质模具上，用压力将其压制成轮毂的形状。</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">修剪边缘：</span>冷却后，使用锯子或剪刀修剪掉多余的塑料边缘，得到初步的轮毂形状。<br><small><i>工具：钢锯 (Hacksaw) 或剪刀 (Scissors)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">精细打磨：</span>对轮毂表面进行精细打磨，确保光滑。<br><small><i>工具：砂纸 (Sandpaper)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">钻孔与修形：</span>根据卡车轮毂的特点，在轮毂上标记并钻出螺栓孔和散热孔。使用微型锉刀或小刀修整孔洞边缘，使其圆滑。<br><small><i>工具：手钻 (Hand Drill), 微型锉刀 (Small Files) 或美工刀 (Craft Knife)</i></small></li>
+                        </ul>
+                        <img src="placeholder_04_06.jpg" alt="Heating Plastic Sheet" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_04_42.jpg" alt="Pressing Plastic Hubcap" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_05_18.jpg" alt="Cutting Excess Plastic" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_05_31.jpg" alt="Marking and Drilling Holes" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_05_55.jpg" alt="Refining Hubcap Holes" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- Step 5: 最终组装与胎纹雕刻 -->
+                <div class="flex flex-col md:flex-row items-start gap-8 p-6 bg-white rounded-xl shadow-xl fade-in" data-delay="0.9">
+                    <div class="flex-shrink-0 text-center">
+                        <div class="text-7xl font-extrabold text-blue-600 opacity-70 mb-2 leading-none">05</div>
+                        <i class="fas fa-paint-roller text-4xl text-orange-600 opacity-70"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-4">最终组装与胎纹雕刻 <span class="text-xl font-normal text-gray-600">Final Assembly & Tread Engraving</span></h3>
+                        <p class="mb-4 text-gray-700">
+                            将所有部件组合，并为轮胎刻画逼真的胎纹。
+                        </p>
+                        <ul class="list-none text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">轮毂安装：</span>将制作好的塑料轮毂精确地嵌入到橡胶胎体内。使用少量快速胶进行固定，确保牢固且居中。<br><small><i>材料：快速胶 (Super Glue)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">中心孔与螺栓孔：</span>使用电钻在轮毂中心钻出用于安装车轴的孔洞，并用铰刀平滑边缘。接着，在轮毂上钻出细小的螺栓孔，增加细节真实性。<br><small><i>工具：电钻 (Electric Drill), 铰刀 (Reamer), 手钻 (Hand Drill)</i></small></li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">胎纹雕刻：</span>使用加热的焊笔或烙铁，小心地在橡胶胎面上手工刻画出逼真的轮胎胎纹。这一步需要耐心和技巧，以保证纹路深度和均匀性。</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i><span class="font-medium">精修与清洁：</span>最后，对整个轮胎进行最后的检查和清理，去除多余的胶水痕迹或碎屑。</li>
+                        </ul>
+                        <img src="placeholder_06_06.jpg" alt="Assembling Tire and Hubcap" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_06_31.jpg" alt="Drilling Central Hole" class="w-full rounded-lg shadow-md mb-4">
+                        <img src="placeholder_07_10.jpg" alt="Engraving Tire Tread" class="w-full rounded-lg shadow-md">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final Product Showcase -->
+        <section class="text-center mb-12 fade-in" data-delay="1.0">
+            <h2 class="text-4xl font-bold mb-8 text-gradient bg-gradient-to-r from-purple-600 to-blue-600">
+                完美呈现 <span class="text-2xl font-normal text-gray-500">The Perfect Result</span>
+            </h2>
+            <p class="text-xl text-gray-700 mb-6">经过一番精雕细琢，这些微缩卡车轮胎已然栩栩如生，准备为您的模型车增添无限魅力！</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="placeholder_00_00.jpg" alt="Finished Tire Close-up" class="w-full rounded-lg shadow-xl">
+                <img src="placeholder_00_06.jpg" alt="Multiple Finished Tires" class="w-full rounded-lg shadow-xl">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Framer Motion CDN (at the end of body for performance) -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.0/dist/framer-motion.min.js"></script>
+    <script>
+        // Simple Intersection Observer for elements with .fade-in class
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.2 // Trigger when 20% of the item is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = parseFloat(entry.target.dataset.delay || 0);
+                        setTimeout(() => {
+                            motion.animate(entry.target, { opacity: 1, y: 0 }, {
+                                duration: 0.8,
+                                ease: "easeOut"
+                            });
+                        }, delay * 1000); // Convert delay to milliseconds
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

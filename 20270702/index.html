@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何自制一台太阳方位追踪仪</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN (Note: <motion.tag> syntax requires JSX/TSX. For plain JS, use the API with IntersectionObserver) -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@latest/dist/framer-motion.min.js"></script>
+    <style>
+        /* Custom gradient for highlighting */
+        .bg-gradient-highlight-blue {
+             background: linear-gradient(to right, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(59, 130, 246, 0.1) 100%);
+        }
+        /* Another gradient for variety */
+        .bg-gradient-highlight-green {
+             background: linear-gradient(to right, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 50%, rgba(34, 197, 94, 0.1) 100%);
+        }
+        /* Custom styles for Bento-like cards */
+        .bento-card {
+            @apply bg-white rounded-xl shadow-md overflow-hidden border border-gray-200;
+        }
+         img {
+            display: block; /* Ensure images are block elements */
+            max-width: 100%; /* Prevent images from exceeding container width */
+            height: auto; /* Maintain aspect ratio */
+            width: 900px; /* Fixed width as requested, max-width ensures it scales down */
+            margin-left: auto; /* Center the image */
+            margin-right: auto; /* Center the image */
+         }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+
+    <div class="container mx-auto px-4 py-8 max-w-2xl md:max-w-3xl lg:max-w-4xl">
+
+        <!-- Title Section -->
+        <h1 class="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-12">
+            <span class="text-blue-600">如何</span>自制一台<br>太阳方位追踪仪
+            <div class="text-sm font-normal text-gray-500 mt-2">DIY a Solar Azimuth Tracker</div>
+        </h1>
+        <!-- Note: For Framer Motion animation on this title in plain JS, you would select it by an ID or class and use the Framer Motion API in a script block -->
+
+        <!-- Product Summary Section -->
+        <section
+            class="bento-card p-6 mb-8 bg-gradient-highlight-blue"
+            data-initial='{"opacity": 0, "y": 50}'
+            data-while-in-view='{"opacity": 1, "y": 0}'
+            data-viewport='{"once": true, "amount": 0.5}'
+            data-transition='{"duration": 0.6}'
+             id="features-section"
+        >
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+                项目概述与特点 <span class="text-base font-normal text-gray-500 ml-2">Project Overview & Features</span>
+            </h2>
+            <p class="text-lg font-semibold mb-4">
+                 这个项目展示了一个能够<span class="text-blue-600">实时跟踪并锁定太阳位置</span>的<span class="text-blue-600">太阳方位追踪仪</span>。它结构简单，可以实现<span class="text-green-600">24小时全天候</span>追踪太阳的方位和位置。
+                <span class="text-sm font-normal text-gray-600 block mt-1">This project demonstrates a <span class="text-blue-600">Solar Azimuth Tracker</span> capable of <span class="text-blue-600">real-time tracking and locking the sun's position</span>. Its structure is simple and it can achieve <span class="text-green-600">24/7</span> tracking of the sun's azimuth and position.</span>
+            </p>
+            <div class="flex flex-col space-y-4">
+                <div class="flex items-center">
+                    <i class="fas fa-sun text-yellow-600 text-xl mr-3"></i>
+                    <div>
+                        <p class="text-lg font-semibold">太阳能感应追踪</p>
+                        <p class="text-sm text-gray-600">Solar Sensing & Tracking</p>
+                         <p class="text-sm text-gray-500">通过前后两组太阳能电池检测光照方向</p>
+                         <p class="text-sm text-gray-500">Uses two sets of front and back solar panels to detect light direction</p>
+                    </div>
+                </div>
+                 <div class="flex items-center">
+                    <i class="fas fa-cogs text-gray-700 text-xl mr-3"></i>
+                    <div>
+                        <p class="text-lg font-semibold">双减速马达驱动</p>
+                        <p class="text-sm text-gray-600">Dual Geared Motor Drive</p>
+                         <p class="text-sm text-gray-500">两个减速马达分别控制水平和垂直方向的运动</p>
+                         <p class="text-sm text-gray-500">Two geared motors control horizontal and vertical movement respectively</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-arrows-alt text-teal-600 text-xl mr-3"></i>
+                     <div>
+                        <p class="text-lg font-semibold">全方位角度调整</p>
+                        <p class="text-sm text-gray-600">Full Angular Adjustment</p>
+                         <p class="text-sm text-gray-500">根据光照差异自动调整方位和仰角</p>
+                         <p class="text-sm text-gray-500">Automatically adjusts azimuth and elevation based on light differences</p>
+                    </div>
+                </div>
+                 <div class="flex items-center">
+                    <i class="fas fa-bolt text-blue-600 text-xl mr-3"></i>
+                     <div>
+                        <p class="text-lg font-semibold">基于太阳能电池供电</p>
+                        <p class="text-sm text-gray-600">Powered by Solar Panels</p>
+                         <p class="text-sm text-gray-500">利用太阳能电池产生的电压驱动电机</p>
+                          <p class="text-sm text-gray-500">Uses voltage generated by solar panels to drive motors</p>
+                    </div>
+                </div>
+            </div>
+             <img src="placeholder_00_00.jpg" alt="成品太阳方位追踪仪" class="my-6 rounded-lg shadow-lg">
+        </section>
+
+        <!-- Construction Steps Section -->
+        <section class="space-y-8">
+
+            <!-- Step 1: Horizontal Rotation Base (showing internals) -->
+            <div
+                class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-1"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 1：查看水平旋转底座结构
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 1: Inspect Horizontal Rotation Base Structure</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    打开设备的圆形底座，可以看到内部有一个<span class="font-semibold">小型减速马达</span>和<span class="font-semibold">电路板 (PCB)</span>。底座边缘有多颗滚珠用于平稳旋转。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Open the device's round base to see the internal <span class="font-semibold">small geared motor</span> and <span class="font-semibold">circuit board (PCB)</span>. The base edge has multiple ball bearings for smooth rotation.</span>
+                </p>
+                 <img src="placeholder_00_34.jpg" alt="水平旋转底座内部结构" class="my-4 rounded-lg shadow">
+                 <p class="text-lg font-semibold mb-4">
+                    将马达的导线连接到电路板上。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Connect the motor wires to the circuit board.</span>
+                 </p>
+                  <img src="placeholder_00_39.jpg" alt="连接马达到电路板" class="my-4 rounded-lg shadow">
+            </div>
+
+            <!-- Step 2: Horizontal Motor Mount Plate -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-2"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 2：制作水平马达安装板
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 2: Fabricate Horizontal Motor Mount Plate</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    粘合多层塑料板，制作马达安装平台，并在中心开孔安装<span class="font-semibold">轴承</span> (内径 5mm, 外径 10mm)。将<span class="font-semibold">马达安装支架</span>固定到平台上。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Bond multiple plastic sheets to create the motor mount platform, drill a hole in the center and install a <span class="font-semibold">bearing</span> (Inner diameter: 5mm, Outer diameter: 10mm). Fix the <span class="font-semibold">motor mount bracket</span> to the platform.</span>
+                 </p>
+                 <img src="placeholder_00_49.jpg" alt="制作马达安装平台并安装轴承" class="my-4 rounded-lg shadow">
+                  <img src="placeholder_01_06.jpg" alt="固定马达安装支架" class="my-4 rounded-lg shadow">
+            </div>
+
+            <!-- Step 3: Assemble Horizontal Unit -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-3"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 3：组装水平旋转单元
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 3: Assemble Horizontal Rotation Unit</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    将制作好的马达安装板固定到圆形底座的旋转部分上。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Fix the fabricated motor mount plate onto the rotating part of the round base.</span>
+                 </p>
+                 <img src="placeholder_01_50.jpg" alt="固定马达安装板到底座" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 4: Main Vertical Shaft Bearing Block -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-4"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 4：制作主垂直轴承座块
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 4: Fabricate Main Vertical Shaft Bearing Block</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    粘合多层塑料板制作一个较厚的方块，在中心钻孔并安装一个较大的<span class="font-semibold">直线轴承</span> (内径 10mm, 外径 19mm)。这个轴承将支撑整个面板臂的垂直轴。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Bond multiple plastic sheets to make a thick block, drill a hole in the center and install a larger <span class="font-semibold">linear bearing</span> (Inner diameter: 10mm, Outer diameter: 19mm). This bearing will support the vertical shaft of the entire panel arm assembly.</span>
+                </p>
+                 <img src="placeholder_01_26.jpg" alt="制作垂直轴承座块" class="my-4 rounded-lg shadow">
+                  <img src="placeholder_01_40.jpg" alt="安装直线轴承到方块" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 5: Attach Bearing Block to Base -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-5"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 5：将轴承座块固定到底座上
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 5: Fix Bearing Block onto the Base</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    将垂直轴承座块粘合固定到水平旋转底座的中心位置。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Bond and fix the vertical bearing block to the center of the horizontal rotation base.</span>
+                 </p>
+                 <img src="placeholder_01_48.jpg" alt="固定轴承座块到底座" class="my-4 rounded-lg shadow">
+            </div>
+
+
+            <!-- Step 6: Prepare Horizontal Arm & Panel Mounts -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-6"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 6：制作面板支撑臂和安装件
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 6: Fabricate Panel Support Arm and Mounts</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    切割并整形铝合金型材作为主支撑臂。同时切割和弯折小的铝合金片，用于固定太阳能电池板。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Cut and shape aluminum profile for the main support arm. Also cut and bend small aluminum pieces to fix the solar panels.</span>
+                </p>
+                 <img src="placeholder_02_02.jpg" alt="切割铝合金型材" class="my-4 rounded-lg shadow">
+                  <img src="placeholder_02_17.jpg" alt="弯折铝合金安装片" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 7: Assemble Panels to Arm -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-7"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 7：组装太阳能电池板到支撑臂
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 7: Assemble Solar Panels onto Support Arm</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    将制作好的铝合金安装件固定到太阳能电池板上。然后将这些电池板组件固定到主支撑臂的两端。每端似乎安装了两组电池板，呈一定角度。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Fix the fabricated aluminum mounts to the solar panels. Then fix these panel assemblies to both ends of the main support arm. Each end seems to have two sets of panels installed at an angle.</span>
+                 </p>
+                 <img src="placeholder_02_19.jpg" alt="安装件固定到电池板" class="my-4 rounded-lg shadow">
+                  <img src="placeholder_02_34.jpg" alt="电池板组件固定到支撑臂" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 8: Prepare Vertical Shaft -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-8"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 8：制作垂直连接轴
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 8: Fabricate Vertical Connecting Shaft</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    切割金属圆棒。在圆棒的两端开槽，并在其中一个槽下方钻孔。这个轴连接面板支撑臂和底座。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Cut a metal rod. Make slots at both ends of the rod and drill a hole below one of the slots. This shaft connects the panel support arm and the base.</span>
+                </p>
+                 <img src="placeholder_03_51.jpg" alt="切割金属圆棒并开槽" class="my-4 rounded-lg shadow">
+                 <img src="placeholder_04_14.jpg" alt="金属圆棒上钻孔安装插销" class="my-4 rounded-lg shadow">
+                 <p class="text-lg font-semibold mb-4">
+                    在钻孔处安装一个<span class="font-semibold">固定环</span>，用于防止轴下滑。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Install a <span class="font-semibold">set screw collar</span> at the drilled hole to prevent the shaft from sliding down.</span>
+                 </p>
+                  <img src="placeholder_04_21.jpg" alt="安装固定环" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 9: Assemble Arm & Shaft -->
+             <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-9"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 9：组装支撑臂和垂直轴
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 9: Assemble Support Arm and Vertical Shaft</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                   将面板支撑臂（带太阳能电池板和垂直马达）连接到垂直连接轴上。垂直马达控制面板的仰角调整。
+                   <span class="text-sm font-normal text-gray-600 block mt-1">Connect the panel support arm (with solar panels and vertical motor) to the vertical connecting shaft. The vertical motor controls the elevation adjustment of the panels.</span>
+                 </p>
+                 <img src="placeholder_03_21.jpg" alt="支撑臂上的垂直马达及接线" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 10: Final Mechanical Assembly -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-10"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 10：完成整体机械组装
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 10: Complete Overall Mechanical Assembly</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                   将组装好的支撑臂和垂直轴插入底座上的轴承座中。安装主支撑柱（灰色的圆管）。
+                   <span class="text-sm font-normal text-gray-600 block mt-1">Insert the assembled support arm and vertical shaft into the bearing block on the base. Install the main support column (the gray tube).</span>
+                </p>
+                <img src="placeholder_05_00.jpg" alt="将垂直轴组件插入底座" class="my-4 rounded-lg shadow">
+            </div>
+
+             <!-- Step 11: Wiring & Cable Management -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-11"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 11：布线及整理
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 11: Wiring and Cable Management</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                   连接来自太阳能电池板和垂直马达的导线到水平旋转底座内的电路板上。用束线带固定好导线，保持整洁。
+                   <span class="text-sm font-normal text-gray-600 block mt-1">Connect the wires from the solar panels and vertical motor to the circuit board inside the horizontal rotation base. Secure the wires with zip ties for tidiness.</span>
+                </p>
+                 <img src="placeholder_03_00.jpg" alt="使用束线带固定导线" class="my-4 rounded-lg shadow">
+                  <p class="text-lg font-semibold mb-4">
+                    这里演示了太阳能电池板和马达驱动的基本原理：当某个方向的电池板接收到更多阳光时，产生的电流会驱动马达朝该方向转动，直到光照均匀。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">This demonstrates the basic principle of solar panel and motor drive: when panels in a certain direction receive more sunlight, the generated current drives the motor to turn in that direction until the light is balanced.</span>
+                  </p>
+                  <img src="placeholder_02_39.jpg" alt="太阳能电池板驱动马达原理图" class="my-4 rounded-lg shadow">
+            </div>
+
+            <!-- Step 12: Horizontal Rotation Test -->
+             <div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-12"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 12：水平旋转功能测试
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 12: Horizontal Rotation Functional Test</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    通过模拟光照（例如使用卡纸遮挡部分电池板），测试水平旋转机构是否能正常工作，并演示追踪太阳方位的功能。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">By simulating light (e.g., using cardboard to block some panels), test if the horizontal rotation mechanism works properly and demonstrate the function of tracking the sun's azimuth.</span>
+                </p>
+                 <img src="placeholder_02_57.jpg" alt="模拟光照测试水平旋转" class="my-4 rounded-lg shadow">
+                  <img src="placeholder_03_05.jpg" alt="水平旋转追踪演示" class="my-4 rounded-lg shadow">
+            </div>
+
+            <!-- Step 13: Final Demonstration (Full Tracking) -->
+            <div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 data-initial='{"opacity": 0, "y": 50}'
+                 data-while-in-view='{"opacity": 1, "y": 0}'
+                 data-viewport='{"once": true, "amount": 0.3}'
+                 data-transition='{"duration": 0.6}'
+                 id="step-13"
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 13：最终追踪效果演示
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 13: Final Tracking Demonstration</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    展示太阳方位追踪仪在室外环境中，实时跟随太阳的方位和仰角进行调整。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Show the solar azimuth tracker adjusting in real-time to follow the sun's azimuth and elevation in an outdoor environment.</span>
+                </p>
+                 <img src="placeholder_03_41.jpg" alt="室外追踪效果演示" class="my-4 rounded-lg shadow">
+            </div>
+
+        </section>
+
+        <div
+            class="text-center text-3xl font-bold text-gray-700 mt-16 mb-8"
+             data-initial='{"opacity": 0, "y": 50}'
+             data-while-in-view='{"opacity": 1, "y": 0}'
+             data-viewport='{"once": true, "amount": 0.5}'
+             data-transition='{"duration": 0.6}'
+             id="thank-you-section"
+        >
+            <span class="text-blue-600">感谢</span>您的观看！
+            <div class="text-sm font-normal text-gray-500 mt-2">Thank you for watching!</div>
+             <img src="placeholder_13_29.jpg" alt="点赞手势" class="mx-auto mt-4" style="max-width: 100px; height: auto;">
+        </div>
+
+    </div>
+
+    <!--
+    Optional: JavaScript for Framer Motion scrolling animations.
+    This requires selecting elements and setting up Intersection Observers manually,
+    as <motion.tag> syntax is for JSX/TSX frameworks like React.
+
+    Here's a basic example structure (uncomment and adapt if needed):
+    -->
+    <!--
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const { animate } = Motion; // Get Framer Motion functions
+
+            // Select elements that have animation data attributes
+            const elementsToAnimate = document.querySelectorAll('[data-while-in-view]');
+
+            elementsToAnimate.forEach(element => {
+                try {
+                    const initial = JSON.parse(element.getAttribute('data-initial') || '{}');
+                    const whileInView = JSON.parse(element.getAttribute('data-while-in-view') || '{}');
+                    const viewport = JSON.parse(element.getAttribute('data-viewport') || '{}');
+                    const transition = JSON.parse(element.getAttribute('data-transition') || '{}');
+
+                    // Use Intersection Observer for whileInView
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animate(element, whileInView, { transition: transition });
+                                if (viewport.once) {
+                                    observer.unobserve(element); // Stop observing after animation
+                                }
+                            } else {
+                                 // Optional: Animate back to initial state when out of view
+                                 // Only if not 'once'
+                                 if (!viewport.once) {
+                                     animate(element, initial, { transition: transition });
+                                 }
+                            }
+                        });
+                    }, {
+                         threshold: viewport.amount || 0, // How much of the element must be visible
+                    });
+
+                    observer.observe(element);
+
+                    // Set initial state immediately (optional, but good practice)
+                     animate(element, initial, { duration: 0 });
+
+                } catch (e) {
+                    console.error("Error parsing animation data attributes:", e);
+                }
+            });
+
+             // Example: Animate the title once on page load
+             const titleElement = document.querySelector('h1');
+             if(titleElement) {
+                 const initialTitle = { opacity: 0, y: -50 }; // Match data-initial or define here
+                 const animateTitle = { opacity: 1, y: 0 }; // Match data-animate or define here
+                 const transitionTitle = { duration: 0.8 }; // Match data-transition or define here
+                 animate(titleElement, animateTitle, { initial: initialTitle, transition: transitionTitle });
+             }
+
+        });
+    </script>
+    -->
+
+</body>
+</html>

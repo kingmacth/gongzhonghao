@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何自制一台高性能迷你桌面曲线锯</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@latest/dist/framer-motion.min.js"></script>
+    <style>
+        /* Custom gradient for highlighting */
+        .bg-gradient-highlight-blue {
+             background: linear-gradient(to right, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(59, 130, 246, 0.1) 100%);
+        }
+        /* Another gradient for variety */
+        .bg-gradient-highlight-green {
+             background: linear-gradient(to right, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 50%, rgba(34, 197, 94, 0.1) 100%);
+        }
+        /* Custom styles for Bento-like cards */
+        .bento-card {
+            @apply bg-white rounded-xl shadow-md overflow-hidden border border-gray-200;
+        }
+        .bento-card-dark {
+             @apply bg-gray-800 text-white rounded-xl shadow-md overflow-hidden border border-gray-700;
+        }
+         img {
+            display: block; /* Ensure images are block elements for w-full to work */
+            max-width: 100%; /* Prevent images from exceeding container width */
+         }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+
+    <div class="container mx-auto px-4 py-8 max-w-2xl md:max-w-3xl lg:max-w-4xl">
+
+        <motion.h1
+            class="text-center text-4xl md:text-5xl font-bold text-gray-800 mb-12"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
+            <span class="text-blue-600">如何</span>自制一台<br>高性能迷你桌面曲线锯
+            <div class="text-sm font-normal text-gray-500 mt-2">DIY a High-Performance Mini Desktop Scroll Saw</div>
+        </motion.h1>
+
+        <!-- Product Summary Section -->
+        <motion.section
+            class="bento-card p-6 mb-8 bg-gradient-highlight-blue"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+        >
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+                产品特点概述 <span class="text-base font-normal text-gray-500 ml-2">Product Features Overview</span>
+            </h2>
+            <div class="flex flex-col space-y-4">
+                <div class="flex items-center">
+                    <i class="fas fa-box-open text-blue-600 text-xl mr-3"></i>
+                    <div>
+                        <p class="text-lg font-semibold">结构紧凑，便携易用</p>
+                        <p class="text-sm text-gray-600">Compact Structure, Portable & Easy to Use</p>
+                    </div>
+                </div>
+                 <div class="flex items-center">
+                    <i class="fas fa-tachometer-alt text-green-600 text-xl mr-3"></i>
+                    <div>
+                        <p class="text-lg font-semibold">无级调速功能</p>
+                        <p class="text-sm text-gray-600">Infinitely Adjustable Speed</p>
+                         <p class="text-sm text-gray-500">PWM调速模块: 电流 10A, 电压 12-40V</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-cut text-red-600 text-xl mr-3"></i>
+                     <div>
+                        <p class="text-lg font-semibold">适用于精确切割薄板材料</p>
+                        <p class="text-sm text-gray-600">Suitable for Precision Cutting of Thin Sheet Materials</p>
+                         <p class="text-sm text-gray-500">锯片规格: 18T, 长度 133mm, 宽度 3mm</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-bolt text-yellow-600 text-xl mr-3"></i>
+                    <div>
+                        <p class="text-lg font-semibold">直流电机驱动</p>
+                        <p class="text-sm text-gray-600">DC Motor Driven</p>
+                        <p class="text-sm text-gray-500">电机型号: 775电机, 电压 12-24V, 转速 2500-20000rpm</p>
+                    </div>
+                </div>
+                 <div class="flex items-center">
+                    <i class="fas fa-battery-full text-purple-600 text-xl mr-3"></i>
+                     <div>
+                        <p class="text-lg font-semibold">多种供电方式</p>
+                        <p class="text-sm text-gray-600">Multiple Power Supply Options</p>
+                         <p class="text-sm text-gray-500">兼容电池包或直流电源适配器 (演示使用 18V 5A 电源)</p>
+                    </div>
+                </div>
+                 <div class="flex items-center">
+                    <i class="fas fa-ruler-combined text-teal-600 text-xl mr-3"></i>
+                     <div>
+                        <p class="text-lg font-semibold">紧凑的机身尺寸</p>
+                        <p class="text-sm text-gray-600">Compact Dimensions</p>
+                         <p class="text-sm text-gray-500">高约 32cm, 工作台面尺寸约 18cm x 24cm</p>
+                    </div>
+                </div>
+            </div>
+             <motion.img src="placeholder_00_00.jpg" alt="成品迷你桌面曲线锯" class="w-full h-auto object-cover my-6 rounded-lg shadow-lg"
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true, amount: 0.5 }}
+                 transition={{ duration: 0.5 }}
+             />
+        </motion.section>
+
+        <!-- Construction Steps Section -->
+        <section class="space-y-8">
+
+            <!-- Step 1 -->
+            <motion.div
+                class="bento-card p-6 bg-gradient-highlight-green"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 1：准备机身驱动结构底座板材
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 1: Prepare Base Plates for Drive Mechanism</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    在塑料板上绘制切割线。切割所需尺寸的板材。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Mark cutting lines on plastic sheets. Cut pieces to required size.</span>
+                </p>
+                <motion.img src="placeholder_00_18.jpg" alt="绘制切割线" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                     initial={{ opacity: 0, x: -20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true, amount: 0.5 }}
+                     transition={{ duration: 0.5 }}
+                />
+                 <p class="text-lg font-semibold mb-4">
+                    粘合多层板材增加厚度，并打磨表面。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Bond multiple layers for thickness and sand the surface.</span>
+                 </p>
+                 <motion.img src="placeholder_00_21.jpg" alt="打磨板材表面" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                     initial={{ opacity: 0, x: 20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true, amount: 0.5 }}
+                     transition={{ duration: 0.5 }}
+                 />
+            </motion.div>
+
+            <!-- Step 2 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 2：制作电机安装件并安装轴承
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 2: Fabricate Motor Mount and Install Bearing</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    在粘合的板材上标记并开孔，用于安装电机和轴承。安装一个 <span class="font-semibold">轴承</span> (内径 5mm, 外径 10mm)。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Mark and drill holes on the bonded piece for motor and bearing installation. Install an <span class="font-semibold">axle bearing</span> (Inner diameter: 5mm, Outer diameter: 10mm).</span>
+                 </p>
+                 <motion.img src="placeholder_00_49.jpg" alt="打孔安装轴承" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.5 }}
+                 />
+            </motion.div>
+
+            <!-- Step 3 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 3：制作并安装大同步带轮轴承座
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 3: Fabricate and Install Large Pulley Bearing Block</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    粘合多层板材制作方形轴承座，开孔并安装一个 <span class="font-semibold">直线轴承</span> (内径 10mm, 外径 19mm)。
+                     <span class="text-sm font-normal text-gray-600 block mt-1">Bond multiple layers to make a square bearing block, drill a hole and install a <span class="font-semibold">linear bearing</span> (Inner diameter: 10mm, Outer diameter: 19mm).</span>
+                 </p>
+                  <motion.img src="placeholder_01_26.jpg" alt="粘合板材制作方形块" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                   <motion.img src="placeholder_01_37.jpg" alt="方形块上安装直线轴承" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, x: 20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+            <!-- Step 4 -->
+             <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 4：制作连杆
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 4: Fabricate Connecting Rod</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    切割铝合金方管并打磨。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Cut and sand aluminum square tube.</span>
+                </p>
+                 <motion.img src="placeholder_02_57.jpg" alt="打磨连杆" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                 <p class="text-lg font-semibold mb-4">
+                    在连杆两端打孔，一端安装衬套。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Drill holes at both ends of the connecting rod, install a bushing at one end.</span>
+                 </p>
+                 <motion.img src="placeholder_03_16.jpg" alt="连杆端部衬套" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 5 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 5：安装同步带轮和连杆
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 5: Install Synchronous Pulleys and Connecting Rod</span>
+                </h2>
+                 <p class="text-lg font-semibold mb-4">
+                    在 <span class="font-semibold">大同步带轮</span> (60齿) 上打孔安装螺丝。将小同步带轮 (20齿) 固定在电机轴上。将连杆通过螺丝固定在大同步带轮上。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Drill a hole on the <span class="font-semibold">large synchronous belt pulley</span> (60 teeth) for a screw. Fix the small synchronous belt pulley (20 teeth) onto the motor shaft. Fix the connecting rod to the large synchronous belt pulley with a screw.</span>
+                 </p>
+                 <motion.img src="placeholder_02_16.jpg" alt="在大同步带轮上打螺丝孔" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, x: -20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                   <motion.img src="placeholder_03_35.jpg" alt="安装皮带轮和连杆" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, x: 20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 6 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 6：制作垂直轴支架管
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 6: Fabricate Vertical Shaft Holder Tube</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    切割并打磨金属圆管。在管上开槽，并打孔安装插销。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Cut and sand metal tube. Make a slot on the tube and drill a hole for a pin.</span>
+                </p>
+                 <motion.img src="placeholder_03_51.jpg" alt="金属管上开槽" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                  <motion.img src="placeholder_04_14.jpg" alt="金属管上安装插销" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 7 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 7：制作上锯片夹持件
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 7: Fabricate Upper Saw Blade Clamp</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                   制作金属夹持件，用于固定锯片上端。
+                   <span class="text-sm font-normal text-gray-600 block mt-1">Fabricate a metal clamp part to hold the upper end of the saw blade.</span>
+                 </p>
+                 <motion.img src="placeholder_08_51.jpg" alt="制作上锯片夹持件" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+            <!-- Step 8 -->
+             <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 8：制作机身主体框架
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 8: Fabricate Main Body Frame</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    切割并粘合多层塑料板，形成“C”形的机身框架。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Cut and bond multiple layers of plastic sheets to form the "C"-shaped frame.</span>
+                </p>
+                 <motion.img src="placeholder_06_00.jpg" alt="制作机身框架" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 9 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 9：固定驱动机构到底座和框架
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 9: Fix Drive Mechanism to Base and Frame</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    将电机/驱动机构底座固定到机身框架底部。使用螺丝加固连接。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Fix the motor/drive mechanism base onto the main frame base. Secure connections with screws.</span>
+                </p>
+                 <motion.img src="placeholder_08_08.jpg" alt="固定驱动机构底座" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+            <!-- Step 10 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 10：制作并安装工作台面
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 10: Fabricate and Install Work Table</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    粘合多层板材制作工作台面，修剪并打磨边缘。在中心为锯片开孔，安装衬套。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Bond multiple layers for the work table, trim and sand edges. Drill a hole in the center for the saw blade and install a bushing/insert.</span>
+                </p>
+                 <motion.img src="placeholder_07_07.jpg" alt="粘合工作台面板材" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.5 }}
+                 />
+                  <motion.img src="placeholder_10_08.jpg" alt="工作台面上的锯片孔和衬套" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, x: 20 }}
+                       whileInView={{ opacity: 1, x: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 11 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 11：将工作台面固定到底座
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 11: Fix Work Table to Base</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    在底座上打孔，安装衬套，然后用螺丝将工作台面固定到底座上。安装橡胶脚垫。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Drill holes on the base, install bushings, then fix the work table to the base with screws. Install rubber feet.</span>
+                </p>
+                 <motion.img src="placeholder_07_45.jpg" alt="底座上的螺丝孔和衬套" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                  <motion.img src="placeholder_07_51.jpg" alt="固定工作台面" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+            <!-- Step 12 -->
+             <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 12：安装垂直轴和锯片机构
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 12: Install Vertical Shaft and Saw Blade Mechanism</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    将垂直轴穿过上下轴承座，连接连杆。安装上锯片夹持件和弹簧，调整锯片张紧度。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Insert the vertical shaft through the upper and lower bearing blocks, connect the connecting rod. Install the upper saw blade clamp and spring, adjust the blade tension.</span>
+                </p>
+                 <motion.img src="placeholder_05_00.jpg" alt="安装垂直轴到底部轴承座" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                   <motion.img src="placeholder_09_17.jpg" alt="安装锯片并调整张紧" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 13 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 13：制作并安装控制箱
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 13: Fabricate and Install Control Box</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    制作控制箱外壳，安装并连接 <span class="font-semibold">PWM调速模块</span>、电压显示屏、开关和接线端子。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Fabricate the control box enclosure, install and wire the <span class="font-semibold">PWM Speed Regulation Switch</span>, voltage display, switches, and terminals.</span>
+                </p>
+                 <motion.img src="placeholder_10_50.jpg" alt="安装控制箱组件" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+            <!-- Step 14 -->
+            <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-blue"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 14：最终组装并连接电源
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 14: Final Assembly and Power Connection</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                   将控制箱固定到机身上，连接电机接线和电源接头。可使用电池包或 <span class="font-semibold">18V 5A 直流电源适配器</span> 供电。
+                   <span class="text-sm font-normal text-gray-600 block mt-1">Fix the control box to the machine body, connect motor wires and power connectors. Can be powered by a battery pack or <span class="font-semibold">18V 5A DC power adapter</span>.</span>
+                </p>
+                <motion.img src="placeholder_10_55.jpg" alt="固定控制箱" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                 <motion.img src="placeholder_11_38.jpg" alt="连接电源适配器" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+             <!-- Step 15 -->
+             <motion.div
+                 class="bento-card p-6 bg-gradient-highlight-green"
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.3 }}
+                 transition={{ duration: 0.6 }}
+            >
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                    步骤 15：切割演示
+                    <span class="text-base font-normal text-gray-500 ml-2">Step 15: Cutting Demonstration</span>
+                </h2>
+                <p class="text-lg font-semibold mb-4">
+                    打开电源，调节速度，即可进行精确的切割操作。
+                    <span class="text-sm font-normal text-gray-600 block mt-1">Turn on power, adjust speed, and perform precise cutting operations.</span>
+                 </p>
+                  <motion.img src="placeholder_12_06.jpg" alt="切割演示开始" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+                   <motion.img src="placeholder_13_23.jpg" alt="完成切割的形状" class="w-full h-auto object-cover my-4 rounded-lg shadow"
+                       initial={{ opacity: 0, scale: 0.9 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true, amount: 0.5 }}
+                       transition={{ duration: 0.5 }}
+                  />
+            </motion.div>
+
+
+        </section>
+
+        <motion.div
+            class="text-center text-3xl font-bold text-gray-700 mt-16 mb-8"
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true, amount: 0.5 }}
+             transition={{ duration: 0.6 }}
+        >
+            <span class="text-blue-600">感谢</span>您的观看！
+            <div class="text-sm font-normal text-gray-500 mt-2">Thank you for watching!</div>
+        </motion.div>
+
+    </div>
+
+    <!-- Initialize Framer Motion (Optional, as whileInView handles scrolling) -->
+    <script>
+        // Ensure Motion is accessed correctly if using directly
+        // const { motion } = Motion;
+    </script>
+
+</body>
+</html>
