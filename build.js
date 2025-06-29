@@ -106,6 +106,35 @@ async function buildBlog() {
 
     </body>
     </html>
+	  // ... (前面的代码不变)
+
+	 indexHtmlContent += `
+            </ul>
+        </main>
+
+        <footer>
+            <section class="contact-info">
+                <h3>联系方式</h3>
+                <p>Email: <a href="mailto:kingmacth@gmail.com">kingmacth@gmail.com</a></p>
+            </section>
+
+            <section class="friendly-links">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">fiverr自由职业者</a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <!-- Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cd472c672f374e578bc700d5a6c0e8aa"}'></script>
+        <!-- End Cloudflare Web Analytics -->
+
+    </body>
+    </html>
+  `; // <-- 统计代码插入在 </body> 标签前
+
+  // ... (后面的代码不变)
   `;
 
   // 5. 将生成的主页 HTML 写入输出目录
