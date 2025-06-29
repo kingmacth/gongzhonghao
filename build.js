@@ -1,16 +1,20 @@
-const fs = require('fs-extra'); // 用于文件操作，需要安装 fs-extra
-const path = require('path'); // Node.js 内置模块，处理路径
+const fs = require('fs-extra');
+const path = require('path');
+const cheerio = require('cheerio'); // <--- 引入 cheerio
 
-const sourceDir = '.'; // 你的仓库根目录
-const outputDir = 'dist'; // 构建输出目录，Cloudflare Pages 将部署这个目录的内容
+const sourceDir = '.';
+const outputDir = 'dist';
 
 async function buildBlog() {
+  console.log('Starting blog build...');
+
   // 1. 清理输出目录
   await fs.emptyDir(outputDir);
+  console.log(`Cleaned output directory: ${outputDir}`);
 
-  // 2. 扫描源目录，查找 YYYYMMDD 格式的文件夹
+  // 2. 扫描源目录，查找 YYYYMMDD 格式的文件夹，并提取标题
   const entries = await fs.readdir(sourceDir);
-  const dateFolders = [];
+  const postsData = []; // 存储 { folder: 'YYYYMMDD', title: 'Extracted Title' }
 
   for (const entry of entries) {
     const fullPath = path.join(sourceDir, entry);
@@ -18,12 +22,39 @@ async function buildBlog() {
 
     // 检查是否是目录且名称符合 YYYYMMDD 格式
     if (stat.isDirectory() && /^\d{8}$/.test(entry)) {
-      dateFolders.push(entry);
+      const postFolderPath = fullPath;
+      const postIndexPath = path.join(postFolderPath, 'index.html');
+      let postTitle = entry; // 默认使用文件夹名称作为标题
+
+      try {
+        // 尝试读取并解析 index.html 获取标题
+        if (await fs.exists(postIndexPath)) {
+          const htmlContent = await fs.readFile(postIndexPath, 'utf8');
+          const $ = cheerio.load(htmlContent); // 用 cheerio 加载 HTML
+          const extractedTitle = $('title').text(); // 提取 <title> 标签的文本内容
+
+          if (extractedTitle) {
+            postTitle = extractedTitle; // 如果成功提取到标题，则使用提取的标题
+            console.log(`Extracted title for ${entry}: "${postTitle}"`);
+          } else {
+             console.warn(`Warning: No <title> tag found in ${postIndexPath}. Using folder name "${entry}" as title.`);
+          }
+        } else {
+           console.warn(`Warning: ${postIndexPath} not found. Using folder name "${entry}" as title.`);
+        }
+      } catch (err) {
+        console.error(`Error reading or parsing ${postIndexPath}:`, err);
+        // 发生错误时，保留默认的文件夹名称作为标题
+      }
+
+      postsData.push({ folder: entry, title: postTitle });
     }
   }
 
   // 3. 按日期（文件夹名称）排序，最新在前
-  dateFolders.sort().reverse(); // 升序排序后反转为降序 (最新在前)
+  postsData.sort((a, b) => b.folder.localeCompare(a.folder)); // 降序排序 (最新在前)
+  console.log('Found and sorted posts:', postsData.map(p => p.folder));
+
 
   // 4. 生成主页 HTML 内容
   let indexHtmlContent = `
@@ -33,28 +64,21 @@ async function buildBlog() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>我的公众号文章存档</title>
-        <style>
-          body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
-          h1 { color: #333; }
-          ul { list-style: none; padding: 0; }
-          li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-          a { text-decoration: none; color: #0066cc; }
-          a:hover { text-decoration: underline; }
-        </style>
+        <link rel="stylesheet" href="/style.css"> <!-- 链接到 style.css -->
     </head>
     <body>
         <h1>公众号文章列表</h1>
         <ul>
   `;
 
-  if (dateFolders.length === 0) {
+  if (postsData.length === 0) {
       indexHtmlContent += `<li>暂无文章。</li>`;
   } else {
-      dateFolders.forEach(folderName => {
-          // 格式化日期，可选，这里直接使用文件夹名
-          const formattedDate = folderName.replace(/(\d{4})(\d{2})(\d{2})/, '$1年$2月$3日');
+      postsData.forEach(post => {
+          // 格式化日期，可选，这里直接使用文件夹名加标题
+          // const formattedDate = post.folder.replace(/(\d{4})(\d{2})(\d{2})/, '$1年$2月$3日');
           indexHtmlContent += `
-              <li><a href="/${folderName}/index.html">${formattedDate}</a></li>
+              <li><a href="/${post.folder}/index.html">${post.title}</a></li> <!-- 使用提取的标题 -->
           `;
       });
   }
@@ -66,25 +90,26 @@ async function buildBlog() {
   `;
 
   // 5. 将生成的主页 HTML 写入输出目录
-  await fs.ensureDir(outputDir); // 确保输出目录存在
+  await fs.ensureDir(outputDir);
   await fs.writeFile(path.join(outputDir, 'index.html'), indexHtmlContent);
   console.log(`Generated ${path.join(outputDir, 'index.html')}`);
 
   // 6. 将所有 YYYYMMDD 文件夹及其内容复制到输出目录
-  for (const folderName of dateFolders) {
-      const sourceFolder = path.join(sourceDir, folderName);
-      const destFolder = path.join(outputDir, folderName);
+  for (const post of postsData) {
+      const sourceFolder = path.join(sourceDir, post.folder);
+      const destFolder = path.join(outputDir, post.folder);
       await fs.copy(sourceFolder, destFolder);
       console.log(`Copied ${sourceFolder} to ${destFolder}`);
   }
 
-   // 7. 复制一个基础的 style.css 文件（如果需要的话，可选）
-   // 你可以在仓库根目录创建一个 style.css 文件，然后用脚本复制它
-   const styleSource = path.join(sourceDir, 'style.css'); // 假设你的 style.css 在根目录
+   // 7. 复制 style.css 文件（确保 style.css 存在于根目录）
+   const styleSource = path.join(sourceDir, 'style.css');
    const styleDest = path.join(outputDir, 'style.css');
    if (await fs.exists(styleSource)) {
        await fs.copy(styleSource, styleDest);
        console.log(`Copied ${styleSource} to ${styleDest}`);
+   } else {
+       console.warn(`Warning: style.css not found in ${sourceDir}. Skipping copy.`);
    }
 
 
@@ -94,5 +119,5 @@ async function buildBlog() {
 // 执行构建函数
 buildBlog().catch(err => {
   console.error('Build failed:', err);
-  process.exit(1); // 构建失败时退出，Cloudflare Pages 会报告错误
+  process.exit(1);
 });
