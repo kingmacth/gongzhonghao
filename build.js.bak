@@ -56,54 +56,35 @@ async function buildBlog() {
   console.log('Found and sorted posts:', postsData.map(p => p.folder));
 
 
-   // 4. 生成主页 HTML 内容
+  // 4. 生成主页 HTML 内容
   let indexHtmlContent = `
     <!DOCTYPE html>
     <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>大道无极的BLOG</title> <!-- 这里也改成博客标题 -->
-        <link rel="stylesheet" href="/style.css">
+        <title>我的公众号文章存档</title>
+        <link rel="stylesheet" href="/style.css"> <!-- 链接到 style.css -->
     </head>
     <body>
-        <header>
-            <h1>大道无极的BLOG</h1> <!-- 主要标题 -->
-        </header>
-
-        <main>
-            <h2>文章列表</h2> <!-- 列表的副标题 -->
-            <ul>
+        <h1>公众号文章列表</h1>
+        <ul>
   `;
 
   if (postsData.length === 0) {
       indexHtmlContent += `<li>暂无文章。</li>`;
   } else {
       postsData.forEach(post => {
+          // 格式化日期，可选，这里直接使用文件夹名加标题
+          // const formattedDate = post.folder.replace(/(\d{4})(\d{2})(\d{2})/, '$1年$2月$3日');
           indexHtmlContent += `
-              <li><a href="/${post.folder}/index.html">${post.title}</a></li>
+              <li><a href="/${post.folder}/index.html">${post.title}</a></li> <!-- 使用提取的标题 -->
           `;
       });
   }
 
   indexHtmlContent += `
-            </ul>
-        </main>
-
-        <footer>
-            <section class="contact-info">
-                <h3>联系方式</h3>
-                <p>Email: <a href="mailto:kingmacth@gmail.com">kingmacth@gmail.com</a></p>
-            </section>
-
-            <section class="friendly-links">
-                <h3>友情链接</h3>
-                <ul>
-                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">fiverr自由职业者</a></li> <!-- target="_blank" 让链接在新标签页打开 -->
-                </ul>
-            </section>
-        </footer>
-
+        </ul>
     </body>
     </html>
   `;
