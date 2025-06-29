@@ -102,7 +102,7 @@ async function buildBlog() {
             <section class="friendly-links">
                 <h3>友情链接 / Friendly Links</h3>
                 <ul>
-                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">Great freelancer</a></li> <!-- 修改了链接文本 -->
+                    <li><a href="https://www.fiverr.com/kingmacth?public_mode=true" target="_blank">Great freelancer</a></li> <!-- 修改了链接文本 -->
                 </ul>
             </section>
         </footer>
