@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何制作一个超声波冷雾加湿器</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion (if needed for JS animations, include the script) -->
+    <!-- For basic usage without React/Vue, you'd typically use the vanilla JS library -->
+    <!-- As no specific animation is requested beyond including the lib, we just link the core script -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.5/dist/framer-motion.min.js"></script>
+
+    <style>
+        /* Custom styles for gradient text/elements if needed beyond Tailwind */
+        .gradient-text-blue {
+            background-image: linear-gradient(to right, #6366f1, #06b6d4); /* Indigo to Cyan */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+         .gradient-border-pink {
+            border-image: linear-gradient(to right, #ec4899, #f472b6) 1; /* Pink to Rose */
+         }
+
+        /* Ensure images scale down within the container */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen p-4">
+
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+
+        <!-- Title Section -->
+        <div class="p-6 text-center border-b-2 border-purple-300">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-2 gradient-text-blue">
+                如何制作一个超声波冷雾加湿器
+            </h1>
+            <p class="text-gray-600 text-sm uppercase tracking-wider">
+                How to Make a Simple Ultrasonic Cool Mist Humidifier
+            </p>
+        </div>
+
+        <!-- Product Summary -->
+        <div class="p-6 border-b-2 border-purple-300">
+            <h2 class="text-2xl font-bold mb-4">
+                简易高效的自制加湿器
+            </h2>
+            <p class="text-gray-700 mb-4">
+                这个DIY教程将向您展示如何利用日常用品和简单的电子元件，制作一个功能强大的超声波冷雾加湿器。它结构紧凑，易于组装，能有效增加室内湿度，或用于制造酷炫的雾化效果。
+            </p>
+            <p class="text-gray-600 text-sm">
+                A simple and efficient DIY humidifier project using common household items and electronic components to create a cool mist ultrasonic humidifier.
+            </p>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                <div class="p-4 bg-blue-50 rounded-lg shadow">
+                    <i class="fas fa-screwdriver-wrench text-blue-500 text-3xl mb-2"></i>
+                    <p class="text-xl font-bold">
+                         <span class="text-3xl font-extrabold text-blue-600 mr-1">DIY</span> 项目
+                    </p>
+                    <p class="text-gray-600 text-xs">DIY Project</p>
+                </div>
+                 <div class="p-4 bg-purple-50 rounded-lg shadow">
+                    <i class="fas fa-cloud text-purple-500 text-3xl mb-2"></i>
+                    <p class="text-xl font-bold">
+                         <span class="text-3xl font-extrabold text-purple-600 mr-1">冷雾</span> 输出
+                    </p>
+                    <p class="text-gray-600 text-xs">Cool Mist Output</p>
+                </div>
+                 <div class="p-4 bg-green-50 rounded-lg shadow">
+                    <i class="fas fa-battery-three-quarters text-green-500 text-3xl mb-2"></i>
+                    <p class="text-xl font-bold">
+                         <span class="text-3xl font-extrabold text-green-600 mr-1">低功耗</span> 运行
+                    </p>
+                    <p class="text-gray-600 text-xs">Low Power Operation</p>
+                </div>
+                 <div class="p-4 bg-yellow-50 rounded-lg shadow">
+                    <i class="fas fa-tools text-yellow-500 text-3xl mb-2"></i>
+                    <p class="text-xl font-bold">
+                         <span class="text-3xl font-extrabold text-yellow-600 mr-1">易于</span> 制作
+                    </p>
+                     <p class="text-gray-600 text-xs">Easy to Build</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Materials Section -->
+        <div class="p-6 border-b-2 border-purple-300">
+            <h2 class="text-2xl font-bold mb-4">
+                所需材料
+            </h2>
+             <p class="text-gray-600 text-sm mb-4">
+                Materials Needed
+            </p>
+            <ul class="list-none p-0 m-0 space-y-3">
+                <li class="flex items-center text-gray-800">
+                    <i class="fas fa-box mr-3 text-blue-500"></i>
+                    <div>
+                        <strong class="text-lg">透明塑料容器</strong> <span class="text-gray-600 text-sm">(带盖)</span><br>
+                        <span class="text-gray-500 text-xs">Clear Plastic Container (with lid)</span>
+                    </div>
+                </li>
+                <li class="flex items-center text-gray-800">
+                    <i class="fas fa-pipe mr-3 text-red-500"></i>
+                    <div>
+                        <strong class="text-lg">红色 PVC 弯头</strong> <span class="text-gray-600 text-sm">(用于出雾口)</span><br>
+                        <span class="text-gray-500 text-xs">Red PVC Elbow (for mist outlet)</span>
+                    </div>
+                </li>
+                <li class="flex items-center text-gray-800">
+                     <i class="fas fa-pipe mr-3 text-white"></i> <!-- Using default white color -->
+                    <div>
+                        <strong class="text-lg">白色 PVC 连接件</strong> <span class="text-gray-600 text-sm">(连接弯头与盖子)</span><br>
+                        <span class="text-gray-500 text-xs">White PVC Connector (joins elbow to lid)</span>
+                    </div>
+                </li>
+                <li class="flex items-center text-gray-800">
+                     <i class="fas fa-fan mr-3 text-gray-700"></i>
+                    <div>
+                        <strong class="text-lg">DC 散热风扇</strong> <span class="text-gray-600 text-sm">(例如 12V 约 80/92mm 电脑风扇)</span><br>
+                        <span class="text-gray-500 text-xs">DC Cooling Fan (e.g., 12V approx. 80/92mm PC fan)</span>
+                    </div>
+                </li>
+                 <li class="flex items-center text-gray-800">
+                     <i class="fas fa-plug mr-3 text-gray-700"></i>
+                    <div>
+                        <strong class="text-lg">DC 电源插座</strong> <span class="text-gray-600 text-sm">(桶状插孔型)</span><br>
+                        <span class="text-gray-500 text-xs">DC Power Socket (Barrel Jack Type)</span>
+                    </div>
+                </li>
+                <li class="flex items-center text-gray-800">
+                     <i class="fas fa-water mr-3 text-blue-400"></i>
+                    <div>
+                        <strong class="text-lg">超声波雾化模块</strong> <span class="text-gray-600 text-sm">(带电源线)</span><br>
+                        <span class="text-gray-500 text-xs">Ultrasonic Mist Maker Module (with power cable)</span>
+                    </div>
+                </li>
+                <li class="flex items-center text-gray-800">
+                    <i class="fas fa-hot-glue mr-3 text-yellow-600"></i>
+                    <div>
+                        <strong class="text-lg">热熔胶枪及胶棒</strong><br>
+                        <span class="text-gray-500 text-xs">Hot Glue Gun and Glue Sticks</span>
+                    </div>
+                </li>
+                 <li class="flex items-center text-gray-800">
+                    <i class="fas fa-temperature-arrow-down mr-3 text-red-500"></i>
+                    <div>
+                        <strong class="text-lg">电烙铁及焊锡</strong><br>
+                        <span class="text-gray-500 text-xs">Soldering Iron and Solder</span>
+                    </div>
+                </li>
+                 <li class="flex items-center text-gray-800">
+                    <i class="fas fa-fill-drip mr-3 text-cyan-500"></i>
+                    <div>
+                        <strong class="text-lg">水</strong><br>
+                        <span class="text-gray-500 text-xs">Water</span>
+                    </div>
+                </li>
+                 <li class="flex items-center text-gray-800">
+                    <i class="fas fa-screwdriver mr-3 text-gray-500"></i>
+                    <div>
+                        <strong class="text-lg">钻孔工具</strong> <span class="text-gray-600 text-sm">(用于盖子和容器打孔)</span><br>
+                        <span class="text-gray-500 text-xs">Drilling Tool (for making holes in the lid and container)</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Step-by-Step Instructions -->
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-4">
+                制作步骤
+            </h2>
+             <p class="text-gray-600 text-sm mb-4">
+                Step-by-Step Instructions
+            </p>
+
+            <ol class="list-decimal list-inside space-y-8 text-gray-800">
+                <li>
+                    <strong class="text-lg">准备容器盖子</strong><br>
+                    <span class="text-gray-600 text-sm">Prepare the Container Lid</span>
+                    <p class="mt-2 text-gray-700">在塑料容器的盖子中心挖一个适合白色PVC连接件的大孔，并在周围均匀打几个小孔作为进气口。</p>
+                    <p class="text-gray-600 text-xs">Cut a large hole in the center of the plastic lid to fit the white PVC connector and drill several smaller holes around it for air intake.</p>
+                     <img src="placeholder_00_34.jpg" alt="Prepared container lid" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">组装PVC部件</strong><br>
+                    <span class="text-gray-600 text-sm">Assemble the PVC Parts</span>
+                    <p class="mt-2 text-gray-700">将红色PVC弯头与白色PVC连接件组合在一起。</p>
+                     <p class="text-gray-600 text-xs">Combine the red PVC elbow and the white PVC connector.</p>
+                    <img src="placeholder_00_38.jpg" alt="Assembled PVC parts" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">固定PVC到盖子</strong><br>
+                    <span class="text-gray-600 text-sm">Attach PVC to the Lid</span>
+                    <p class="mt-2 text-gray-700">使用热熔胶将组装好的PVC部件牢固地固定在盖子中心的大孔上，确保密封。</p>
+                     <p class="text-gray-600 text-xs">Securely glue the assembled PVC part to the large central hole on the lid using hot glue, ensuring a tight seal.</p>
+                     <img src="placeholder_00_54.jpg" alt="PVC attached to lid" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">安装散热风扇</strong><br>
+                    <span class="text-gray-600 text-sm">Install the Cooling Fan</span>
+                    <p class="mt-2 text-gray-700">将DC散热风扇固定在盖子的底部（内侧），使其叶片正对PVC连接件的开口，用于将雾气吹出。同样使用热熔胶固定。</p>
+                     <p class="text-gray-600 text-xs">Fix the DC cooling fan to the underside (inside) of the lid, positioning its blades directly under the PVC connector opening to blow out mist. Use hot glue to secure it.</p>
+                      <img src="placeholder_01_26.jpg" alt="Fan attached to lid" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                     <strong class="text-lg">安装电源插座</strong><br>
+                    <span class="text-gray-600 text-sm">Install the Power Socket</span>
+                    <p class="mt-2 text-gray-700">在盖子上合适的位置打一个小孔，安装DC电源插座。</p>
+                     <p class="text-gray-600 text-xs">Drill a small hole in a suitable location on the lid and install the DC power socket.</p>
+                      <img src="placeholder_01_41.jpg" alt="Power socket installed" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">连接风扇与插座</strong><br>
+                    <span class="text-gray-600 text-sm">Wire the Fan to the Socket</span>
+                    <p class="mt-2 text-gray-700">将散热风扇的电线连接到DC电源插座上。红色线通常接电源插座的中心正极触点，黑色线接外部负极触点。使用电烙铁焊接牢固。</p>
+                     <p class="text-gray-600 text-xs">Connect the fan's wires to the DC power socket. The red wire typically connects to the center positive terminal of the socket, and the black wire to the outer negative terminal. Solder them securely using a soldering iron.</p>
+                      <img src="placeholder_02_08.jpg" alt="Fan wired to socket" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">准备塑料容器</strong><br>
+                    <span class="text-gray-600 text-sm">Prepare the Plastic Container</span>
+                    <p class="mt-2 text-gray-700">在塑料容器的侧面靠近底部的位置打一个小孔，用于引出雾化模块的电源线。</p>
+                     <p class="text-gray-600 text-xs">Drill a small hole in the side of the plastic container near the bottom to pass the mist maker module's power cable through.</p>
+                      <img src="placeholder_02_16.jpg" alt="Container with hole" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                 <li>
+                    <strong class="text-lg">放置雾化模块</strong><br>
+                    <span class="text-gray-600 text-sm">Place the Mist Maker Module</span>
+                    <p class="mt-2 text-gray-700">将超声波雾化模块放入容器底部，通过侧面的小孔将电源线引出。确保模块可以完全浸没在水中。</p>
+                     <p class="text-gray-600 text-xs">Place the ultrasonic mist maker module at the bottom of the container, threading its power cable through the small hole on the side. Ensure the module can be fully submerged in water.</p>
+                     <img src="placeholder_02_34.jpg" alt="Mist maker in container" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                <li>
+                    <strong class="text-lg">加入水</strong><br>
+                    <span class="text-gray-600 text-sm">Add Water</span>
+                    <p class="mt-2 text-gray-700">向容器中加入足量的水，至少要没过雾化模块的传感器部分。</p>
+                     <p class="text-gray-600 text-xs">Add sufficient water to the container, at least enough to cover the sensor part of the mist maker module.</p>
+                     <img src="placeholder_02_38.jpg" alt="Water added to container" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+
+                 <li>
+                    <strong class="text-lg">组装并测试</strong><br>
+                    <span class="text-gray-600 text-sm">Assemble and Test</span>
+                    <p class="mt-2 text-gray-700">将带有风扇和PVC部件的盖子盖到容器上，并连接外部12V电源。超声波雾化模块会产生雾气，风扇会将其从红色弯头处吹出。</p>
+                     <p class="text-gray-600 text-xs">Place the lid with the fan and PVC parts onto the container. Connect an external 12V power supply. The ultrasonic mist maker module will produce mist, and the fan will blow it out through the red elbow.</p>
+                      <img src="placeholder_02_44.jpg" alt="Final assembly" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                      <img src="placeholder_02_58.jpg" alt="Humidifier working" width="900" class="mt-4 rounded responsive-image mx-auto shadow-md">
+                </li>
+            </ol>
+        </div>
+
+        <!-- How it Works Section -->
+        <div class="p-6 border-t-2 border-purple-300">
+            <h3 class="text-xl font-bold mb-4">
+                工作原理
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+                How it Works
+            </p>
+            <p class="text-gray-700">
+                超声波雾化模块通过高频振动将水分子打散成微小的颗粒，形成冷雾。DC风扇则将这些雾气向上抽送并通过弯头引导出来。进气孔的设计保证了空气流通，使得风扇能够有效地吹出雾气。
+            </p>
+             <p class="text-gray-600 text-xs mt-2">
+                The ultrasonic mist maker module uses high-frequency vibrations to break down water molecules into tiny particles, creating cool mist. The DC fan draws this mist upwards and directs it out through the elbow. The air intake holes ensure proper airflow for the fan to effectively expel the mist.
+            </p>
+        </div>
+
+        <!-- Footer / Thanks -->
+        <div class="p-6 bg-gradient-to-r from-teal-400 to-cyan-500 text-white text-center">
+            <h3 class="text-2xl font-bold tracking-wide">
+                感谢您的阅读
+            </h3>
+             <p class="text-sm opacity-90">
+                THANKS FOR WATCHING / READING
+            </p>
+            <div class="flex justify-around mt-6 space-x-4">
+                 <div class="border-2 border-white w-24 h-16"></div> <!-- Placeholder for suggestion -->
+                 <div class="border-2 border-white rounded-full w-16 h-16"></div> <!-- Placeholder for subscribe -->
+                 <div class="border-2 border-white w-24 h-16"></div> <!-- Placeholder for next video -->
+            </div>
+             <p class="text-sm mt-4 opacity-90">
+                MY SUGGESTION | SUBSCRIBE | WATCH NEXT
+            </p>
+             <p class="text-xs mt-2 opacity-70">
+                FOR MORE DIY VIDEOS
+            </p>
+        </div>
+
+    </div>
+
+     <script>
+        // Optional: Use Framer Motion for a simple animation on the main title or the first section
+        // This requires selecting the element and applying motion properties.
+        // As a basic example, let's fade-in the main container slightly after load.
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.max-w-md');
+            if (container && typeof motion !== 'undefined') {
+                 motion(container, {
+                    opacity: 0,
+                    y: 20
+                 }).animate({
+                    opacity: 1,
+                    y: 0
+                 }, {
+                    duration: 0.5,
+                    ease: "easeOut"
+                 });
+            }
+        });
+     </script>
+
+</body>
+</html>

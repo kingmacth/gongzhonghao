@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然如何塑造了这些奇特生物</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@6.5.1/dist/framer-motion.cdn.js"></script>
+    <style>
+        /* Custom styles for Bento Grid inspired elements and gradients */
+        .bento-card {
+            background: linear-gradient(135deg, var(--tw-gradient-stops));
+            border-radius: 1rem; /* Rounded corners */
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin-bottom: 1.5rem;
+            overflow: hidden; /* Ensure nothing overflows */
+            position: relative; /* For absolute positioning of elements */
+        }
+
+        .gradient-highlight-blue {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.5), rgba(59, 130, 246, 0.1)); /* Blue gradient */
+        }
+        .gradient-highlight-green {
+             background: linear-gradient(to right, rgba(34, 197, 94, 0.5), rgba(34, 197, 94, 0.1)); /* Green gradient */
+        }
+         .gradient-highlight-purple {
+             background: linear-gradient(to right, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0.1)); /* Purple gradient */
+        }
+        /* Add more gradients as needed */
+
+        /* Styling for large bold Chinese text */
+        .heading-lg-bold {
+            font-size: 2.5rem; /* Large size */
+            font-weight: 700; /* Bold */
+            line-height: 1.2; /* Adjust line height for readability */
+        }
+
+         /* Styling for large numbers/digits */
+         .number-xl {
+            font-size: 4rem; /* Extra large number */
+            font-weight: 700;
+             line-height: 1;
+         }
+
+        /* Simple outline icon style */
+        .outline-icon {
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Ensure images maintain aspect ratio and fit width */
+        .responsive-image {
+             max-width: 900px;
+             width: 100%; /* Make image responsive within its container */
+             height: auto;
+             display: block; /* Remove extra space below image */
+             margin: 0 auto; /* Center image */
+        }
+
+        /* Custom styling for Framer Motion elements */
+        [data-framer-motion] {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <div class="container mx-auto p-4 max-w-lg md:max-w-2xl">
+
+        <!-- Title -->
+        <header class="text-center mb-8">
+            <h1 class="heading-lg-bold mb-2">
+                自然如何塑造了这些奇特生物
+            </h1>
+            <p class="text-gray-600 text-sm">Nature's Peculiar Creations</p>
+        </header>
+
+        <!-- Overall Summary/Features -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6 }">
+            <div class="bento-card bg-gradient-to-br from-blue-100 to-purple-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">马达加斯加：一个被隔离的奇迹之地</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Madagascar: An Isolated Land of Wonders</p>
+                <p class="mb-4">数百万年的隔绝 (Millions of years of isolation) 催生了独一无二的生物 (have given rise to unique creatures)，它们展现出非凡的适应能力 (showcasing extraordinary adaptations) 以便在这片土地上繁衍生息 (to thrive on this land)。</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                    <div class="p-4 bg-white rounded-lg shadow-inner">
+                         <p class="text-sm text-gray-500 mb-1">Isolation Drives Evolution</p>
+                         <p class="heading-lg-bold text-blue-600">独一无二</p>
+                         <p class="text-gray-700 text-sm">Unique Adaptations</p>
+                    </div>
+                     <div class="p-4 bg-white rounded-lg shadow-inner">
+                         <p class="text-sm text-gray-500 mb-1">Rich Ecosystems</p>
+                         <p class="heading-lg-bold text-green-600">生物多样</p>
+                         <p class="text-gray-700 text-sm">High Biodiversity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.2 }">
+             <div class="bento-card bg-gradient-to-br from-green-100 to-blue-100 mb-8">
+                <p class="mb-4">沿着马达加斯加的东海岸 (Along the eastern side of Madagascar)，这座地球上第四大岛屿 (the fourth largest island on Earth)，隐藏着一片原始而神秘的雨林 (lies a primary and mysterious rainforest)。</p>
+                <img src="placeholder_00_34.jpg" alt="Madagascar Rainforest" class="responsive-image mb-4">
+                <p class="mb-4">这里生物多样性极高 (Biodiversity is extremely high here)，<span class="heading-lg-bold inline-block text-purple-600">超过80%</span> 的物种 (Over 80% of species) 在地球上其他任何地方都找不到 (are found nowhere else on Earth)。这些森林是地球上生物多样性最高、碳密度最大的森林形式 (These primary forests are the most biodiverse and carbon-dense form of forest)。</p>
+            </div>
+        </section>
+
+        <!-- Section: 林间的舞者：狐猴 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+            <div class="bento-card bg-gradient-to-br from-yellow-100 to-green-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">林间的舞者：狐猴</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Dancers in the Forest: Lemurs</p>
+
+                <p class="mb-4">戴冕狐猴 (Diademed Sifaka) 是林间的杂技演员 (are acrobats of the forest)。 (Placeholder image: placeholder_01_07.jpg)</p>
+                <p class="mb-4">它们拥有超长的腿和短小的手臂 (With incredibly long legs and short arms)，在树木间跳跃是它们的拿手好戏 (leaping between trees is their forte)。每一次跳跃可达<span class="number-xl inline-block text-blue-600">10米</span> (Each leap can be up to 10 meters)，为了寻找最有营养的植物 (in their search for the most nutritious plants)。 (Placeholder image: placeholder_01_38.jpg)</p>
+                <p class="mb-4">黑白领狐猴 (Black and White Ruffed Lemur) 是世界上最大的传粉者之一 (are one of the world's largest pollinators)。 (Placeholder image: placeholder_05_01.jpg)</p>
+                 <p class="mb-4">最小的狐猴 (The smallest of all lemurs)，鼠狐猴 (Mouse Lemur)，体重不足<span class="number-xl inline-block text-red-600">70克</span> (weighing in at less than 70 grams)。 (Placeholder image: placeholder_00_24.jpg)</p>
+            </div>
+        </section>
+
+         <!-- Section: 森林的幽灵：马岛长尾狸猫 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+             <div class="bento-card bg-gradient-to-br from-red-100 to-yellow-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">森林的幽灵：马岛长尾狸猫</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">The Forest's Phantom: The Fossa</p>
+                <p class="mb-4">马岛长尾狸猫 (The Fossa) 是岛上的顶级掠食者 (is the island's top predator)。(Placeholder image: placeholder_03_21.jpg)</p>
+                <p class="mb-4">它拥有猎豹般的半伸缩爪 (It has semi-retractable claws like a cheetah) 和猴子一样长的尾巴 (and a tail nearly as long as a monkey)。(Placeholder image: placeholder_03_55.jpg)</p>
+                 <p class="mb-4">现实中 (In reality), 它拥有高度发达的嗅觉、视觉和听觉 (it has a highly developed sense of smell, sight, and hearing)。(Placeholder image: placeholder_04_09.jpg)</p>
+            </div>
+        </section>
+
+
+         <!-- Section: 海洋的秘密居民 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+            <div class="bento-card bg-gradient-to-br from-blue-100 to-teal-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">海洋的秘密居民</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Secret Residents of the Ocean</p>
+                <p class="mb-4">儒艮 (The Dugong) 是一种温柔的素食海洋哺乳动物 (is a graceful, gentle, and vegetarian giant)。 (Placeholder image: placeholder_00_07.jpg)</p>
+                <p class="mb-4">锯鳐 (The Sawfish) 拥有一个像绿篱修剪机一样的吻部 (has a rostrum resembling a hedge trimmer)。(Placeholder image: placeholder_11_24.jpg)</p>
+                 <p class="mb-4">牛鲨 (The Bull Shark) 是规则的破坏者 (are rule-breakers)，许多人认为它们是世界上最危险的鲨鱼 (Many consider these the world's most dangerous sharks)。(Placeholder image: placeholder_11_52.jpg)</p>
+                  <p class="mb-4">座头鲸 (Humpback whales) 是温柔的巨人 (are gentler giants)，它们从南极洲来到马达加斯加沿海繁殖 (They make the long journey from Antarctica to breed in Madagascar's coastal waters)。(Placeholder image: placeholder_12_41.jpg)</p>
+            </div>
+        </section>
+
+         <!-- Section: 非凡的植物和昆虫 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+            <div class="bento-card bg-gradient-to-br from-green-100 to-yellow-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">非凡的植物和昆虫</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Extraordinary Plants and Insects</p>
+                <p class="mb-4">马达加斯加的植物有时挑战常规 (Sometimes Madagascar's plants seem to defy the norm)，叶子大如雨伞 (with leaves as large as umbrellas) 的植物令人惊叹 (plants are astonishing)。(Placeholder image: placeholder_14_17.jpg)</p>
+                 <p class="mb-4">彗星飞蛾 (The Comet moth) 翼展接近<span class="number-xl inline-block text-yellow-600">20厘米</span> (with a wingspan of nearly 20 centimeters)，是地球上最大的蚕蛾之一 (is one of the largest silk moths on Earth)。(Placeholder image: placeholder_16_34.jpg)</p>
+                  <p class="mb-4">一些巨大的毛毛虫 (Some caterpillars are huge)，它们发展出防御策略 (They have developed anti-predator strategies)，包括有毒的毛发 (including toxic hairs)。(Placeholder image: placeholder_14_35.jpg)</p>
+            </div>
+        </section>
+
+         <!-- Section: 奇异的爬行动物 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+             <div class="bento-card bg-gradient-to-br from-purple-100 to-red-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">奇异的爬行动物</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Peculiar Reptiles</p>
+                <p class="mb-4">放射陆龟 (The Radiated Tortoise) 是世界上最稀有的陆龟之一 (is one of the world's rarest tortoises)。 (Placeholder image: placeholder_17_00.jpg)</p>
+                <p class="mb-4">叶鼻蛇 (Leaf-nosed Snakes) 伪装成细树枝 (resemble thin branches)。 (Placeholder image: placeholder_28_13.jpg)</p>
+                 <p class="mb-4">马达加斯加地栖壁虎 (Stumpff's Ground Gecko) 有一只<span class="heading-lg-bold inline-block text-blue-600">第三只眼睛</span> (has a third eye) 在头顶上 (right on top of their scaley heads)。(Placeholder image: placeholder_32_03.jpg)</p>
+                 <p class="mb-4">豹纹变色龙 (Panther Chameleon) 是变色大师 (are masters of disguise)，它们因改变颜色的能力而闻名 (best known for their ability to change color)。 (Placeholder image: placeholder_36_16.jpg)</p>
+                 <p class="mb-4">它们的舌头能像鱼叉一样射出 (Their tongue shoots out like a harpoon)。 (Placeholder image: placeholder_37_39.jpg)</p>
+
+            </div>
+        </section>
+
+         <!-- Section: 独具特色的哺乳动物 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+            <div class="bento-card bg-gradient-to-br from-teal-100 to-blue-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">独具特色的哺乳动物</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Unique Mammals</p>
+                 <p class="mb-4">条纹马岛猬 (Streaked Tenrecs) 是地球上唯一一种通过摩擦刚毛交流的哺乳动物 (are the only mammals on Earth that communicate by rubbing their quills together)。 (Placeholder image: placeholder_22_15.jpg)</p>
+                 <p class="mb-4">普通马岛猬 (The Common Tenrec) 它们会冬眠长达<span class="heading-lg-bold inline-block text-blue-600">九个月</span> (They hibernate for up to nine months)。 (Placeholder image: placeholder_23_39.jpg)</p>
+                <p class="mb-4">环尾獴 (Ring-tailed Mongoose) 是岛上分布最广的食肉动物 (is the island's most widespread carnivore)。 (Placeholder image: placeholder_35_11.jpg)</p>
+            </div>
+        </section>
+
+        <!-- Section: 森林的母亲：猴面包树 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+             <div class="bento-card bg-gradient-to-br from-green-100 to-teal-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">森林的母亲：猴面包树</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Mother of the Forest: Baobabs</p>
+                <p class="mb-4">猴面包树 (Baobab trees) 是古老而巨大的树木 (are ancient and gigantic trees)。 (Placeholder image: placeholder_19_30.jpg)</p>
+                <p class="mb-4">它们可以储存大量水分 (They can store vast amounts of water) 在多汁的树干中 (in their succulent trunks)。它们可以活<span class="heading-lg-bold inline-block text-green-600">一千多年</span> (They can live for more than 1000 years)。(Placeholder image: placeholder_19_43.jpg)</p>
+                <p class="mb-4">在当地语言中 (In the local language), 猴面包树意为“森林的母亲” (the word for Baobab is 'reniala', which means 'mother of the forest')。(Placeholder image: placeholder_20_35.jpg)</p>
+            </div>
+        </section>
+
+         <!-- Section: 再次探访：狐猴社会结构 -->
+        <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.4 }">
+            <div class="bento-card bg-gradient-to-br from-purple-100 to-blue-100 mb-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">再次探访：狐猴社会结构</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-4">Revisiting: Lemur Social Structure</p>
+                <p class="mb-4">环尾狐猴 (Ring-tailed Lemurs) 不同于大多数狐猴 (Unlike most lemurs)，它们把很多时间花在地面上 (they spend much of their day on the ground)，长达<span class="heading-lg-bold inline-block text-blue-600">50%</span>。(Placeholder image: placeholder_41_35.jpg)</p>
+                 <p class="mb-4">它们的社会不是由国王统治 (Their society is not ruled by a king) 而是由<span class="heading-lg-bold inline-block text-purple-600">女王</span>统治 (but rather by a queen)。(Placeholder image: placeholder_42_41.jpg)</p>
+                 <p class="mb-4">雌性在群体中享有优先权 (Females rule the roost and have their pick of mates within the group)。它们会通过尾巴散发气味 (They cover their long tails with smelly secretions) 来争夺统治地位 (and wave them in the air to battle for dominance)。(Placeholder image: placeholder_42_18.jpg, placeholder_42_29.jpg)</p>
+            </div>
+        </section>
+
+
+        <!-- Conclusion -->
+         <section data-framer-motion
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.3 }}
+                 :transition="{ duration: 0.6, delay: 0.6 }">
+            <div class="bento-card bg-gradient-to-br from-yellow-100 to-red-100 mb-8 text-center">
+                <h2 class="text-xl md:text-2xl font-bold mb-4">探索仍在继续...</h2>
+                 <p class="text-base md:text-lg text-gray-700 mb-4">The Exploration Continues...</p>
+                <p class="mb-4">马达加斯加的生物奇特而迷人 (Madagascar's creatures are weird and wonderful)。它们的故事充满了神话色彩 (Their stories are the stuff of myth)。 (Placeholder image: placeholder_09_14.jpg)</p>
+            </div>
+        </section>
+
+
+        <!-- Credits (Optional but good practice) -->
+        <footer class="text-center text-gray-500 text-xs mt-8">
+            <p>© 2023 奇妙生物教程组 All rights reserved.</p>
+            <p>Design inspired by Bento Grids, powered by Tailwind CSS & Framer Motion.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Framer Motion setup (automatically applied by the data-framer-motion attribute and script inclusion)
+        // No additional JS is needed for the basic animations defined in the HTML attributes
+    </script>
+
+</body>
+</html>

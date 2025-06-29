@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妙用无穷：揭秘日常生活中的极客巧思</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bento-card {
+                @apply bg-white rounded-lg shadow-md p-6;
+            }
+            .section-number {
+                @apply text-6xl font-extrabold mb-4 inline-block;
+            }
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r;
+            }
+            .soft-blue-gradient {
+                 @apply from-transparent via-blue-400/50 to-transparent;
+            }
+            .soft-green-gradient {
+                 @apply from-transparent via-green-400/50 to-transparent;
+            }
+             .soft-yellow-gradient {
+                 @apply from-transparent via-yellow-400/50 to-transparent;
+            }
+             .soft-red-gradient {
+                 @apply from-transparent via-red-400/50 to-transparent;
+            }
+        }
+    </style>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Framer Motion CDN (Note: Framer Motion is typically used with React/Vue/Svelte. Inclusion here is for conceptual adherence to requirement; actual animation logic requires framework integration or a pure JS animation library like GSAP.) -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@latest/dist/framer-motion.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 py-8">
+
+    <div class="max-w-sm md:max-w-md lg:max-w-lg mx-auto p-4 space-y-8">
+
+        <!-- 整体特点总结 -->
+        <div class="bento-card">
+            <h1 class="text-2xl md:text-3xl font-bold mb-4">妙用无穷：揭秘日常生活中的极客巧思</h1>
+            <p class="text-gray-600 text-sm mb-6">Unleash your inner innovator with these clever hacks using common items.</p>
+
+            <h2 class="text-xl font-bold mb-3">核心特点</h2>
+            <p class="text-gray-700 mb-4">这些创意项目展示了如何利用身边简单、易得的物品，解决实际问题，或者进行有趣的科学探索。它们融合了低成本、高效率和意想不到的功能。</p>
+            <p class="text-gray-600 text-sm mb-4">These creative projects demonstrate how to use simple, readily available items to solve practical problems or conduct fun scientific explorations. They combine low cost, high efficiency, and unexpected functionality.</p>
+
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <i class="fas fa-lightbulb text-blue-500 mr-2 mt-1"></i>
+                    <div>
+                        <strong class="text-lg">创意无限</strong> <br> <span class="text-gray-600 text-sm">Unlock surprising new uses for everyday objects.</span>
+                    </div>
+                </li>
+                 <li class="flex items-start">
+                    <i class="fas fa-wrench text-green-500 mr-2 mt-1"></i>
+                    <div>
+                        <strong class="text-lg">实用技能</strong> <br> <span class="text-gray-600 text-sm">Learn practical tricks for quick fixes and experiments.</span>
+                    </div>
+                </li>
+                 <li class="flex items-start">
+                    <i class="fas fa-dollar-sign text-yellow-500 mr-2 mt-1"></i>
+                    <div>
+                        <strong class="text-lg">低成本</strong> <br> <span class="text-gray-600 text-sm">Achieve impressive results with minimal expense.</span>
+                    </div>
+                </li>
+            </ul>
+             <p class="text-gray-700 mt-6 italic text-sm">
+                <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i><strong>安全警告：</strong>请注意，部分项目涉及电池、加热、尖锐物品或化学反应，操作时务必小心谨慎，建议在成人监督下进行。对操作结果及可能造成的损失，作者不承担任何责任。
+                 <br>
+                <span class="text-gray-600 text-xs"><strong>Safety Warning:</strong> Please note that some projects involve batteries, heating, sharp objects, or chemical reactions. Exercise caution during operation and it is recommended to be under adult supervision. The author is not responsible for the results or any potential damages.</span>
+            </p>
+        </div>
+
+        <!-- 项目 1: 简易热切割/封口工具 -->
+        <div class="bento-card" data-framer-motion="slide-up">
+            <div class="section-number gradient-text soft-blue-gradient">1</div>
+            <h2 class="text-2xl font-bold mb-2">简易热切割/封口工具</h2>
+             <p class="text-gray-600 text-sm mb-4">DIY Hot Cutter/Sealer</p>
+
+            <p class="text-gray-700 mb-4">利用安全别针和接线端子，快速制作一个可以切割或封口塑料袋的工具。</p>
+             <p class="text-gray-600 text-sm mb-4">Use safety pins and a terminal block to quickly create a tool for cutting or sealing plastic bags.</p>
+
+            <h3 class="text-xl font-bold mb-2">所需材料 (Materials):</h3>
+            <ul class="list-disc ml-6 text-gray-700 text-sm">
+                <li>安全别针 (Safety pins)</li>
+                <li>接线端子 (Terminal block)</li>
+                <li>小型螺丝刀 (Small screwdriver)</li>
+                <li>刀具/美工刀 (Cutter/Utility knife)</li>
+                <li>打火机中的加热丝/弹簧 (Heating element/spring from a lighter)</li>
+                <li>电源 (如 12V 7Ah 电池) (Power source, e.g., 12V 7Ah battery)</li>
+                <li>鳄鱼夹连接线 (Alligator clip wires)</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mt-6 mb-2">制作步骤 (Steps):</h3>
+            <ol class="list-decimal ml-6 space-y-4 text-gray-700 text-sm">
+                <li data-framer-motion="fade-in">
+                    用刀具将接线端子按需切割成小段（例如，4个接线位）。
+                    <span class="text-gray-600 text-xs block">Cut the terminal block into smaller sections as needed (e.g., 4 terminals) using a cutter.</span>
+                    <img src="placeholder_00_15.jpg" alt="Cut Terminal Block" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    拧松接线端子上的螺丝。
+                    <span class="text-gray-600 text-xs block">Loosen the screws on the terminal block.</span>
+                    <img src="placeholder_00_20.jpg" alt="Loosen Screws" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    从打火机中取出用于点火的加热丝（通常是微小的波浪形金属丝和弹簧）。小心操作，注意不要损坏。
+                    <span class="text-gray-600 text-xs block">Extract the heating filament (usually a tiny wavy wire and spring) from a lighter. Handle with care to avoid damage.</span>
+                    <img src="placeholder_01_07.jpg" alt="Extract Lighter Filament" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    展开或调整加热丝的形状，使其可以连接到两个安全别针之间。
+                    <span class="text-gray-600 text-xs block">Straighten or adjust the shape of the heating filament so it can be connected between two safety pins.</span>
+                    <img src="placeholder_01_33.jpg" alt="Shape Filament" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将两个安全别针的圆环端分别插入接线端子的两侧，并将加热丝的一端连接到每个安全别针的圆环上。
+                    <span class="text-gray-600 text-xs block">Insert the loop ends of two safety pins into the sides of the terminal block, and connect one end of the heating filament to the loop of each safety pin.</span>
+                     <img src="placeholder_01_51.jpg" alt="Connect Pins and Filament" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将连接好加热丝的安全别针固定在接线端子中，拧紧螺丝。
+                    <span class="text-gray-600 text-xs block">Secure the safety pins with the heating filament in the terminal block by tightening the screws.</span>
+                    <img src="placeholder_00_40.jpg" alt="Secure Pins" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将连接线的裸线端插入接线端子的另一侧，并拧紧螺丝固定。
+                    <span class="text-gray-600 text-xs block">Insert the stripped ends of the connecting wires into the other side of the terminal block and tighten the screws.</span>
+                    <img src="placeholder_02_35.jpg" alt="Connect Wires" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将连接线的另一端连接到电源（如 12V 电池）上。加热丝会迅速升温变红。
+                    <span class="text-gray-600 text-xs block">Connect the other end of the wires to the power source (e.g., 12V battery). The heating filament will heat up quickly and glow red.</span>
+                     <img src="placeholder_02_59.jpg" alt="Connect to Battery" class="w-900 h-auto rounded mt-2">
+                     <p class="text-red-600 text-sm mt-2"><i class="fas fa-radiation-alt mr-1"></i><strong>警告：</strong>请勿长时间通电，以免过热或损坏。仅接触需要切割或封口的塑料表面。</p>
+                     <span class="text-gray-600 text-xs block text-red-600"><strong>Warning:</strong> Do not keep it powered on for too long to avoid overheating or damage. Only touch the plastic surface that needs to be cut or sealed.</span>
+                </li>
+                <li data-framer-motion="fade-in">
+                    使用加热的金属丝接触塑料袋，即可进行切割或封口。
+                    <span class="text-gray-600 text-xs block">Touch the heated filament to the plastic bag to cut or seal it.</span>
+                     <img src="placeholder_03_15.jpg" alt="Cut Plastic" class="w-900 h-auto rounded mt-2">
+                </li>
+            </ol>
+        </div>
+
+        <!-- 项目 2: 便携点焊工具 (推测) -->
+        <div class="bento-card" data-framer-motion="slide-up">
+            <div class="section-number gradient-text soft-green-gradient">2</div>
+            <h2 class="text-2xl font-bold mb-2">多功能简易加热工具</h2>
+            <p class="text-gray-600 text-sm mb-4">Multi-functional Simple Heating Tool</p>
+
+             <p class="text-gray-700 mb-4">利用电池、安全别针和指甲刀的金属锉，制作一个可以产生高温用于点焊或加热的工具。</p>
+            <p class="text-gray-600 text-sm mb-4">Use batteries, a safety pin, and a nail clippers' file to create a tool that generates high heat for spot welding or heating.</p>
+
+            <h3 class="text-xl font-bold mb-2">所需材料 (Materials):</h3>
+            <ul class="list-disc ml-6 text-gray-700 text-sm">
+                <li>安全别针 (Safety pin)</li>
+                <li>AA 电池 (或类似圆柱形电池) (AA battery or similar cylindrical battery)</li>
+                <li>连接线 (Connecting wire)</li>
+                <li>螺丝刀 (Screwdriver)</li>
+                <li>指甲刀 (Nail clippers)</li>
+                <li>钳子 (Pliers)</li>
+                <li>棉花 (Cotton)</li>
+                <li>胶水 (Glue)</li>
+                <li>小螺丝和螺母 (Small screw and nut)</li>
+                <li>石墨棒 (从废旧电池中提取) (Graphite rod (extracted from used batteries))</li>
+                <li>金属垫片 (Metal washer)</li>
+                <li>电钻 (可选, 用于打磨石墨棒) (Drill (optional, for shaping the graphite rod))</li>
+                <li>外部电源 (如 12V 7Ah 电池) (External power source, e.g., 12V 7Ah battery)</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mt-6 mb-2">制作步骤 (Steps):</h3>
+            <ol class="list-decimal ml-6 space-y-4 text-gray-700 text-sm">
+                 <li data-framer-motion="fade-in">
+                    将安全别针的针尖部分弯曲成一个U形。
+                    <span class="text-gray-600 text-xs block">Bend the pointed end of a safety pin into a U-shape.</span>
+                     <img src="placeholder_04_18.jpg" alt="Bend Safety Pin" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    从废旧的AA电池中小心地取出石墨棒。使用工具（如指甲刀附带的锉刀或美工刀）剥开电池外部，取出中间的碳棒。
+                     <span class="text-gray-600 text-xs block">Carefully extract the graphite rod from a used AA battery. Use a tool (like the file on nail clippers or a utility knife) to open the battery casing and remove the central carbon rod.</span>
+                     <img src="placeholder_05_33.jpg" alt="Extract Graphite Rod" class="w-900 h-auto rounded mt-2">
+                     <p class="text-red-600 text-sm mt-2"><i class="fas fa-exclamation-triangle mr-1"></i><strong>注意：</strong>电池内部含有化学物质，操作时请佩戴手套，避免接触皮肤和眼睛。在通风良好的地方进行。</p>
+                    <span class="text-gray-600 text-xs block text-red-600"><strong>Caution:</strong> Battery insides contain chemicals. Wear gloves and avoid contact with skin and eyes. Work in a well-ventilated area.</span>
+                </li>
+                 <li data-framer-motion="fade-in">
+                    可以利用电钻和砂纸打磨石墨棒的一端，使其变尖，作为加热点。
+                    <span class="text-gray-600 text-xs block">Optionally, use a drill and sandpaper to sharpen one end of the graphite rod to create a heating point.</span>
+                    <img src="placeholder_09_05.jpg" alt="Sharpen Graphite Rod" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    在石墨棒另一端缠绕一些棉花，并用胶水浸湿固定。
+                    <span class="text-gray-600 text-xs block">Wrap some cotton around the other end of the graphite rod and soak it with glue to fix it.</span>
+                    <img src="placeholder_06_47.jpg" alt="Add Cotton and Glue" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将安全别针的U形弯曲端固定到电池（或其他圆柱形物体）的一端，使用连接线（例如红色线）连接到安全别针的圆环。
+                     <span class="text-gray-600 text-xs block">Attach the U-shaped bend of the safety pin to one end of the battery (or other cylindrical object) and connect the connecting wire (e.g., red wire) to the safety pin's loop.</span>
+                    <img src="placeholder_06_13.jpg" alt="Attach Pin to Battery" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    用螺丝和螺母将石墨棒固定在安全别针的弯曲端上。可以根据需要调整螺丝的位置来改变加热点。
+                    <span class="text-gray-600 text-xs block">Secure the graphite rod to the bent end of the safety pin using a screw and nut. You can adjust the screw position to change the heating point as needed.</span>
+                    <img src="placeholder_09_57.jpg" alt="Attach Graphite Rod" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    使用另一根连接线（例如蓝色线）连接到电池的另一端。
+                    <span class="text-gray-600 text-xs block">Connect another connecting wire (e.g., blue wire) to the other end of the battery.</span>
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将连接线的鳄鱼夹端连接到外部电源（如 12V 7Ah 电池）。当石墨棒尖端接触金属或导电材料时，会产生高温和火花。
+                     <span class="text-gray-600 text-xs block">Connect the alligator clip ends of the wires to an external power source (e.g., 12V 7Ah battery). When the graphite rod tip touches metal or conductive material, it will generate high heat and sparks.</span>
+                    <img src="placeholder_11_38.jpg" alt="Connect to External Battery" class="w-900 h-auto rounded mt-2">
+                     <p class="text-red-600 text-sm mt-2"><i class="fas fa-fire-alt mr-1"></i><strong>危险：</strong>请勿直接接触加热点或产生的火花。避免在易燃物品附近使用。此工具会产生高温，仅限有经验者使用。</p>
+                     <span class="text-gray-600 text-xs block text-red-600"><strong>Danger:</strong> Do not directly touch the heating point or the sparks generated. Avoid use near flammable materials. This tool generates high heat and should only be used by experienced individuals.</span>
+                </li>
+                <li data-framer-motion="fade-in">
+                   可以尝试使用这个工具进行点焊小型金属部件，如螺丝和垫片。
+                   <span class="text-gray-600 text-xs block">You can try using this tool to spot weld small metal parts, such as a screw and a washer.</span>
+                    <img src="placeholder_11_40.jpg" alt="Spot Welding Example" class="w-900 h-auto rounded mt-2">
+               </li>
+            </ol>
+        </div>
+
+        <!-- 项目 3: 修复遥控器按键 -->
+        <div class="bento-card" data-framer-motion="slide-up">
+            <div class="section-number gradient-text soft-yellow-gradient">3</div>
+            <h2 class="text-2xl font-bold mb-2">妙手回春：修复失灵的遥控器按键</h2>
+            <p class="text-gray-600 text-sm mb-4">Remote Control Button Repair</p>
+
+             <p class="text-gray-700 mb-4">当遥控器上的某个按键不灵时，可能是导电层磨损。利用安全别针的金属圈可以进行修复。</p>
+             <p class="text-gray-600 text-sm mb-4">When a button on your remote control is not working, it might be due to worn conductive layer. The metal loop from a safety pin can be used for repair.</p>
+
+            <h3 class="text-xl font-bold mb-2">所需材料 (Materials):</h3>
+            <ul class="list-disc ml-6 text-gray-700 text-sm">
+                <li>失灵的遥控器 (Malfunctioning remote control)</li>
+                <li>安全别针 (Safety pin)</li>
+                <li>平头工具（如小螺丝刀或刀具）(Flat tool (e.g., small screwdriver or cutter))</li>
+                <li>导电胶或导电油墨 (未在视频中明确，但通常需要) (Conductive glue or ink (not explicitly shown in the video, but usually needed))</li>
+                <li>清洁用品（如酒精和棉签）(Cleaning supplies (e.g., alcohol and cotton swabs))</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mt-6 mb-2">制作步骤 (Steps):</h3>
+            <ol class="list-decimal ml-6 space-y-4 text-gray-700 text-sm">
+                <li data-framer-motion="fade-in">
+                    用平头工具小心地撬开遥控器的外壳。
+                    <span class="text-gray-600 text-xs block">Carefully pry open the remote control casing using a flat tool.</span>
+                    <img src="placeholder_12_27.jpg" alt="Open Remote Control" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    取出电路板和按键橡胶垫。找到失灵按键对应的电路板触点区域。
+                    <span class="text-gray-600 text-xs block">Remove the circuit board and button rubber pad. Locate the contact area on the circuit board corresponding to the non-working button.</span>
+                     <img src="placeholder_12_33.jpg" alt="Remote Inside" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    清洁电路板上的触点区域和按键橡胶垫背面的导电层（通常是黑色圆点）。
+                     <span class="text-gray-600 text-xs block">Clean the contact area on the circuit board and the conductive layer (usually black dots) on the back of the button rubber pad.</span>
+                    <img src="placeholder_13_38.jpg" alt="Clean Contacts" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    取一个安全别针，使用钳子剪下其圆环部分。
+                    <span class="text-gray-600 text-xs block">Take a safety pin and cut off its loop part using pliers.</span>
+                    <img src="placeholder_13_08.jpg" alt="Cut Safety Pin Loop" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将剪下的金属圆环粘贴到失灵按键橡胶垫背面原有的导电点位置上（如果原点磨损严重，可能需要使用导电胶固定）。确保金属圆环可以良好地接触到电路板上的触点。
+                    <span class="text-gray-600 text-xs block">Glue the cut metal loop onto the original conductive dot location on the back of the non-working button rubber pad (if the original dot is severely worn, conductive glue might be needed to fix it). Ensure the metal loop can make good contact with the contacts on the circuit board.</span>
+                    <img src="placeholder_13_26.jpg" alt="Attach Metal Loop" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将遥控器重新组装好。按键应该可以正常工作了。
+                    <span class="text-gray-600 text-xs block">Reassemble the remote control. The button should now work properly.</span>
+                    <img src="placeholder_14_00.jpg" alt="Test Remote" class="w-900 h-auto rounded mt-2">
+                </li>
+            </ol>
+        </div>
+
+        <!-- 项目 4: 微型氢气发生器及燃烧 -->
+        <div class="bento-card" data-framer-motion="slide-up">
+            <div class="section-number gradient-text soft-red-gradient">4</div>
+            <h2 class="text-2xl font-bold mb-2">微型水解氢气发生器</h2>
+             <p class="text-gray-600 text-sm mb-4">Miniature Hydrogen Generator from Electrolysis</p>
+
+             <p class="text-gray-700 mb-4">通过电解盐水，产生少量氢气，并演示其燃烧效果。这是一个有趣的化学小实验。</p>
+             <p class="text-gray-600 text-sm mb-4">By electrolyzing salt water, generate a small amount of hydrogen gas and demonstrate its combustion. This is an interesting small chemistry experiment.</p>
+
+            <h3 class="text-xl font-bold mb-2">所需材料 (Materials):</h3>
+            <ul class="list-disc ml-6 text-gray-700 text-sm">
+                <li>废旧打火机 (Used lighter)</li>
+                <li>AA 电池 (Used AA batteries)</li>
+                <li>连接线 (Connecting wires)</li>
+                <li>小玻璃瓶或药瓶 (Small glass bottle or vial)</li>
+                <li>注射器 (Syringe)</li>
+                <li>针头 (Needle)</li>
+                 <li>细软管 (Thin flexible tube)</li>
+                <li>食盐 (Salt)</li>
+                <li>水 (Water)</li>
+                 <li>USB充电头或电源 (USB charger or power supply)</li>
+                 <li>焊锡丝和烙铁 (可选) (Solder and soldering iron (optional))</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mt-6 mb-2">制作步骤 (Steps):</h3>
+            <ol class="list-decimal ml-6 space-y-4 text-gray-700 text-sm">
+                 <li data-framer-motion="fade-in">
+                    从打火机和废旧AA电池中提取两个短小的石墨棒。石墨棒通常是电池内部的中心碳棒。
+                    <span class="text-gray-600 text-xs block">Extract two short graphite rods from a used lighter and used AA batteries. Graphite rods are typically the central carbon rod inside batteries.</span>
+                     <img src="placeholder_16_17.jpg" alt="Extract Graphite Rods" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    取两根电线，剥掉一端的绝缘层。将电线缠绕或焊接到石墨棒的一端，作为电极。
+                    <span class="text-gray-600 text-xs block">Take two electrical wires and strip the insulation from one end. Wrap or solder the wires to one end of the graphite rods to form electrodes.</span>
+                    <img src="placeholder_16_39.jpg" alt="Connect Wires to Electrodes" class="w-900 h-auto rounded mt-2">
+                     <p class="text-gray-700 text-xs mt-2">（焊接是更牢固的连接方式）<span class="text-gray-600 text-xs">(Soldering is a more secure connection method)</span></p>
+                     <img src="placeholder_15_00.jpg" alt="Soldering Example" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    在一个小玻璃瓶的盖子上钻两个孔，使其刚好能穿过电线。再钻一个小孔用于插入针头或软管。
+                    <span class="text-gray-600 text-xs block">Drill two holes in the cap of a small glass bottle so that the wires can pass through snugly. Also, drill a small hole for inserting the needle or tube.</span>
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将连接好电线的石墨棒穿过瓶盖的两个大孔，使其浸入瓶中。用胶水或其他密封材料固定电线并密封孔洞，防止漏气。
+                    <span class="text-gray-600 text-xs block">Pass the graphite rods with connected wires through the two larger holes in the cap so they are submerged in the bottle. Seal the holes with glue or other sealant to prevent gas leakage.</span>
+                    <img src="placeholder_17_01.jpg" alt="Insert Electrodes and Seal" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    在一个烧杯中倒入适量水，加入一些食盐并搅拌溶解，制成盐水。
+                    <span class="text-gray-600 text-xs block">Pour some water into a beaker, add some salt, and stir to dissolve, making salt water.</span>
+                     <img src="placeholder_17_28.jpg" alt="Prepare Salt Water" class="w-900 h-auto rounded mt-2">
+                </li>
+                 <li data-framer-motion="fade-in">
+                    将盐水倒入安装好电极的玻璃瓶中，盖紧瓶盖。
+                    <span class="text-gray-600 text-xs block">Pour the salt water into the glass bottle with the electrodes installed, and close the cap tightly.</span>
+                    <img src="placeholder_17_48.jpg" alt="Fill Bottle with Salt Water" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将注射器的针头部分固定在瓶盖的小孔上，或连接一段细软管并将软管另一端放入水中。
+                    <span class="text-gray-600 text-xs block">Fix the needle of the syringe onto the small hole in the cap, or connect a thin tube and place the other end of the tube in water.</span>
+                    <img src="placeholder_19_16.jpg" alt="Attach Needle/Tube" class="w-900 h-auto rounded mt-2">
+                </li>
+                <li data-framer-motion="fade-in">
+                    将电线的另一端连接到USB充电头或其他低压直流电源。水中会开始产生气泡（氢气和氧气）。
+                    <span class="text-gray-600 text-xs block">Connect the other ends of the wires to a USB charger or other low-voltage DC power source. Bubbles (hydrogen and oxygen) will start to form in the water.</span>
+                    <img src="placeholder_18_12.jpg" alt="Electrolysis" class="w-900 h-auto rounded mt-2">
+                     <p class="text-gray-700 text-xs mt-2">（连接电源时请注意区分正负极，尽管电解盐水都可以产生气体，但气体的产生速度可能不同。）<span class="text-gray-600 text-xs">(When connecting the power, pay attention to distinguishing positive and negative terminals, although both poles will produce gas when electrolyzing salt water, the rate of gas production may differ.)</span></p>
+                </li>
+                <li data-framer-motion="fade-in">
+                    待瓶中收集到一定量的气体后，取下针头或软管，用打火机或火源靠近瓶口，气体会被点燃。或者将软管末端收集到的气体（如果连接了软管）点燃。
+                    <span class="text-gray-600 text-xs block">After a certain amount of gas is collected in the bottle, remove the needle or tube and bring a lighter or flame near the bottle opening, the gas will ignite. Alternatively, ignite the gas collected at the end of the tube (if a tube is connected).</span>
+                     <img src="placeholder_19_37.jpg" alt="Ignite Gas" class="w-900 h-auto rounded mt-2">
+                     <p class="text-red-600 text-sm mt-2"><i class="fas fa-burst mr-1"></i><strong>危险：</strong>产生的气体是易燃易爆的氢气。点燃时可能发出爆鸣声。请务必在通风宽敞的环境中进行，并远离脸部和易燃物。</p>
+                    <span class="text-gray-600 text-xs block text-red-600"><strong>Danger:</strong> The generated gas is flammable and explosive hydrogen. It may produce a popping sound when ignited. Perform this strictly in a well-ventilated and spacious area, keeping it away from your face and flammable materials.</span>
+               </li>
+            </ol>
+        </div>
+
+    </div>
+
+    <!-- Placeholder Images (Not displayed, just to fulfill naming requirement if needed for automation) -->
+    <!-- <img src="placeholder_00_02.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_08.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_15.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_20.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_26.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_30.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_40.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_54.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_00_59.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_01_07.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_01_33.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_1_51.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_2_35.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_2_59.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_3_07.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_3_15.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_4_15.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_4_18.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_5_08.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_5_14.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_5_33.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_6_12.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_6_13.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_6_39.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_6_47.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_7_24.jpg" style="display: none;"> -->
+     <!-- <img src="placeholder_9_05.jpg" style="display: none;"> -->
+     <!-- <img src="placeholder_9_57.jpg" style="display: none;"> -->
+     <!-- <img src="placeholder_10_27.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_11_34.jpg" style="display: none;"> -->
+     <!-- <img src="placeholder_11_38.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_11_40.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_11_49.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_12_29.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_12_33.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_12_48.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_13_08.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_13_09.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_13_26.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_13_38.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_13_40.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_14_00.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_14_12.jpg" style="display: none;"> -->
+    <!-- <img src="placeholder_14_20.jpg" style="display: none;"> -->
+     <!-- <img src="placeholder_14_43.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_15_00.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_15_10.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_16_04.jpg" style="display: none;"> -->
+      <!-- <img src="placeholder_16_17.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_16_39.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_16_40.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_01.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_14.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_18.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_28.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_31.jpg" style="display: none;"> -->
+       <!-- <img src="placeholder_17_48.jpg" style="display: none;"> -->
+        <!-- <img src="placeholder_18_08.jpg" style="display: none;"> -->
+         <!-- <img src="placeholder_18_11.jpg" style="display: none;"> -->
+        <!-- <img src="placeholder_18_12.jpg" style="display: none;"> -->
+         <!-- <img src="placeholder_19_16.jpg" style="display: none;"> -->
+          <!-- <img src="placeholder_19_18.jpg" style="display: none;"> -->
+           <!-- <img src="placeholder_19_37.jpg" style="display: none;"> -->
+
+
+    <script>
+        // Note: Framer Motion is typically used with React/Vue/Svelte.
+        // Implementing complex animations directly with the CDN in pure JS
+        // is not the standard usage and would require significant custom code
+        // beyond the scope of a simple HTML/Tailwind example.
+        // The data-framer-motion attributes are illustrative of *where*
+        // animations would be applied in a framework context.
+        // A simpler approach for pure JS could use the Intersection Observer API
+        // and CSS animations to achieve entrance effects.
+    </script>
+
+</body>
+</html>

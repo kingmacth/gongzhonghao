@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无需专业设备：巧妙利用废弃物品制作实用工具</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 自定义样式用于Bento Grid视觉效果和渐变 */
+        .bento-card {
+            background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* 柔和边框 */
+            backdrop-filter: blur(5px); /* 毛玻璃效果 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .bento-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-highlight {
+            background: linear-gradient(to right, rgba(255, 165, 0, 0.5), rgba(255, 165, 0, 0) 50%); /* 橙色渐变 */
+        }
+         .gradient-highlight-blue {
+            background: linear-gradient(to right, rgba(0, 165, 255, 0.5), rgba(0, 165, 255, 0) 50%); /* 蓝色渐变 */
+        }
+         .gradient-highlight-red {
+            background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 50%); /* 红色渐变 */
+        }
+
+        /* 移除默认的下划线 */
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <main class="max-w-xl mx-auto p-6 space-y-8">
+
+        <!-- Title Section -->
+        <header class="text-center mb-10">
+            <img src="placeholder_00_00.jpg" alt="Innovation Plus One Logo" class="mx-auto mb-4 w-20 h-auto rounded-full">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                <span class="gradient-highlight p-2">无需专业设备：巧妙利用废弃物品</span>
+                <br>
+                <span class="gradient-highlight-blue p-2">制作实用工具</span>
+            </h1>
+            <p class="text-gray-400 text-sm">Ingenious Tools from Discarded Items Without Professional Equipment</p>
+        </header>
+
+        <!-- Product Features Summary -->
+        <section class="space-y-4 bento-card p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">
+                <span class="border-b-2 border-orange-500 pb-1">项目亮点速览</span>
+                <br>
+                <span class="text-gray-400 text-sm font-normal">Project Highlights Overview</span>
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <p class="text-lg font-semibold"><i class="fas fa-bolt text-blue-400 mr-2"></i>
+                        <span class="text-xl font-extrabold gradient-highlight-blue p-1">自制简易点焊/电烙铁</span>
+                        <br>
+                        <span class="text-gray-400 text-xs font-normal">DIY Spot Welder/Soldering Iron</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mt-1">利用废旧火花塞和电池，快速搭建小型金属焊接/加热装置。</p>
+                     <p class="text-gray-400 text-xs font-normal">Build a small metal welding/heating device quickly using discarded spark plugs and batteries.</p>
+                </div>
+                <div>
+                    <p class="text-lg font-semibold"><i class="fas fa-cut text-red-400 mr-2"></i>
+                         <span class="text-xl font-extrabold gradient-highlight-red p-1">热切割与封口工具</span>
+                        <br>
+                        <span class="text-gray-400 text-xs font-normal">Hot Wire Cutter and Sealer Tool</span>
+                    </p>
+                     <p class="text-sm text-gray-300 mt-1">从打火机和安全别针中提取元件，制作便携式热切割工具。</p>
+                     <p class="text-gray-400 text-xs font-normal">Extract components from a lighter and safety pins to create a portable hot cutting tool.</p>
+                </div>
+                 <div>
+                    <p class="text-lg font-semibold"><i class="fas fa-recycle text-green-400 mr-2"></i>
+                         <span class="text-xl font-extrabold gradient-highlight p-1">变废为宝创意</span>
+                        <br>
+                        <span class="text-gray-400 text-xs font-normal">Upcycling Creativity</span>
+                    </p>
+                     <p class="text-sm text-gray-300 mt-1">展示如何将日常废弃物转化为功能性工具，实用且环保。</p>
+                     <p class="text-gray-400 text-xs font-normal">Shows how to transform everyday waste into functional tools, practical and eco-friendly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 1 Section -->
+        <section class="space-y-4 bento-card p-6 rounded-lg"
+                 data-framer-component="fade-in"
+                 data-framer-duration="1.5">
+            <h2 class="text-2xl font-bold mb-4">
+                <span class="border-b-2 border-blue-500 pb-1">项目 1：简易点焊/电烙铁</span>
+                 <br>
+                <span class="text-gray-400 text-sm font-normal">Project 1: Simple Spot Welder/Soldering Iron</span>
+            </h2>
+
+            <h3 class="text-xl font-semibold mb-3">
+                <span class="text-blue-300">所需材料与工具</span>
+                 <br>
+                <span class="text-gray-400 text-xs font-normal">Materials and Tools Needed</span>
+            </h3>
+            <ul class="list-disc list-inside text-sm text-gray-300 space-y-1">
+                <li>废旧火花塞 (Used Spark Plug)</li>
+                <li>垫圈 (Washer)</li>
+                <li>接线端子 (Terminal Lugs / Eyelet Type)</li>
+                <li>螺母 (Nut)</li>
+                <li>细长螺杆 (Long Threaded Screw/Rod)</li>
+                <li>塑料接线排 (Plastic Terminal Block Strip)</li>
+                <li>蓝/红导线 (Blue/Red Wires)</li>
+                <li>12V 铅酸电池 (12V Lead-Acid Battery, e.g., WP7-12 12V 7Ah)</li>
+                <li>电烙铁与焊锡 (Soldering Iron and Solder)</li>
+                <li>尖嘴钳 (Needle-Nose Pliers)</li>
+                <li>斜口钳/剪线钳 (Diagonal Cutters / Wire Cutters)</li>
+                <li>螺丝刀 (Screwdriver)</li>
+                <li>电钻 (Electric Drill)</li>
+                <li>砂纸 (Sandpaper)</li>
+                <li>夹子 (Clamp)</li>
+                <li>电池外壳金属片或类似物 (Battery Casing Metal Piece or Similar)</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-3">
+                 <span class="text-blue-300">制作步骤</span>
+                 <br>
+                <span class="text-gray-400 text-sm font-normal">Construction Steps</span>
+            </h3>
+
+            <div class="space-y-6">
+                <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 1：拆卸火花塞接头</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 1: Remove Spark Plug Terminal</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">使用尖嘴钳卸下火花塞顶部的金属接头。</p>
+                     <p class="text-gray-400 text-xs font-normal">Use needle-nose pliers to remove the metal terminal at the top of the spark plug.</p>
+                    <img src="placeholder_00_08.jpg" alt="Remove Spark Plug Terminal" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 2：组装火花塞底座</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 2: Assemble Spark Plug Base</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">将一个垫圈和一个环形接线端子套在火花塞露出的螺纹上，用螺母固定。</p>
+                     <p class="text-gray-400 text-xs font-normal">Place a washer and a ring terminal lug onto the exposed thread of the spark plug, secure with a nut.</p>
+                     <img src="placeholder_00_26.jpg" alt="Assemble Spark Plug Base" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 3：制作焊接尖端</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 3: Create Welding Tip</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">取一根细长螺杆，套上一个垫圈。从塑料接线排上切下一小块包含铜芯的部分，拧下铜芯上的螺丝。将铜芯套在螺杆上。</p>
+                     <p class="text-gray-400 text-xs font-normal">Take a long threaded rod, put a washer on it. Cut a small piece from the plastic terminal block containing the brass insert, unscrew the screws from the brass insert. Slide the brass insert onto the threaded rod.</p>
+                     <img src="placeholder_02_07.jpg" alt="Prepare Welding Tip Assembly" class="w-full h-auto rounded-md">
+                </div>
+
+                <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 4：固定焊接尖端</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 4: Secure Welding Tip Assembly</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">将螺杆穿过步骤2中火花塞上的环形接线端子，并用螺母将整个组件固定在火花塞上。使用电钻和砂纸将螺杆前端打磨尖锐。</p>
+                     <p class="text-gray-400 text-xs font-normal">Pass the threaded rod through the ring terminal lug on the spark plug from Step 2, and use a nut to secure the entire assembly onto the spark plug. Use a drill and sandpaper to sharpen the tip of the threaded rod.</p>
+                     <img src="placeholder_05_44.jpg" alt="Attach and Sharpen Tip" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 5：连接电路</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 5: Connect the Circuit</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">取一根蓝导线和一根红导线，剥去两端绝缘层。蓝导线焊接到火花塞底部的环形接线端子上。红导线一端连接鳄鱼夹。</p>
+                     <p class="text-gray-400 text-xs font-normal">Take one blue wire and one red wire, strip insulation from both ends. Solder the blue wire to the ring terminal lug at the base of the spark plug. Attach an alligator clip to one end of the red wire.</p>
+                     <img src="placeholder_08_14.jpg" alt="Wire and Solder Connections" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 6：焊接测试</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 6: Welding Test</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">将蓝导线的另一端（火花塞端）连接到电池的负极，红导线（带鳄鱼夹）连接到电池的正极。使用夹子固定待焊接的金属片，将火花塞焊接尖端接触金属片，铜芯接触金属片并调整距离，即可产生电弧进行点焊。</p>
+                     <p class="text-gray-400 text-xs font-normal">Connect the other end of the blue wire (spark plug end) to the negative terminal of the battery, and the red wire (with alligator clip) to the positive terminal. Use a clamp to hold the metal piece to be welded. Touch the sharpened threaded rod tip to the metal piece, and the brass insert to the metal piece, adjusting the distance to create an arc for spot welding.</p>
+                     <img src="placeholder_09_18.jpg" alt="Welding Demonstration" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-blue-400">步骤 7：电烙铁测试 (可选)</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 7: Soldering Iron Test (Optional)</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">在打磨尖锐的螺杆尖端处涂抹焊锡膏或助焊剂，连接电源。螺杆会迅速发热，可作为简易电烙铁使用。</p>
+                     <p class="text-gray-400 text-xs font-normal">Apply soldering paste or flux to the sharpened threaded rod tip. Connect the power source. The rod will heat up quickly and can be used as a simple soldering iron.</p>
+                     <img src="placeholder_08_48.jpg" alt="Soldering Demonstration" class="w-full h-auto rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 2 Section -->
+        <section class="space-y-4 bento-card p-6 rounded-lg"
+                 data-framer-component="fade-in"
+                 data-framer-duration="1.5">
+            <h2 class="text-2xl font-bold mb-4">
+                <span class="border-b-2 border-red-500 pb-1">项目 2：热切割工具</span>
+                 <br>
+                <span class="text-gray-400 text-sm font-normal">Project 2: Hot Wire Cutter Tool</span>
+            </h2>
+
+             <h3 class="text-xl font-semibold mb-3">
+                <span class="text-red-300">所需材料与工具</span>
+                 <br>
+                <span class="text-gray-400 text-xs font-normal">Materials and Tools Needed</span>
+            </h3>
+             <ul class="list-disc list-inside text-sm text-gray-300 space-y-1">
+                <li>一次性打火机 (Disposable Lighter)</li>
+                <li>安全别针 (Safety Pins)</li>
+                <li>塑料接线排 (Plastic Terminal Block Strip)</li>
+                <li>蓝/红导线 (Blue/Red Wires)</li>
+                 <li>12V 铅酸电池 (12V Lead-Acid Battery)</li>
+                <li>美工刀 (Utility Knife)</li>
+                <li>尖嘴钳 (Needle-Nose Pliers)</li>
+                <li>斜口钳/剪线钳 (Diagonal Cutters / Wire Cutters)</li>
+                <li>螺丝刀 (Screwdriver)</li>
+                 <li>棉花或纸巾 (Cotton or Tissue)</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-3">
+                 <span class="text-red-300">制作步骤</span>
+                 <br>
+                <span class="text-gray-400 text-sm font-normal">Construction Steps</span>
+            </h3>
+
+            <div class="space-y-6">
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 1：获取打火机发热丝</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 1: Get Lighter Heating Wire</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">用美工刀小心地沿着打火机外壳切割，取出内部的金属部分。找到用于点燃的细小螺旋弹簧丝。</p>
+                     <p class="text-gray-400 text-xs font-normal">Carefully cut along the lighter casing with a utility knife and remove the inner metal part. Find the small spiral spring wire used for ignition.</p>
+                     <img src="placeholder_05_22.jpg" alt="Extract Lighter Spring" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 2：处理安全别针</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 2: Prepare Safety Pins</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">取两个安全别针，将头部弯曲部分拉直一部分。用美工刀或钳子小心地刮掉别针头部内侧的一小块镀层或氧化层，露出金属本色以便导电。</p>
+                     <p class="text-gray-400 text-xs font-normal">Take two safety pins, straighten a portion of the bent head. Carefully scrape a small area on the inner side of the pin heads with a utility knife or pliers to remove plating or oxidation, exposing bare metal for electrical contact.</p>
+                      <img src="placeholder_11_52.jpg" alt="Prepare Safety Pins" class="w-full h-auto rounded-md">
+                </div>
+
+                <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 3：连接发热丝与别针</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 3: Connect Heating Wire and Pins</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">将打火机上的螺旋弹簧丝小心地展开。将其两端分别缠绕在两个处理好的安全别针的头部弯曲处（刮掉镀层的地方）。</p>
+                     <p class="text-gray-400 text-xs font-normal">Carefully uncoil the spiral spring wire from the lighter. Wrap each end around the bent head of the prepared safety pins (where the plating was scraped off).</p>
+                     <img src="placeholder_11_59.jpg" alt="Attach Spring to Pins" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 4：制作电极底座</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 4: Create Electrode Base</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">从塑料接线排上切下一块，至少包含两个成对的接线孔。拧松螺丝，将两个安全别针的直端分别插入对应的接线孔中，拧紧螺丝固定。</p>
+                     <p class="text-gray-400 text-xs font-normal">Cut a piece from the plastic terminal block strip, containing at least two pairs of connection holes. Loosen the screws, insert the straight ends of the two safety pins into the corresponding holes, and tighten the screws to secure them.</p>
+                     <img src="placeholder_10_49.jpg" alt="Attach Pins to Terminal Block" class="w-full h-auto rounded-md">
+                </div>
+
+                <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 5：连接电源线</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 5: Connect Power Wires</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">取蓝导线和红导线，一端连接电池的鳄鱼夹。将另一端的蓝导线插入接线排的另一对孔中，拧紧螺丝固定。同样方式连接红导线。</p>
+                     <p class="text-gray-400 text-xs font-normal">Take blue and red wires, attach alligator clips to one end. Insert the other end of the blue wire into the other pair of holes in the terminal block, tighten the screw. Connect the red wire in the same manner.</p>
+                     <img src="placeholder_12_36.jpg" alt="Connect Wires to Terminal Block" class="w-full h-auto rounded-md">
+                </div>
+
+                 <div class="bento-card p-4 rounded-lg">
+                    <p class="text-lg font-medium mb-2">
+                        <span class="text-red-400">步骤 6：热切割测试</span>
+                         <br>
+                        <span class="text-gray-400 text-xs font-normal">Step 6: Hot Cutting Test</span>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-3">将鳄鱼夹连接到电池正负极。此时安全别针之间的螺旋丝会迅速发热变红。可用于切割或封合薄塑料袋等材料。</p>
+                     <p class="text-gray-400 text-xs font-normal">Connect the alligator clips to the positive and negative terminals of the battery. The spiral wire between the safety pins will quickly heat up and turn red. It can be used for cutting or sealing thin plastic bags, etc.</p>
+                     <img src="placeholder_13_18.jpg" alt="Hot Wire Cutting Demonstration" class="w-full h-auto rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-10">
+             <p>© Innovation Plus One. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Framer Motion CDN Script -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@6.5.1/dist/framer-motion.min.js"></script>
+    <script>
+        // Basic Framer Motion Integration (Example: Fade-in effect)
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('[data-framer-component="fade-in"]');
+            fadeElements.forEach(el => {
+                const duration = el.dataset.framerDuration || 1; // Default duration 1s
+                framerMotion.animate(el, { opacity: [0, 1] }, { duration: parseFloat(duration), delay: 0.2 });
+            });
+        });
+    </script>
+</body>
+</html>
