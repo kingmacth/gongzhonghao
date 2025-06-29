@@ -7,7 +7,7 @@
     "build": "node build.js"
   },
   "dependencies": {
-    "fs-extra": "^11.1.0",  // 这一行只有逗号，没有后面的注释
+    "fs-extra": "^11.1.0", 
     "cheerio": "^1.0.0-rc.12"
   }
 }
