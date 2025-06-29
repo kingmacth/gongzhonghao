@@ -1,0 +1,12 @@
+{
+  "name": "gongzhonghao-blog-builder",
+  "version": "1.0.0",
+  "description": "Build script for gongzhonghao blog",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0"
+  }
+}
