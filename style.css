@@ -1,84 +1,132 @@
-/* style.css - Enhanced Tech/DIY/Vibrant Style v2 */
+/* style.css - Enhanced Tech/DIY/Vibrant Style v3 + Particles */
 
 /* 使用更鲜明且对比度高的颜色 */
 :root {
-    --primary-color: #00bcd4; /* 青蓝色 */
-    --secondary-color: #8bc34a; /* 亮绿色 */
-    --accent-color: #ff9800; /* 橙色点缀 */
+    --primary-color: #00ffff; /* 亮青色 */
+    --secondary-color: #76ff03; /* 荧光绿 */
+    --accent-color: #ff4081; /* 热粉色 */
     --text-color: #212121; /* 深灰近黑 */
-    --background-light: #e0f7fa; /* 极浅青蓝背景 */
-    --background-dark: #b2ebf2; /* 稍深青蓝背景 */
-    --card-background: #ffffff;
-    --border-color: #b2ebf2; /* 与深背景色协调的边框 */
-    --shadow-color: rgba(0, 0, 0, 0.2); /* 更明显的阴影 */
-    --hover-background: rgba(0, 188, 212, 0.1); /* hover 的浅背景色，带透明度 */
+    --background-gradient-start: #1a2a3a; /* 深蓝灰色 */
+    --background-gradient-end: #4a0072; /* 深紫 */
+    --card-background: rgba(255, 255, 255, 0.95); /* 卡片背景，略透明 */
+    --border-color: rgba(255, 255, 255, 0.3); /* 半透明浅色边框 */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* 更明显的阴影 */
+    --hover-background: rgba(0, 255, 255, 0.1); /* hover 的浅背景色，带透明度 (使用主色) */
+    --particle-color: #ffffff; /* 粒子颜色为白色 */
 }
 
 body {
     font-family: 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.8; /* 增加行高，提升可读性 */
+    line-height: 1.8;
     margin: 0;
-    padding: 0; /* 移除 body padding，让 header/footer 撑满 */
-    background: linear-gradient(to bottom, var(--background-light), var(--background-dark)); /* 渐变背景 */
+    padding: 0;
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end)); /* 倾斜渐变背景 */
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    align-items: center; /* 居中内容 */
+    align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
+    position: relative; /* 确保粒子背景可以相对body定位 */
+    overflow-x: hidden; /* 防止粒子动画可能导致的横向滚动条 */
+    z-index: 0; /* 确保 body 在粒子背景之上 */
 }
 
-/* 使用 padding 来控制页面内容距离边缘的距离 */
+/* 粒子背景容器 */
+#particle-background {
+    position: fixed; /* 固定定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 隐藏超出屏幕的粒子 */
+    pointer-events: none; /* 确保粒子不影响鼠标事件 */
+    z-index: -1; /* 将粒子置于所有内容之下 */
+}
+
+/* 粒子元素 */
+.particle {
+    display: block;
+    position: absolute;
+    background-color: var(--particle-color);
+    border-radius: 50%; /* 圆形粒子 */
+    animation: float-and-fade linear infinite; /* 应用动画 */
+}
+
+/* 粒子动画关键帧 */
+@keyframes float-and-fade {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: var(--opacity, 0.8); /* 使用 JS 设置的初始透明度 */
+    }
+    50% {
+        transform: translate(calc(var(--size, 5px) * 5), calc(var(--size, 5px) * 5)) rotate(180deg); /* 轻微漂移和旋转 */
+        opacity: var(--opacity, 0.8);
+    }
+    100% {
+        transform: translate(0, 100vh) rotate(360deg); /* 向下漂移并旋转到底部 */
+        opacity: 0; /* 最终淡出 */
+    }
+}
+
+/* 注意：particles.js 中只设置了 style 属性，这里将 animationDuration/Delay 提取到 JS 中设置，
+   而 animation-name/timing-function/iteration-count 在 CSS 中设置 */
+/* 粒子在 JS 中设置的 style 会覆盖这里的默认值，这是预期行为 */
+
+
+/* 容器包裹主要内容，使其在粒子背景之上 */
 .container {
     width: 100%;
-    max-width: 1000px; /* 更宽的最大宽度 */
-    padding: 0 20px; /* 左右内边距 */
-    margin: 0 auto; /* 居中容器 */
+    max-width: 1100px; /* 更宽的最大宽度 */
+    padding: 40px 20px; /* 顶部和左右内边距 */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    position: relative; /* 确保内容在粒子之上 */
+    z-index: 1;
 }
-
 
 header {
     text-align: center;
     margin-bottom: 40px;
-    padding: 40px 20px 20px; /* 顶部有更大内边距 */
+    padding: 0 20px 20px; /* 只留底部内边距 */
     width: 100%;
     border-bottom: 3px solid var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.9); /* 头部背景半透明白色 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 头部阴影 */
+    background-color: transparent; /* 头部背景透明 */
+    box-shadow: none; /* 移除头部阴影 */
 }
 
 h1 {
     color: var(--primary-color);
-    font-size: 3.8em; /* 更大的标题 */
-    margin-bottom: 10px;
-    font-weight: 900; /* 更粗的字体 */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    letter-spacing: -1px; /* 字母间距微调 */
+    font-size: 4.5em; /* 更大的标题 */
+    margin-bottom: 15px;
+    font-weight: 900;
+    text-shadow: 3px 3px 6px rgba(0, 255, 255, 0.5); /* 标题光晕阴影 */
+    letter-spacing: -2px;
+    text-transform: uppercase; /* 标题大写 */
 }
 
 main {
     width: 100%;
     background-color: var(--card-background);
     padding: 40px;
-    box-shadow: 0 8px 20px var(--shadow-color); /* 更明显的阴影 */
-    border-radius: 15px; /* 更大的圆角 */
+    box-shadow: 0 12px 25px var(--shadow-color); /* 更明显的阴影 */
+    border-radius: 15px;
     margin-bottom: 40px;
     flex-grow: 1;
-    z-index: 1; /* 确保在背景之上 */
 }
 
 h2 {
     color: var(--text-color);
-    font-size: 2.4em;
+    font-size: 2.8em;
     margin-top: 0;
     margin-bottom: 30px;
-    border-bottom: 3px solid var(--border-color);
+    border-bottom: 3px dashed var(--secondary-color); /* 副标题使用辅色 */
     padding-bottom: 15px;
     font-weight: 700;
+    text-align: center; /* 副标题居中 */
 }
 
 ul {
@@ -89,27 +137,28 @@ ul {
 
 li {
     margin-bottom: 20px;
-    padding: 15px 0; /* 上下内边距 */
-    border-bottom: 1px solid #eee;
+    padding: 15px 20px; /* 左右也增加内边距 */
+    border: 1px solid var(--border-color); /* 列表项边框 */
+    border-radius: 8px; /* 列表项圆角 */
     font-size: 1.25em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 5px; /* 列表项圆角 */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* 列表项背景略透明 */
 }
 
 li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color); /* 最后一个列表项也有边框 */
+    margin-bottom: 20px; /* 最后一个列表项也保留底部间距 */
 }
 
 li:hover {
-    background-color: var(--hover-background); /* hover 浅背景色 */
-    transform: translateX(8px); /* hover 时向右移动 */
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.05); /* hover 阴影 */
+    background-color: var(--hover-background);
+    transform: translateY(-5px); /* hover 时向上移动 */
+    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2); /* hover 光晕阴影 (使用主色) */
 }
 
 li a {
      display: block;
-     padding: 0; /* 链接内边距由 li 控制 */
+     padding: 0;
      color: var(--text-color);
      text-decoration: none;
      transition: color 0.3s ease;
@@ -122,15 +171,14 @@ li a:hover {
 
 footer {
     margin-top: 40px;
-    padding: 30px 20px 40px; /* 底部有更大内边距 */
+    padding: 30px 20px 40px;
     width: 100%;
     border-top: 3px solid var(--secondary-color);
     text-align: center;
-    font-size: 1em;
-    color: #555;
-    background-color: rgba(255, 255, 255, 0.9); /* 页脚背景半透明白色 */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 页脚阴影 */
-    z-index: 1; /* 确保在背景之上 */
+    font-size: 1.1em;
+    color: #ddd; /* 页脚文字颜色变浅，适应深色背景 */
+    background-color: transparent; /* 页脚背景透明 */
+    box-shadow: none; /* 移除页脚阴影 */
 }
 
 footer section {
@@ -138,8 +186,8 @@ footer section {
 }
 
 footer h3 {
-    color: var(--text-color);
-    font-size: 1.5em;
+    color: #eee; /* 页脚标题颜色变浅 */
+    font-size: 1.6em;
     margin-bottom: 15px;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 8px;
@@ -156,85 +204,91 @@ footer ul {
 }
 
 footer li {
-    margin: 10px 0;
+    margin: 12px 0;
     padding: 0;
     border: none;
     font-size: 1.1em;
+    background-color: transparent; /* 页脚 li 背景透明 */
 }
 
 footer a {
-    color: #555;
+    color: #ccc; /* 页脚链接颜色变浅 */
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-     color: var(--secondary-color);
+     color: var(--accent-color); /* hover 时变成橙色点缀 */
      text-decoration: underline;
 }
 
 
 /* 响应式调整 */
+@media (max-width: 1024px) {
+     .container {
+         max-width: 960px;
+     }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px; /* 左右内边距减小 */
+        padding: 30px 15px;
     }
     header {
-        padding: 30px 15px 15px;
+        padding: 0 15px 15px;
     }
     h1 {
-        font-size: 2.8em;
+        font-size: 3.5em;
     }
     main {
         padding: 30px;
     }
     h2 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
     li {
         font-size: 1.1em;
+        padding: 12px 15px;
     }
     footer {
         padding: 25px 15px 30px;
     }
-    footer section {
-        margin-bottom: 20px;
-    }
      footer h3 {
-         font-size: 1.3em;
+         font-size: 1.4em;
      }
      footer li {
-         margin: 8px 0;
+         margin: 10px 0;
      }
 }
 
 @media (max-width: 480px) {
      .container {
-         padding: 0 10px;
+         padding: 20px 10px;
      }
      header {
-        padding: 20px 10px 10px;
+        padding: 0 10px 10px;
      }
      h1 {
-         font-size: 2.2em;
+         font-size: 2.5em;
+         letter-spacing: -1px;
      }
      main {
         padding: 20px;
      }
      h2 {
-         font-size: 1.6em;
+         font-size: 1.8em;
      }
      li {
          font-size: 1em;
          margin-bottom: 15px;
-         padding: 10px 0;
+         padding: 10px 10px;
      }
      footer {
          padding: 20px 10px 25px;
      }
      footer h3 {
-        font-size: 1.2em;
+        font-size: 1.3em;
      }
      footer li {
-         margin: 5px 0;
+         margin: 8px 0;
      }
 }

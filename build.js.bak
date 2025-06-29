@@ -1,9 +1,9 @@
 const fs = require('fs-extra');
 const path = require('path');
-const cheerio = require('cheerio'); // <--- 引入 cheerio
+const cheerio = require('cheerio'); // 用于解析 HTML 获取标题
 
-const sourceDir = '.';
-const outputDir = 'dist';
+const sourceDir = '.'; // 你的仓库根目录
+const outputDir = 'dist'; // 构建输出目录
 
 async function buildBlog() {
   console.log('Starting blog build...');
@@ -31,13 +31,14 @@ async function buildBlog() {
         if (await fs.exists(postIndexPath)) {
           const htmlContent = await fs.readFile(postIndexPath, 'utf8');
           const $ = cheerio.load(htmlContent); // 用 cheerio 加载 HTML
-          const extractedTitle = $('title').text(); // 提取 <title> 标签的文本内容
+          // 尝试提取 <title> 标签的文本内容，如果获取不到，尝试提取第一个 <h1> 标签的内容
+          const extractedTitle = $('title').text().trim() || $('h1').first().text().trim();
 
           if (extractedTitle) {
             postTitle = extractedTitle; // 如果成功提取到标题，则使用提取的标题
             console.log(`Extracted title for ${entry}: "${postTitle}"`);
           } else {
-             console.warn(`Warning: No <title> tag found in ${postIndexPath}. Using folder name "${entry}" as title.`);
+             console.warn(`Warning: No <title> or <h1> tag found in ${postIndexPath}. Using folder name "${entry}" as title.`);
           }
         } else {
            console.warn(`Warning: ${postIndexPath} not found. Using folder name "${entry}" as title.`);
@@ -56,30 +57,31 @@ async function buildBlog() {
   console.log('Found and sorted posts:', postsData.map(p => p.folder));
 
 
-   // 4. 生成主页 HTML 内容
+  // 4. 生成主页 HTML 内容 - 包含新的结构、标题和底部内容
   let indexHtmlContent = `
     <!DOCTYPE html>
     <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>大道无极的BLOG</title> <!-- 这里也改成博客标题 -->
-        <link rel="stylesheet" href="/style.css">
+        <title>大道无极的BLOG / Kingmacth's BLOG</title> <!-- 博客标题 -->
+        <link rel="stylesheet" href="/style.css"> <!-- 链接到 style.css -->
     </head>
     <body>
         <header>
-            <h1>大道无极的BLOG</h1> <!-- 主要标题 -->
+            <h1>大道无极的BLOG / Kingmacth's BLOG</h1> <!-- 主要标题 -->
         </header>
 
         <main>
-            <h2>文章列表</h2> <!-- 列表的副标题 -->
+            <h2>文章列表 / Article List</h2> <!-- 列表的副标题 -->
             <ul>
   `;
 
   if (postsData.length === 0) {
-      indexHtmlContent += `<li>暂无文章。</li>`;
+      indexHtmlContent += `<li>暂无文章 / No articles yet.</li>`;
   } else {
       postsData.forEach(post => {
+          // 使用提取的标题作为链接文本
           indexHtmlContent += `
               <li><a href="/${post.folder}/index.html">${post.title}</a></li>
           `;
@@ -92,36 +94,14 @@ async function buildBlog() {
 
         <footer>
             <section class="contact-info">
-                <h3>联系方式</h3>
+                <h3>联系方式 / Contact</h3>
                 <p>Email: <a href="mailto:kingmacth@gmail.com">kingmacth@gmail.com</a></p>
             </section>
 
             <section class="friendly-links">
-                <h3>友情链接</h3>
+                <h3>友情链接 / Friendly Links</h3>
                 <ul>
-                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">fiverr自由职业者</a></li> <!-- target="_blank" 让链接在新标签页打开 -->
-                </ul>
-            </section>
-        </footer>
-
-    </body>
-    </html>
-	  // ... (前面的代码不变)
-
-	 indexHtmlContent += `
-            </ul>
-        </main>
-
-        <footer>
-            <section class="contact-info">
-                <h3>联系方式</h3>
-                <p>Email: <a href="mailto:kingmacth@gmail.com">kingmacth@gmail.com</a></p>
-            </section>
-
-            <section class="friendly-links">
-                <h3>友情链接</h3>
-                <ul>
-                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">Great freelancer</a></li>
+                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">Great freelancer</a></li> <!-- 修改了链接文本和链接 -->
                 </ul>
             </section>
         </footer>
@@ -132,10 +112,7 @@ async function buildBlog() {
 
     </body>
     </html>
-  `; // <-- 统计代码插入在 </body> 标签前
-
-  // ... (后面的代码不变)
-  `;
+  `; // <-- Cloudflare 统计代码已安全地包含在模板字符串中
 
   // 5. 将生成的主页 HTML 写入输出目录
   await fs.ensureDir(outputDir);
@@ -146,8 +123,13 @@ async function buildBlog() {
   for (const post of postsData) {
       const sourceFolder = path.join(sourceDir, post.folder);
       const destFolder = path.join(outputDir, post.folder);
-      await fs.copy(sourceFolder, destFolder);
-      console.log(`Copied ${sourceFolder} to ${destFolder}`);
+      // 检查源文件夹是否存在，避免构建因缺失文件夹而失败
+      if (await fs.exists(sourceFolder)) {
+          await fs.copy(sourceFolder, destFolder);
+          console.log(`Copied ${sourceFolder} to ${destFolder}`);
+      } else {
+          console.warn(`Warning: Source folder ${sourceFolder} not found. Skipping copy.`);
+      }
   }
 
    // 7. 复制 style.css 文件（确保 style.css 存在于根目录）
@@ -160,12 +142,11 @@ async function buildBlog() {
        console.warn(`Warning: style.css not found in ${sourceDir}. Skipping copy.`);
    }
 
-
   console.log('Build finished successfully!');
 }
 
 // 执行构建函数
 buildBlog().catch(err => {
   console.error('Build failed:', err);
-  process.exit(1);
+  process.exit(1); // 构建失败时退出，Cloudflare Pages 会报告错误
 });

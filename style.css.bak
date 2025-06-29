@@ -1,65 +1,84 @@
-/* style.css - 科技/DIY/靓丽风格 */
+/* style.css - Enhanced Tech/DIY/Vibrant Style v2 */
 
+/* 使用更鲜明且对比度高的颜色 */
 :root {
-    --primary-color: #007bff; /* 主蓝色 */
-    --secondary-color: #28a745; /* 辅绿色 */
-    --text-color: #333;
-    --background-color: #f8f9fa; /* 极浅灰色背景 */
-    --card-background: #ffffff; /* 卡片白色背景 */
-    --border-color: #dee2e6; /* 浅边框色 */
-    --shadow-color: rgba(0,0,0,0.08); /* 细微阴影色 */
+    --primary-color: #00bcd4; /* 青蓝色 */
+    --secondary-color: #8bc34a; /* 亮绿色 */
+    --accent-color: #ff9800; /* 橙色点缀 */
+    --text-color: #212121; /* 深灰近黑 */
+    --background-light: #e0f7fa; /* 极浅青蓝背景 */
+    --background-dark: #b2ebf2; /* 稍深青蓝背景 */
+    --card-background: #ffffff;
+    --border-color: #b2ebf2; /* 与深背景色协调的边框 */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* 更明显的阴影 */
+    --hover-background: rgba(0, 188, 212, 0.1); /* hover 的浅背景色，带透明度 */
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* 使用更通用的现代字体栈 */
-    line-height: 1.6;
+    font-family: 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.8; /* 增加行高，提升可读性 */
     margin: 0;
-    padding: 20px;
-    background-color: var(--background-color);
+    padding: 0; /* 移除 body padding，让 header/footer 撑满 */
+    background: linear-gradient(to bottom, var(--background-light), var(--background-dark)); /* 渐变背景 */
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* 居中内容 */
     min-height: 100vh;
-    box-sizing: border-box; /* 确保 padding 不会撑大元素 */
+    box-sizing: border-box;
 }
+
+/* 使用 padding 来控制页面内容距离边缘的距离 */
+.container {
+    width: 100%;
+    max-width: 1000px; /* 更宽的最大宽度 */
+    padding: 0 20px; /* 左右内边距 */
+    margin: 0 auto; /* 居中容器 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
 
 header {
     text-align: center;
-    margin-bottom: 40px; /* 增加底部间距 */
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--primary-color); /* 使用主色作为底边框 */
+    margin-bottom: 40px;
+    padding: 40px 20px 20px; /* 顶部有更大内边距 */
     width: 100%;
-    max-width: 900px; /* 稍微放宽最大宽度 */
+    border-bottom: 3px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.9); /* 头部背景半透明白色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 头部阴影 */
 }
 
 h1 {
     color: var(--primary-color);
-    font-size: 3em; /* 增加标题大小 */
+    font-size: 3.8em; /* 更大的标题 */
     margin-bottom: 10px;
-    font-weight: 700; /* 更粗的字体 */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 添加一点文字阴影 */
+    font-weight: 900; /* 更粗的字体 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: -1px; /* 字母间距微调 */
 }
 
 main {
     width: 100%;
-    max-width: 900px; /* 与 header 宽度一致 */
     background-color: var(--card-background);
-    padding: 30px; /* 增加内边距 */
-    box-shadow: 0 4px 10px var(--shadow-color); /* 增加阴影效果 */
-    border-radius: 10px; /* 更大的圆角 */
-    margin-bottom: 30px;
+    padding: 40px;
+    box-shadow: 0 8px 20px var(--shadow-color); /* 更明显的阴影 */
+    border-radius: 15px; /* 更大的圆角 */
+    margin-bottom: 40px;
     flex-grow: 1;
+    z-index: 1; /* 确保在背景之上 */
 }
 
 h2 {
     color: var(--text-color);
-    font-size: 2em;
+    font-size: 2.4em;
     margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px dashed var(--border-color); /* 使用虚线边框 */
-    padding-bottom: 10px;
-    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--border-color);
+    padding-bottom: 15px;
+    font-weight: 700;
 }
 
 ul {
@@ -69,11 +88,12 @@ ul {
 }
 
 li {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee; /* 列表项之间细分隔线 */
-    font-size: 1.15em; /* 稍微增加字体大小 */
-    transition: background-color 0.3s ease; /* 增加hover过渡效果 */
+    margin-bottom: 20px;
+    padding: 15px 0; /* 上下内边距 */
+    border-bottom: 1px solid #eee;
+    font-size: 1.25em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px; /* 列表项圆角 */
 }
 
 li:last-child {
@@ -82,48 +102,51 @@ li:last-child {
 }
 
 li:hover {
-    background-color: #e9ecef; /* hover时浅背景色变化 */
-    cursor: pointer; /* 显示手型光标 */
+    background-color: var(--hover-background); /* hover 浅背景色 */
+    transform: translateX(8px); /* hover 时向右移动 */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05); /* hover 阴影 */
 }
 
 li a {
-     display: block; /* 让链接填充整个 li */
-     padding: 5px 0; /* 给链接一些点击区域 */
-     color: var(--text-color); /* 默认链接颜色与正文一致 */
+     display: block;
+     padding: 0; /* 链接内边距由 li 控制 */
+     color: var(--text-color);
      text-decoration: none;
      transition: color 0.3s ease;
 }
 
 li a:hover {
-    color: var(--primary-color); /* hover时改变颜色 */
-    text-decoration: none; /* 保持无下划线 */
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-
 footer {
-    margin-top: 40px; /* 增加顶部间距 */
-    padding-top: 30px;
-    border-top: 2px solid var(--secondary-color); /* 使用辅色作为顶边框 */
-    text-align: center;
-    font-size: 0.95em;
-    color: #555; /* 稍微深一点的页脚文字颜色 */
+    margin-top: 40px;
+    padding: 30px 20px 40px; /* 底部有更大内边距 */
     width: 100%;
-    max-width: 900px;
+    border-top: 3px solid var(--secondary-color);
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.9); /* 页脚背景半透明白色 */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 页脚阴影 */
+    z-index: 1; /* 确保在背景之上 */
 }
 
 footer section {
-    margin-bottom: 25px; /* 增加 section 间距 */
+    margin-bottom: 30px;
 }
 
 footer h3 {
     color: var(--text-color);
-    font-size: 1.3em; /* 稍微增加字体大小 */
+    font-size: 1.5em;
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 5px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
     display: inline-block;
-    margin-left: auto; /* 尝试居中 h3，虽然 inline-block 不完全受 margin: auto 影响，但配合父元素 text-align: center 有效 */
+    margin-left: auto;
     margin-right: auto;
+    font-weight: 600;
 }
 
 footer ul {
@@ -133,73 +156,85 @@ footer ul {
 }
 
 footer li {
-    margin: 8px 0; /* 增加页脚 li 间距 */
+    margin: 10px 0;
     padding: 0;
     border: none;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 footer a {
-    color: #555; /* 页脚链接颜色 */
+    color: #555;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-     color: var(--secondary-color); /* hover时变成辅色 */
+     color: var(--secondary-color);
      text-decoration: underline;
 }
 
 
 /* 响应式调整 */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
+    .container {
+        padding: 0 15px; /* 左右内边距减小 */
     }
-
-    header, main, footer {
-        max-width: 100%; /* 在小屏幕上使用全部宽度 */
+    header {
+        padding: 30px 15px 15px;
     }
-
     h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
-
     main {
-        padding: 20px;
+        padding: 30px;
     }
-
     h2 {
-        font-size: 1.7em;
+        font-size: 2em;
     }
-
     li {
         font-size: 1.1em;
     }
-
     footer {
-        margin-top: 30px;
-        padding-top: 20px;
+        padding: 25px 15px 30px;
     }
-
     footer section {
         margin-bottom: 20px;
     }
+     footer h3 {
+         font-size: 1.3em;
+     }
+     footer li {
+         margin: 8px 0;
+     }
 }
 
 @media (max-width: 480px) {
-     h1 {
-         font-size: 2em;
+     .container {
+         padding: 0 10px;
      }
-     h2 {
-         font-size: 1.4em;
+     header {
+        padding: 20px 10px 10px;
+     }
+     h1 {
+         font-size: 2.2em;
      }
      main {
-        padding: 15px;
+        padding: 20px;
+     }
+     h2 {
+         font-size: 1.6em;
      }
      li {
          font-size: 1em;
+         margin-bottom: 15px;
+         padding: 10px 0;
      }
-     body {
-         padding: 10px;
+     footer {
+         padding: 20px 10px 25px;
+     }
+     footer h3 {
+        font-size: 1.2em;
+     }
+     footer li {
+         margin: 5px 0;
      }
 }

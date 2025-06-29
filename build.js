@@ -1,9 +1,10 @@
 const fs = require('fs-extra');
 const path = require('path');
-const cheerio = require('cheerio'); // 用于解析 HTML 获取标题
+const cheerio = require('cheerio');
 
 const sourceDir = '.'; // 你的仓库根目录
 const outputDir = 'dist'; // 构建输出目录
+const effectsJsFileName = 'effects.js'; // JavaScript 文件名
 
 async function buildBlog() {
   console.log('Starting blog build...');
@@ -57,7 +58,7 @@ async function buildBlog() {
   console.log('Found and sorted posts:', postsData.map(p => p.folder));
 
 
-  // 4. 生成主页 HTML 内容 - 包含新的结构、标题和底部内容
+  // 4. 生成主页 HTML 内容 - 包含新的结构、标题、底部内容和 JS 引用
   let indexHtmlContent = `
     <!DOCTYPE html>
     <html lang="zh-CN">
@@ -101,7 +102,7 @@ async function buildBlog() {
             <section class="friendly-links">
                 <h3>友情链接 / Friendly Links</h3>
                 <ul>
-                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">Great freelancer</a></li> <!-- 修改了链接文本和链接 -->
+                    <li><a href="https://www.fiverr.com/s/ZmwjpkY" target="_blank">Great freelancer</a></li> <!-- 修改了链接文本 -->
                 </ul>
             </section>
         </footer>
@@ -110,9 +111,13 @@ async function buildBlog() {
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cd472c672f374e578bc700d5a6c0e8aa"}'></script>
         <!-- End Cloudflare Web Analytics -->
 
+        <!-- Custom Effects Script -->
+        <script src="/${effectsJsFileName}"></script> <!-- 引用 effects.js -->
+        <!-- End Custom Effects Script -->
+
     </body>
     </html>
-  `; // <-- Cloudflare 统计代码已安全地包含在模板字符串中
+  `;
 
   // 5. 将生成的主页 HTML 写入输出目录
   await fs.ensureDir(outputDir);
@@ -123,7 +128,6 @@ async function buildBlog() {
   for (const post of postsData) {
       const sourceFolder = path.join(sourceDir, post.folder);
       const destFolder = path.join(outputDir, post.folder);
-      // 检查源文件夹是否存在，避免构建因缺失文件夹而失败
       if (await fs.exists(sourceFolder)) {
           await fs.copy(sourceFolder, destFolder);
           console.log(`Copied ${sourceFolder} to ${destFolder}`);
@@ -132,7 +136,7 @@ async function buildBlog() {
       }
   }
 
-   // 7. 复制 style.css 文件（确保 style.css 存在于根目录）
+   // 7. 复制 style.css 文件
    const styleSource = path.join(sourceDir, 'style.css');
    const styleDest = path.join(outputDir, 'style.css');
    if (await fs.exists(styleSource)) {
@@ -142,11 +146,22 @@ async function buildBlog() {
        console.warn(`Warning: style.css not found in ${sourceDir}. Skipping copy.`);
    }
 
+   // 8. 复制 effects.js 文件
+   const effectsJsSource = path.join(sourceDir, effectsJsFileName);
+   const effectsJsDest = path.join(outputDir, effectsJsFileName);
+   if (await fs.exists(effectsJsSource)) {
+       await fs.copy(effectsJsSource, effectsJsDest);
+       console.log(`Copied ${effectsJsSource} to ${effectsJsDest}`);
+   } else {
+       console.warn(`Warning: ${effectsJsFileName} not found in ${sourceDir}. Skipping copy.`);
+   }
+
+
   console.log('Build finished successfully!');
 }
 
 // 执行构建函数
 buildBlog().catch(err => {
   console.error('Build failed:', err);
-  process.exit(1); // 构建失败时退出，Cloudflare Pages 会报告错误
+  process.exit(1);
 });
