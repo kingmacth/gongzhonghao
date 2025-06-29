@@ -8,5 +8,6 @@
   },
   "dependencies": {
     "fs-extra": "^11.1.0"
+    "cheerio": "^1.0.0-rc.12"  // <--- 添加这一行
   }
 }
