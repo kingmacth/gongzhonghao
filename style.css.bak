@@ -1,52 +1,65 @@
-/* style.css - 科技/苹果风格 */
+/* style.css - 科技/DIY/靓丽风格 */
+
+:root {
+    --primary-color: #007bff; /* 主蓝色 */
+    --secondary-color: #28a745; /* 辅绿色 */
+    --text-color: #333;
+    --background-color: #f8f9fa; /* 极浅灰色背景 */
+    --card-background: #ffffff; /* 卡片白色背景 */
+    --border-color: #dee2e6; /* 浅边框色 */
+    --shadow-color: rgba(0,0,0,0.08); /* 细微阴影色 */
+}
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* 使用更通用的现代字体栈 */
     line-height: 1.6;
-    margin: 0; /* 重置默认 margin */
+    margin: 0;
     padding: 20px;
-    background-color: #f4f4f4; /* 浅灰色背景 */
-    color: #333; /* 深灰色文字 */
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
-    flex-direction: column; /* 让 header, main, footer 垂直排列 */
-    align-items: center; /* 居中内容 */
-    min-height: 100vh; /* 确保 footer 在底部 */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box; /* 确保 padding 不会撑大元素 */
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd; /* 细分隔线 */
+    margin-bottom: 40px; /* 增加底部间距 */
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color); /* 使用主色作为底边框 */
     width: 100%;
-    max-width: 800px; /* 限制最大宽度 */
+    max-width: 900px; /* 稍微放宽最大宽度 */
 }
 
 h1 {
-    color: #007aff; /* 苹果蓝 */
-    font-size: 2.5em;
+    color: var(--primary-color);
+    font-size: 3em; /* 增加标题大小 */
     margin-bottom: 10px;
-    font-weight: 600; /* 稍微粗一点的字体 */
+    font-weight: 700; /* 更粗的字体 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 添加一点文字阴影 */
 }
 
 main {
     width: 100%;
-    max-width: 800px; /* 限制最大宽度 */
-    background-color: #fff; /* 白色背景 */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 细微阴影 */
-    border-radius: 8px; /* 圆角 */
-    margin-bottom: 20px;
-    flex-grow: 1; /* 让 main 占据剩余空间 */
+    max-width: 900px; /* 与 header 宽度一致 */
+    background-color: var(--card-background);
+    padding: 30px; /* 增加内边距 */
+    box-shadow: 0 4px 10px var(--shadow-color); /* 增加阴影效果 */
+    border-radius: 10px; /* 更大的圆角 */
+    margin-bottom: 30px;
+    flex-grow: 1;
 }
 
 h2 {
-    color: #555;
-    font-size: 1.8em;
+    color: var(--text-color);
+    font-size: 2em;
     margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed var(--border-color); /* 使用虚线边框 */
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
 ul {
@@ -56,10 +69,11 @@ ul {
 }
 
 li {
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #eee;
-    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* 列表项之间细分隔线 */
+    font-size: 1.15em; /* 稍微增加字体大小 */
+    transition: background-color 0.3s ease; /* 增加hover过渡效果 */
 }
 
 li:last-child {
@@ -67,39 +81,49 @@ li:last-child {
     margin-bottom: 0;
 }
 
-a {
-    text-decoration: none;
-    color: #007aff; /* 苹果蓝 */
-    transition: color 0.2s ease-in-out; /* 平滑过渡 */
+li:hover {
+    background-color: #e9ecef; /* hover时浅背景色变化 */
+    cursor: pointer; /* 显示手型光标 */
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #0056b3; /* 深一点的蓝色 */
+li a {
+     display: block; /* 让链接填充整个 li */
+     padding: 5px 0; /* 给链接一些点击区域 */
+     color: var(--text-color); /* 默认链接颜色与正文一致 */
+     text-decoration: none;
+     transition: color 0.3s ease;
 }
+
+li a:hover {
+    color: var(--primary-color); /* hover时改变颜色 */
+    text-decoration: none; /* 保持无下划线 */
+}
+
 
 footer {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+    margin-top: 40px; /* 增加顶部间距 */
+    padding-top: 30px;
+    border-top: 2px solid var(--secondary-color); /* 使用辅色作为顶边框 */
     text-align: center;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 0.95em;
+    color: #555; /* 稍微深一点的页脚文字颜色 */
     width: 100%;
-    max-width: 800px; /* 限制最大宽度 */
+    max-width: 900px;
 }
 
 footer section {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* 增加 section 间距 */
 }
 
 footer h3 {
-    color: #555;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    color: var(--text-color);
+    font-size: 1.3em; /* 稍微增加字体大小 */
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 5px;
-    display: inline-block; /* 让边框线只包围文字 */
+    display: inline-block;
+    margin-left: auto; /* 尝试居中 h3，虽然 inline-block 不完全受 margin: auto 影响，但配合父元素 text-align: center 有效 */
+    margin-right: auto;
 }
 
 footer ul {
@@ -109,39 +133,73 @@ footer ul {
 }
 
 footer li {
-    margin: 5px 0;
+    margin: 8px 0; /* 增加页脚 li 间距 */
     padding: 0;
     border: none;
+    font-size: 1em;
 }
 
 footer a {
-    color: #666; /* 页脚链接颜色 */
+    color: #555; /* 页脚链接颜色 */
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-     color: #333;
+     color: var(--secondary-color); /* hover时变成辅色 */
      text-decoration: underline;
 }
 
-/* 可选：调整移动端显示 */
-@media (max-width: 600px) {
+
+/* 响应式调整 */
+@media (max-width: 768px) {
     body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    main {
         padding: 15px;
     }
 
+    header, main, footer {
+        max-width: 100%; /* 在小屏幕上使用全部宽度 */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
     h2 {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     li {
-        font-size: 1em;
+        font-size: 1.1em;
     }
+
+    footer {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    footer section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+     h1 {
+         font-size: 2em;
+     }
+     h2 {
+         font-size: 1.4em;
+     }
+     main {
+        padding: 15px;
+     }
+     li {
+         font-size: 1em;
+     }
+     body {
+         padding: 10px;
+     }
 }
