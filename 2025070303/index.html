@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何制造一个遥控机械臂 - DIY教程</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Lantinghei SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .gradient-highlight {
+            background-image: linear-gradient(to right, rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0));
+            background-size: 200% auto;
+            animation: gradient-animation 5s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .feature-item {
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+        .step-item {
+            transition: background-color 0.3s ease-in-out;
+        }
+        .step-item:hover {
+            background-color: #e9ecef;
+        }
+        .icon-container {
+            display: inline-block;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 响应式网格，至少200px宽 */
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .image-grid img {
+            width: 100%; /* 确保图片填充其网格单元格 */
+            height: auto;
+            border-radius: 0.5rem; /* 圆角 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
+            object-fit: cover; /* 保持图片比例 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4">
+
+        <header class="text-center mb-8">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-800 leading-tight mb-4">
+                <span class="inline-block animate-pulse">💡</span> <span class="text-blue-600">ReDIY:</span>
+                <span class="gradient-highlight">遥控机械臂</span>
+                <span class="text-gray-700">制造指南</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600">
+                Turn Your Remote into a Robotic Arm - A DIY Guide
+            </p>
+        </header>
+
+        <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-4xl font-bold text-blue-700 mb-4 text-center">
+                <span class="icon-container"><i class="fas fa-star text-blue-500"></i></span>
+                产品特点速览
+                <span class="icon-container"><i class="fas fa-star text-blue-500"></i></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-item bg-blue-50 p-4 rounded-lg shadow hover:shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="icon-container mr-3"><i class="fas fa-robot text-blue-400 text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800">机器人乐趣</h3>
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        Explore the world of robotics with a fun, hands-on project.
+                    </p>
+                </div>
+                <div class="feature-item bg-yellow-50 p-4 rounded-lg shadow hover:shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="icon-container mr-3"><i class="fas fa-cogs text-yellow-400 text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800">机械与电子结合</h3>
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        Integrate mechanical design with simple electronics for a functional arm.
+                    </p>
+                </div>
+                <div class="feature-item bg-green-50 p-4 rounded-lg shadow hover:shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="icon-container mr-3"><i class="fas fa-tools text-green-400 text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800">低成本制作</h3>
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        Utilize readily available materials and basic tools for an affordable build.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">
+                <span class="icon-container"><i class="fas fa-list-ol text-gray-500"></i></span>
+                制作步骤详解
+                <span class="icon-container"><i class="fas fa-list-ol text-gray-500"></i></span>
+            </h2>
+            <div class="grid grid-cols-1 gap-8">
+
+                <!-- 步骤 1: 拆卸遥控器 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-tools text-blue-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-blue-600">01</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        拆卸遥控器
+                        <span class="text-sm font-normal text-gray-500 ml-2">Disassemble the Remote</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        首先，需要小心地拆开遥控器的外壳。通常遥控器底部会有螺丝孔，或者通过卡扣固定。请使用合适的工具（如撬棒或小螺丝刀）缓慢操作，避免损坏内部元件。
+                        <br>
+                        <span class="text-xs text-gray-500">First, carefully disassemble the remote control's casing. Typically, there will be screw holes at the bottom or it might be secured by clips. Use appropriate tools (like a pry bar or a small screwdriver) and operate slowly to avoid damaging the internal components.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_00_01.jpg" alt="拆卸遥控器 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_00_02.jpg" alt="拆卸遥控器 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_00_03.jpg" alt="拆卸遥控器 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- 步骤 2: 移除内部结构 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-cut text-yellow-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-yellow-600">02</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        移除内部结构
+                        <span class="text-sm font-normal text-gray-500 ml-2">Remove Internal Structures</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        拆开遥控器后，你会看到电池仓、电路板和按键。根据你的机械臂设计需求，可能需要移除部分非必要的塑料支撑或电池仓结构。仔细观察电路板，确定控制机械臂动作所需的按键和对应的触点。
+                        <br>
+                        <span class="text-xs text-gray-500">After opening the remote, you will see the battery compartment, circuit board, and buttons. Depending on your robotic arm design needs, you may need to remove some non-essential plastic supports or the battery compartment structure. Carefully observe the circuit board to identify the buttons and corresponding contact points required for controlling the robotic arm's movement.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_00_12.jpg" alt="移除内部结构 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_00_13.jpg" alt="移除内部结构 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_00_23.jpg" alt="移除内部结构 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- 步骤 3: 连接驱动线 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-bolt text-red-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-red-600">03</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        连接驱动线
+                        <span class="text-sm font-normal text-gray-500 ml-2">Connect Drive Wires</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        在遥控器内部找到需要控制的按键对应的电路连接点。根据你的机械臂控制方案，将微型电机或舵机的控制线焊接或连接到这些点上。你需要确定哪些按键对应机械臂的哪个动作（例如：前进、后退、抓取等）。
+                        <br>
+                        <span class="text-xs text-gray-500">Locate the circuit connection points corresponding to the buttons you need to control inside the remote. Based on your robotic arm control scheme, solder or connect the control wires of micro motors or servos to these points. You need to determine which buttons correspond to which actions of the robotic arm (e.g., forward, backward, grab, etc.).</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_01_12.jpg" alt="连接驱动线 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_01_13.jpg" alt="连接驱动线 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_01_23.jpg" alt="连接驱动线 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_02_13.jpg" alt="连接驱动线 4" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- 步骤 4: 安装机械臂组件 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-link text-purple-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-purple-600">04</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        安装机械臂组件
+                        <span class="text-sm font-normal text-gray-500 ml-2">Install Robotic Arm Components</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        将你设计的机械臂组件（如舵机、连杆、夹爪等）安装在遥控器外壳外部或一个集成的平台上。确保机械臂的运动范围和遥控器的按键布局相匹配。这一步需要根据你的具体机械臂设计进行调整。
+                        <br>
+                        <span class="text-xs text-gray-500">Mount your designed robotic arm components (e.g., servos, linkages, grippers) on the exterior of the remote control casing or on an integrated platform. Ensure the arm's range of motion aligns with the remote's button layout. This step may require adjustments based on your specific robotic arm design.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_01_07.jpg" alt="安装机械臂组件 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_01_10.jpg" alt="安装机械臂组件 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_01_11.jpg" alt="安装机械臂组件 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_01_21.jpg" alt="安装机械臂组件 4" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- 步骤 5: 熔接或固定 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-burn text-orange-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-orange-600">05</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        熔接或固定
+                        <span class="text-sm font-normal text-gray-500 ml-2">Solder or Secure</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        使用电烙铁和焊锡，将连接线牢固地焊接到电路板的触点上。如果不想焊接，也可以考虑使用导电胶或细导线进行缠绕固定，但焊接是更可靠的方式，可以确保长期的稳定性。
+                        <br>
+                        <span class="text-xs text-gray-500">Using a soldering iron and solder, firmly attach the connecting wires to the circuit board's contact points. If you prefer not to solder, you can consider using conductive glue or winding with fine wires for a more secure connection, but soldering is the most reliable method for long-term stability.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_02_22.jpg" alt="熔接或固定 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_02_32.jpg" alt="熔接或固定 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_02_42.jpg" alt="熔接或固定 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                <!-- 步骤 6: 供电与测试 -->
+                <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-play-circle text-indigo-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-indigo-600">06</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        供电与测试
+                        <span class="text-sm font-normal text-gray-500 ml-2">Power Up and Test</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        最后，装入电池，并根据你的机械臂设计，测试遥控器各按键是否能正常控制机械臂的动作。可能需要反复调整机械连接或电路连接以达到最佳效果。确保所有连接都牢固可靠。
+                        <br>
+                        <span class="text-xs text-gray-500">Finally, install the batteries and, based on your robotic arm design, test if each remote button correctly controls the arm's movements. You may need to repeatedly adjust mechanical connections or circuit connections for optimal results. Ensure all connections are firm and reliable.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_01_13.jpg" alt="供电与测试 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_02_13.jpg" alt="供电与测试 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_03_13.jpg" alt="供电与测试 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+                 <!-- 步骤 7: 细节调整与封装 -->
+                 <div class="step-item bg-white p-6 rounded-lg shadow mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-container mr-3"><i class="fas fa-cog text-teal-500 text-3xl"></i></div>
+                        <h3 class="text-4xl font-bold text-teal-600">07</h3>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        细节调整与封装
+                        <span class="text-sm font-normal text-gray-500 ml-2">Fine-tuning and Casing</span>
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        根据实际测试情况，对机械臂的精度和遥控器的响应进行调整。完成后，小心地将遥控器外壳合上，确保所有元件都安装妥当且没有被挤压。你可能需要对电池仓盖做一些小的改动，以便让电线穿过。
+                        <br>
+                        <span class="text-xs text-gray-500">Based on the actual test results, adjust the robotic arm's precision and the remote control's responsiveness. Once completed, carefully close the remote control casing, ensuring all components are properly installed and not squeezed. You might need to make minor modifications to the battery compartment cover to allow the wires to pass through.</span>
+                    </p>
+                    <!-- 多张截图 -->
+                    <div class="image-grid">
+                        <img src="placeholder_03_32.jpg" alt="细节调整与封装 1" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_03_42.jpg" alt="细节调整与封装 2" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        <img src="placeholder_04_43.jpg" alt="细节调整与封装 3" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 如果需要 Framer Motion 的动画，请取消注释并集成 -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@6.2.8/dist/framer-motion.js"></script>
+    <script>
+        const { motion, AnimatePresence } = framer;
+        
+        // 示例：标题动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const titleH1 = header.querySelector('h1');
+            const titleSpans = titleH1.querySelectorAll('span');
+
+            titleSpans.forEach((span, index) => {
+                motion.span(span, {
+                    initial: { y: 50, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                    transition: { duration: 1, ease: "out", delay: 0.2 * index },
+                });
+            });
+
+            // 特点项动画
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach((item, index) => {
+                motion.div(item, {
+                    initial: { y: 30, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                    transition: { duration: 0.8, ease: "out", delay: 0.5 + index * 0.2 },
+                });
+            });
+
+            // 步骤项动画
+            const stepItems = document.querySelectorAll('.step-item');
+            stepItems.forEach((item, index) => {
+                motion.div(item, {
+                    initial: { y: 50, opacity: 0 },
+                    animate: { y: 0, opacity: 1 },
+                    transition: { duration: 1, ease: "out", delay: 1 + index * 0.3 },
+                });
+            });
+
+            // 图片网格动画 (稍微复杂一点，可以为每个图片应用动画)
+            const imageGrids = document.querySelectorAll('.image-grid');
+            imageGrids.forEach(grid => {
+                const images = grid.querySelectorAll('img');
+                images.forEach((img, imgIndex) => {
+                    motion.img(img, {
+                        initial: { opacity: 0, scale: 0.95 },
+                        animate: { opacity: 1, scale: 1 },
+                        transition: { duration: 0.5, ease: "easeOut", delay: 0.2 * imgIndex },
+                    });
+                });
+            });
+        });
+    </script>
+    -->
+    <!-- 如果不使用 Framer Motion，可以考虑使用 GSAP 来实现更精细的动画 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 标题动画
+            gsap.from("h1 span", {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 1,
+                ease: "out"
+            });
+
+            // 特点项动画
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach((item, index) => {
+                gsap.from(item, {
+                    y: 30,
+                    opacity: 0,
+                    delay: 0.5 + index * 0.2,
+                    duration: 0.8,
+                    ease: "out"
+                });
+            });
+
+            // 步骤项动画
+            const stepItems = document.querySelectorAll('.step-item');
+            stepItems.forEach((item, index) => {
+                gsap.from(item, {
+                    y: 50,
+                    opacity: 0,
+                    delay: 1 + index * 0.3,
+                    duration: 1,
+                    ease: "out"
+                });
+            });
+
+            // 图片网格动画
+            const imageGrids = document.querySelectorAll('.image-grid');
+            imageGrids.forEach(grid => {
+                const images = grid.querySelectorAll('img');
+                images.forEach((img, imgIndex) => {
+                    gsap.from(img, {
+                        opacity: 0,
+                        scale: 0.95,
+                        duration: 0.5,
+                        ease: "easeOut",
+                        delay: 0.2 * imgIndex
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
