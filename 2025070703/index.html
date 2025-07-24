@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解锁未来能源：自制高效氢气发生器！</title>
+    <!-- Tailwind CSS 3.0+ CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Framer Motion CDN (Note: For full Framer Motion interactivity, a JS framework like React/Vue is typically used. Here, we simulate simple fade-in effects via JS and CSS animations.) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.3/framer-motion.min.js"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom styles for gradients and animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(16px); /* Tailwind's translate-y-4 is 16px */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        /* Highlight gradient for numbers/large text */
+        .highlight-gradient {
+            background: linear-gradient(to right, #4CAF50, #8BC34A); /* Example green gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Specific gradient for Bento Grid backgrounds */
+        .bento-gradient-blue { background: linear-gradient(135deg, rgba(239, 246, 255, 0.8) 0%, rgba(200, 220, 255, 0.8) 100%); }
+        .bento-gradient-green { background: linear-gradient(135deg, rgba(236, 253, 245, 0.8) 0%, rgba(180, 250, 210, 0.8) 100%); }
+        .bento-gradient-purple { background: linear-gradient(135deg, rgba(243, 239, 255, 0.8) 0%, rgba(220, 200, 255, 0.8) 100%); }
+        .bento-gradient-yellow { background: linear-gradient(135deg, rgba(255, 253, 239, 0.8) 0%, rgba(255, 240, 180, 0.8) 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased p-4">
+    <div class="max-w-3xl mx-auto space-y-10">
+
+        <!-- 标题区域 -->
+        <header class="text-center py-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
+                如何利用日常物品，<br>打造不可思议的科学实验？
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">
+                How to Use Everyday Items to Create Incredible Science Experiments?
+            </p>
+        </header>
+
+        <!-- 产品特点汇总 -->
+        <section class="bg-white p-6 rounded-2xl shadow-xl space-y-6 opacity-0 translate-y-4 animate-fade-in-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">【特点汇总】 <span class="text-gray-600 text-lg">Feature Summary</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Feature 1 -->
+                <div class="p-6 bento-gradient-blue rounded-xl shadow-md transform transition-transform duration-300 hover:scale-102">
+                    <i class="fas fa-magic text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900">1. 巧用材料 <span class="text-base text-gray-600 block mt-1">Clever Material Use</span></h3>
+                    <p class="mt-2 text-gray-700">从电池到注射器，平凡物品的不凡新生。</p>
+                    <p class="text-sm text-gray-500">Extraordinary rebirth of ordinary items from batteries to syringes.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-6 bento-gradient-green rounded-xl shadow-md transform transition-transform duration-300 hover:scale-102">
+                    <i class="fas fa-flask text-4xl text-green-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900">2. 科学原理 <span class="text-base text-gray-600 block mt-1">Scientific Principles</span></h3>
+                    <p class="mt-2 text-gray-700">探索电解、磁悬浮等奇妙现象。</p>
+                    <p class="text-sm text-gray-500">Explore fascinating phenomena like electrolysis and magnetic levitation.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-6 bento-gradient-purple rounded-xl shadow-md transform transition-transform duration-300 hover:scale-102">
+                    <i class="fas fa-tools text-4xl text-purple-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900">3. 技能提升 <span class="text-base text-gray-600 block mt-1">Skill Enhancement</span></h3>
+                    <p class="mt-2 text-gray-700">学习基础焊接与巧妙改造技巧。</p>
+                    <p class="text-sm text-gray-500">Learn basic soldering and clever modification techniques.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="p-6 bento-gradient-yellow rounded-xl shadow-md transform transition-transform duration-300 hover:scale-102">
+                    <i class="fas fa-lightbulb text-4xl text-yellow-600 mb-3"></i>
+                    <h3 class="text-2xl font-bold text-gray-900">4. 无限创意 <span class="text-base text-gray-600 block mt-1">Infinite Creativity</span></h3>
+                    <p class="mt-2 text-gray-700">激发你的动手潜能，成为创新者。</p>
+                    <p class="text-sm text-gray-500">Unleash your hands-on potential and become an innovator.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作步骤 -->
+        <section class="space-y-10">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.1s;">
+                <h2 class="text-3xl font-bold text-gray-900">第一步：准备电池 <span class="text-gray-600 text-lg block mt-1">Step One: Prepare Batteries</span></h2>
+                <p class="mt-4 text-gray-700">从一节普通的<strong class="highlight-gradient text-4xl font-extrabold">AA电池</strong>开始你的奇妙旅程。 / Start your wonderful journey with an ordinary <strong class="highlight-gradient text-4xl font-extrabold">AA battery</strong>.</p>
+                <p class="mt-2 text-gray-700">我们需要使用焊锡将电池的正极进行初步处理，方便后续连接。 / We need to pre-solder the positive terminals of the batteries for easier subsequent connections.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_00_20.jpg" alt="Solder Battery Terminals" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-blue-500 opacity-20">1.5V</span>
+                        <i class="fas fa-battery-full text-9xl text-blue-500 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">所需材料：<strong class="font-semibold">Energize R6P SIZE AA 1.5V 超重型电池</strong>，焊锡，电烙铁。 / Materials: <strong class="font-semibold">Energize R6P SIZE AA 1.5V Super Heavy Duty batteries</strong>, solder, soldering iron.</p>
+                <img src="placeholder_00_30.jpg" alt="Soldering Battery Terminals Close Up" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_00_35.jpg" alt="Soldering Battery Terminals Close Up 2" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_00_15.jpg" alt="Four AA Batteries" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-green-400 to-green-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-gray-900">第二步：制作螺旋线圈 <span class="text-gray-600 text-lg block mt-1">Step Two: Craft Copper Coils</span></h2>
+                <p class="mt-4 text-gray-700">取一根<strong class="highlight-gradient text-4xl font-extrabold">细铜线（约1.5mm直径）</strong>，将其紧密缠绕在细金属棒上，形成一个紧密的螺旋线圈。 / Take a <strong class="highlight-gradient text-4xl font-extrabold">thin copper wire (approx. 1.5mm diameter)</strong>, tightly wrap it around a thin metal rod to form a compact spiral coil.</p>
+                <p class="mt-2 text-gray-700">然后，使用尖嘴钳将线圈的两端弯曲成 L 形，这将是重要的连接点。 / Then, use needle-nose pliers to bend both ends of the coil into an L-shape, which will serve as crucial connection points.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_00_50.jpg" alt="Bending Copper Wire 1" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-yellow-600 opacity-20">COIL</span>
+                        <i class="fas fa-cogs text-9xl text-yellow-600 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_00_55.jpg" alt="Coiling Copper Wire" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_03.jpg" alt="Coiling Copper Wire 2" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_10.jpg" alt="Bending Copper Wire 2" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_15.jpg" alt="Bending Copper Wire 3" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_20.jpg" alt="Bending Copper Wire 4" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_25.jpg" alt="Finished Copper Coil" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-4 text-sm text-gray-600">所需材料：<strong class="font-semibold">细铜线</strong>，细金属棒，尖嘴钳。 / Materials: <strong class="font-semibold">Thin copper wire</strong>, thin metal rod, needle-nose pliers.</p>
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <h2 class="text-3xl font-bold text-gray-900">第三步：固定螺旋线圈 <span class="text-gray-600 text-lg block mt-1">Step Three: Attach Copper Coils to Batteries</span></h2>
+                <p class="mt-4 text-gray-700">将制作好的<strong class="highlight-gradient text-4xl font-extrabold">四根螺旋线圈</strong>焊接到AA电池的正极。 / Solder the <strong class="highlight-gradient text-4xl font-extrabold">four copper coils</strong> to the positive terminals of the AA batteries.</p>
+                <p class="mt-2 text-gray-700">确保每个线圈都稳固地立在电池上方。 / Ensure each coil stands firmly above its respective battery.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_01_35.jpg" alt="Soldering Copper Coils to Batteries" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-purple-600 opacity-20">连接</span>
+                        <i class="fas fa-link text-9xl text-purple-600 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_01_45.jpg" alt="Soldering Copper Coils to Batteries 2" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_01_56.jpg" alt="Finished Coils on Batteries" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-red-400 to-red-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold text-gray-900">第四步：改造注射器 <span class="text-gray-600 text-lg block mt-1">Step Four: Modify Syringes</span></h2>
+                <p class="mt-4 text-gray-700">打开<strong class="highlight-gradient text-4xl font-extrabold">一次性注射器</strong>的包装。 / Unpack the <strong class="highlight-gradient text-4xl font-extrabold">disposable syringe</strong>.</p>
+                <img src="placeholder_02_10.jpg" alt="Unpacking Syringe" class="w-full rounded-lg shadow-md" width="900">
+                <p class="mt-2 text-gray-700">移除注射器的针头和推杆，并使用刀具将注射器筒体<strong class="highlight-gradient text-4xl font-extrabold">切割至合适长度（约3ml刻度）</strong>。 / Remove the needle and plunger from the syringe, and use a utility knife to <strong class="highlight-gradient text-4xl font-extrabold">cut the barrel to an appropriate length (around the 3ml mark)</strong>.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_02_20.jpg" alt="Syringe Components" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-green-600 opacity-20">DIY</span>
+                        <i class="fas fa-cut text-9xl text-green-600 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_02_40.jpg" alt="Cutting Syringe Barrel" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-2 text-gray-700">这将成为容纳电池和线圈的透明外壳。 / This will serve as the transparent casing for the battery and coil assembly.</p>
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.5s;">
+                <h2 class="text-3xl font-bold text-gray-900">第五步：插入电池与线圈 <span class="text-gray-600 text-lg block mt-1">Step Five: Insert Battery & Coil Assembly</span></h2>
+                <p class="mt-4 text-gray-700">将电池和线圈的组合体<strong class="highlight-gradient text-4xl font-extrabold">插入</strong>改造后的注射器筒中。 / <strong class="highlight-gradient text-4xl font-extrabold">Insert</strong> the battery and coil assembly into the modified syringe barrel.</p>
+                <p class="mt-2 text-gray-700">确保线圈的一端从注射器侧面预留的小孔中伸出。 / Ensure one end of the coil protrudes from the small hole made on the side of the syringe.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_04_30.jpg" alt="Insert Battery & Coil Assembly" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-blue-600 opacity-20">整合</span>
+                        <i class="fas fa-hand-holding-box text-9xl text-blue-600 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_04_50.jpg" alt="Battery and coil in syringe" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-pink-400 to-pink-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <h2 class="text-3xl font-bold text-gray-900">第六步：固定引线 <span class="text-gray-600 text-lg block mt-1">Step Six: Secure Leads</span></h2>
+                <p class="mt-4 text-gray-700">取下注射器推杆的<strong class="highlight-gradient text-4xl font-extrabold">橡胶塞</strong>，将其作为底座，将电池组合体固定在注射器筒内。 / Remove the <strong class="highlight-gradient text-4xl font-extrabold">rubber stopper</strong> from the syringe plunger and use it as a base to secure the battery assembly within the syringe barrel.</p>
+                <img src="placeholder_02_55.jpg" alt="Removing plunger stopper" class="w-full rounded-lg shadow-md" width="900">
+                <p class="mt-2 text-gray-700">然后，取一个<strong class="highlight-gradient text-4xl font-extrabold">注射器针头（23G或25G）</strong>，钝化其尖端，将其作为引出电极，插入电池负极对应的侧孔中。 / Then, take a <strong class="highlight-gradient text-4xl font-extrabold">syringe needle (23G or 25G)</strong>, blunt its tip, and insert it as an electrode into a side hole corresponding to the battery's negative terminal.</p>
+                <img src="placeholder_07_05.jpg" alt="Inserting needle electrode" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_07_40.jpg" alt="Inserting needle electrode close up" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_07_55.jpg" alt="Completed battery cell assembly" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-teal-400 to-teal-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.7s;">
+                <h2 class="text-3xl font-bold text-gray-900">第七步：制作电解液并注入 <span class="text-gray-600 text-lg block mt-1">Step Seven: Prepare and Inject Electrolyte</span></h2>
+                <p class="mt-4 text-gray-700">在烧杯中加入饮用水和食盐，充分搅拌直至<strong class="highlight-gradient text-4xl font-extrabold">盐完全溶解</strong>，制成电解液。 / Add drinking water and salt to a beaker, stir thoroughly until the <strong class="highlight-gradient text-4xl font-extrabold">salt is completely dissolved</strong>, creating the electrolyte solution.</p>
+                <img src="placeholder_08_10.jpg" alt="Water and salt" class="w-full rounded-lg shadow-md" width="900">
+                <img src="placeholder_08_22.jpg" alt="Mixing saltwater" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-2 text-gray-700">使用另一支注射器抽取盐水，然后<strong class="highlight-gradient text-4xl font-extrabold">缓慢注入</strong>每个电池单元的注射器筒中，直至液面覆盖螺旋铜线和电池底部。 / Use another syringe to draw the saltwater, then <strong class="highlight-gradient text-4xl font-extrabold">slowly inject</strong> it into each battery unit's syringe barrel until the liquid covers the copper coil and the bottom of the battery.</p>
+                <img src="placeholder_08_45.jpg" alt="Injecting saltwater" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_09_05.jpg" alt="Saltwater bubbling inside syringe" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-2 text-gray-700">此时，你应该能看到电解反应产生的微小气泡。 / At this point, you should observe tiny bubbles forming due to the electrolysis reaction.</p>
+                <img src="placeholder_09_15.jpg" alt="Saltwater bubbling close up" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-indigo-400 to-indigo-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.8s;">
+                <h2 class="text-3xl font-bold text-gray-900">第八步：串联电池阵列 <span class="text-gray-600 text-lg block mt-1">Step Eight: Series Connect Battery Array</span></h2>
+                <p class="mt-4 text-gray-700">使用一根<strong class="highlight-gradient text-4xl font-extrabold">铜线</strong>，将所有电池单元的正极和负极串联起来。 / Use a <strong class="highlight-gradient text-4xl font-extrabold">copper wire</strong> to connect the positive and negative terminals of all battery cells in series.</p>
+                <p class="mt-2 text-gray-700">即：一个电池的正极连接到下一个电池的负极，依次连接，并用烙铁焊牢。 / That is: the positive terminal of one battery connects to the negative terminal of the next, and so on, secured with solder.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_09_55.jpg" alt="Connecting batteries in series" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-orange-500 opacity-20">串联</span>
+                        <i class="fas fa-sitemap text-9xl text-orange-500 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_10_05.jpg" alt="Soldering series connection" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_10_15.jpg" alt="Completed series connection" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-purple-400 to-purple-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.9s;">
+                <h2 class="text-3xl font-bold text-gray-900">第九步：搭建氢气收集系统 <span class="text-gray-600 text-lg block mt-1">Step Nine: Build Hydrogen Collection System</span></h2>
+                <p class="mt-4 text-gray-700">取一个医用小玻璃瓶，将其顶部的橡胶塞上均匀插入<strong class="highlight-gradient text-4xl font-extrabold">四个注射器针头底座</strong>。 / Take a small medical glass vial and evenly insert <strong class="highlight-gradient text-4xl font-extrabold">four syringe needle hubs</strong> into the rubber stopper on its top.</p>
+                <p class="mt-2 text-gray-700">确保针尖伸入瓶内。 / Ensure the needle tips extend into the bottle.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_10_40.jpg" alt="Gas collection bottle setup" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-blue-500 opacity-20">收集</span>
+                        <i class="fas fa-gas-pump text-9xl text-blue-500 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_10_48.jpg" alt="Needle hubs in stopper" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-2 text-gray-700">使用<strong class="highlight-gradient text-4xl font-extrabold">透明软管</strong>连接每个电池单元侧面的针头底座与玻璃瓶盖上的针头底座，形成气体传输通路。 / Use <strong class="highlight-gradient text-4xl font-extrabold">clear tubing</strong> to connect the needle hubs on the side of each battery cell to the needle hubs on the glass vial's cap, forming gas transfer pathways.</p>
+                <img src="placeholder_11_00.jpg" alt="Connecting tubing for gas collection" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_11_10.jpg" alt="Connecting tubing 2" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_11_20.jpg" alt="Connecting tubing 3" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_11_24.jpg" alt="Completed gas collection system" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-green-400 to-green-200 rounded-full"></div>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 1.0s;">
+                <h2 class="text-3xl font-bold text-gray-900">第十步：测试氢气可燃性 <span class="text-gray-600 text-lg block mt-1">Step Ten: Test Hydrogen Flammability</span></h2>
+                <p class="mt-4 text-gray-700">连接一根带流速控制器的<strong class="highlight-gradient text-4xl font-extrabold">透明软管</strong>到气体收集瓶。 / Connect a <strong class="highlight-gradient text-4xl font-extrabold">clear tube</strong> with a flow regulator to the gas collection vial.</p>
+                <p class="mt-2 text-gray-700">将管口对准火焰，可以观察到产生的<strong class="highlight-gradient text-4xl font-extrabold">蓝色火焰</strong>，这表明氢气正在燃烧。 / Point the tube opening towards a flame, and you will observe a <strong class="highlight-gradient text-4xl font-extrabold">blue flame</strong>, indicating hydrogen combustion.</p>
+                <div class="mt-4 relative">
+                    <img src="placeholder_11_45.jpg" alt="Gas flow regulator" class="w-full rounded-lg shadow-md" width="900">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="text-9xl font-extrabold text-red-500 opacity-20">点燃</span>
+                        <i class="fas fa-fire-alt text-9xl text-red-500 opacity-20 absolute"></i>
+                    </div>
+                </div>
+                <img src="placeholder_12_00.jpg" alt="Gas ignition test" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <p class="mt-2 text-gray-700">氢气产生：电解液中出现大量气泡。 / Hydrogen Production: Numerous bubbles appear in the electrolyte.</p>
+                <img src="placeholder_13_00.jpg" alt="Electrolysis bubbles" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_13_10.jpg" alt="Electrolysis bubbles close up" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_13_20.jpg" alt="Gas collection and burning" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <div class="mt-4 w-1/3 h-1 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
+            </div>
+
+            <!-- Bonus Section: 简易焊接技巧 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl flex flex-col items-center text-center opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 1.1s;">
+                <h2 class="text-3xl font-bold text-gray-900">【附加教程】简易焊接技巧 <span class="text-gray-600 text-lg block mt-1">BONUS TUTORIAL: Simple Soldering Techniques</span></h2>
+                <p class="mt-4 text-gray-700">学习一些日常生活中的巧妙焊接方法，让你成为一名生活中的极客！ / Learn some clever soldering methods for everyday life, making you a life hacker!</p>
+
+                <h3 class="text-2xl font-bold mt-6 text-gray-900">1. 制作迷你焊盘 <span class="text-base text-gray-600 block mt-1">1. Creating a Mini Solder Pad</span></h3>
+                <p class="mt-4 text-gray-700">将一个<strong class="highlight-gradient text-3xl font-extrabold">金属垫圈</strong>焊接到一个<strong class="highlight-gradient text-3xl font-extrabold">螺栓顶部</strong>，制作一个简易的迷你焊盘。 / Solder a <strong class="highlight-gradient text-3xl font-extrabold">metal washer</strong> to the <strong class="highlight-gradient text-3xl font-extrabold">top of a bolt</strong> to create a simple mini solder pad.</p>
+                <img src="placeholder_13_55.jpg" alt="Soldering washer to bolt" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_14_15.jpg" alt="Finished mini solder pad" class="w-full rounded-lg shadow-md mt-4" width="900">
+
+                <h3 class="text-2xl font-bold mt-6 text-gray-900">2. 延长螺栓长度 <span class="text-base text-gray-600 block mt-1">2. Extending Bolt Length</span></h3>
+                <p class="mt-4 text-gray-700">通过焊接连接两根相同型号的<strong class="highlight-gradient text-3xl font-extrabold">螺栓</strong>，获得更长的螺栓。 / Connect two <strong class="highlight-gradient text-3xl font-extrabold">bolts</strong> of the same model by soldering them together to obtain a longer bolt.</p>
+                <img src="placeholder_14_35.jpg" alt="Joining two bolts" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_14_55.jpg" alt="Soldering two bolts" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_15_10.jpg" alt="Extended bolt" class="w-full rounded-lg shadow-md mt-4" width="900">
+
+                <h3 class="text-2xl font-bold mt-6 text-gray-900">3. 修复安全别针 <span class="text-base text-gray-600 block mt-1">3. Repairing a Safety Pin</span></h3>
+                <p class="mt-4 text-gray-700">使用焊接技术修复断裂的<strong class="highlight-gradient text-3xl font-extrabold">安全别针</strong>，使其恢复功能。 / Use soldering techniques to repair a broken <strong class="highlight-gradient text-3xl font-extrabold">safety pin</strong>, restoring its functionality.</p>
+                <img src="placeholder_15_45.jpg" alt="Soldering safety pins" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_15_55.jpg" alt="Repaired safety pin" class="w-full rounded-lg shadow-md mt-4" width="900">
+
+                <h3 class="text-2xl font-bold mt-6 text-gray-900">4. 修复断裂餐叉 <span class="text-base text-gray-600 block mt-1">4. Fixing a Broken Dinner Fork</span></h3>
+                <p class="mt-4 text-gray-700">将断裂的<strong class="highlight-gradient text-3xl font-extrabold">餐叉</strong>手柄与叉头焊接，使其可以继续使用。 / Solder the broken handle of a <strong class="highlight-gradient text-3xl font-extrabold">dinner fork</strong> to its head, allowing it to be used again.</p>
+                <img src="placeholder_16_15.jpg" alt="Soldering broken fork" class="w-full rounded-lg shadow-md mt-4" width="900">
+                <img src="placeholder_16_35.jpg" alt="Repaired fork" class="w-full rounded-lg shadow-md mt-4" width="900">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JavaScript for simple animation on scroll (simulating Framer Motion's effect) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 /* Trigger when 10% of the element is visible */
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

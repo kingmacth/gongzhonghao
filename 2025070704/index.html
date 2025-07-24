@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【创意无限】用电池和日常用品制作三款实用工具！</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for gradients and subtle effects */
+        body {
+            background-color: #f0f4f8; /* Light grey-blue */
+        }
+        .bento-card {
+            background-color: #d9e2ec; /* Slightly darker */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, opacity 0.6s ease-out;
+        }
+        .bento-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bento-card:not(.animate-in) {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Gradient styles */
+        .gradient-bg-1 {
+            background: linear-gradient(to right, rgba(167, 190, 211, 0.3) 0%, rgba(108, 141, 176, 0.3) 100%);
+        }
+        .gradient-bg-2 {
+            background: linear-gradient(to right, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%); /* Gold/Orange transparent */
+        }
+        .gradient-bg-3 {
+            background: linear-gradient(to right, rgba(64, 224, 208, 0.2) 0%, rgba(0, 191, 255, 0.2) 100%); /* Turquoise/Deep Sky Blue transparent */
+        }
+
+        /* Custom text sizes for emphasis */
+        .text-display-chinese {
+            font-size: 3.5rem; /* Larger than text-5xl */
+            line-height: 1.1;
+        }
+        .text-headline-chinese {
+            font-size: 2.5rem; /* Larger than text-4xl */
+            line-height: 1.2;
+        }
+        .text-accent-english {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Simple line graphics - purely for visual style */
+        .line-graphic {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #a7bed3;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="max-w-3xl mx-auto py-8 px-4">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <div class="relative w-full aspect-video flex flex-col items-center justify-center rounded-xl overflow-hidden mb-6 p-8 gradient-bg-1">
+                <div class="icon-circle bg-white mb-4">
+                    <i class="fas fa-lightbulb text-blue-600 text-4xl"></i>
+                </div>
+                <h1 class="text-display-chinese font-extrabold text-blue-800 mb-2">
+                    创意无限
+                </h1>
+                <p class="text-accent-english text-blue-700 uppercase tracking-wider">
+                    Infinite Creativity
+                </p>
+                <h2 class="text-headline-chinese font-bold text-blue-700 mt-4">
+                    用电池和日常用品制作三款实用工具！
+                </h2>
+                <p class="text-accent-english text-blue-600 mt-2">
+                    Make Three Practical Tools from Batteries and Everyday Items!
+                </p>
+            </div>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                在紧急情况下，巧妙利用身边物品制作工具能够帮助你解决大问题。本教程将带你探索如何将普通的电池和一些简单材料，转化为三款令人惊叹的实用工具。
+                <span class="block text-sm text-gray-500 mt-1">In emergencies, cleverly using everyday items to create tools can help you solve big problems. This tutorial will guide you through transforming ordinary batteries and simple materials into three amazing and practical tools.</span>
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bento-card p-4 flex flex-col items-center justify-center text-blue-700 font-bold">
+                    <i class="fas fa-suitcase text-3xl mb-2"></i>
+                    <span>便携</span>
+                    <span class="text-xs font-light">Portable</span>
+                </div>
+                <div class="bento-card p-4 flex flex-col items-center justify-center text-blue-700 font-bold">
+                    <i class="fas fa-bell text-3xl mb-2"></i>
+                    <span>紧急</span>
+                    <span class="text-xs font-light">Emergency</span>
+                </div>
+                <div class="bento-card p-4 flex flex-col items-center justify-center text-blue-700 font-bold">
+                    <i class="fas fa-tools text-3xl mb-2"></i>
+                    <span>实用</span>
+                    <span class="text-xs font-light">Practical</span>
+                </div>
+                <div class="bento-card p-4 flex flex-col items-center justify-center text-blue-700 font-bold">
+                    <i class="fas fa-bolt text-3xl mb-2"></i>
+                    <span>高效</span>
+                    <span class="text-xs font-light">Efficient</span>
+                </div>
+            </div>
+            <p class="text-base text-gray-600 border-l-4 border-blue-400 pl-4 py-2 bg-blue-50">
+                <strong class="text-blue-700">安全提示：</strong> 制作和使用这些工具时请务必小心。某些步骤涉及尖锐或高温部件，儿童应在成人监督下操作。对任何潜在危险请自行承担责任。
+                <span class="block text-xs text-gray-500 mt-1">
+                    <strong class="text-blue-700">Safety Notice:</strong> Please exercise extreme caution when making and using these tools. Some steps involve sharp or hot components. Children should operate under adult supervision. You are solely responsible for any potential hazards.
+                </span>
+            </p>
+        </section>
+
+        <!-- Tool 1: Emergency Lock Picker -->
+        <section class="mb-12 bento-card">
+            <div class="p-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="icon-circle bg-blue-200">
+                        <i class="fas fa-key text-blue-700 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-blue-800 mb-1">应急开锁器</h2>
+                        <p class="text-accent-english text-blue-600">Emergency Lock Picker</p>
+                    </div>
+                </div>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    通过巧妙改造废旧电池和剃须刀片，你可以制作一个在紧急情况下帮助你开锁的工具。
+                    <span class="block text-sm text-gray-500 mt-1">By ingeniously repurposing an old battery and a razor blade, you can create a tool that might help you open locks in an emergency.</span>
+                </p>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">所需材料：</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>一节AAA电池 <span class="text-xs text-gray-500">(One Panasonic NEO AAA Battery, 1.5V)</span></li>
+                    <li>一片剃须刀片 <span class="text-xs text-gray-500">(One Super Stainless Made in Egypt razor blade)</span></li>
+                    <li>一小块砂纸 <span class="text-xs text-gray-500">(A small piece of sandpaper)</span></li>
+                    <li>绝缘胶带 <span class="text-xs text-gray-500">(Electrical tape)</span></li>
+                    <li>强力胶 <span class="text-xs text-gray-500">(All-purpose adhesive)</span></li>
+                    <li>尖嘴钳 <span class="text-xs text-gray-500">(Needle-nose pliers)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">制作步骤：</h3>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">1. 电池打磨与塑形 <span class="text-sm text-gray-600">(Battery Grinding and Shaping)</span></p>
+                        <img src="placeholder_00_29.jpg" alt="电池打磨" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将AAA电池（松下NEO AAA电池，1.5V）的一端用电钻固定并配合砂纸进行打磨，去除电池表面的塑料涂层，露出金属表面。然后用电工胶带缠绕打磨后的电池，形成一个可以持握的手柄。
+                            <span class="block text-sm text-gray-500 mt-1">Secure one end of the AAA battery (Panasonic NEO AAA Battery, 1.5V) with a drill and use sandpaper to grind away the plastic coating, exposing the metal surface. Then, wrap the ground battery with electrical tape to form a handle.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">2. 刀片切割与修整 <span class="text-sm text-gray-600">(Blade Cutting and Trimming)</span></p>
+                        <img src="placeholder_02_43.jpg" alt="刀片切割" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">使用尖嘴钳小心地将剃须刀片（Super Stainless Made in Egypt）分成两半，并根据锁的形状修剪刀片的边缘，使其形成类似钥匙齿的形状。
+                            <span class="block text-sm text-gray-500 mt-1">Carefully use needle-nose pliers to cut the razor blade (Super Stainless Made in Egypt) in half, and trim the edges of the blade to resemble the teeth of a key, matching the lock's shape.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">3. 组装与固定 <span class="text-sm text-gray-600">(Assembly and Fixing)</span></p>
+                        <img src="placeholder_04_18.jpg" alt="组装开锁器" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将强力胶滴入电池打磨过的一端，然后将修整好的刀片小心插入，确保刀片稳固且外露部分足够操作。
+                            <span class="block text-sm text-gray-500 mt-1">Apply super glue into the ground end of the battery, then carefully insert the trimmed blade, ensuring it is secure and the exposed portion is sufficient for operation.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">4. 使用技巧 <span class="text-sm text-gray-600">(Usage Tip)</span></p>
+                        <img src="placeholder_07_39.jpg" alt="使用开锁器" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">（请谨慎尝试）配合一个简易的扭力扳手（可以用弯曲的螺丝杆制作），将开锁器插入锁孔，通过轻微转动和上下拨动，尝试拨动内部弹子，直到锁芯转动。
+                            <span class="block text-sm text-gray-500 mt-1">(Proceed with caution) Using a simple tension wrench (which can be made from a bent threaded rod), insert the lock picker into the keyhole. With slight rotation and up-and-down movements, try to manipulate the pins until the cylinder turns.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool 2: Miniature Igniter -->
+        <section class="mb-12 bento-card">
+            <div class="p-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="icon-circle bg-yellow-200">
+                        <i class="fas fa-fire text-yellow-700 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-blue-800 mb-1">微型点火器</h2>
+                        <p class="text-accent-english text-blue-600">Miniature Igniter</p>
+                    </div>
+                </div>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    利用电池和简单的金属丝，制作一个可以产生瞬间高温，用于引燃易燃物的微型点火器。
+                    <span class="block text-sm text-gray-500 mt-1">Using a battery and simple metal wire, create a miniature igniter that generates instant high heat to light flammable materials.</span>
+                </p>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">所需材料：</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>两根安全别针 <span class="text-xs text-gray-500">(Two safety pins)</span></li>
+                    <li>一个两孔接线端子 <span class="text-xs text-gray-500">(A two-hole terminal block)</span></li>
+                    <li>两根短导线 <span class="text-xs text-gray-500">(Two short wires - blue and red)</span></li>
+                    <li>一个打火机芯（包含火石和弹簧） <span class="text-xs text-gray-500">(A lighter flint/spring mechanism)</span></li>
+                    <li>一个12V 7Ah铅酸电池 <span class="text-xs text-gray-500">(A 12V 7Ah sealed maintenance-free rechargeable battery)</span></li>
+                    <li>鳄鱼夹连接线 <span class="text-xs text-gray-500">(Alligator clip cables)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">制作步骤：</h3>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">1. 别针与接线端子连接 <span class="text-sm text-gray-600">(Safety Pin to Terminal Block Connection)</span></p>
+                        <img src="placeholder_09_58.jpg" alt="别针接线" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将接线端子切割成两部分，每部分带有两个孔。拆开安全别针，将别针主体分别穿入接线端子的螺丝孔中并拧紧，确保连接牢固。
+                            <span class="block text-sm text-gray-500 mt-1">Cut the terminal block into two parts, each with two holes. Disassemble the safety pins. Insert the body of each safety pin into the screw holes of the terminal block and tighten securely.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">2. 打火机芯改造 <span class="text-sm text-gray-600">(Lighter Flint Mechanism Modification)</span></p>
+                        <img src="placeholder_10_23.jpg" alt="打火机芯" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">从一次性打火机中取出火石和金属弹簧。小心地拉伸并弯曲金属弹簧，使其成为一段细小的波浪形电阻丝。
+                            <span class="block text-sm text-gray-500 mt-1">Remove the flint and metal spring from a disposable lighter. Carefully stretch and bend the metal spring to form a small, wavy resistance wire.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">3. 电路组装与点火测试 <span class="text-sm text-gray-600">(Circuit Assembly and Ignition Test)</span></p>
+                        <img src="placeholder_12_05.jpg" alt="点火测试" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将处理好的波浪形电阻丝连接到两个安全别针之间。用导线将安全别针接线端子连接到12V电池（WP7-12，12V 7Ah）上。当电流通过波浪形电阻丝时，它会迅速发红发热，可以点燃纸张或棉花。
+                            <span class="block text-sm text-gray-500 mt-1">Connect the prepared wavy resistance wire between the two safety pins. Use wires to connect the safety pin terminal block to a 12V battery (WP7-12, 12V 7Ah). When current passes through the wavy resistance wire, it will quickly glow red and heat up, capable of igniting paper or cotton.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool 3: Simple Cutting/Drilling Tool -->
+        <section class="mb-12 bento-card">
+            <div class="p-8">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="icon-circle bg-pink-200">
+                        <i class="fas fa-cut text-pink-700 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-blue-800 mb-1">简易切割/钻孔笔</h2>
+                        <p class="text-accent-english text-blue-600">Simple Cutting/Drilling Pen</p>
+                    </div>
+                </div>
+
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    利用电池内的石墨棒和螺丝，制作一个可用于简易切割或钻孔的工具。
+                    <span class="block text-sm text-gray-500 mt-1">Utilize the graphite rod from a battery and a screw to create a tool capable of simple cutting or drilling.</span>
+                </p>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">所需材料：</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-6">
+                    <li>一节AAA电池 <span class="text-xs text-gray-500">(One Panasonic AAA Hyper Battery, 1.5V)</span></li>
+                    <li>一根小螺丝杆及螺母、垫圈 <span class="text-xs text-gray-500">(One small threaded rod with nut and washer)</span></li>
+                    <li>一段电池石墨棒 <span class="text-xs text-gray-500">(A graphite rod from a battery)</span></li>
+                    <li>一小段导线 <span class="text-xs text-gray-500">(A short piece of red wire)</span></li>
+                    <li>一小块砂纸 <span class="text-xs text-gray-500">(A small piece of sandpaper)</span></li>
+                    <li>强力胶 <span class="text-xs text-gray-500">(All-purpose adhesive)</span></li>
+                    <li>电钻 <span class="text-xs text-gray-500">(Power drill)</span></li>
+                    <li>鳄鱼夹连接线 <span class="text-xs text-gray-500">(Alligator clip cables)</span></li>
+                    <li>一个大垫圈（用于焊接） <span class="text-xs text-gray-500">(A large washer for welding)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-blue-700 mb-4">制作步骤：</h3>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">1. 螺丝杆改造与打磨头制作 <span class="text-sm text-gray-600">(Threaded Rod Modification and Grinding Tip Creation)</span></p>
+                        <img src="placeholder_05_13.jpg" alt="螺丝杆改造" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将小螺丝杆用尖嘴钳弯曲成“L”形。从废弃电池中取出石墨棒，用电钻将其一端磨尖。
+                            <span class="block text-sm text-gray-500 mt-1">Bend the small threaded rod into an "L" shape using needle-nose pliers. Extract the graphite rod from a discarded battery and sharpen one end with a power drill.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">2. 电池内部填充与外部连接 <span class="text-sm text-gray-600">(Battery Internal Filling and External Connection)</span></p>
+                        <img src="placeholder_16_00.jpg" alt="电池内部填充" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">清理AAA电池（Panasonic AAA Hyper Battery, 1.5V）内部。将导线和L形螺丝杆穿入电池孔中，并用棉花和强力胶填充固定，确保螺丝杆的弯曲部分在电池外部形成一个简易的提手。
+                            <span class="block text-sm text-gray-500 mt-1">Clean the inside of the AAA battery (Panasonic AAA Hyper Battery, 1.5V). Thread the wire and the L-shaped threaded rod through the battery's hole. Fill and secure with cotton and super glue, ensuring the bent part of the rod forms a simple handle outside the battery.</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">3. 高温焊接与切割 <span class="text-sm text-gray-600">(High-Temperature Welding and Cutting)</span></p>
+                        <img src="placeholder_20_36.jpg" alt="高温切割" class="w-full h-auto rounded-lg mb-2" width="900">
+                        <p class="text-gray-700">将尖石墨棒固定在黄铜接线柱上。将螺丝杆通过鳄鱼夹连接到电池负极。当石墨棒接触到待切割的金属（如垫圈或金属片）时，通电产生局部高温，可实现简易的焊接和切割。
+                            <span class="block text-sm text-gray-500 mt-1">Fix the sharpened graphite rod onto a brass terminal post. Connect the threaded rod to the battery's negative terminal using an alligator clip. When the graphite rod touches the metal to be cut (such as a washer or metal sheet), current flows, generating localized high temperatures for simple welding and cutting.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bentoCards = document.querySelectorAll('.bento-card');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 /* Trigger when 10% of the element is visible */
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target); /* Stop observing once animated */
+                    }
+                });
+            }, observerOptions);
+
+            bentoCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何用日常物品制作紧急开锁工具</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom colors for a softer palette and gradients */
+        :root {
+            --soft-blue: #a3b1d4; /* For background hints */
+            --soft-green: #a7d9c6; /* For background hints */
+            --soft-yellow: #f8e5b4; /* For background hints */
+            --highlight-blue: #647acb; /* Main highlight */
+            --highlight-teal: #48a6a6; /* Secondary highlight */
+            --highlight-orange: #e58d51; /* Tertiary highlight */
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        /* Utility classes for custom colors (Tailwind doesn't support vars directly in arbitrary values without config) */
+        .text-highlight-blue { color: var(--highlight-blue); }
+        .text-highlight-teal { color: var(--highlight-teal); }
+        .text-highlight-orange { color: var(--highlight-orange); }
+        .text-soft-blue-icon { color: rgba(163, 177, 212, 0.5); }
+        .text-soft-green-icon { color: rgba(167, 217, 198, 0.5); }
+        .text-soft-yellow-icon { color: rgba(248, 229, 180, 0.5); }
+
+        /* Bento Grid Item Styling */
+        .group-bento-item {
+            background-color: white;
+            border-radius: 1.5rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-3xl mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-6xl md:text-8xl font-extrabold text-highlight-blue leading-tight mb-4" data-framer-motion='{"initial":{"opacity":0,"y":50},"animate":{"opacity":1,"y":0},"transition":{"duration":0.8}}'>
+                如何用日常物品制作紧急开锁工具
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8" data-framer-motion='{"initial":{"opacity":0,"y":50},"animate":{"opacity":1,"y":0},"transition":{"delay":0.2,"duration":0.8}}'>
+                HOW TO CRAFT EMERGENCY LOCK-PICKING TOOLS FROM EVERYDAY ITEMS.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group-bento-item" data-framer-motion='{"initial":{"opacity":0,"scale":0.9},"animate":{"opacity":1,"scale":1},"transition":{"delay":0.4,"duration":0.6}}'>
+                    <h2 class="text-4xl md:text-5xl font-bold text-highlight-teal mb-2">
+                        <span class="text-6xl md:text-8xl block font-extrabold mb-1">1</span>
+                        易于获取
+                    </h2>
+                    <p class="text-lg text-gray-600">EASILY ACCESSIBLE MATERIALS</p>
+                    <i class="fas fa-box text-8xl text-soft-green-icon absolute bottom-4 right-4"></i>
+                </div>
+                <div class="group-bento-item" data-framer-motion='{"initial":{"opacity":0,"scale":0.9},"animate":{"opacity":1,"scale":1},"transition":{"delay":0.6,"duration":0.6}}'>
+                    <h2 class="text-4xl md:text-5xl font-bold text-highlight-blue mb-2">
+                        <span class="text-6xl md:text-8xl block font-extrabold mb-1">2</span>
+                        巧妙设计
+                    </h2>
+                    <p class="text-lg text-gray-600">INGENIOUS DESIGN PRINCIPLES</p>
+                    <i class="fas fa-lightbulb text-8xl text-soft-blue-icon absolute bottom-4 right-4"></i>
+                </div>
+                <div class="group-bento-item" data-framer-motion='{"initial":{"opacity":0,"scale":0.9},"animate":{"opacity":1,"scale":1},"transition":{"delay":0.8,"duration":0.6}}'>
+                    <h2 class="text-4xl md:text-5xl font-bold text-highlight-orange mb-2">
+                        <span class="text-6xl md:text-8xl block font-extrabold mb-1">3</span>
+                        应急方案
+                    </h2>
+                    <p class="text-lg text-gray-600">EMERGENCY SOLUTIONS</p>
+                    <i class="fas fa-lock-open text-8xl text-soft-yellow-icon absolute bottom-4 right-4"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Method 1: The Zipper Slider Lock Pick -->
+        <section class="mb-12">
+            <h2 class="text-5xl font-extrabold text-indigo-700 mt-12 mb-4" data-framer-motion='{"initial":{"opacity":0,"y":50},"animate":{"opacity":1,"y":0},"transition":{"duration":0.8}}'>
+                方法一: 万能拉链头开锁器
+            </h2>
+            <p class="text-xl text-gray-600 mb-6" data-framer-motion='{"initial":{"opacity":0,"y":50},"animate":{"opacity":1,"y":0},"transition":{"delay":0.2,"duration":0.8}}'>
+                METHOD ONE: THE UNIVERSAL ZIPPER SLIDER LOCK PICK
+            </p>
+            <p class="text-lg text-gray-800 mb-4">
+                这款工具巧妙利用拉链头的结构，通过组装螺丝和别针，打造出集开锁器和张力扳手于一体的多功能应急工具。它坚固耐用，且易于操作。
+            </p>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">所需材料:</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6">
+                <li>一个拉链头 (A zipper slider)</li>
+                <li>两个长度不同的螺丝 (Two screws of different lengths, one thin, one thick)</li>
+                <li>多个螺母 (Multiple nuts)</li>
+                <li>钳子 (Pliers)</li>
+                <li>锤子 (Hammer)</li>
+                <li>指甲刀 (Nail clipper)</li>
+                <li>砂纸 (Sandpaper)</li>
+                <li>一个别针 (A safety pin)</li>
+            </ul>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">制作步骤:</h3>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">1</span>: 准备拉链头</p>
+                <p class="text-base text-gray-700 mb-3">STEP 1: PREPARE THE ZIPPER SLIDER</p>
+                <img src="placeholder_00_10.jpg" alt="Preparation step" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">找到一个尺寸合适的金属拉链头，确保其内部结构完好。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">2</span>: 安装螺丝</p>
+                <p class="text-base text-gray-700 mb-3">STEP 2: INSTALL SCREWS</p>
+                <img src="placeholder_00_30.jpg" alt="Install screws" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">将较细的螺丝从拉链头顶部的小孔插入，再将较粗的螺丝从底部的大孔插入，使两者在拉链头内部相遇。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">3</span>: 固定螺母</p>
+                <p class="text-base text-gray-700 mb-3">STEP 3: SECURE NUTS</p>
+                <img src="placeholder_00_58.jpg" alt="Secure nuts" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">在较粗螺丝伸出拉链头的一端拧上至少两个螺母。使用钳子拧紧螺母，将螺丝牢固地固定在拉链头内，形成一个坚固的工具手柄。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">4</span>: 打磨螺丝头</p>
+                <p class="text-base text-gray-700 mb-3">STEP 4: GRIND THE SCREW TIP</p>
+                <img src="placeholder_02_09.jpg" alt="Grind screw tip" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">将较粗螺丝的尖端放在坚硬表面，用锤子将其敲平，形成一个扁平的螺丝刀状尖端。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">5</span>: 精修尖端</p>
+                <p class="text-base text-gray-700 mb-3">STEP 5: REFINE THE TIP</p>
+                <img src="placeholder_02_51.jpg" alt="Refine tip" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">使用指甲刀上的指甲锉或砂纸，细致打磨螺丝的扁平尖端，使其光滑且具有一定的锋利度，便于操作锁芯。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">6</span>: 制作张力扳手</p>
+                <p class="text-base text-gray-700 mb-3">STEP 6: CRAFT THE TENSION WRENCH</p>
+                <img src="placeholder_03_16.jpg" alt="Craft tension wrench" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">展开别针，将其穿过拉链头原有的拉环孔洞。用钳子将别针弯曲成一个“L”形或“Z”形的张力扳手，使其能对锁芯施加恰当的转动压力。</p>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">7</span>: 最终调整</p>
+                <p class="text-base text-gray-700 mb-3">STEP 7: FINAL ADJUSTMENT</p>
+                <img src="placeholder_04_06.jpg" alt="Final adjustment" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">确保所有部件都紧密无松动，张力扳手和开锁尖端都处于最佳使用状态。</p>
+            </div>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">使用方法:</h3>
+            <img src="placeholder_05_06.jpg" alt="Usage method 1" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+            <p class="text-lg text-gray-800 mb-8">
+                将张力扳手插入锁孔底部，施加轻微的转动压力。将螺丝尖端（即开锁器）插入锁孔上部，尝试拨动锁芯内的弹珠，直到听到“咔嗒”声。在弹珠复位前，保持张力扳手的压力，并继续操作下一个弹珠，直至所有弹珠都被拨动到位，锁芯即可转动。
+            </p>
+        </section>
+
+        <!-- Method 2: Battery & Safety Pin Lock Pick -->
+        <section class="mb-12">
+            <h2 class="text-5xl font-extrabold text-indigo-700 mt-12 mb-4">
+                方法二: 电池与回形针简易开锁器
+            </h2>
+            <p class="text-xl text-gray-600 mb-6">
+                METHOD TWO: SIMPLE LOCK PICK FROM BATTERY & SAFETY PIN
+            </p>
+            <p class="text-lg text-gray-800 mb-4">
+                利用电池的体积和重量作为手柄，结合回形针的柔韧性和可塑性，快速制作出一个应急开锁工具。
+            </p>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">所需材料:</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6">
+                <li>一节AAA电池 (An AAA battery)</li>
+                <li>一个别针 (A safety pin)</li>
+                <li>烙铁和焊锡 (Soldering iron and solder)</li>
+                <li>钳子 (Pliers)</li>
+                <li>砂纸 (Sandpaper)</li>
+            </ul>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">制作步骤:</h3>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">1</span>: 准备电池</p>
+                <p class="text-base text-gray-700 mb-3">STEP 1: PREPARE THE BATTERY</p>
+                <img src="placeholder_07_07.jpg" alt="Prepare battery" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">使用刀片小心刮除AAA电池负极（底部）的外部包裹层，露出内部金属部分。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">2</span>: 焊接别针</p>
+                <p class="text-base text-gray-700 mb-3">STEP 2: SOLDER THE SAFETY PIN</p>
+                <img src="placeholder_07_24.jpg" alt="Solder safety pin" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">将别针一端用烙铁和焊锡牢固地焊接到电池负极暴露的金属部分。确保焊接点稳固。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">3</span>: 塑形别针</p>
+                <p class="text-base text-gray-700 mb-3">STEP 3: SHAPE THE SAFETY PIN</p>
+                <img src="placeholder_07_49.jpg" alt="Shape safety pin" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">使用钳子将别针的另一端弯曲成开锁器所需的特殊形状。通常需要一个弯曲的尖端，能够伸入锁芯内部拨动弹珠。</p>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">4</span>: 打磨尖端</p>
+                <p class="text-base text-gray-700 mb-3">STEP 4: GRIND THE TIP</p>
+                <img src="placeholder_08_01.jpg" alt="Grind tip" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">用砂纸或细锉刀仔细打磨别针的尖端，使其光滑且精细，避免损坏锁芯。</p>
+            </div>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">使用方法:</h3>
+            <img src="placeholder_08_22.jpg" alt="Usage method 2" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+            <p class="text-lg text-gray-800 mb-8">
+                将另一张力工具（如小L形金属片）插入锁孔底部施加压力。将电池上的别针开锁器插入锁孔，轻轻拨动锁芯内的弹珠。电池的重量和尺寸提供了良好的握持感，有助于稳定操作。
+            </p>
+        </section>
+
+        <!-- Method 3: Razor Blade Emergency Lock Key -->
+        <section class="mb-12">
+            <h2 class="text-5xl font-extrabold text-indigo-700 mt-12 mb-4">
+                方法三: 剃须刀片紧急开锁钥匙
+            </h2>
+            <p class="text-xl text-gray-600 mb-6">
+                METHOD THREE: EMERGENCY RAZOR BLADE LOCK KEY
+            </p>
+            <p class="text-lg text-gray-800 mb-4">
+                这个方法利用剃须刀片的锯齿边缘和胶水的塑形能力，制作出一把可以模拟钥匙齿形的应急开锁钥匙。适用于部分简单锁具。
+            </p>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">所需材料:</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6">
+                <li>一片双面剃须刀片 (A double-edged razor blade)</li>
+                <li>一小段绝缘胶带卷筒 (A small section of electrical tape roll, used as a mold)</li>
+                <li>胶水 (Strong glue, like carpenter's glue or epoxy)</li>
+                <li>砂纸 (Sandpaper)</li>
+                <li>钳子 (Pliers)</li>
+            </ul>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">制作步骤:</h3>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">1</span>: 切割刀片</p>
+                <p class="text-base text-gray-700 mb-3">STEP 1: CUT THE RAZOR BLADE</p>
+                <img src="placeholder_12_00.jpg" alt="Cut razor blade" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">使用钳子小心地将剃须刀片从中间断开，得到两片锯齿状的刀片。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">2</span>: 准备模具</p>
+                <p class="text-base text-gray-700 mb-3">STEP 2: PREPARE THE MOLD</p>
+                <img src="placeholder_14_34.jpg" alt="Prepare mold" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">获得一段坚固的圆筒状物体作为模具，如绝缘胶带的纸芯或塑料管，并用绝缘胶带缠绕使其厚度合适。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">3</span>: 填充胶水</p>
+                <p class="text-base text-gray-700 mb-3">STEP 3: FILL WITH GLUE</p>
+                <img src="placeholder_15_00.jpg" alt="Fill with glue" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">将强力胶水倒入模具圆筒中。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">4</span>: 插入刀片</p>
+                <p class="text-base text-gray-700 mb-3">STEP 4: INSERT BLADE</p>
+                <img src="placeholder_15_10.jpg" alt="Insert blade" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">将其中一片剃须刀片带锯齿的一端小心地插入胶水填充的模具中，让锯齿部分露出约1-2厘米。</p>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">5</span>: 固化与成形</p>
+                <p class="text-base text-gray-700 mb-3">STEP 5: CURE AND SHAPE</p>
+                <img src="placeholder_15_16.jpg" alt="Cure and shape" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">等待胶水完全固化。固化后，用砂纸细致打磨露出的刀片锯齿部分，使其形成与所需钥匙齿形相似的轮廓。</p>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-2xl font-bold text-gray-900 mb-2">步骤 <span class="text-highlight-blue text-5xl">6</span>: 重复制作 (可选)</p>
+                <p class="text-base text-gray-700 mb-3">STEP 6: REPEAT FOR TENSION TOOL (OPTIONAL)</p>
+                <img src="placeholder_16_00.jpg" alt="Repeat for tension tool" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+                <p class="text-md text-gray-800">另一片刀片，可以用螺丝和钳子塑造成一个简易的张力扳手。</p>
+            </div>
+
+            <h3 class="text-3xl font-bold text-gray-800 mb-3">使用方法:</h3>
+            <img src="placeholder_16_52.jpg" alt="Usage method 3" class="w-full h-auto rounded-lg shadow-lg mb-4" width="900">
+            <p class="text-lg text-gray-800 mb-8">
+                将张力扳手插入锁孔施加压力，将自制钥匙（剃须刀片）插入锁孔。轻轻转动并前后移动自制钥匙，利用其锯齿状边缘拨动锁芯内的弹珠。由于刀片较薄，操作时需要格外小心，避免折断。此方法可用于模拟部分简单锁的钥匙。
+            </p>
+        </section>
+
+        <!-- Disclaimer -->
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-8" role="alert">
+            <strong class="font-bold">重要提示:</strong>
+            <span class="block sm:inline">以上所有开锁方法仅供应急和教育目的。请勿用于非法用途，否则后果自负。</span>
+            <span class="block text-sm text-red-600">IMPORTANT NOTE: All lock-picking methods described above are for emergency and educational purposes only. Do not use them for illegal activities, or you will be solely responsible for the consequences.</span>
+        </div>
+
+    </div>
+
+    <!-- Framer Motion Script -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/dist/framer-motion.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('[data-framer-motion]');
+            elements.forEach(el => {
+                try {
+                    const animProps = JSON.parse(el.getAttribute('data-framer-motion'));
+                    
+                    // Apply initial state immediately
+                    Object.assign(el.style, animProps.initial);
+                    el.style.transition = `all ${animProps.transition.duration || 0.5}s ${animProps.transition.delay || 0}s ease-out`;
+
+                    // Trigger animate state after a tiny delay to ensure initial is rendered
+                    setTimeout(() => {
+                        Object.assign(el.style, animProps.animate);
+                    }, 50); 
+                    
+                } catch (e) {
+                    console.error("Error parsing Framer Motion data attribute:", e);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

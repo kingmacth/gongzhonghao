@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💡 如何制造一个无需外部能源的“永动”水泵？</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.2.10/dist/framer-motion.min.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f0f4f8; /* Soft light gray-blue background */
+            line-height: 1.6;
+        }
+        .bento-card {
+            background-color: #ffffff; /* White background for cards */
+            border-radius: 1.5rem; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            padding: 2.5rem; /* Ample padding */
+            margin-bottom: 2rem; /* Space between cards */
+            overflow: hidden; /* Ensure content stays within bounds */
+            position: relative;
+        }
+        .gradient-overlay-blue {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(144, 202, 249, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .gradient-overlay-green {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(165, 214, 167, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .gradient-overlay-purple {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at bottom left, rgba(179, 157, 219, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .icon-large {
+            font-size: 3rem; /* Larger icons */
+            color: #42a5f5; /* Blue accent for icons */
+        }
+        .highlight-text {
+            color: #42a5f5; /* Consistent blue for highlights */
+            font-weight: bold;
+        }
+        .section-heading {
+            font-size: 2.5rem; /* Large heading */
+            font-weight: bold;
+            color: #334155; /* Dark slate for headings */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .section-subheading {
+            font-size: 1.25rem; /* Subheading size */
+            color: #64748b; /* Medium gray for subheadings */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .detail-list li {
+            margin-bottom: 0.5rem;
+        }
+        .detail-list li::before {
+            content: "•"; /* Bullet point */
+            color: #42a5f5; /* Blue bullet */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-3xl mx-auto">
+
+        <!-- 标题区域 -->
+        <motion.div 
+            initial={{ opacity: 0, y: -50 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+            class="bento-card text-center relative"
+        >
+            <div class="gradient-overlay-blue"></div>
+            <h1 class="text-5xl font-extrabold text-blue-800 mb-4 tracking-tight leading-tight">
+                💡 如何制造一个无需外部能源的“永动”水泵？
+            </h1>
+            <p class="text-lg text-gray-600">
+                How to build a self-sustaining "perpetual motion" water pump without external energy.
+            </p>
+        </motion.div>
+
+        <!-- 产品特点汇总 -->
+        <motion.div 
+            initial={{ opacity: 0, y: 50 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-green"></div>
+            <h2 class="section-heading">核心特点 / Core Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="flex flex-col items-center text-center">
+                    <i class="fas fa-bolt-lightning icon-large mb-3 text-yellow-500"></i>
+                    <h3 class="text-2xl font-bold mb-2">无需电力 / No Electricity Needed</h3>
+                    <p class="text-gray-600 text-sm">
+                        Completely off-grid, relying solely on natural physical principles.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i class="fas fa-recycle icon-large mb-3 text-green-500"></i>
+                    <h3 class="text-2xl font-bold mb-2">自循环压力回路 / Hydro-Cycling Pressure Loop™</h3>
+                    <p class="text-gray-600 text-sm">
+                        A self-sustaining system leveraging innovative hydro-pneumatic cycles.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i class="fas fa-tint icon-large mb-3 text-blue-500"></i>
+                    <h3 class="text-2xl font-bold mb-2">高效水利用 / Efficient Water Utilization</h3>
+                    <p class="text-gray-600 text-sm">
+                        Transforms pneumatic energy into hydraulic flow, maximizing water output.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <i class="fas fa-cogs icon-large mb-3 text-gray-500"></i>
+                    <h3 class="text-2xl font-bold mb-2">物理原理驱动 / Physics-Driven Operation</h3>
+                    <p class="text-gray-600 text-sm">
+                        Utilizes Venturi effect, Boyle-Mariotte Law, and controlled cavitation.
+                    </p>
+                </div>
+            </div>
+        </motion.div>
+
+        <!-- 制作步骤介绍 -->
+        <h2 class="section-heading mt-12 mb-8">制作步骤 / Production Steps</h2>
+
+        <!-- 步骤1: 准备PVC管材和接头 -->
+        <motion.div 
+            initial={{ opacity: 0, x: -100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-purple"></div>
+            <h3 class="text-3xl font-bold mb-4 highlight-text">第一步：切割与扩口 / Cutting & Expanding PVC Pipes</h3>
+            <p class="text-gray-700 text-base mb-4">
+                首先，我们需要准备好PVC管材，并根据尺寸要求进行精确切割和扩口，以确保后续组装的紧密性。
+                <br>
+                First, prepare the PVC pipes, precisely cut them according to dimensions, and expand their ends for tight assembly.
+            </p>
+            <ul class="detail-list text-gray-700 text-sm mb-4">
+                <li><strong class="highlight-text">主水箱管 (2根)：</strong>直径 Ø110mm x 长400mm / <span class="text-xs">Main Tanks (2 tubes): Ø110x400mm</span></li>
+                <li><strong class="highlight-text">辅助管 (2根)：</strong>直径 Ø32mm x 长210mm / <span class="text-xs">Auxiliary Pipes (2 tubes): Ø32x210mm</span></li>
+                <li><strong class="highlight-text">基础支架管 (多根)：</strong>直径 Ø32mm，长度不同 / <span class="text-xs">Base Support Pipes (various): Ø32mm, varying lengths</span></li>
+                <li><strong class="highlight-text">T型接头 (多用)：</strong>直径 Ø32mm / <span class="text-xs">T-Joints (multiple uses): Ø32mm</span></li>
+                <li><strong class="highlight-text">弯头 (多用)：</strong>直径 Ø32mm，90度或45度 / <span class="text-xs">Elbows (multiple uses): Ø32mm, 90° or 45°</span></li>
+                <li><strong class="highlight-text">螺纹盖 (1个)：</strong>直径 Ø50mm / <span class="text-xs">Threaded Cap (1 unit): Ø50mm</span></li>
+                <li><strong class="highlight-text">异径接头/盖 (多个)：</strong>将 Ø40mm 缩小到 Ø32mm / <span class="text-xs">Reducing Couplers/Caps (multiple): Ø40mm to Ø32mm</span></li>
+            </ul>
+            <p class="text-gray-700 text-base mb-4">
+                利用喷灯加热PVC管的末端，使其软化后，可以插入尺寸略大的管子或盖子进行扩口定型。
+                <br>
+                Use a blowtorch to heat the ends of the PVC pipes, softening them, then insert slightly larger pipes or caps to expand and shape them.
+            </p>
+            <img src="placeholder_00_30.jpg" alt="切割与扩口" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_00_48.jpg" alt="加热扩口" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_01_00.jpg" alt="管子嵌套" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+        </motion.div>
+
+        <!-- 步骤2: 组装水龙头连接件 -->
+        <motion.div 
+            initial={{ opacity: 0, x: 100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-blue"></div>
+            <h3 class="text-3xl font-bold mb-4 highlight-text">第二步：制作水龙头连接 / Faucet Connection Assembly</h3>
+            <p class="text-gray-700 text-base mb-4">
+                将1英寸转1-1/4英寸的黄铜接头加热后，熔接到直径32毫米的PVC T型接头内。待冷却后，旋入水龙头。
+                <br>
+                Heat the 1-inch to 1-1/4-inch brass fitting and melt it into the Ø32mm PVC T-joint. Once cooled, screw in the faucet.
+            </p>
+            <ul class="detail-list text-gray-700 text-sm mb-4">
+                <li><strong class="highlight-text">接头：</strong>1英寸转1-1/4英寸的黄铜接头 / <span class="text-xs">Fitting: 1" to 1-1/4" brass fitting</span></li>
+                <li><strong class="highlight-text">T型接头：</strong>直径 Ø32mm / <span class="text-xs">T-joint: Ø32mm</span></li>
+                <li><strong class="highlight-text">水龙头：</strong>标准花园水龙头 / <span class="text-xs">Faucet: Standard garden faucet</span></li>
+            </ul>
+            <img src="placeholder_01_38.jpg" alt="水龙头接头加热" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_01_55.jpg" alt="水龙头组装完成" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+        </motion.div>
+
+        <!-- 步骤3: 胶合主要水箱和底座结构 -->
+        <motion.div 
+            initial={{ opacity: 0, x: -100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-green"></div>
+            <h3 class="text-3xl font-bold mb-4 highlight-text">第三步：胶合水箱与底座 / Gluing Tanks & Base Structure</h3>
+            <p class="text-gray-700 text-base mb-4">
+                使用高压PVC胶水将所有管材和接头胶合在一起。确保所有连接处密封严密，以防漏气漏水。
+                <br>
+                Use high-pressure PVC adhesive to glue all pipes and fittings together. Ensure all connections are tightly sealed to prevent leaks.
+            </p>
+            <ul class="detail-list text-gray-700 text-sm mb-4">
+                <li><strong class="highlight-text">胶水：</strong>高压PVC专用胶水 / <span class="text-xs">Adhesive: High-pressure PVC specialized adhesive</span></li>
+                <li><strong class="highlight-text">盖子：</strong>带有小孔的盖子，用于连接 Ø32mm 管 / <span class="text-xs">Caps: Caps with small holes for Ø32mm pipe connections</span></li>
+                <li><strong class="highlight-text">固定夹具：</strong>用于固定主水箱的金属夹具 / <span class="text-xs">Clamps: Metal clamps for securing main tanks</span></li>
+            </ul>
+            <img src="placeholder_02_50.jpg" alt="胶合水箱" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_03_40.jpg" alt="异径接头安装" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_04_30.jpg" alt="底座结构部件" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_06_00.jpg" alt="水箱与底座连接" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_06_30.jpg" alt="固定夹具" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+        </motion.div>
+
+        <!-- 步骤4: 安装进气阀门和水泵进水口 -->
+        <motion.div 
+            initial={{ opacity: 0, x: 100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-purple"></div>
+            <h3 class="text-3xl font-bold mb-4 highlight-text">第四步：安装阀门与进水口 / Valve & Inlet Installation</h3>
+            <p class="text-gray-700 text-base mb-4">
+                将一个汽车轮胎气门嘴安装在其中一个水箱的螺纹盖上，用于注入压缩空气。进水管末端连接一个止回阀。
+                <br>
+                Install a car tire valve on one of the tank's threaded caps for compressed air injection. Attach a non-return valve to the end of the water intake pipe.
+            </p>
+            <ul class="detail-list text-gray-700 text-sm mb-4">
+                <li><strong class="highlight-text">气门嘴：</strong>汽车轮胎气门嘴 / <span class="text-xs">Valve: Car tire valve</span></li>
+                <li><strong class="highlight-text">止回阀：</strong>确保水流方向正确，防止回流 / <span class="text-xs">Check Valve: Ensures correct water flow direction, prevents backflow</span></li>
+                <li><strong class="highlight-text">进水管：</strong>用于吸取水源的管子 / <span class="text-xs">Intake Pipe: Pipe used to draw water from the source</span></li>
+            </ul>
+            <img src="placeholder_09_05.jpg" alt="螺纹盖" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_09_18.jpg" alt="钻孔安装气门嘴" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_10_00.jpg" alt="气门嘴完成" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_10_20.jpg" alt="止回阀" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            <img src="placeholder_10_45.jpg" alt="水泵组装完成" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+        </motion.div>
+
+        <!-- 工作原理 -->
+        <motion.div 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            class="bento-card relative"
+        >
+            <div class="gradient-overlay-green"></div>
+            <h3 class="section-heading">工作原理 / Operating Principle</h3>
+            <p class="text-gray-700 text-base mb-4">
+                该系统基于能量平衡原理，通过控制气动循环将压缩空气的能量转化为水流。
+                <br>
+                The system operates on the principle of energy balance, converting the energy of compressed air into hydraulic flow through a controlled pneumatic cycle.
+            </p>
+
+            <h4 class="text-xl font-bold mb-2">初始准备 / Initial Setup:</h4>
+            <p class="text-gray-700 text-sm mb-4">
+                首先，将整个闭合回路注满水，并关闭水龙头和气门嘴。然后，通过气门嘴向系统注入少量压缩空气，形成一个“隐形活塞”。
+                <br>
+                Initially, fill the entire closed circuit with water, then close the faucet and valve. Inject a small amount of compressed air into the system via the valve, creating an "invisible piston."
+            </p>
+
+            <h4 class="text-xl font-bold mb-2">文丘里效应与伯努利定律 / Venturi Effect & Bernoulli's Law:</h4>
+            <p class="text-gray-700 text-sm mb-4">
+                当水龙头被打开时，水开始流出。水流在水龙头出水口处产生的节流效应，根据文丘里效应，会加速水流，同时降低该区域的压力。
+                <br>
+                When the faucet is opened, water starts to flow out. The constriction at the faucet outlet, according to the Venturi effect, accelerates the water flow while lowering the pressure in that area.
+            </p>
+            <ul class="detail-list text-gray-700 text-sm mb-4">
+                <li><strong class="highlight-text">文丘里效应 (Venturi Effect)：</strong>当流体通过收缩的管道时，流速增加，压力降低。/ <span class="text-xs">When a fluid flows through a constricted pipe, its velocity increases, and its pressure decreases.</span></li>
+            </ul>
+            <img src="placeholder_14_30.jpg" alt="水流出" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+
+            <h4 class="text-xl font-bold mb-2">持续吸水与做功 / Continuous Suction & Work:</h4>
+            <p class="text-gray-700 text-sm mb-4">
+                这个低压区域在进水管一端产生吸力，使系统无需外部机械辅助即可从河流或水坝中吸收水流。同时，根据<strong class="highlight-text">玻意耳-马略特定律 (Boyle-Mariotte Law)</strong>，压缩空气在膨胀过程中将其能量传递给水柱。
+                <br>
+                This low-pressure zone creates suction at the intake, allowing the system to draw water from a river or dam without external mechanical assistance. Simultaneously, according to the <strong class="highlight-text">Boyle-Mariotte Law</strong>, compressed air transfers its energy to the liquid column as it expands.
+            </p>
+            <p class="text-lg font-bold text-center text-blue-700 mb-4">
+                P × V = 常数 / P × V = constant
+            </p>
+            <p class="text-gray-700 text-sm mb-4">
+                <ul class="detail-list text-gray-700 text-sm mb-4">
+                    <li><strong class="highlight-text">Q：</strong>泵送水的有用流量 [m³/s] / <span class="text-xs">Q: Useful flow rate of pumped water [m³/s]</span></li>
+                    <li><strong class="highlight-text">P<sub>air</sub>：</strong>压缩空气的绝对压力 [Pa] / <span class="text-xs">P<sub>air</sub>: Absolute pressure of compressed air [Pa]</span></li>
+                    <li><strong class="highlight-text">V<sub>air</sub>：</strong>注入空气的体积 [m³] / <span class="text-xs">V<sub>air</sub>: Volume of injected air [m³]</span></li>
+                    <li><strong class="highlight-text">ρ：</strong>水的密度 (~1000 kg/m³) / <span class="text-xs">ρ: Density of water (~1000 kg/m³)</span></li>
+                    <li><strong class="highlight-text">g：</strong>重力加速度 (~9.81 m/s²) / <span class="text-xs">g: Gravitational acceleration (~9.81 m/s²)</span></li>
+                    <li><strong class="highlight-text">h<sub>elev</sub>：</strong>泵送扬程 [m] / <span class="text-xs">h<sub>elev</sub>: Pumping elevation head [m]</span></li>
+                    <li><strong class="highlight-text">Δh<sub>losses</sub>：</strong>摩擦和湍流导致的扬程损失 [m] / <span class="text-xs">Δh<sub>losses</sub>: Head losses due to friction and turbulence [m]</span></li>
+                    <li><strong class="highlight-text">η<sub>cycle</sub>：</strong>气动循环效率 (0.2 – 0.7，取决于设计) / <span class="text-xs">η<sub>cycle</sub>: Efficiency of the hydropneumatic cycle (0.2 – 0.7 depending on design)</span></li>
+                </ul>
+            </p>
+            <p class="text-lg font-bold text-center text-blue-700 mb-4">
+                <img src="placeholder_12_01.jpg" alt="公式" class="w-full h-auto rounded-lg mb-4 shadow-md" width="900">
+            </p>
+            <p class="text-gray-700 text-base mb-4">
+                只要水龙头保持开启，这个循环就会持续进行。一旦水龙头完全关闭，系统将失去其吸力，气压将趋于稳定。此时需要重新注入压缩空气来重启循环。
+                <br>
+                This cycle continues as long as the faucet remains open. Once the faucet is completely closed, the system loses its absorption momentum, and the air pressure stabilizes. In that case, it will be necessary to inject compressed air again to restart the cycle.
+            </p>
+        </motion.div>
+
+        <!-- 结尾 -->
+        <motion.div 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            class="bento-card text-center relative"
+        >
+            <div class="gradient-overlay-blue"></div>
+            <p class="text-xl font-bold text-gray-800 mb-4">
+                分享此教程，加入能源革新！
+                <br>
+                Share this guide and join the energy revolution!
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">
+                    <i class="fas fa-thumbs-up icon-large"></i>
+                </a>
+                <a href="#" class="text-green-500 hover:text-green-700 transition-colors duration-300">
+                    <i class="fas fa-share-alt icon-large"></i>
+                </a>
+                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300">
+                    <i class="fas fa-heart icon-large"></i>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-6">
+                我们的原型产品不出售。请勿上当受骗！
+                <br>
+                Our prototypes are not for sale. Do not be fooled by scammers!
+            </p>
+            <h4 class="text-base font-bold mt-6">感谢所有支持者！/ Thanks to all our members!</h4>
+        </motion.div>
+
+    </div>
+
+    <script>
+        // Framer Motion initialization (might not be strictly necessary if elements are used directly)
+        // This is a basic setup, more complex scenarios might need react or vue integration.
+        // For simple HTML, just adding motion attributes to elements usually works via the CDN.
+        document.addEventListener('DOMContentLoaded', () => {
+            // No explicit JS needed beyond the CDN script for basic motion attributes
+            // If you had dynamic content or complex orchestrations, JS would go here.
+        });
+    </script>
+</body>
+</html>

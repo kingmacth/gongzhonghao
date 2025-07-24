@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY趣味科学：从日常生活到惊艳实验！</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+body {
+font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+background-color: #f0f4f8; /* Soft background color */
+}
+.bento-grid-item {
+background-color: #ffffff;
+border-radius: 1.5rem; /* Rounded corners */
+padding: 1.5rem;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+transition: all 0.3s ease-in-out;
+border: 1px solid rgba(220, 220, 220, 0.5); /* Soft border */
+}
+.bento-grid-item:hover {
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+transform: translateY(-2px);
+}
+.gradient-highlight-blue {
+background: linear-gradient(to right, rgba(147, 197, 253, 0.5), rgba(59, 130, 246, 0.5));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.gradient-highlight-green {
+background: linear-gradient(to right, rgba(167, 243, 208, 0.5), rgba(16, 185, 129, 0.5));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.gradient-highlight-purple {
+background: linear-gradient(to right, rgba(200, 180, 255, 0.5), rgba(124, 58, 237, 0.5));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+</style>
+</head>
+<body class="p-8 max-w-2xl mx-auto">
+<div class="space-y-8">
+
+    <div class="bento-grid-item text-center">
+        <h1 class="text-7xl font-extrabold mb-4 gradient-highlight-blue">
+            DIY趣味科学 <br> <span class="text-3xl font-light text-gray-600">Fun DIY Science Experiments</span>
+        </h1>
+        <p class="text-lg text-gray-700 mb-4">
+            探索日常生活中的科学奥秘！本教程将带您利用常见物品，亲手制作简易水解装置、体验趣味金属焊接，并制作一个环保的干电池。
+            <br>
+            <span class="text-sm text-gray-500">Explore the scientific wonders in everyday life! This tutorial guides you through creating a simple water electrolysis apparatus, experiencing interesting metal soldering, and building an eco-friendly dry cell battery using common items.</span>
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+            <span class="text-sm flex items-center"><i class="fas fa-flask mr-2 text-blue-500"></i><strong class="text-lg">实验性</strong> (Experimental)</span>
+            <span class="text-sm flex items-center"><i class="fas fa-lightbulb mr-2 text-yellow-500"></i><strong class="text-lg">创意性</strong> (Creative)</span>
+            <span class="text-sm flex items-center"><i class="fas fa-recycle mr-2 text-green-500"></i><strong class="text-lg">环保性</strong> (Eco-friendly)</span>
+            <span class="text-sm flex items-center"><i class="fas fa-hand-sparkles mr-2 text-purple-500"></i><strong class="text-lg">实用性</strong> (Practical)</span>
+        </div>
+    </div>
+
+    <!-- Project 1: Water Electrolysis -->
+    <div class="bento-grid-item">
+        <h2 class="text-4xl font-bold mb-4 gradient-highlight-blue">
+            项目一：制作简易水解装置 <br> <span class="text-xl font-light text-gray-600">Project One: DIY Simple Water Electrolysis Apparatus</span>
+        </h2>
+        <p class="text-base text-gray-700 mb-4">
+            通过电解水来分离氢气和氧气，直观感受电化学的魅力。
+            <br>
+            <span class="text-sm text-gray-500">Witness the magic of electrochemistry by separating hydrogen and oxygen from water.</span>
+        </p>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">材料清单 <span class="text-base font-light text-gray-500">Materials List</span></h3>
+        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+            <li><i class="fas fa-pencil-alt text-blue-400 mr-2"></i>铅笔 (ARCO 3001 HB CE) <span class="text-sm text-gray-500">Pencil</span></li>
+            <li><i class="fas fa-fire text-blue-400 mr-2"></i>打火机 <span class="text-sm text-gray-500">Lighter</span></li>
+            <li><i class="fas fa-toolbox text-blue-400 mr-2"></i>钳子 <span class="text-sm text-gray-500">Pliers</span></li>
+            <li><i class="fas fa-syringe text-blue-400 mr-2"></i>大注射器 (60ml) <span class="text-sm text-gray-500">Large Syringe</span></li>
+            <li><i class="fas fa-drill text-blue-400 mr-2"></i>电钻 (Bosch Brushless) <span class="text-sm text-gray-500">Electric Drill</span></li>
+            <li><i class="fas fa-bottle-water text-blue-400 mr-2"></i>小玻璃瓶 <span class="text-sm text-gray-500">Small Glass Bottle</span></li>
+            <li><i class="fas fa-water text-blue-400 mr-2"></i>纯水 <span class="text-sm text-gray-500">Pure Water</span></li>
+            <li><i class="fas fa-salt-shaker text-blue-400 mr-2"></i>食盐 <span class="text-sm text-gray-500">Table Salt</span></li>
+            <li><i class="fas fa-glue text-blue-400 mr-2"></i>强力胶 <span class="text-sm text-gray-500">Super Glue</span></li>
+            <li><i class="fas fa-pipe text-blue-400 mr-2"></i>细塑料管 <span class="text-sm text-gray-500">Thin Plastic Tubing</span></li>
+            <li><i class="fas fa-grip-lines-vertical text-blue-400 mr-2"></i>鳄鱼夹 (红/蓝) <span class="text-sm text-gray-500">Alligator Clips (Red/Blue)</span></li>
+            <li><i class="fas fa-syringe text-blue-400 mr-2"></i>注射器针头 (气体收集用) <span class="text-sm text-gray-500">Syringe Needle (for gas collection)</span></li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">步骤详解 <span class="text-base font-light text-gray-500">Detailed Steps</span></h3>
+
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-blue-500 mr-4">1.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">提取石墨电极 <span class="text-base font-light text-gray-500">Extracting Graphite Electrodes</span></h4>
+                    <img src="placeholder_00_07.jpg" alt="Pencil tip being extracted" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        从笔筒中取出一支ARCO 3001 HB CE铅笔。用打火机灼烧铅笔笔尖，使其木质部分碳化，然后使用钳子轻轻剥离碳化的木头，取出完整的石墨铅芯。重复以上步骤，准备多根石墨铅芯作为电极。
+                        <br>
+                        <span class="text-sm text-gray-500">Take an ARCO 3001 HB CE pencil from the holder. Burn the pencil tip with a lighter to carbonize the wood, then gently peel off the carbonized wood with pliers to reveal the graphite lead. Repeat to prepare multiple graphite leads for electrodes.</span>
+                    </p>
+                    <img src="placeholder_00_46.jpg" alt="Graphite electrodes from pencil" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-blue-500 mr-4">2.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">制作注射器电极支架 <span class="text-base font-light text-gray-500">Making the Syringe Electrode Holder</span></h4>
+                    <img src="placeholder_01_38.jpg" alt="Disassembled syringe parts" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        拆解一支60ml大注射器，取出活塞和活塞帽。在活塞帽上精确钻出多个小孔，孔径略小于石墨铅芯直径。将石墨铅芯插入这些小孔中，确保其稳固不晃动，并在铅芯与活塞帽的连接处滴入强力胶固定。
+                        <br>
+                        <span class="text-sm text-gray-500">Disassemble a 60ml large syringe, remove the plunger and plunger cap. Precisely drill multiple small holes in the plunger cap, slightly smaller than the graphite lead diameter. Insert the graphite leads into these holes, ensuring they are stable, and apply super glue at the connection points of the leads and cap to secure them.</span>
+                    </p>
+                    <img src="placeholder_02_31.jpg" alt="Graphite electrodes inserted into syringe cap" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-blue-500 mr-4">3.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">组装电解装置 <span class="text-base font-light text-gray-500">Assembling the Electrolysis Apparatus</span></h4>
+                    <img src="placeholder_04_41.jpg" alt="Water poured into glass bottle" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        取一个干净的玻璃瓶，倒入适量纯水，然后加入食盐并搅拌使其完全溶解，制成导电盐水。将制作好的石墨电极支架插入盐水中，确保电极浸没在水中。
+                        <br>
+                        <span class="text-sm text-gray-500">Take a clean glass bottle and pour in an appropriate amount of pure water. Then add table salt and stir until fully dissolved to make conductive salt water. Insert the prepared graphite electrode holder into the salt water, ensuring the electrodes are submerged.</span>
+                    </p>
+                    <img src="placeholder_05_34.jpg" alt="Electrode holder inserted into salt water" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-blue-500 mr-4">4.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">电解实验与气体收集 <span class="text-base font-light text-gray-500">Electrolysis Experiment & Gas Collection</span></h4>
+                    <p class="text-gray-700">
+                        使用鳄鱼夹连接电极与电源（通常为9V电池或直流电源）。观察电极上冒出的气泡，蓝色夹子连接的一端产生氢气，红色夹子连接的一端产生氧气。将长塑料管的另一端插入一个小瓶中，收集产生的氢气。最后，用打火机在收集氢气的小瓶口处点燃，氢气会发出轻微的爆鸣声。
+                        <br>
+                        <span class="text-sm text-gray-500">Use alligator clips to connect the electrodes to a power source (typically a 9V battery or DC supply). Observe bubbles forming on the electrodes: hydrogen from the blue-clipped side, oxygen from the red-clipped side. Insert the other end of the long plastic tube into a small bottle to collect hydrogen gas. Finally, ignite the collected hydrogen at the small bottle's opening with a lighter; hydrogen will produce a slight popping sound.</span>
+                    </p>
+                    <img src="placeholder_06_13.jpg" alt="Bubbles forming during electrolysis" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <img src="placeholder_08_01.jpg" alt="Collected gas being ignited" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2: Metal Soldering Techniques -->
+    <div class="bento-grid-item">
+        <h2 class="text-4xl font-bold mb-4 gradient-highlight-green">
+            项目二：趣味金属焊接技巧 <br> <span class="text-xl font-light text-gray-600">Project Two: Fun Metal Soldering Techniques</span>
+        </h2>
+        <p class="text-base text-gray-700 mb-4">
+            掌握基本的焊接技巧，轻松修复断裂的金属物品，或创作独特的金属艺术品。
+            <br>
+            <span class="text-sm text-gray-500">Master basic soldering techniques to easily repair broken metal items or create unique metal art.</span>
+        </p>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">材料清单 <span class="text-base font-light text-gray-500">Materials List</span></h3>
+        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+            <li><i class="fas fa-wrench text-green-500 mr-2"></i>小螺丝 (细牙) <span class="text-sm text-gray-500">Small Screw (fine thread)</span></li>
+            <li><i class="fas fa-circle text-green-500 mr-2"></i>小垫片 <span class="text-sm text-gray-500">Small Washer</span></li>
+            <li><i class="fas fa-paperclip text-green-500 mr-2"></i>安全别针 (2枚) <span class="text-sm text-gray-500">Safety Pins (2 pcs)</span></li>
+            <li><i class="fas fa-utensils text-green-500 mr-2"></i>断裂的叉子 <span class="text-sm text-gray-500">Broken Fork</span></li>
+            <li><i class="fas fa-tools text-green-500 mr-2"></i>焊锡丝 <span class="text-sm text-gray-500">Solder Wire</span></li>
+            <li><i class="fas fa-fire text-green-500 mr-2"></i>焊枪/打火机 <span class="text-sm text-gray-500">Torch/Lighter</span></li>
+            <li><i class="fas fa-compress-arrows-alt text-green-500 mr-2"></i>小镊子 <span class="text-sm text-gray-500">Small Tweezers</span></li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">步骤详解 <span class="text-base font-light text-gray-500">Detailed Steps</span></h3>
+
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-green-500 mr-4">1.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">焊接螺丝与垫片 <span class="text-base font-light text-gray-500">Soldering Screw and Washer</span></h4>
+                    <p class="text-gray-700">
+                        用小镊子夹住小螺丝，并用焊枪或打火机加热螺丝头，将焊锡丝熔化在加热的螺丝头上。然后将小垫片放在螺丝头上，并继续加热使其与焊锡充分结合。
+                        <br>
+                        <span class="text-sm text-gray-500">Hold the small screw with tweezers and heat the screw head with a torch or lighter. Melt solder wire onto the heated screw head. Then place the small washer on the screw head and continue heating to ensure it bonds well with the solder.</span>
+                    </p>
+                    <img src="placeholder_08_43.jpg" alt="Soldering washer to a bolt" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <img src="placeholder_08_56.jpg" alt="Soldered bolt and washer" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-green-500 mr-4">2.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">连接安全别针 <span class="text-base font-light text-gray-500">Joining Safety Pins</span></h4>
+                    <img src="placeholder_10_13.jpg" alt="Two safety pins interlinked" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        将两枚安全别针相互连接，使其首尾相扣。用小镊子固定连接处，加热该区域，然后将焊锡丝熔化在连接点上，使其牢固地焊合。
+                        <br>
+                        <span class="text-sm text-gray-500">Interlink two safety pins end-to-end. Secure the joint with tweezers and heat the area, then melt solder wire onto the joint to firmly bond them.</span>
+                    </p>
+                    <img src="placeholder_10_20.jpg" alt="Soldering safety pins" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-green-500 mr-4">3.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">修复断裂的叉子 <span class="text-base font-light text-gray-500">Repairing a Broken Fork</span></h4>
+                    <img src="placeholder_10_50.jpg" alt="Broken fork pieces" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        将断裂的叉子两部分精准对齐。用钳子固定连接处，并用焊枪或打火机加热。在加热的断裂面上添加焊锡，使其熔化并填充缝隙，将叉子焊合。
+                        <br>
+                        <span class="text-sm text-gray-500">Align the two broken parts of the fork precisely. Hold the joint with pliers and heat it with a torch or lighter. Add solder to the heated broken surfaces, allowing it to melt and fill the gap, welding the fork together.</span>
+                    </p>
+                    <img src="placeholder_10_57.jpg" alt="Soldering a broken fork" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3: DIY Simple Dry Cell Battery -->
+    <div class="bento-grid-item">
+        <h2 class="text-4xl font-bold mb-4 gradient-highlight-purple">
+            项目三：简易干电池制作 <br> <span class="text-xl font-light text-gray-600">Project Three: DIY Simple Dry Cell Battery</span>
+        </h2>
+        <p class="text-base text-gray-700 mb-4">
+            利用废弃电池材料，制作一个可以为小电器供电的简易电池，体验废物利用的乐趣。
+            <br>
+            <span class="text-sm text-gray-500">Recycle old battery materials to create a simple battery that can power small electronics, experiencing the joy of repurposing.</span>
+        </p>
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">材料清单 <span class="text-base font-light text-gray-500">Materials List</span></h3>
+        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+            <li><i class="fas fa-battery-empty text-purple-500 mr-2"></i>废弃AA电池 <span class="text-sm text-gray-500">Discarded AA Battery</span></li>
+            <li><i class="fas fa-syringe text-purple-500 mr-2"></i>小型注射器 (5ml) <span class="text-sm text-gray-500">Small Syringe (5ml)</span></li>
+            <li><i class="fas fa-cut text-purple-500 mr-2"></i>一次性美工刀 <span class="text-sm text-gray-500">Disposable Cutter</span></li>
+            <li><i class="fas fa-compress-arrows-alt text-purple-500 mr-2"></i>镊子 <span class="text-sm text-gray-500">Tweezers</span></li>
+            <li><i class="fas fa-code-branch text-purple-500 mr-2"></i>铜线 <span class="text-sm text-gray-500">Copper Wire</span></li>
+            <li><i class="fas fa-water text-purple-500 mr-2"></i>纯水 <span class="text-sm text-gray-500">Pure Water</span></li>
+            <li><i class="fas fa-salt-shaker text-purple-500 mr-2"></i>食盐 <span class="text-sm text-gray-500">Table Salt</span></li>
+            <li><i class="fas fa-cotton-ball text-purple-500 mr-2"></i>医用棉花 <span class="text-sm text-gray-500">Cotton Wool</span></li>
+            <li><i class="fas fa-clock text-purple-500 mr-2"></i>小型石英钟 <span class="text-sm text-gray-500">Small Quartz Clock</span></li>
+            <li><i class="fas fa-glue text-purple-500 mr-2"></i>强力胶 <span class="text-sm text-gray-500">Super Glue</span></li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mb-3 text-gray-800">步骤详解 <span class="text-base font-light text-gray-500">Detailed Steps</span></h3>
+
+        <div class="space-y-6">
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-purple-500 mr-4">1.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">准备注射器外壳 <span class="text-base font-light text-gray-500">Preparing the Syringe Casing</span></h4>
+                    <p class="text-gray-700">
+                        拆解一支5ml小型注射器，丢弃活塞，只保留透明筒体。用美工刀切掉注射器前端的针头连接部分，并切掉注射器尾端的活塞帽固定部分。
+                        <br>
+                        <span class="text-sm text-gray-500">Disassemble a 5ml small syringe, discard the plunger, and keep only the transparent barrel. Use a cutter to remove the needle connection part at the front of the syringe, and also cut off the plunger cap fixing part at the rear.</span>
+                    </p>
+                    <img src="placeholder_01_38.jpg" alt="Syringe barrel cut for battery" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-purple-500 mr-4">2.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">提取电池材料 <span class="text-base font-light text-gray-500">Extracting Battery Materials</span></h4>
+                    <img src="placeholder_12_18.jpg" alt="Discarded battery casing" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <p class="text-gray-700">
+                        小心地拆解废弃的AA电池，取出外部的锌壳和内部的碳棒。（注意：视频中主要展示了锌片提取，通常电池内还有碳棒作为正极。）将锌壳剪下一小块作为锌电极片。剪取一小段铜线。
+                        <br>
+                        <span class="text-sm text-gray-500">Carefully disassemble a discarded AA battery to extract the outer zinc casing and inner carbon rod. (Note: The video mainly shows zinc extraction; typically, a carbon rod serves as the positive electrode inside batteries.) Cut a small piece from the zinc casing to serve as the zinc electrode. Cut a small piece of copper wire.</span>
+                    </p>
+                    <img src="placeholder_12_55.jpg" alt="Zinc and copper pieces for electrode" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-purple-500 mr-4">3.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">制作电池电极与电解质 <span class="text-base font-light text-gray-500">Making Battery Electrodes & Electrolyte</span></h4>
+                    <p class="text-gray-700">
+                        将铜线一端焊接到剪下的锌电极片上，用强力胶固定以防脱落。将制作好的锌电极放入注射器筒体的一端。将少量医用棉花塞入注射器筒体中央。在棉花上滴入盐水，使其湿润作为电解质。将碳棒电极（另一根铜线连接）插入棉花另一端，与盐水和锌电极形成回路。最后，在注射器两端使用强力胶固定电极和棉花，确保密封。
+                        <br>
+                        <span class="text-sm text-gray-500">Solder one end of the copper wire to the cut zinc electrode piece, securing it with super glue to prevent detachment. Place the prepared zinc electrode into one end of the syringe barrel. Stuff a small amount of cotton into the center of the syringe barrel. Drip salt water onto the cotton to moisten it as the electrolyte. Insert the carbon rod electrode (connected to another copper wire) into the other end of the cotton, forming a circuit with the salt water and zinc electrode. Finally, use super glue to secure the electrodes and cotton at both ends of the syringe, ensuring a seal.</span>
+                    </p>
+                    <img src="placeholder_13_51.jpg" alt="Zinc electrode assembly" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                    <img src="placeholder_16_42.jpg" alt="Completed battery cell" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-6xl font-extrabold text-purple-500 mr-4">4.</span>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">连接与测试 <span class="text-base font-light text-gray-500">Connecting & Testing</span></h4>
+                    <p class="text-gray-700">
+                        取出一个小型石英钟。将自制电池的正负极（铜线）分别连接到时钟电池仓的正负极，通常铜线连接碳棒为正极，锌片为负极。观察时钟是否开始走动，验证自制电池的发电效果。
+                        <br>
+                        <span class="text-sm text-gray-500">Take a small quartz clock. Connect the positive and negative terminals (copper wires) of the homemade battery to the positive and negative terminals of the clock's battery compartment, respectively. Typically, the copper wire connected to the carbon rod is positive, and the zinc piece is negative. Observe if the clock starts ticking, verifying the power generation effect of the homemade battery.</span>
+                    </p>
+                    <img src="placeholder_17_08.jpg" alt="Homemade battery powering clock" class="w-full h-auto rounded-lg shadow-md my-3" width="900">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巧手匠心：五大实用工具与发明教程，点亮你的生活！</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Framer Motion (通过CDN加载，需要在脚本中引用) -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/dist/framer-motion.min.js"></script>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f8fafc; /* Soft background */
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Single column for WeChat */
+            gap: 1.5rem; /* Space between grid items */
+        }
+        .bento-item {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .highlight-bg {
+            background: linear-gradient(to right, rgba(100, 149, 237, 0.2), rgba(100, 149, 237, 0)); /* Soft blue gradient */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .text-overlay {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-8 lg:p-12">
+
+    <div class="max-w-2xl mx-auto bento-grid">
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
+            <span class="text-blue-600">巧手匠心：</span><br>
+            <span class="text-blue-800">五大实用工具与发明教程</span><br>
+            <span class="text-gray-600 text-2xl md:text-3xl lg:text-4xl mt-4 block">Ignite Your Inner Inventor: 5 DIY Tools & Inventions</span>
+        </h1>
+
+        <!-- Features Summary Card -->
+        <div class="bento-item relative">
+            <div class="highlight-bg"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-blue-700">项目亮点一览</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">Project Highlights at a Glance</span>
+                </h2>
+                <ul class="list-none space-y-3 text-lg md:text-xl text-gray-700">
+                    <li class="flex items-center">
+                        <i class="fas fa-flask text-blue-500 mr-3 text-2xl"></i>
+                        <span class="font-bold">自制燃料：</span>从铅笔芯提取石墨，制作燃烧棒，甚至电解水制氢气，用于微型焊接。
+                        <br><span class="text-gray-500 text-base ml-8">DIY Fuel: Extract graphite from pencils for burning rods, and electrolyze water for hydrogen for micro-welding.</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-tools text-blue-500 mr-3 text-2xl"></i>
+                        <span class="font-bold">废物利用：</span>将日常废弃物如一次性剃须刀、安全别针和废弃火花塞，改造为实用工具。
+                        <br><span class="text-gray-500 text-base ml-8">Recycle & Reuse: Transform everyday waste like disposable razors, safety pins, and old spark plugs into useful tools.</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-hand-sparkles text-blue-500 mr-3 text-2xl"></i>
+                        <span class="font-bold">奇思妙想：</span>掌握简易焊接技巧，轻松实现金属连接与玻璃切割。
+                        <br><span class="text-gray-500 text-base ml-8">Ingenious Ideas: Learn simple welding techniques and easily cut glass.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 1: Graphite Pencil Lead Transformation -->
+        <div class="bento-item relative">
+            <div class="highlight-bg"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-blue-700">01</span>
+                    <span class="ml-2">自制石墨芯棒</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">DIY Graphite Rod from Pencil Lead</span>
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    将普通铅笔转化为可导电的纯石墨棒，适用于多种实验或制作项目。
+                    <span class="text-gray-600 text-sm block mt-1">Transforming ordinary pencils into conductive graphite rods for various experiments and projects.</span>
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">材料清单 <span class="text-gray-600 text-lg">Materials List</span></h3>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fas fa-pencil-alt text-gray-500 mr-2"></i> 铅笔 (建议：HB或2B，石墨纯度更高) <span class="text-gray-600 text-sm">(Recommended: HB or 2B for higher graphite purity)</span></li>
+                    <li><i class="fas fa-fire text-gray-500 mr-2"></i> 打火机 <span class="text-gray-600 text-sm">(Lighter)</span></li>
+                    <li><i class="fas fa-compress-arrows-alt text-gray-500 mr-2"></i> 尖嘴钳 <span class="text-gray-600 text-sm">(Needle-nose pliers)</span></li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">制作步骤 <span class="text-gray-600 text-lg">Step-by-Step Guide</span></h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-blue-600 mr-4">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">点燃笔尖 <span class="text-gray-600 text-base">Ignite the Pencil Tip</span></h4>
+                            <p class="text-gray-700">用打火机小心加热铅笔尖，直到木质部分开始燃烧并炭化。确保火焰集中在木头上，避免直接燃烧石墨芯。</p>
+                            <p class="text-gray-600 text-sm mt-1">Carefully heat the pencil tip with a lighter until the wood begins to burn and char. Ensure the flame focuses on the wood, avoiding direct burning of the graphite lead.</p>
+                            <img src="placeholder_00_15.jpg" alt="点燃笔尖" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-blue-600 mr-4">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">剥离木屑 <span class="text-gray-600 text-base">Peel Off Wood Shavings</span></h4>
+                            <p class="text-gray-700">用尖嘴钳轻轻剥离烧焦的木屑，露出内部的纯石墨芯。这个过程需要耐心，避免弄断石墨芯。</p>
+                            <p class="text-gray-600 text-sm mt-1">Gently peel off the charred wood shavings with needle-nose pliers to expose the pure graphite lead. This process requires patience to avoid breaking the lead.</p>
+                            <img src="placeholder_00_46.jpg" alt="剥离木屑" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-blue-600 mr-4">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">收集与组合 <span class="text-gray-600 text-base">Collect & Combine</span></h4>
+                            <p class="text-gray-700">重复以上步骤，收集多根石墨芯。这些石墨芯可以单独使用，也可以组合起来形成更长的导电棒。</p>
+                            <p class="text-gray-600 text-sm mt-1">Repeat the above steps to collect multiple graphite leads. These leads can be used individually or combined to form longer conductive rods.</p>
+                            <img src="placeholder_01_19.jpg" alt="收集与组合" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: Simple Hydrogen Generator & Micro Flame -->
+        <div class="bento-item relative">
+            <div class="highlight-bg" style="background: linear-gradient(to right, rgba(255, 165, 0, 0.2), rgba(255, 165, 0, 0));"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-orange-600">02</span>
+                    <span class="ml-2">简易制氢与微火焰</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">Simple Hydrogen Generator & Micro Flame</span>
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    通过电解食盐水产生氢气和氧气，并利用氢气制造一个可用于精细焊接的微型火焰。
+                    <span class="text-gray-600 text-sm block mt-1">Generate hydrogen and oxygen through saltwater electrolysis, and use hydrogen to create a micro-flame for fine welding.</span>
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">材料清单 <span class="text-gray-600 text-lg">Materials List</span></h3>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fas fa-syringe text-gray-500 mr-2"></i> 大号注射器 (约60ml) <span class="text-gray-600 text-sm">(Large syringe, approx. 60ml)</span></li>
+                    <li><i class="fas fa-pencil-alt text-gray-500 mr-2"></i> 铅笔石墨芯 (来自项目1) <span class="text-gray-600 text-sm">(Graphite pencil leads from Project 1)</span></li>
+                    <li><i class="fas fa-tint text-gray-500 mr-2"></i> 水 <span class="text-gray-600 text-sm">(Water)</span></li>
+                    <li><i class="fas fa-salt text-gray-500 mr-2"></i> 食盐 (氯化钠) <span class="text-gray-600 text-sm">(Salt / NaCl)</span></li>
+                    <li><i class="fas fa-grip-lines text-gray-500 mr-2"></i> 强力胶 <span class="text-gray-600 text-sm">(Super glue)</span></li>
+                    <li><i class="fas fa-square-root-alt text-gray-500 mr-2"></i> 塑料管 <span class="text-gray-600 text-sm">(Plastic tubing)</span></li>
+                    <li><i class="fas fa-link text-gray-500 mr-2"></i> 导管接头 (例如：输液器接头) <span class="text-gray-600 text-sm">(Tubing connector, e.g., from an IV set)</span></li>
+                    <li><i class="fas fa-battery-half text-gray-500 mr-2"></i> 鳄鱼夹与导线 <span class="text-gray-600 text-sm">(Alligator clips & wires)</span></li>
+                    <li><i class="fas fa-battery-three-quarters text-gray-500 mr-2"></i> 电源 (例如：12V电池) <span class="text-gray-600 text-sm">(Power supply, e.g., 12V battery)</span></li>
+                    <li><i class="fas fa-glass-whiskey text-gray-500 mr-2"></i> 小玻璃瓶 (带金属盖) <span class="text-gray-600 text-sm">(Small glass bottle with metal cap)</span></li>
+                    <li><i class="fas fa-syringe text-gray-500 mr-2"></i> 针头 (例如：注射器针头) <span class="text-gray-600 text-sm">(Needle, e.g., syringe needle)</span></li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">制作步骤 <span class="text-gray-600 text-lg">Step-by-Step Guide</span></h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-orange-600 mr-4">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">制作电解槽主体 <span class="text-gray-600 text-base">Build Electrolyzer Body</span></h4>
+                            <p class="text-gray-700">拆卸注射器活塞和前端盖，只保留筒身。在活塞盖上钻孔并插入石墨芯，用强力胶固定。确保石墨芯均匀分布且长度一致。</p>
+                            <p class="text-gray-600 text-sm mt-1">Disassemble the syringe plunger and front cap, keeping only the barrel. Drill holes in the plunger cap and insert graphite leads, securing them with super glue. Ensure even distribution and consistent length.</p>
+                            <img src="placeholder_02_41.jpg" alt="制作电解槽主体" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                            <img src="placeholder_03_40.jpg" alt="石墨芯安装完成" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-orange-600 mr-4">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">配置电解液 <span class="text-gray-600 text-base">Prepare Electrolyte Solution</span></h4>
+                            <p class="text-gray-700">在玻璃瓶中倒入纯净水，加入少量食盐，搅拌直至完全溶解。食盐能增加水的导电性，提高制氢效率。</p>
+                            <p class="text-gray-600 text-sm mt-1">Pour distilled water into a glass bottle, add a small amount of salt, and stir until completely dissolved. Salt increases the water's conductivity, improving hydrogen production efficiency.</p>
+                            <img src="placeholder_05_05.jpg" alt="配置电解液" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-orange-600 mr-4">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">组装与连接电源 <span class="text-gray-600 text-base">Assemble & Connect Power</span></h4>
+                            <p class="text-gray-700">将石墨芯组件插入电解液瓶中，确保石墨芯完全浸没。用鳄鱼夹将电源（例如：12V直流电源）连接到石墨芯两端，观察气泡（氢气和氧气）的产生。</p>
+                            <p class="text-gray-600 text-sm mt-1">Insert the graphite lead assembly into the electrolyte bottle, ensuring the leads are fully submerged. Use alligator clips to connect a power source (e.g., 12V DC power) to both ends of the graphite leads, and observe the bubbles (hydrogen and oxygen) forming.</p>
+                            <img src="placeholder_06_14.jpg" alt="连接电源" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-orange-600 mr-4">4</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">制作气体收集瓶与喷嘴 <span class="text-gray-600 text-base">Build Gas Collection Bottle & Nozzle</span></h4>
+                            <p class="text-gray-700">在小玻璃瓶盖上钻两个小孔。一个孔用于连接从电解槽引出的气体管（氢气），另一个用于连接带有针头的喷嘴。用强力胶密封。</p>
+                            <p class="text-gray-600 text-sm mt-1">Drill two small holes in the small glass bottle cap. One hole connects to the gas tube (hydrogen) from the electrolyzer, and the other connects to the needle nozzle. Seal with super glue.</p>
+                            <img src="placeholder_07_04.jpg" alt="气体收集瓶" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                            <img src="placeholder_07_50.jpg" alt="气体收集与喷嘴" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-orange-600 mr-4">5</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">点燃微型火焰 <span class="text-gray-600 text-base">Ignite the Micro Flame</span></h4>
+                            <p class="text-gray-700">待氢气在收集瓶中累积一定量后，用打火机在喷嘴处点燃。你会看到一个细小而稳定的蓝色火焰，这正是纯氢气燃烧的特征。</p>
+                            <p class="text-gray-600 text-sm mt-1">Once a sufficient amount of hydrogen has accumulated in the collection bottle, ignite it at the nozzle with a lighter. You will see a small, stable blue flame, characteristic of pure hydrogen combustion.</p>
+                            <img src="placeholder_08_30.jpg" alt="点燃微型火焰" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Safety Pin Welding -->
+        <div class="bento-item relative">
+            <div class="highlight-bg" style="background: linear-gradient(to right, rgba(0, 128, 0, 0.2), rgba(0, 128, 0, 0));"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-green-600">03</span>
+                    <span class="ml-2">安全别针焊接</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">Safety Pin Welding</span>
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    利用自制微型火焰，将普通安全别针焊接在一起，展示简易焊接的可能性。
+                    <span class="text-gray-600 text-sm block mt-1">Utilize the DIY micro-flame to weld ordinary safety pins together, demonstrating the possibilities of simple welding.</span>
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">材料清单 <span class="text-gray-600 text-lg">Materials List</span></h3>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fas fa-thumbtack text-gray-500 mr-2"></i> 安全别针 <span class="text-gray-600 text-sm">(Safety pins)</span></li>
+                    <li><i class="fas fa-fire text-gray-500 mr-2"></i> 微型火焰装置 (来自项目2) <span class="text-gray-600 text-sm">(Micro-flame setup from Project 2)</span></li>
+                    <li><i class="fas fa-bolt text-gray-500 mr-2"></i> 焊锡丝 (或类似易熔金属) <span class="text-gray-600 text-sm">(Solder wire or similar low-melting metal)</span></li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">制作步骤 <span class="text-gray-600 text-lg">Step-by-Step Guide</span></h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-green-600 mr-4">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">连接别针 <span class="text-gray-600 text-base">Connect the Pins</span></h4>
+                            <p class="text-gray-700">将两个安全别针的环形部分互相套住，确保它们紧密接触，形成一个可以焊接的连接点。</p>
+                            <p class="text-gray-600 text-sm mt-1">Interlock the loop ends of two safety pins, ensuring they are in close contact to form a connection point for welding.</p>
+                            <img src="placeholder_10_15.jpg" alt="连接别针" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-green-600 mr-4">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">加热与焊接 <span class="text-gray-600 text-base">Heat and Weld</span></h4>
+                            <p class="text-gray-700">用微型火焰精确加热别针的连接处，同时将焊锡丝触碰加热区域。焊锡会迅速熔化，将两个别针牢固连接。</p>
+                            <p class="text-gray-600 text-sm mt-1">Precisely heat the connection point of the pins with the micro-flame, while touching the solder wire to the heated area. The solder will melt rapidly, securely joining the two pins.</p>
+                            <img src="placeholder_10_54.jpg" alt="加热与焊接" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-green-600 mr-4">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">冷却与检查 <span class="text-gray-600 text-base">Cool and Inspect</span></h4>
+                            <p class="text-gray-700">让焊接点自然冷却后，轻轻拉动别针，检查焊接是否牢固。成功的焊接会形成一个紧密、不易断裂的连接。</p>
+                            <p class="text-gray-600 text-sm mt-1">After the weld cools naturally, gently pull the pins to check for a secure connection. A successful weld will form a tight, unbreakable joint.</p>
+                            <img src="placeholder_11_10.jpg" alt="冷却与检查" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: Razor Blade Cutting Tool -->
+        <div class="bento-item relative">
+            <div class="highlight-bg" style="background: linear-gradient(to right, rgba(147, 197, 253, 0.2), rgba(147, 197, 253, 0));"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-purple-600">04</span>
+                    <span class="ml-2">剃须刀片切割工具</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">Razor Blade Cutting Tool</span>
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    将一次性剃须刀的刀片安全固定在刀柄上，制作成一个简易的精确切割工具。
+                    <span class="text-gray-600 text-sm block mt-1">Securely attach a disposable razor blade to its handle to create a simple yet precise cutting tool.</span>
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">材料清单 <span class="text-gray-600 text-lg">Materials List</span></h3>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fas fa-brush text-gray-500 mr-2"></i> 一次性剃须刀 (例如：Dorco GGC210) <span class="text-gray-600 text-sm">(Disposable razor, e.g., Dorco GGC210)</span></li>
+                    <li><i class="fas fa-wind text-gray-500 mr-2"></i> 细线 (例如：棉线、鱼线) <span class="text-gray-600 text-sm">(Thin thread, e.g., cotton or fishing line)</span></li>
+                    <li><i class="fas fa-grip-lines text-gray-500 mr-2"></i> 强力胶 <span class="text-gray-600 text-sm">(Super glue)</span></li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">制作步骤 <span class="text-gray-600 text-lg">Step-by-Step Guide</span></h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-purple-600 mr-4">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">拆卸刀头 <span class="text-gray-600 text-base">Disassemble the Razor Head</span></h4>
+                            <p class="text-gray-700">用小刀或美工刀小心地从一次性剃须刀柄上分离刀头部分。确保操作安全，避免刀片伤手。</p>
+                            <p class="text-gray-600 text-sm mt-1">Carefully separate the razor head from the disposable razor handle using a utility knife or craft knife. Ensure safety during this process to avoid cuts.</p>
+                            <img src="placeholder_11_38.jpg" alt="拆卸刀头" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-purple-600 mr-4">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">固定刀片 <span class="text-gray-600 text-base">Secure the Blade</span></h4>
+                            <p class="text-gray-700">将刀片重新放置在剃须刀柄的头部，用细线紧密缠绕，将刀片牢固地固定在刀柄上。确保缠绕均匀且紧实。</p>
+                            <p class="text-gray-600 text-sm mt-1">Reposition the blade onto the head of the razor handle. Tightly wrap a thin thread around it, securing the blade firmly to the handle. Ensure even and tight wrapping.</p>
+                            <img src="placeholder_12_50.jpg" alt="固定刀片" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-purple-600 mr-4">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">加固与完成 <span class="text-gray-600 text-base">Reinforce & Finish</span></h4>
+                            <p class="text-gray-700">剪断多余的线头，在缠绕处滴上少量强力胶进行加固。待胶水干燥后，你的简易切割工具就制作完成了。</p>
+                            <p class="text-gray-600 text-sm mt-1">Cut any excess thread and apply a small amount of super glue to the wrapped area for reinforcement. Once the glue dries, your simple cutting tool is complete.</p>
+                            <img src="placeholder_13_38.jpg" alt="加固与完成" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5: DIY Glass Cutter -->
+        <div class="bento-item relative">
+            <div class="highlight-bg" style="background: linear-gradient(to right, rgba(0, 191, 255, 0.2), rgba(0, 191, 255, 0));"></div>
+            <div class="text-overlay">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-cyan-600">05</span>
+                    <span class="ml-2">自制玻璃切割器</span>
+                    <br><span class="text-gray-600 text-xl md:text-2xl">DIY Glass Cutter</span>
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    利用改装后的剃须刀片，制作一个简易而有效的玻璃切割器。
+                    <span class="text-gray-600 text-sm block mt-1">Create a simple yet effective glass cutter using a modified razor blade.</span>
+                </p>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">材料清单 <span class="text-gray-600 text-lg">Materials List</span></h3>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fas fa-cube text-gray-500 mr-2"></i> 玻璃片 <span class="text-gray-600 text-sm">(Glass pane)</span></li>
+                    <li><i class="fas fa-ruler-horizontal text-gray-500 mr-2"></i> 直尺 <span class="text-gray-600 text-sm">(Ruler)</span></li>
+                    <li><i class="fas fa-cut text-gray-500 mr-2"></i> 自制剃须刀片切割工具 (来自项目4) <span class="text-gray-600 text-sm">(DIY Razor Blade Cutting Tool from Project 4)</span></li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">制作步骤 <span class="text-gray-600 text-lg">Step-by-Step Guide</span></h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-cyan-600 mr-4">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">准备工作 <span class="text-gray-600 text-base">Preparation</span></h4>
+                            <p class="text-gray-700">确保玻璃表面干净无尘，这将有助于划出更清晰、更准确的切痕。同时准备好直尺和自制切割工具。</p>
+                            <p class="text-gray-600 text-sm mt-1">Ensure the glass surface is clean and dust-free, which will help create clearer and more accurate scores. Have your ruler and DIY cutting tool ready.</p>
+                            <img src="placeholder_13_52.jpg" alt="准备工作" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-cyan-600 mr-4">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">划线切割 <span class="text-gray-600 text-base">Score the Glass</span></h4>
+                            <p class="text-gray-700">将直尺稳固地放置在玻璃上，作为切割的引导。沿直尺边缘，用自制剃须刀片切割工具轻轻且均匀地划过玻璃，形成一道明显的划痕。只需划一次，重复划线会降低效果。</p>
+                            <p class="text-gray-600 text-sm mt-1">Place the ruler firmly on the glass to guide the cut. Along the edge of the ruler, gently and evenly score the glass with your DIY razor blade cutting tool, creating a clear score line. Only score once; repeated scoring can reduce effectiveness.</p>
+                            <img src="placeholder_14_38.jpg" alt="划线切割" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-4">
+                        <div class="flex-shrink-0 text-6xl font-bold text-cyan-600 mr-4">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-xl font-semibold text-gray-800">折断玻璃 <span class="text-gray-600 text-base">Break the Glass</span></h4>
+                            <p class="text-gray-700">将划好线的玻璃放置在桌子边缘，确保划痕与边缘对齐。双手用力均匀向下压，玻璃会沿着划痕整齐地折断。戴手套以防受伤。</p>
+                            <p class="text-gray-600 text-sm mt-1">Position the scored glass with the score line aligned with the edge of a table. Apply even downward pressure with both hands, and the glass will cleanly break along the score line. Wear gloves to prevent injury.</p>
+                            <img src="placeholder_14_50.jpg" alt="折断玻璃" class="w-full h-auto rounded-lg mt-3 shadow-md" width="900">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Framer Motion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if Framer Motion is loaded
+            if (typeof Motion !== 'undefined') {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            Motion.animate(entry.target, { opacity: 1, y: 0 }, { duration: 0.8, ease: "easeOut" });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                // Apply initial hidden state and observe elements
+                document.querySelectorAll('.bento-item, h1').forEach(element => {
+                    element.style.opacity = 0;
+                    element.style.transform = 'translateY(20px)';
+                    observer.observe(element);
+                });
+            } else {
+                console.warn("Framer Motion CDN might not be loaded. Animations will not work.");
+            }
+        });
+    </script>
+</body>
+</html>
